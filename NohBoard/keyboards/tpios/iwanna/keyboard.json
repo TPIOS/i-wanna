@@ -2,7 +2,7 @@
     "Elements": [
       {
         "__type": "KeyboardKey",
-        "Id": 0,
+        "Id": 16,
         "Boundaries": [
           {
             "X": 9,
@@ -32,7 +32,7 @@
       },
       {
         "__type": "KeyboardKey",
-        "Id": 1,
+        "Id": 20,
         "Boundaries": [
           {
             "X": 54,
@@ -62,7 +62,7 @@
       },
       {
         "__type": "KeyboardKey",
-        "Id": 2,
+        "Id": 18,
         "Boundaries": [
           {
             "X": 99,
@@ -92,7 +92,7 @@
       },
       {
         "__type": "KeyboardKey",
-        "Id": 3,
+        "Id": 19,
         "Boundaries": [
           {
             "X": 54,
@@ -122,7 +122,7 @@
       },
       {
         "__type": "KeyboardKey",
-        "Id": 4,
+        "Id": 25,
         "Boundaries": [
           {
             "X": 215,
@@ -152,7 +152,7 @@
       },
       {
         "__type": "KeyboardKey",
-        "Id": 5,
+        "Id": 24,
         "Boundaries": [
           {
             "X": 185,
@@ -182,7 +182,7 @@
       },
       {
         "__type": "KeyboardKey",
-        "Id": 6,
+        "Id": 0,
         "Boundaries": [
           {
             "X": 137,
@@ -212,7 +212,7 @@
       },
       {
         "__type": "KeyboardKey",
-        "Id": 7,
+        "Id": 26,
         "Boundaries": [
           {
             "X": 167,
