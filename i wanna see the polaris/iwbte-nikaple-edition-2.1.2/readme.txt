@@ -12,3 +12,7 @@ version 2.0 updated information:
 2. Add one big extra stage at last (not very hard).
 
 Please enjoy it~
+
+version 1.5 updated information:
+1. Fix some short cuts
+2. Change save mode to SAVE_PRESS-'S'
