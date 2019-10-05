@@ -1,0 +1,8 @@
+ERROR in
+action number 1
+of Alarm Event for alarm 11
+for object roomChanger:
+
+在 Object warp 中，参数 r 为必填项。详见：https://www.nikaple.com/engine/#/（在左上角搜索相关信息）。（在房间 room73 中，位于 (544, 544) 的 Object warp 发生了一个错误，id: 131285）。
+
+
