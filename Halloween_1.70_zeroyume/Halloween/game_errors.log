@@ -1,0 +1,8 @@
+ERROR in
+action number 1
+of Alarm Event for alarm 11
+for object objRoundingCherry:
+
+在 Object objRoundingCherry 中，参数 num 为必填项。详见：https://www.nikaple.com/engine/#/（在左上角搜索相关信息）。（在房间 zroom10 中，位于 (128, 288) 的 Object objRoundingCherry 发生了一个错误，id: 158814）。
+
+
