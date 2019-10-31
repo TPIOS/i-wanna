@@ -1,1 +1,0 @@
-﻿作品名：I wanna play with Mr. Ghost
