@@ -23,3 +23,8 @@ def circle(pictureName, outputName):
     imb.save(outputName)
   
 circle("q.jpg", "q32.png")
+circle("bao.jpg", "bao32.png")
+circle("jushi.jpg", "jushi32.png")
+circle("zero.jpg", "zero32.png")
+circle("rong.jpg", "rong32.png")
+circle("zoulv.jpg", "zoulv32.png")
