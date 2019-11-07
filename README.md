@@ -15,5 +15,5 @@ Game Engine: YoYoYo, no online documents available, there are some online forum 
 
 
 
-**Second work**: something about Halloween. Co-operate with zeroyume, sunlaoqq, Xiao_zoulv, Baozi, ZZR.
+**Second work**:  i wanna play with Mr.Ghost, download URL:  http://www.mediafire.com/file/m1hfodisung5ni3/i_wanna_play_with_Mr.Ghost.zip/file; Co-operate with zeroyume, sunlaoqq, Xiao_zoulv(Koyuyu), bao, ZZR, IWD.
 
