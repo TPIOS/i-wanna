@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Fangame title="I Wanna be the Snow Drive" saveReader="Manual">
+
+<AddressSpace>
+  <RoomId type="fixed" valueType="int32">0x006c73c8</RoomId>
+</AddressSpace>
+
+<DeathDetector type="file" name="DeathTime">
+  <Slot1Offset>0</Slot1Offset>
+  <Slot2Offset>8</Slot2Offset>
+  <Slot3Offset>16</Slot3Offset>
+</DeathDetector>
+
+<Boss name="Snow Drive">
+  <StartTrigger type="AddressChange" addressName="RoomId" targetValue="160"/>
+
+  <Attack name="Vertical Fruit" icon="FruitWhite.png">
+    <StartTrigger type="BossStart" delay="11"/>
+  	<Time end="32.5"/>
+  </Attack>
+  <Attack name="Central Figures" icon="FruitLightGrey.png">
+  	<Time end="53.0"/>
+  </Attack>
+  <Attack name="Green Mayhem" icon="NextStage\FruitGreen.png">
+    <Time end="70.5"/>
+  </Attack>
+  <Attack name="Fruit Rain" icon="FruitWhite.png">
+  	<Time end="87.5"/>
+  </Attack>
+  <Attack name="Water World" icon="FruitAzure.png">
+  	<Time end="105"/>
+  </Attack>
+  <Attack name="Fountains" icon="NextStage\FruitWhite.png">
+    <Time end="123.0"/>
+  </Attack>
+  <Attack name="Fruit Bounces" icon="Entrance\FruitWhite.png">
+  	<Time end="139.0"/>
+  </Attack>
+  <Attack name="Miku" icon="FruitPink.png">
+    <Time end="156.5"/>
+  </Attack>
+  <Attack name="Windmill" icon="FruitWhite.png">
+    <Time end="174.0"/>
+  </Attack>
+  <Attack name="Final" icon="Flandre\BlackCherry.png">
+    <Time end="195.5"/>
+  </Attack>
+</Boss>
+
+</Fangame> 

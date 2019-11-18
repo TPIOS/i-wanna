@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Fangame title="I wanna bye the Entrance" saveReader="Manual">
+
+<AddressSpace>
+  <RoomId type="fixed" valueType="int32">0x006c73c8</RoomId>
+</AddressSpace>
+
+<Boss name="Entrance">
+  <StartTrigger type="AddressChange" addressName="RoomId" targetValue="139"/>
+  <StartTrigger type="GameRestart"/>
+  <AbortTrigger type="AddressChange" addressName="RoomId" excludeValue="139"/>
+
+  <Attack name="Intro" icon="Entrance\FruitRed.png">
+  	<Time end="23.2" progressDelay="1.5"/>
+  </Attack>
+  <Attack name="Fruit Flow" icon="Entrance\FruitGreen.png">
+  	<Time end="28.1"/>
+  </Attack>
+  <Attack name="Speed Change" icon="Entrance\FruitBlue.png">
+    <Time end="42.9"/>
+  </Attack>
+  <Attack name="Bouncing Fruit" icon="Entrance\FruitOrange.png">
+  	<Time end="52.3"/>
+  </Attack>
+  <Attack name="White Bounces" icon="Entrance\FruitWhite.png">
+  	<Time end="63"/>
+  </Attack>
+  <Attack name="Fruit Trails" icon="Entrance\FruitViolet.png">
+    <Time end="85.8"/>
+  </Attack>
+  <Attack name="Horizontal Bursts" icon="Entrance\FruitCyan.png">
+  	<Time end="102.0"/>
+  </Attack>
+  <Attack name="Final" icon="Entrance\FruitPurple.png">
+    <Progress type="time" end="107.5"/>
+    <EndTrigger type="TimePassed" end="108"/>
+  </Attack>
+</Boss>
+
+</Fangame> 

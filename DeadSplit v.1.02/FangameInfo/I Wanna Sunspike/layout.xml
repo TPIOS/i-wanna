@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Fangame title="I Wanna Sunspike" saveReader="Manual">
+
+<AddressSpace>
+  <RoomId type="fixed" valueType="int32">0x008452fc</RoomId>
+</AddressSpace>
+
+<DeathDetector type="file" name="DeathTime">
+  <Slot1Offset>0</Slot1Offset>
+  <Slot2Offset>8</Slot2Offset>
+  <Slot3Offset>16</Slot3Offset>
+</DeathDetector>
+
+<Boss name="IA">
+  <StartTrigger type="AddressChange" addressName="RoomId" targetValue="188"/>
+
+  <Attack name="First Verse" icon="FruitFive.png" currentStatus="hidden">
+    <Time end="86.5"/>
+    <Attack name="Intro" icon="FruitViolet.png">
+    	<Time end="24.7"/>
+    </Attack>
+    <Attack name="Diagonal Fruit" icon="FruitGreen.png">
+      <Time end="45.5"/>
+    </Attack>
+    <Attack name="Star Pattern" icon="FruitYellow.png">
+    	<Time end="66.5"/>
+    </Attack>
+    <Attack name="Purple Flower" icon="FruitPurple.png">
+    	<Time end="73.5"/>
+    </Attack>
+    <Attack name="Grey Bounces" icon="FruitGrey.png">
+      <Time end="86.5"/>
+    </Attack>
+  </Attack>
+
+  <Attack name="Second Verse" icon="Sunspike\FruitGreen.png" currentStatus="hidden">
+    <Time end="167.0"/>
+    <Attack name="Outline Fruit" icon="Sunspike\FruitPurple.png">
+      <Time end="117.0"/>
+    </Attack>
+    <Attack name="Butterflies" icon="Sunspike\ButterflyAzure.png">
+      <Time end="128.0"/>
+    </Attack>
+    <Attack name="Hearts" icon="FruitRed.png">
+      <Time end="142.0"/>
+    </Attack>
+    <Attack name="Random Bursts" icon="Sunspike\FruitCream.png">
+      <Time end="148.0"/>
+    </Attack>
+  </Attack>
+
+  <Attack name="Targeted Bursts" icon="Sunspike\FruitBlack.png">
+    <Time end="179.6"/>
+  </Attack>
+  <Attack name="Infinite Jump" icon="Sunspike\Arrow.png">
+    <Time end="188.5"/>
+  </Attack>
+  <Attack name="The Sphere" icon="Sunspike\Sphere.png">
+    <Time end="209.0"/>
+  </Attack>
+</Boss>
+
+</Fangame> 

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Fangame title="I wanna Bye the Bye" saveReader="Manual">
+
+<AddressSpace>
+  <RoomId type="fixed" valueType="int32">0x006c73c8</RoomId>
+</AddressSpace>
+
+<Boss name="Miku">
+  <StartTrigger type="AddressChange" addressName="RoomId" targetValue="139"/>
+  <StartTrigger type="GameRestart"/>
+  <AbortTrigger type="AddressChange" addressName="RoomId" excludeValue="139"/>
+
+  <Attack name="LaLaLa" icon="FruitRed.png">
+  	<Time end="18"/>
+  </Attack>
+  <Attack name="RNG Section 1" icon="FruitGreen.png">
+  	<Time end="28"/>
+  </Attack>
+  <Attack name="Gray Split" icon="FruitGrey.png">
+  	<Time end="32"/>
+  </Attack>
+  <Attack name="Pattern Bouncing" icon="FruitPurple.png">
+  	<Time end="39"/>
+  </Attack>
+  <Attack name="Lines and Black Ink" icon="FruitRed.png">
+  	<Time end="47.4"/>
+  </Attack>
+  <Attack name="Chorus 1" icon="FruitWhite.png">
+  	<Time end="60.4"/>
+  </Attack>
+  <Attack name="Bye-Bye" icon="FruitYellow.png">
+  		<Time end="64"/>
+  </Attack>
+  <Attack name="Jumping" icon="Kid.png">
+  		<Time end="75"/>
+  </Attack>
+  <Attack name="Purple Circles" icon="FruitViolet.png">
+  	<Time end="84"/>
+  </Attack>
+  <Attack name="Chorus 2" icon="FruitBlue.png">
+  	<Time end="97"/>
+  </Attack>
+  <Attack name="Monochrome Hierarchy" icon="Flandre\BlackCherry.png">
+  	<Time end="129"/>
+  </Attack>
+  <Attack name="Interlude" icon="FruitCyan.png">
+  	<Time end="151"/>
+  </Attack>
+  <Attack name="Chorus 3" icon="FruitOrange.png">
+  		<Time end="169"/>
+  	</Attack>
+  <Attack name="Outro" icon="FruitPink.png">
+  		<Time end="197"/>
+  </Attack>
+
+</Boss>
+
+</Fangame> 

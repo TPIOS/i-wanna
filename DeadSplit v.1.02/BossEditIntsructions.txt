@@ -1,0 +1,402 @@
+
+=============================================================
+Step 1: Adding a fangame
+=============================================================
+
+In order for your fangame to get detected you need to create a layout file for it. A layout file contains all the needed information about bosses, attacks
+and the way DeadSplit switches between them.
+
+First, you need to create a folder for the layout file. The folder must be put in the FangameInfo parent folder. The name of the folder starts the same way as the name of your fangame
+as it appears in the window title. So, if the game window is titled "I Wanna Kill The Kamilia 3 Death:0 Time:0:00:00" the folder name should be "I Wanna Kill The Kamilia 3".
+Shorter names for the folder will also work, for example naming the folder "I Wanna Kill The K" will match it correctly.
+
+If the window title is generic or contains weird/invalid symbols, you can use baseConnections.xml to specify the link between the fangame folder and the game itself.
+For this you need to create a <Link> node with window title prefix application .exe file name and the fangame folder:
+<Link titlePrefix="Prefix" exeName="Fangame.exe" layoutPath="Path Relative to the FangameInfo folder"/>
+
+Next, you need to create a layout file in the new folder. File must be named "layout.xml". To solve potential encoding problems you should copy an existing layout file from another fangame folder
+and delete all but the minial layout information:
+
+<?xml version="1.0" encoding="utf-16"?> 
+<Fangame title="Fangame Name Goes Here"> 
+</Fangame>
+
+After you've done that, save the layout file, open up the counter and start playing the fangame you created the layout for. The counter should detect it and notify you.
+Note that the fangame will be detected as soon as death information appears on its window title.
+
+=============================================================
+Step 2: Creating a simple boss
+=============================================================
+
+Now that we have the layout file, let's add a time-based boss to it. The boss information (as well as all other layout data) goes between <Fangame ...> and </Fangame> lines in the layout.
+A simple boss node looks like this:
+
+<Boss name="Boss Name Goes Here">
+</Boss>
+
+That's not very useful so far. Let's add a few attacks to it.
+
+<Boss name="Boss Name Goes Here">
+	<Attack name="First Attack" icon="Path To an icon from the Icons folder. Optional, the default icon is a red fruit.">
+	</Attack>
+	<Attack name="Second Attack With Default Icon">
+	</Attack>
+</Boss>
+
+The attack names must be unique strings: a single boss cannot have duplicate attack names. See Step 9 if you want to work around this limitation.
+The last information the we are going to add is the attack duration. For this we must create a <Time> node inside the attack node.
+
+<Boss name="Boss Name Goes Here">
+	<Attack name="First Attack"...>
+		<Time duration="Duration of the attack in seconds"/>
+	</Attack>
+	<Attack name="Second Attack With Default Icon">
+		<Time end="Time from the start of the boss when the attack ends. Also in seconds."
+	</Attack>
+</Boss>
+
+Both end and duration attributes serve the same purpose and can be used interchangeably.
+
+There you go! The simple boss you've created will show up as you start playing. The attack splits will start immediately after you press the restart game button.
+The counter will detect that your hero died as soon as the window title updates the death count. For some fangames it happens right after the death. Unfortunately, many fangames update the death count
+only after you press restart so the splits will stop (and restart right away) later than they are supposed to.
+
+This boss has quite a few obvious limitations: the splits start too early, they might finish too late, only simple time-based bosses can be properly done... The problem is, in order
+to improve the boss you will need to properly connect the counter with the running fangame. To do that you will require ranging levels of knowledge in one or all of these fields:
+- Memory scanner ( CheatEngine )
+- Hex editor
+- GameMaker ( mostly optional )
+
+The good news is, most of the tasks require only basic knowledge and it's never too late to learn! While these instructions cannot serve as a proper tutorial,
+the problems themselves are a good entry level task. Here's what constitutes a basic level of preparation for the purposes of this document:
+- CheatEngine - install the latest release and pass the tutorial.
+- Hex editor - install an editor of your choice and learn to count byte offsets in files.
+- GameMaker - install the version of GamemMaker that was used for the target fangame. Ask the developer for the source code or decompile the game. Complete an entry level programming course in any language.
+
+The following steps will note what level of knowledge is expected from you.
+
+=============================================================
+Step 3: Detecting when boss starts
+=============================================================
+
+Requirements: CheatEngine (basic)
+Example: I Wanna Buy the Crayon
+
+All GameMaker based fangames have an internal variable that represents which room you are currently in. This variable is called the room ID. Since bosses generally reside in a separate room, finding this
+variable with CheatEngine can help you determine when the boss starts. There's no general algorithm for finding it, but there are a few hints:
+- Room ID is a 4 byte integer type variable. 
+- The address is the same every time you start the game. It will be colored green in CheatEngine scan results.
+- The values are generally small. If you are lucky they start with 0 for the first room of the game.
+- Room ID value changes when you change rooms (duh). Generally, it increases by 1 when you enter the next room.
+
+After you find the address, your next step is to add it to the layout. Address names and values are stored in an <AddressSpace> node inside a <Fangame> node:
+
+<Fangame...>
+<AddressSpace>
+	<RoomId type="fixed" valueType="int32">0x00000000</RoomId>
+</AddressSpace>
+...
+
+The zeroes inside the RoomId name should be replaced with an actual addresss.
+Now that the address is declared, it can be used as a start trigger for the boss like this:
+
+<Boss...>
+<StartTrigger type="AddressChange" addressName="RoomId" targetValue="1223"/>
+...
+
+An actual targetValue should be the room ID value in the boss room. This value can be found looking at the address in CheatEngine.
+After the address and the start trigger are set, your splits will start as soon as you enter the boss room.
+
+=============================================================
+Step 4: Subsplits
+=============================================================
+
+Requirements: none
+Example: I Wanna Grand of the Perfect Bear
+
+DeadSplit does not support split scrolling. This is by design: you should be able to gauge the entire boss progress and statistics at any moment. As a result the attacks are scaled to fit
+in the current window. If your boss takes up too much space, you can use subsplits to make it compact.
+
+The process is trivial: you can put <Attack> nodes not only inside a <Boss> node but inside other <Attack> nodes as well. This will make a newly created attack a subsplit of its parent <Attack> node.
+
+There are several thing you should keep in mind:
+- Only a single split can show subsplits at any moment. Other subsplits will be automatically closed when a new parent split becomes active.
+- When a parent attack finishes, all its subsplits end as well.
+- You cannot start a subsplit attack if its parent is not active.
+
+Having multiple active splits at the same time can create a lot of visual clutter. If you want a split to not show its progress bar when active, you can add the following attribute:
+<Attack name="Test" currentStatus="hidden">...
+
+=============================================================
+Step 5: Detecting deaths
+=============================================================
+
+Requirements: Hex editor (basic) OR CheatEngine (advanced)
+Examples: I Wanna Call Me It (from file); I Wanna Grand of the Perfect Bear (from memory)
+
+Some fangames are nice and update the window title deathcount as soon as your hero dies. In this case you don't need to do anything - detection will work as intended by default.
+When this is not the case, there are two things you can try:
+
+1. Detecting deaths from file.
+Most games save the death count in a file, usually named "Deathtime". This file may contain other information as well, so you'll need to find the byte offset of death data in that file.
+The most straightforward way to do so is to die and observe what changes. Thankfuly, the exact format in which deaths are saved is not important: as long as the value at a given offset
+changes, a death will be detected.
+In some cases you may notice, that whenever you die, the entire content of the file changes. This is a sign of file encryption. It's unfeasible to extract death information from encrypted files.
+After you've found where the death data is saved, you need to add this information to the layout, inside the <Fangame> node.
+
+<DeathDetector type="file" name="Deathtime" offset="0"/>
+
+As per usual you need to change the offset value to an actual offset that you've found.  
+If the game has saveslots you might want to add death offset information for each slot:
+
+<DeathDetector type="file" name="Deathtime">
+  <Slot1Offset>0</Slot1Offset>
+  <Slot2Offset>8</Slot2Offset>
+  <Slot3Offset>16</Slot3Offset>
+</DeathDetector>
+
+2. Detecting deaths from memory.
+When everything else fails, you can always extract death information directly from the game. Death count is significantly harder to find than the room ID, refer to Step 8 for instructions.
+Death detector information for memory based detectors looks like this:
+
+<DeathDetector type="memory" addressName="DeathCount"/>
+
+DeathCount address must be properly defined in the <AddressSpace> node for this method to work.
+
+=============================================================
+Step 6: Detecting saves
+=============================================================
+
+Requirements: Hex editor (advanced), GameMaker(basic, optional)
+Examples: I Wanna Kill The Kamilia 3
+
+Detecting game saves is largely useless. You might need it in case:
+- You are making splits for platforming.
+- Some boss related events are triggered by the game save.
+
+The process of detecting saves is generally the same as for detecting deaths from a file. You can extract 2 things from saves: room ID and player coordinates. Unlike death data you will actually need
+to know the exact format in which this data was written. One way of doing it is to look it up in the game source code. Another way is to reverse engineer it by looking at how the values change when you
+save in different rooms/positions. DeadSplit supports the following data encodings:
+
+byte - a single byte
+int32 - a 4 byte integer
+float32 - a 4 byte floating point value
+float64 - an 8 byte floating point value
+int24base10 - a base10 encoded 3 byte integer
+int32base10 - a base10 encoded 4 byte integer
+
+A base10 encoding is a weird and surprisingly popular way of writing gamemaker variables in a binary file:
+
+outVar = player.x;
+// Uncomment the next 2 lines for a 4 byte result, otherwise it's a 3 byte result.
+// file_bin_write_byte( file, floor( outVar/1000000 ) );
+// outVar -= floor( outVar/1000000 )*1000000;
+file_bin_write_byte( file, floor( outVar/10000 ) );
+outVar -= floor( outVar/10000 )*10000;
+file_bin_write_byte( file, floor( outVar/100 ) );
+outVar -= floor( outVar/100 )*100;
+file_bin_write_byte( file, outVar );
+
+Some game developers perform a simple constant transformation to the variable after it's read from the save. In this case you will need to determine, what expression was applied for the save reader to work.
+Like death data, the save file can be encrypted. In this case reading from it is not supported.
+If you manage to collect all necessary information for the room id and hero position, the last thing is putting it all together in a <SaveDetector> node inside the <Fangame> node.
+
+<SaveDetector fileName="Data\saveData">
+  <RoomId expr="x / 152.0" valueType="int24base10" offset="4"/>
+  <HeroX expr="x / 172.0" valueType="int24base10" offset="7"/>
+  <HeroY expr="x / 182.0" valueType="int24base10" offset="10"/>
+</SaveDetector>
+
+The expr attribute denotes an optional transformation that is applied to the data after it's extracted from the file. It is mostly unneeded.
+Multiple <RoomId> and position nodes can be put in the same detector to support save detection for multiple saveslots. Likewise, multiple <SaveDetector> nodes can be created 
+if slots are written in different files.
+After you've created the save detector, <GameSave> trigger will become available for boss and attack customization. Refer to the next step for trigger information.
+
+=============================================================
+Step 7: Customizing boss logic
+=============================================================
+
+Requirements: none
+Example: I Wanna Kill The Kamilia 3
+
+Not every boss can be described as a simple avoidance. If your boss has health, room transitions or looping attacks, a <Time> node will not be
+sufficient to describe when attacks end or begin. In this case, the time node should be removed and other nodes need to be used in its place.
+
+Triggers
+--------------------------------------------------------------
+
+Boss behaviour and attack transitions are controlled by triggers. Triggers are put inside <Boss> or <Attack> nodes. Any number of triggers can be put in a single node, trigger event will occur
+if any of the triggers is fired. If no trigger is put, a default trigger is used. 
+
+There are 3 main trigger names:
+<StartTrigger> controls when a boss or an attack starts.
+<EndTrigger> controls when a boss or an attack ends.
+<ShowTrigger> controls when the table for this boss is shown.
+
+Another important attribute of a trigger is its type. It's defined like this:
+<StartTrigger type="TriggerType"/>
+
+There are a lot of different trigger types, each of them has a set of additional attributes. These attributes determine the exact conditions of firing the trigger.
+Trigger name and its type are independent: you can create any combinations of names and types depending on what you'd like to achieve.
+Here's a list of all supported trigger types:
+
+<...Trigger type="GameRestart"/>
+Fires when the user presses the restart button. This is the default boss start trigger.
+
+<...Trigger type="PrevAttackEnd"/>
+Fires when the previous attack in the list is over. This is the default start trigger for every attack but the first one.
+
+<...Trigger type="PrevAttackStart"/>
+Fires when the previous attack in the list starts.
+
+<...Trigger type="AttackEnd" attackName="Name"/>
+<...Trigger type="AttackStart" attackName="Name"/>
+These triggers fire when a specific attack starts or ends. attackName denotes the name attribute of the attack to monitor.
+This trigger can be used to loop boss attacks. Make sure to add isLooping="true" to an <Attack> node if you want the attack to be reentrant.
+
+<...Trigger type="BossStart"/>
+Fires when the boss starts. This is the default start trigger for the first boss attack.
+
+<...Trigger type="ParentStart"/>
+Fires when the parent of the subsplit attack starts. This is the default start trigger for any first subsplit attack.
+
+<...Trigger type="PrevBossClear"/>
+Fires when the previous boss ends. Only useful for show triggers.
+
+<...Trigger type="AllAttacksClear"/>
+Fires when every attack of the boss has ended at least once. This is the default boss end trigger.
+
+<...Trigger type="TimePassed" duration="10"/>
+Fires when the specified amount of time has passed since the attack/boss has started.
+
+<...Trigger type="BossShow"/>
+Fires when the boss is automatically shown. Manual changes made by the user do not fire this trigger.
+
+<...Trigger type="Null"/>
+This trigger never fires. Use this when you don't want the default trigger to be created for your attacks.
+
+<...Trigger type="GameSave" roomId="0" left="0" top="0" right="0" bottom="0"/>
+Fires when the game is saved in the given room and the hero is within the given bounding rectangle. Every bounding rectangle side attribute is optional.
+A <SaveDetector> node should be properly defined for this trigger to fire. See Step 6 for detailed instructions.
+This is the default attack end trigger.
+
+<...Trigger type="CounterInitialize" roomId="0" left="0" top="0" right="0" bottom="0"/>
+Fires when the counter starts and the game save file denotes a given location.
+A <SaveDetector> node should be properly defined for this trigger to fire. See Step 6 for detailed instructions.
+
+<...Trigger type="AddressChange" addressName="Name"/>
+Fires when the change is made for the given address. The address name should be properly defined in the <AddressSpace> node. See Step 8 for detailed instructions.
+The following attributes should be used to determine what kind of change fires the trigger:
+targetValue - trigger fires when the value changes to the given target.
+excludeValue - trigger fires when the value changes to anything but the given one.
+minValue, maxValue - trigger fires when the value changes to the one between the specified range. The range can be specified by one or both of these attributes.
+
+Progress
+--------------------------------------------------------------
+
+The behaviour of an attack progress bar is controlled by <Progress> nodes. Progress nodes are put inside <Attack> nodes. There are 2 types of progress:
+
+<Progress type="time" duration="10"/>
+A blue progress bar that will shrink with time. As with <Time> nodes, an end attribute can be used in place of the duration attribute.
+
+<Progress type="hp" addressName="HpAddressName" startHp="16" targetHp="10"/>
+A green progress bar that reads the value at a given address and updates itself based on a given range.
+If the value is equal or greater than startHp, the progress bar is full. If the value is equal or less than the targetHp, the bar is empty.
+If startHp is not specified the start hp is read from the address when attack starts.
+
+--------------------------------------------------------------
+
+Simple utility nodes can be used instead of common trigger/progress combinations:
+
+<BossArea left="a" top="b" right="c" bottom="d" roomId="x"/>
+is a synonim for:
+<ShowTrigger type="CounterInitialize" left="a" top="b" right="c" bottom="d" roomId="x"/>
+<ShowTrigger type="GameSave" left="a" top="b" right="c" bottom="d" roomId="x"/>
+
+<Time start="0" end="10"/>
+is a synonim for:
+<StartTrigger type="TimePassed" start="10"/>
+<Progress type="time" end="10"/>
+<EndTrigger type="TimePassed" end="10"/>
+
+=============================================================
+Step 8: Finding boss related addresses
+=============================================================
+
+Requirements: CheatEngine (advanced), GameMaker (advanced, optional)
+Example: I Wanna Kill The Kamilia 3
+
+In order to visualize hp values and create complicated attack transitions you will need access to the game memory. This task consists of two parts:
+finding the needed values and finding the stable pointer path to them.
+
+When searching for the values, you need to know what you are actually looking for. This is where the source code comes in handy: you can easily look up
+which variables represent what, and what the exact hp values are. All GameMaker variables are presented in memory as doubles.
+Since searching has to be done while the boss is actively trying to murder you, godmode is extreemly useful. If you recompile the game with godmode, 
+make sure that the GameMaker version is the same as the one used to create the original game. Otherwise, there might be slight memory
+layout changes that will make your results work only in the recompiled version.
+
+The address that you find will likely be extreemly unstable: it will change every time you restart the game, it may change after you die and restart 
+the fight. It may even change during the fight! In order to find a way to reference it, you will need to find a stable pointer path to the address.
+This is done with pointer scan. There are plenty of external resources on how to perform it, so these instructions will not dwell into that.
+When you find a stable pointer path, you can put it in the address space like this:
+
+<AddressSpace>
+<NewAddressName type="nested" valueType="double" startValue="0x008452f8">
+	<Offset>0x6c</Offset>
+	<Offset>0x4</Offset>
+	<Offset>0x104</Offset>
+	<Offset>0x4</Offset>
+	<Offset>0x10</Offset>
+</NewAddressName>
+...
+</AddressSpace>
+
+If the address changes during the fight, remember to add reloadOnUpdate="true" as an address attribute.
+
+Some of the variables are not defined by the game developer but exist as part of every GameMaker program. These variables are called the build-in variables.
+Their address is colored green during scanning, it is always stable. You will not need to perform pointer scans for them.
+Built-ins are defined as follows:
+
+<AddressName type="fixed" valueType="double">0x00711904</ViewY>
+
+=============================================================
+Step 9: Additional layout attributes
+=============================================================
+
+You can specify a few additional attributes to various layout nodes in order to fine-tune the counter behavior.
+
+<Boss> attributes:
+--------------------------------------------------------------
+
+resetFreezeTime="4.4"
+Some of the bosses freeze the player at the beginning and do not allow restarts. Use this attribute to specify the time period during which
+the counter ignores player restarts as well.
+
+attackOrder="random"
+Use this attribute when you want completed attacks to grey out in the counter. You can also use this attribute for parent attacks to only influence 
+their subsplits.
+
+
+<Attack> attributes:
+--------------------------------------------------------------
+
+currentStatus="hidden"
+Use this when you want the progress bar to be hidden on this attack. Use "noProgress" instead of "hidden" if you want the progress bar to be present
+and always be the same width. The user can override this behavior in attack settings.
+
+isLooping="true"
+Use this when the attack is allowed to be started multiple times during a single boss fight.
+
+displayName="Actually Displayed Name"
+Use this when you want your attack to display a name other than its unique key name. Useful if you want to create multiple attacks with the same name.
+
+
+Other attributes:
+--------------------------------------------------------------
+
+delay="1.0"
+Use this for any trigger to add seconds of delay before it's fired.
+
+progressDelay="3"
+Add this to <Time> or <Progress> nodes to add a delay in seconds before the progress bar starts to move.
+
