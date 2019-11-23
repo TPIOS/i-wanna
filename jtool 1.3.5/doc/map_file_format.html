@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Map file format</title>
+    <link rel="stylesheet" href="./docstyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Map file format</h1>
+      In versions 1.2.0 and later, there is an extra copy of the data in map files that is much easier to write a parser for if you want to read jtool maps. Initially, making the map file format easy to parse didn't even cross my mind; I just compressed it for fun. I only realized my mistake when I had to make an additional parser myself.
+      <br><br>
+      Anyways, now it's easy enough to parse that it should be self-explanatory. And for old jtool maps, you can just open and re-save them to get that extra copy of the data.
+      <br><br>
+      For reference, Jtool only reads the top copy of the data when opening files, and it probably always will, for backwards compatibility.
+      <script src="write_footer.js"></script>
+    </div>
+  </body>
+</html>

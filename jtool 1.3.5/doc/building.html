@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Using the source code</title>
+    <link rel="stylesheet" href="./docstyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="content">
+      <h1>Using the source code</h1>
+      I've included the source for jtool so that people are free to see how things are done, and make their own personal modifications if they wish. I do ask however that you do not publicly distribute your own modified version of jtool. Also, if you have any questions about the source or getting it to work, I'd love to help, so feel free to contact me.
+      <br><br>
+      1. The file "source.gmx" is the source. This should be identical to the Github repository; I've included it here for convenience. Be sure that the .gmx folder is in the same directory as the skins folder. Also, the Gmfilesystem extension should be included, but if it's not, then download and import it.
+      <br><br>
+      2. In the script misc/mainInit, you'll need to change the variable global.editor_project_path to be the folder which contains your "skins" folder. This is used to make skins and the config file work when running the game from GM (as opposed to from the exported .exe).
+      <br><br>
+      3. If you want to export the project as an .exe, you have to select the ZIP export option, otherwise Gmfilesystem won't work.
+      <br><br>
+      4. The font used is Segoe UI, sizes 9 and 15, with anti-aliasing off and High Quality unchecked.
+      <script src="write_footer.js"></script>
+    </div>
+  </body>
+</html>
