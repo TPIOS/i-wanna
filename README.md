@@ -7,6 +7,14 @@ Game Engine: yuutu, no online documents available, some tutorial in Chinese can 
 
 Game Engine: YoYoYo, no online documents available, there are some online forum of this engine that can be found on GameMaker Studio Online Forum.
 
+Other Tools:
+
+1. **DeadSplit**. A timer for many i-wanna games, especially the game containing boss.
+2. **jtools & i wanna record my jumps**. A program to train jumping in i wanna.
+3. **Nohboard**. A keyboard mapping tool.
+4. **Snipaste**. A good screenshot tool when making game map.
+5. Two decompiler for Gamemaker 8.x.
+
 
 
 **First work**: i wanna see the Polaris, download URL: http://www.mediafire.com/file/6meqxxeh7gowhaq/i_wanna_see_the_Polaris_v2.0.zip/file; You may find some useful review from here: https://delicious-fruit.com/ratings/game_details.php?id=20867
@@ -19,4 +27,8 @@ Game Engine: YoYoYo, no online documents available, there are some online forum 
 
 
 
-**Third Work**: Jushi Happy 2020 Needle. Working in progress, aiming to not normal jump.
+**Third Work**: Jushi 2020 Needle. 32px needle, download URL: http://www.mediafire.com/file/yd64h4cfn8c9jv1/Jushi_Needle_2020.zip/file
+
+
+
+**Fourth Work**: 

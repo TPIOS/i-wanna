@@ -1,1 +1,0 @@
-signText = "You\ncan\nmake\nmultiple\nlines\nlike\nthis";
