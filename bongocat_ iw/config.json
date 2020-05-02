@@ -1,0 +1,80 @@
+//提示：ctrl+r能快速重置程序，能让你马上看到修改结果（窗口置顶得重启软件生效）
+//工具介绍：https://www.bilibili.com/read/cv4324421
+//如果有问题不能解决请联系上面链接里的专栏作者
+//请前往这个网站来快速查询每个按键对应的数值→https://keycode.info/
+
+{                                         
+    "mode": 7,
+    "resolution": {
+        "letterboxing": true,
+        "width": 1920,
+        "height": 1080,
+        "horizontalPosition": 0,
+        "verticalPosition": 0
+    },
+    "decoration": {
+        "leftHanded": false,
+        "rgb": [255, 255, 255],
+        "offsetX": [0, 11],
+        "offsetY": [0, -65],
+        "scalar": [1.0, 1.0]
+    },
+
+
+    "addition":{
+        "framerateLimit":60,
+        "topWindow":false,
+        "armLineColor":[0, 0, 0],
+        "emoticonKeep":true,
+        "emoticonClear":[88]
+    },
+
+
+    "osu": {
+        "mouse": false,
+        "mouse_left": [1],
+        "mouse_right":[2,18],
+        "key1": [69],
+        "key2": [221],
+        "smoke": [186],
+        "key3":[90],
+        "key4":[219],
+        "wave":[222]
+     },
+    "taiko": {
+        "leftCentre": [88],
+        "rightCentre": [67],
+        "leftRim": [90],
+        "rightRim": [86]
+    },
+    "catch": {
+        "left": [37],
+        "right": [39],
+        "dash": [16]
+    },
+    "mania": {
+        "4K": true,
+        "key4K": [65, 83, 76, 186],
+        "key7K": [83, 68, 70, 32, 74, 75, 76]
+    },
+     "mouse":{
+        "mouse":true,
+        "mouse_left": [1],
+        "mouse_right":[2],
+        "face":[97, 98, 99, 100]
+    },
+     "morekeys":{
+        "mouse":true,
+        "mouse_left": [1],
+        "mouse_right":[2],
+        "keybord":[81, 87, 69, 82,68,70,49,50,51,52,53,54,55],
+        "hand":[81, 87, 69, 82,68,70,49,50,51,52,53,54,55],
+        "face":[97, 98, 99, 100]
+     },
+      "morekeys_keybordonly":{
+         "keybord":[90,16,82, 40,37,39,38],
+         "lefthand":[90,16,82],
+         "righthand":[40,37,39,38],
+         "face":[49,50,51,52]
+      }
+}
