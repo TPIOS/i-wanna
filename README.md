@@ -14,6 +14,7 @@ Other Tools:
 3. **Nohboard**. A keyboard mapping tool.
 4. **Snipaste**. A good screenshot tool when making game map.
 5. Two decompiler for Gamemaker 8.x.
+6. **QuickBMS** for decompiling Gamemaker Studio.
 
 
 
