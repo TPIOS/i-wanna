@@ -5432,4 +5432,107 @@
 [2020-04-17 23:10:08.534] [I] Snip request: 0 (dest: 0)
 [2020-04-17 23:10:08.534] [I] Snipper: preparing...
 [2020-04-17 23:10:08.586] [I] Screens: 1
-[2020-04-17 23:10:08.586] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-04-17 23:10:08.586] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1[2020-05-04 14:54:42.668] [I] ***************************************************************
+[2020-05-04 14:54:42.668] [I] Snipaste 1.16.2 x64 (Qt 5.9.0)
+[2020-05-04 14:54:42.668] [I] OS: Windows 10 (10.0) [10.0.17763]
+[2020-05-04 14:54:42.668] [I] Cores: 8
+[2020-05-04 14:54:42.668] [I] Elevated: false
+[2020-05-04 14:54:42.668] [I] Log level: 2
+[2020-05-04 14:54:42.668] [I] Application dir: D:/Github/i-wanna/Snipaste-1.16.2-x64
+[2020-05-04 14:54:42.668] [I] Config: D:/Github/i-wanna/Snipaste-1.16.2-x64/config.ini
+[2020-05-04 14:54:42.668] [I] Library paths: (D:/Github/i-wanna/Snipaste-1.16.2-x64)
+[2020-05-04 14:54:42.668] [I] Screen scale: 1.25
+[2020-05-04 14:54:42.668] [I] Retina factor: 1
+[2020-05-04 14:54:42.668] [I] Screens: 1
+[2020-05-04 14:54:42.668] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-05-04 14:54:42.668] [I] About to import settings from: D:/Github/i-wanna/Snipaste-1.16.2-x64/config.ini
+[2020-05-04 14:54:42.750] [I] Settings imported
+[2020-05-04 14:54:42.752] [I] Breakpad initialized
+[2020-05-04 14:54:42.771] [I] Process priority: 1
+[2020-05-04 14:54:42.771] [I] Initializing Snipaste...
+[2020-05-04 14:54:44.435] [I] Prefetch...
+[2020-05-04 14:54:44.437] [I] About to apply settings...
+[2020-05-04 14:54:44.633] [I] Image writer plugins loaded: 197 ms
+[2020-05-04 14:54:44.665] [I] Image reader plugins loaded: 33 ms
+[2020-05-04 14:54:44.815] [I] Settings applied
+[2020-05-04 14:54:44.894] [I] Log level set to: 2
+[2020-05-04 14:54:45.150] [I] History dir: D:/Github/i-wanna/Snipaste-1.16.2-x64/history
+[2020-05-04 14:54:45.163] [I] Header version: 162
+[2020-05-04 14:54:45.166] [I] About to restore pasters...
+[2020-05-04 14:54:45.171] [I] Group 0 [3NX5MP]: "默认"
+[2020-05-04 14:54:45.171] [I] Record version: 162
+[2020-05-04 14:54:45.171] [I] To restore: 0
+[2020-05-04 14:54:45.171] [I] Pasters touched
+[2020-05-04 14:54:45.171] [I] All pasters activated: true
+[2020-05-04 14:54:45.407] [I] Unref images: 0 (0 removed)
+[2020-05-04 14:54:45.414] [I] Unref dirs: 0 (0 removed)
+[2020-05-04 14:54:45.434] [I] Empty history info files: 0 (0 removed)
+[2020-05-04 14:54:45.434] [I] Pasters restored
+[2020-05-04 14:54:45.434] [I] Launch time: 2839 ms
+[2020-05-04 14:54:45.581] [I] Load default ssl configuration: 1146 ms
+[2020-05-04 14:55:13.045] [I] Snip request: 0 (dest: 0)
+[2020-05-04 14:55:13.045] [I] Snipper: preparing...
+[2020-05-04 14:55:13.117] [I] Screens: 1
+[2020-05-04 14:55:13.117] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-05-04 14:55:13.117] [I] Desktop: QRect(0, 0, 1920 x 1080)
+[2020-05-04 14:55:13.117] [I] Background size: QSize(1920, 1080)
+[2020-05-04 14:55:13.122] [I] Snipper: preparation done (0)
+[2020-05-04 14:55:13.123] [I] Snipper: about to appear...
+[2020-05-04 14:55:13.123] [I] Snipper: prepare to show...
+[2020-05-04 14:55:13.422] [I] Snipper: shown
+[2020-05-04 14:55:13.437] [I] Snipper: focus in
+[2020-05-04 14:55:13.440] [I] Snipper: ready
+[2020-05-04 14:55:19.049] [I] Screenshot destination: none
+[2020-05-04 14:55:19.049] [I] Snipper: about to quit...
+[2020-05-04 14:55:19.052] [I] Snipper: focus out
+[2020-05-04 14:55:19.058] [I] Snipper: hidden
+[2020-05-04 14:55:19.060] [I] Snipper: quit
+[2020-05-04 14:55:20.660] [I] Snip request: 0 (dest: 0)
+[2020-05-04 14:55:20.660] [I] Snipper: preparing...
+[2020-05-04 14:55:20.717] [I] Screens: 1
+[2020-05-04 14:55:20.717] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-05-04 14:55:20.717] [I] Desktop: QRect(0, 0, 1920 x 1080)
+[2020-05-04 14:55:20.717] [I] Background size: QSize(1920, 1080)
+[2020-05-04 14:55:20.719] [I] Snipper: preparation done (0)
+[2020-05-04 14:55:20.719] [I] Snipper: about to appear...
+[2020-05-04 14:55:20.719] [I] Snipper: prepare to show...
+[2020-05-04 14:55:20.721] [I] Snipper: shown
+[2020-05-04 14:55:20.741] [I] Snipper: focus in
+[2020-05-04 14:55:20.758] [I] Snipper: ready
+[2020-05-04 14:55:40.275] [I] Screenshot destination: pin
+[2020-05-04 14:55:40.276] [I] Paste image: QPoint(384, 332)
+[2020-05-04 14:55:40.329] [I] Screenshot successfully saved: pin
+[2020-05-04 14:55:40.329] [I] Snipper: about to quit...
+[2020-05-04 14:55:40.452] [I] Snipper: focus out
+[2020-05-04 14:55:40.453] [I] Snipper: hidden
+[2020-05-04 14:55:40.496] [I] Snipper: quit
+[2020-05-04 14:55:40.759] [I] Snipper: scene saved
+[2020-05-04 14:55:46.484] [I] Silent feed checking finished
+[2020-05-04 14:55:46.484] [I] No available update
+[2020-05-04 14:56:10.675] [I] Snip request: 0 (dest: 0)
+[2020-05-04 14:56:10.675] [I] Snipper: preparing...
+[2020-05-04 14:56:10.737] [I] Screens: 1
+[2020-05-04 14:56:10.737] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-05-04 14:56:10.737] [I] Desktop: QRect(0, 0, 1920 x 1080)
+[2020-05-04 14:56:10.737] [I] Background size: QSize(1920, 1080)
+[2020-05-04 14:56:10.744] [I] Snipper: preparation done (0)
+[2020-05-04 14:56:10.746] [I] Snipper: about to appear...
+[2020-05-04 14:56:10.746] [I] Snipper: prepare to show...
+[2020-05-04 14:56:10.754] [I] Snipper: shown
+[2020-05-04 14:56:10.766] [I] Snipper: focus in
+[2020-05-04 14:56:10.786] [I] Snipper: ready
+[2020-05-04 14:56:25.289] [I] Screenshot destination: pin
+[2020-05-04 14:56:25.290] [I] Paste image: QPoint(383, 332)
+[2020-05-04 14:56:25.313] [I] Screenshot successfully saved: pin
+[2020-05-04 14:56:25.313] [I] Snipper: about to quit...
+[2020-05-04 14:56:25.419] [I] Snipper: focus out
+[2020-05-04 14:56:25.422] [I] Snipper: hidden
+[2020-05-04 14:56:25.424] [I] Snipper: quit
+[2020-05-04 14:56:25.752] [I] Snipper: scene saved
+[2020-05-04 15:27:06.200] [I] Quit from tray menu
+[2020-05-04 15:27:06.285] [I] Snipaste: normal exit
+[2020-05-04 15:27:06.285] [I] Snipper: destructed
+[2020-05-04 15:27:06.338] [I] WinEnumer destructed
+[2020-05-04 15:27:06.339] [I] Exit: 0
+
+
