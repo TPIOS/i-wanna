@@ -1,0 +1,3 @@
+Put the extracted folder into the skins folder. In the skins folder, there should be a skins .txt file. Click that, and add at the end without quotes:
+
+",k3s4"
