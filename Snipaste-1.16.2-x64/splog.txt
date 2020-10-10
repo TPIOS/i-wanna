@@ -6126,3 +6126,272 @@
 [2020-10-08 00:03:35.524] [I] Exit: 0
 
 
+[2020-10-09 16:06:54.250] [I] ***************************************************************
+[2020-10-09 16:06:54.250] [I] Snipaste 1.16.2 x64 (Qt 5.9.0)
+[2020-10-09 16:06:54.250] [I] OS: Windows 10 (10.0) [10.0.18363]
+[2020-10-09 16:06:54.250] [I] Cores: 16
+[2020-10-09 16:06:54.250] [I] Elevated: false
+[2020-10-09 16:06:54.250] [I] Log level: 2
+[2020-10-09 16:06:54.250] [I] Application dir: E:/Github/i-wanna/Snipaste-1.16.2-x64
+[2020-10-09 16:06:54.250] [I] Config: E:/Github/i-wanna/Snipaste-1.16.2-x64/config.ini
+[2020-10-09 16:06:54.250] [I] Library paths: (E:/Github/i-wanna/Snipaste-1.16.2-x64)
+[2020-10-09 16:06:54.250] [I] Screen scale: 1.25
+[2020-10-09 16:06:54.250] [I] Retina factor: 1
+[2020-10-09 16:06:54.250] [I] Screens: 1
+[2020-10-09 16:06:54.250] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-10-09 16:06:54.250] [I] About to import settings from: E:/Github/i-wanna/Snipaste-1.16.2-x64/config.ini
+[2020-10-09 16:06:54.255] [I] Settings imported
+[2020-10-09 16:06:54.256] [I] Breakpad initialized
+[2020-10-09 16:06:54.257] [I] Process priority: 1
+[2020-10-09 16:06:54.257] [I] Initializing Snipaste...
+[2020-10-09 16:06:55.037] [I] Prefetch...
+[2020-10-09 16:06:55.038] [I] About to apply settings...
+[2020-10-09 16:06:55.045] [I] Image writer plugins loaded: 9 ms
+[2020-10-09 16:06:55.047] [I] Image reader plugins loaded: 2 ms
+[2020-10-09 16:06:55.211] [I] Settings applied
+[2020-10-09 16:06:55.263] [I] Log level set to: 2
+[2020-10-09 16:06:55.478] [I] History dir: E:/Github/i-wanna/Snipaste-1.16.2-x64/history
+[2020-10-09 16:06:55.483] [I] Header version: 162
+[2020-10-09 16:06:55.489] [I] About to restore pasters...
+[2020-10-09 16:06:55.491] [I] Group 0 [3NX5MP]: "默认"
+[2020-10-09 16:06:55.491] [I] Record version: 162
+[2020-10-09 16:06:55.491] [I] To restore: 0
+[2020-10-09 16:06:55.491] [I] Pasters touched
+[2020-10-09 16:06:55.491] [I] All pasters activated: true
+[2020-10-09 16:06:55.672] [I] Unref images: 0 (0 removed)
+[2020-10-09 16:06:55.675] [I] Unref dirs: 0 (0 removed)
+[2020-10-09 16:06:55.688] [I] Empty history info files: 0 (0 removed)
+[2020-10-09 16:06:55.688] [I] Pasters restored
+[2020-10-09 16:06:55.688] [I] Launch time: 1442 ms
+[2020-10-09 16:06:55.857] [I] Load default ssl configuration: 819 ms
+[2020-10-09 16:07:04.367] [I] Snip request: 0 (dest: 0)
+[2020-10-09 16:07:04.367] [I] Snipper: preparing...
+[2020-10-09 16:07:04.414] [I] Screens: 1
+[2020-10-09 16:07:04.414] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-10-09 16:07:04.414] [I] Desktop: QRect(0, 0, 1920 x 1080)
+[2020-10-09 16:07:04.414] [I] Background size: QSize(1920, 1080)
+[2020-10-09 16:07:04.418] [I] Snipper: preparation done (0)
+[2020-10-09 16:07:04.419] [I] Snipper: about to appear...
+[2020-10-09 16:07:04.419] [I] Snipper: prepare to show...
+[2020-10-09 16:07:04.428] [I] Snipper: shown
+[2020-10-09 16:07:04.444] [I] Snipper: focus in
+[2020-10-09 16:07:04.445] [I] Snipper: ready
+[2020-10-09 16:07:06.187] [I] Screenshot destination: pin
+[2020-10-09 16:07:06.189] [I] Paste image: QPoint(695, 241)
+[2020-10-09 16:07:06.207] [I] Screenshot successfully saved: pin
+[2020-10-09 16:07:06.207] [I] Snipper: about to quit...
+[2020-10-09 16:07:06.303] [I] Snipper: focus out
+[2020-10-09 16:07:06.305] [I] Snipper: hidden
+[2020-10-09 16:07:06.307] [I] Snipper: quit
+[2020-10-09 16:07:06.397] [I] Snipper: scene saved
+[2020-10-09 16:07:56.928] [W] Feed error: 下载更新源失败。网络错误: 连接关闭了
+[2020-10-09 16:07:57.836] [I] Silent feed checking finished
+[2020-10-09 16:07:57.836] [I] No available update
+[2020-10-09 16:09:34.550] [I] Snip request: 0 (dest: 0)
+[2020-10-09 16:09:34.550] [I] Snipper: preparing...
+[2020-10-09 16:09:34.592] [I] Screens: 1
+[2020-10-09 16:09:34.592] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-10-09 16:09:34.592] [I] Desktop: QRect(0, 0, 1920 x 1080)
+[2020-10-09 16:09:34.592] [I] Background size: QSize(1920, 1080)
+[2020-10-09 16:09:34.595] [I] Snipper: preparation done (0)
+[2020-10-09 16:09:34.595] [I] Snipper: about to appear...
+[2020-10-09 16:09:34.595] [I] Snipper: prepare to show...
+[2020-10-09 16:09:34.596] [I] Snipper: shown
+[2020-10-09 16:09:34.611] [I] Snipper: focus in
+[2020-10-09 16:09:34.622] [I] Snipper: ready
+[2020-10-09 16:09:36.427] [I] Screenshot destination: pin
+[2020-10-09 16:09:36.429] [I] Paste image: QPoint(695, 241)
+[2020-10-09 16:09:36.447] [I] Screenshot successfully saved: pin
+[2020-10-09 16:09:36.447] [I] Snipper: about to quit...
+[2020-10-09 16:09:36.500] [I] Snipper: focus out
+[2020-10-09 16:09:36.502] [I] Snipper: hidden
+[2020-10-09 16:09:36.503] [I] Snipper: quit
+[2020-10-09 16:09:36.593] [I] Snipper: scene saved
+[2020-10-09 17:04:52.065] [I] Snip request: 0 (dest: 0)
+[2020-10-09 17:04:52.065] [I] Snipper: preparing...
+[2020-10-09 17:04:52.106] [I] Screens: 1
+[2020-10-09 17:04:52.106] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-10-09 17:04:52.106] [I] Desktop: QRect(0, 0, 1920 x 1080)
+[2020-10-09 17:04:52.106] [I] Background size: QSize(1920, 1080)
+[2020-10-09 17:04:52.110] [I] Snipper: preparation done (0)
+[2020-10-09 17:04:52.111] [I] Snipper: about to appear...
+[2020-10-09 17:04:52.111] [I] Snipper: prepare to show...
+[2020-10-09 17:04:52.118] [I] Snipper: shown
+[2020-10-09 17:04:52.136] [I] Snipper: focus in
+[2020-10-09 17:04:52.149] [I] Snipper: ready
+[2020-10-09 17:04:53.995] [I] Screenshot destination: pin
+[2020-10-09 17:04:53.996] [I] Paste image: QPoint(475, 246)
+[2020-10-09 17:04:54.016] [I] Screenshot successfully saved: pin
+[2020-10-09 17:04:54.016] [I] Snipper: about to quit...
+[2020-10-09 17:04:54.077] [I] Snipper: focus out
+[2020-10-09 17:04:54.080] [I] Snipper: hidden
+[2020-10-09 17:04:54.081] [I] Snipper: quit
+[2020-10-09 17:04:54.173] [I] Snipper: scene saved
+[2020-10-09 17:05:33.699] [W] QFSFileEngine::open: No file name specified
+[2020-10-09 17:05:33.699] [W] QFile::remove: Empty or null file name
+[2020-10-09 23:37:52.007] [I] Snip request: 0 (dest: 0)
+[2020-10-09 23:37:52.007] [I] Snipper: preparing...
+[2020-10-09 23:37:52.043] [I] Screens: 1
+[2020-10-09 23:37:52.043] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-10-09 23:37:52.043] [I] Desktop: QRect(0, 0, 1920 x 1080)
+[2020-10-09 23:37:52.043] [I] Background size: QSize(1920, 1080)
+[2020-10-09 23:37:52.050] [I] Snipper: preparation done (0)
+[2020-10-09 23:37:52.050] [I] Snipper: about to appear...
+[2020-10-09 23:37:52.050] [I] Snipper: prepare to show...
+[2020-10-09 23:37:52.054] [I] Snipper: shown
+[2020-10-09 23:37:52.072] [I] Snipper: focus in
+[2020-10-09 23:37:52.088] [I] Snipper: ready
+[2020-10-09 23:37:54.493] [I] Screenshot destination: pin
+[2020-10-09 23:37:54.494] [I] Paste image: QPoint(492, 283)
+[2020-10-09 23:37:54.514] [I] Screenshot successfully saved: pin
+[2020-10-09 23:37:54.514] [I] Snipper: about to quit...
+[2020-10-09 23:37:54.591] [I] Snipper: focus out
+[2020-10-09 23:37:54.593] [I] Snipper: hidden
+[2020-10-09 23:37:54.595] [I] Snipper: quit
+[2020-10-09 23:37:54.696] [I] Snipper: scene saved
+[2020-10-09 23:43:04.195] [I] Quit from tray menu
+[2020-10-09 23:43:04.200] [I] Snipaste: normal exit
+[2020-10-09 23:43:04.200] [I] Snipper: destructed
+[2020-10-09 23:43:04.241] [I] WinEnumer destructed
+[2020-10-09 23:43:04.249] [I] Exit: 0
+
+
+[2020-10-10 00:25:32.043] [I] ***************************************************************
+[2020-10-10 00:25:32.043] [I] Snipaste 1.16.2 x64 (Qt 5.9.0)
+[2020-10-10 00:25:32.043] [I] OS: Windows 10 (10.0) [10.0.18363]
+[2020-10-10 00:25:32.043] [I] Cores: 16
+[2020-10-10 00:25:32.043] [I] Elevated: false
+[2020-10-10 00:25:32.043] [I] Log level: 2
+[2020-10-10 00:25:32.043] [I] Application dir: E:/Github/i-wanna/Snipaste-1.16.2-x64
+[2020-10-10 00:25:32.043] [I] Config: E:/Github/i-wanna/Snipaste-1.16.2-x64/config.ini
+[2020-10-10 00:25:32.043] [I] Library paths: (E:/Github/i-wanna/Snipaste-1.16.2-x64)
+[2020-10-10 00:25:32.043] [I] Screen scale: 1.25
+[2020-10-10 00:25:32.043] [I] Retina factor: 1
+[2020-10-10 00:25:32.043] [I] Screens: 1
+[2020-10-10 00:25:32.043] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-10-10 00:25:32.043] [I] About to import settings from: E:/Github/i-wanna/Snipaste-1.16.2-x64/config.ini
+[2020-10-10 00:25:32.049] [I] Settings imported
+[2020-10-10 00:25:32.050] [I] Breakpad initialized
+[2020-10-10 00:25:32.051] [I] Process priority: 1
+[2020-10-10 00:25:32.051] [I] Initializing Snipaste...
+[2020-10-10 00:25:32.900] [I] Prefetch...
+[2020-10-10 00:25:32.902] [I] About to apply settings...
+[2020-10-10 00:25:32.912] [I] Image writer plugins loaded: 11 ms
+[2020-10-10 00:25:32.914] [I] Image reader plugins loaded: 2 ms
+[2020-10-10 00:25:33.055] [I] Settings applied
+[2020-10-10 00:25:33.105] [I] Log level set to: 2
+[2020-10-10 00:25:33.336] [I] History dir: E:/Github/i-wanna/Snipaste-1.16.2-x64/history
+[2020-10-10 00:25:33.339] [I] Header version: 162
+[2020-10-10 00:25:33.343] [I] About to restore pasters...
+[2020-10-10 00:25:33.346] [I] Group 0 [3NX5MP]: "默认"
+[2020-10-10 00:25:33.346] [I] Record version: 162
+[2020-10-10 00:25:33.346] [I] To restore: 0
+[2020-10-10 00:25:33.346] [I] Pasters touched
+[2020-10-10 00:25:33.346] [I] All pasters activated: true
+[2020-10-10 00:25:33.542] [I] Unref images: 0 (0 removed)
+[2020-10-10 00:25:33.546] [I] Unref dirs: 0 (0 removed)
+[2020-10-10 00:25:33.556] [I] Empty history info files: 0 (0 removed)
+[2020-10-10 00:25:33.556] [I] Pasters restored
+[2020-10-10 00:25:33.556] [I] Launch time: 1518 ms
+[2020-10-10 00:25:33.763] [I] Load default ssl configuration: 863 ms
+[2020-10-10 00:26:45.542] [W] Feed error: 下载更新源失败。网络错误: Operation canceled
+[2020-10-10 00:26:57.546] [W] Feed error: 下载更新源失败。网络错误: Operation canceled
+[2020-10-10 00:27:09.544] [E] 下载更新源失败。网络错误: Operation canceled
+[2020-10-10 00:36:28.419] [I] Snip request: 0 (dest: 0)
+[2020-10-10 00:36:28.419] [I] Snipper: preparing...
+[2020-10-10 00:36:28.458] [I] Screens: 1
+[2020-10-10 00:36:28.458] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-10-10 00:36:28.458] [I] Desktop: QRect(0, 0, 1920 x 1080)
+[2020-10-10 00:36:28.458] [I] Background size: QSize(1920, 1080)
+[2020-10-10 00:36:28.463] [I] Snipper: preparation done (0)
+[2020-10-10 00:36:28.463] [I] Snipper: about to appear...
+[2020-10-10 00:36:28.463] [I] Snipper: prepare to show...
+[2020-10-10 00:36:28.468] [I] Snipper: shown
+[2020-10-10 00:36:28.484] [I] Snipper: focus in
+[2020-10-10 00:36:28.485] [I] Snipper: ready
+[2020-10-10 00:36:30.572] [I] Screenshot destination: pin
+[2020-10-10 00:36:30.574] [I] Paste image: QPoint(432, 250)
+[2020-10-10 00:36:30.592] [I] Screenshot successfully saved: pin
+[2020-10-10 00:36:30.592] [I] Snipper: about to quit...
+[2020-10-10 00:36:30.700] [I] Snipper: focus out
+[2020-10-10 00:36:30.702] [I] Snipper: hidden
+[2020-10-10 00:36:30.703] [I] Snipper: quit
+[2020-10-10 00:36:30.785] [I] Snipper: scene saved
+[2020-10-10 00:36:52.709] [W] QFSFileEngine::open: No file name specified
+[2020-10-10 00:36:52.709] [W] QFile::remove: Empty or null file name
+[2020-10-10 00:52:14.657] [I] Quit from tray menu
+[2020-10-10 00:52:14.662] [I] Snipaste: normal exit
+[2020-10-10 00:52:14.662] [I] Snipper: destructed
+[2020-10-10 00:52:14.697] [I] WinEnumer destructed
+[2020-10-10 00:52:14.705] [I] Exit: 0
+
+
+[2020-10-10 01:12:17.947] [I] ***************************************************************
+[2020-10-10 01:12:17.947] [I] Snipaste 1.16.2 x64 (Qt 5.9.0)
+[2020-10-10 01:12:17.947] [I] OS: Windows 10 (10.0) [10.0.18363]
+[2020-10-10 01:12:17.947] [I] Cores: 16
+[2020-10-10 01:12:17.947] [I] Elevated: false
+[2020-10-10 01:12:17.947] [I] Log level: 2
+[2020-10-10 01:12:17.947] [I] Application dir: E:/Github/i-wanna/Snipaste-1.16.2-x64
+[2020-10-10 01:12:17.947] [I] Config: E:/Github/i-wanna/Snipaste-1.16.2-x64/config.ini
+[2020-10-10 01:12:17.947] [I] Library paths: (E:/Github/i-wanna/Snipaste-1.16.2-x64)
+[2020-10-10 01:12:17.947] [I] Screen scale: 1.25
+[2020-10-10 01:12:17.947] [I] Retina factor: 1
+[2020-10-10 01:12:17.947] [I] Screens: 1
+[2020-10-10 01:12:17.947] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-10-10 01:12:17.947] [I] About to import settings from: E:/Github/i-wanna/Snipaste-1.16.2-x64/config.ini
+[2020-10-10 01:12:17.954] [I] Settings imported
+[2020-10-10 01:12:17.955] [I] Breakpad initialized
+[2020-10-10 01:12:17.956] [I] Process priority: 1
+[2020-10-10 01:12:17.956] [I] Initializing Snipaste...
+[2020-10-10 01:12:18.860] [I] Prefetch...
+[2020-10-10 01:12:18.861] [I] About to apply settings...
+[2020-10-10 01:12:18.866] [I] Image writer plugins loaded: 6 ms
+[2020-10-10 01:12:18.868] [I] Image reader plugins loaded: 3 ms
+[2020-10-10 01:12:19.014] [I] Settings applied
+[2020-10-10 01:12:19.067] [I] Log level set to: 2
+[2020-10-10 01:12:19.284] [I] History dir: E:/Github/i-wanna/Snipaste-1.16.2-x64/history
+[2020-10-10 01:12:19.287] [I] Header version: 162
+[2020-10-10 01:12:19.290] [I] About to restore pasters...
+[2020-10-10 01:12:19.293] [I] Group 0 [3NX5MP]: "默认"
+[2020-10-10 01:12:19.293] [I] Record version: 162
+[2020-10-10 01:12:19.293] [I] To restore: 1
+[2020-10-10 01:12:19.626] [I] Pasters touched
+[2020-10-10 01:12:19.626] [I] All pasters activated: true
+[2020-10-10 01:12:19.764] [I] Load default ssl configuration: 905 ms
+[2020-10-10 01:12:19.788] [I] Unref images: 0 (0 removed)
+[2020-10-10 01:12:19.788] [I] Unref dirs: 0 (0 removed)
+[2020-10-10 01:12:19.789] [I] Empty history info files: 0 (0 removed)
+[2020-10-10 01:12:19.789] [I] Pasters restored
+[2020-10-10 01:12:19.789] [I] Launch time: 1846 ms
+[2020-10-10 01:12:25.666] [I] Snip request: 0 (dest: 0)
+[2020-10-10 01:12:25.666] [I] Snipper: preparing...
+[2020-10-10 01:12:25.710] [I] Screens: 1
+[2020-10-10 01:12:25.710] [I]     QRect(0, 0, 1920 x 1080), DPI = 120 , DPR = 1
+[2020-10-10 01:12:25.710] [I] Desktop: QRect(0, 0, 1920 x 1080)
+[2020-10-10 01:12:25.710] [I] Background size: QSize(1920, 1080)
+[2020-10-10 01:12:25.716] [I] Snipper: preparation done (0)
+[2020-10-10 01:12:25.716] [I] Snipper: about to appear...
+[2020-10-10 01:12:25.716] [I] Snipper: prepare to show...
+[2020-10-10 01:12:25.742] [I] Snipper: shown
+[2020-10-10 01:12:25.744] [I] Snipper: focus in
+[2020-10-10 01:12:25.745] [I] Snipper: ready
+[2020-10-10 01:12:27.428] [I] Screenshot destination: pin
+[2020-10-10 01:12:27.429] [I] Paste image: QPoint(703, 274)
+[2020-10-10 01:12:27.446] [I] Screenshot successfully saved: pin
+[2020-10-10 01:12:27.446] [I] Snipper: about to quit...
+[2020-10-10 01:12:27.512] [I] Snipper: focus out
+[2020-10-10 01:12:27.515] [I] Snipper: hidden
+[2020-10-10 01:12:27.516] [I] Snipper: quit
+[2020-10-10 01:12:27.612] [I] Snipper: scene saved
+[2020-10-10 01:13:31.792] [W] Feed error: 下载更新源失败。网络错误: Operation canceled
+[2020-10-10 01:13:43.794] [W] Feed error: 下载更新源失败。网络错误: Operation canceled
+[2020-10-10 01:13:45.926] [I] Silent feed checking finished
+[2020-10-10 01:13:45.926] [I] No available update
+[2020-10-10 01:32:46.249] [I] Quit from tray menu
+[2020-10-10 01:32:46.255] [I] Snipaste: normal exit
+[2020-10-10 01:32:46.255] [I] Snipper: destructed
+[2020-10-10 01:32:46.283] [I] WinEnumer destructed
+[2020-10-10 01:32:46.290] [I] Exit: 0
+
+
