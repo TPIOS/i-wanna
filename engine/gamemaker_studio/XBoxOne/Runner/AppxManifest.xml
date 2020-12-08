@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:mx="http://schemas.microsoft.com/appx/2013/xbox/manifest" IgnorableNamespaces="mx">
+  <Identity Name="${YYGuid}" Publisher="${YYPublisherCN}" Version="${YYVersionNum}" ProcessorArchitecture="x64" />
+  <Properties>
+    <DisplayName>${YYDisplayName}</DisplayName>
+    <PublisherDisplayName>${YYPublisherDisplayName}</PublisherDisplayName>
+    <Logo>StoreLogo.png</Logo>
+    <Description>${YYApplicationDescription}</Description>
+  </Properties>
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+    <mx:ApplicationEnvironment>title</mx:ApplicationEnvironment>
+    <mx:OSName>era</mx:OSName>
+  </Prerequisites>
+  <Resources>
+    <Resource Language="en-us" />${YYXboxLanguages}
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="XboxOneRunner.exe" EntryPoint="XboxOneRunner.App">
+      ${YYXboxRatings}
+      <VisualElements DisplayName="${YYDisplayName}" Logo="Logo.png" SmallLogo="SmallLogo.png" Description="${YYApplicationDescription}" ForegroundText="${YYForegroundText}" BackgroundColor="${YYBackgroundColour}">
+        <DefaultTile ShowName="allLogos" WideLogo="WideLogo.png" />
+        <SplashScreen BackgroundColor="${YYSplashBackgroundColour}" Image="SplashScreen.png" />
+        <mx:ViewStates>
+          <mx:ViewState Name="filled" />
+        </mx:ViewStates>
+      </VisualElements>
+      <Extensions>
+        ${YYXboxLive}
+          
+        
+        <mx:Extension Category="xbox.system.resources"> <mx:XboxSystemResources> <mx:TitleMemory ConsoleType="Xbox_One_X" Size="8"/> </mx:XboxSystemResources> </mx:Extension>
+        ${YYXboxNetworking}
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+    ${YYXboxCapabilities}
+  </Capabilities>
+  <Extensions>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>Microsoft.Xbox.GameChat.dll</Path>
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.GameChat.ChatManager" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+    <Extension Category="windows.activatableClass.inProcessServer">
+      <InProcessServer>
+        <Path>Microsoft.Xbox.Services.dll</Path>
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Social.SocialGroupConstants" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionReference" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Social.ReputationFeedbackItem" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.XboxLiveAppConfiguration" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Leaderboard.LeaderboardQuery" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.UserStatistics.RequestedStatistics" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerQualityOfServiceMeasurements" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Tournaments.TournamentTeamResult" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerSessionCapabilities" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Tournaments.TournamentReference" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerRoleInfo" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerRoleType" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerSession" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerGetSessionsRequest" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerQuerySearchHandleRequest" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.MultiplayerSearchHandleRequest" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Tournaments.TournamentRequest" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Tournaments.TeamRequest" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.XboxLiveContextSettings" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Presence.PresenceData" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.TitleStorage.TitleStorageBlobMetadata" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.XboxLiveContext" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.XboxLiveHttpCall" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Multiplayer.Manager.MultiplayerManager" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Privacy.PermissionIdConstants" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Social.Manager.SocialManager" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.Statistics.Manager.StatisticManager" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.ServiceCallLoggingConfig" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="Microsoft.Xbox.Services.System.XboxLiveServicesSettings" ThreadingModel="both" />
+      </InProcessServer>
+    </Extension>
+  </Extensions>
+</Package>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

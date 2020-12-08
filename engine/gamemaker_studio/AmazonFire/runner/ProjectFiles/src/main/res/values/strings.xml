@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+  <string name="app_name">${YYAndroidDisplayName}</string>
+  <string name="app_id">${YYAndroidDisplayName}</string>
+  <string name="banner_desc">Banner</string>
+  <string name="menu_settings">Settings</string>
+  <string name="menu_exit">Exit</string>
+  <string name="xperiaplayoptimized_content">true</string>
+  <string name="billing_not_supported_title">Can\'t make purchases</string>
+  <string name="billing_not_supported_message">The Market billing service is
+  not available at this time. You can continue to use this app but you won\'t
+  be able to make any purchases.</string>
+  <string name="billing_failed_title">Purchase failed</string>
+  <string name="billing_failed_message">The Market billing service was unable to process your purchase.</string>
+  <string name="cannot_connect_title">Can\'t connect to Market</string>
+  <string name="cannot_connect_message">This app cannot connect to Market.
+  Your version of Market may be out of date.
+  You can continue to use this app but you
+  won\'t be able to make purchases.</string>
+  <string name="restoring_transactions">Restoring Market transactions</string>
+  <string name="help_url" formatted="false">http://market.android.com/support/bin/answer.py?answer=1050566&amp;hl=%lang%&amp;dl=%region%</string>
+  <string name="learn_more">Learn more</string>
+  <string name="license_fail">Unable to get a valid license, please ensure that you have purchased this product.</string>
+  <string name="text_paused_cellular">Would you like to enable downloading over cellular connections? Depending on your data plan, this may cost you money.</string>
+  <string name="text_paused_cellular_2">If you choose not to enable downloading over cellular connections, the download will automatically resume when wi-fi is available.</string>
+  <string name="text_button_resume_cellular">Resume download</string>
+  <string name="text_button_wifi_settings">Wi-Fi settings</string>
+  <string name="text_button_pause">Pause Download</string>
+  <string name="text_button_resume">Resume Download</string>
+  <string name="text_button_cancel">Cancel</string>
+  ${YYAndroidStringValues}
+</resources>

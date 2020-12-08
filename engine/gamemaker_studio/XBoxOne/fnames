@@ -1,0 +1,152 @@
+///////////////////////////////
+// Xbox One specific
+///////////////////////////////
+
+// # = constant
+// * = readonly
+// & = obsolete
+
+xboxone_fileerror_noerror#
+xboxone_fileerror_outofmemory#
+xboxone_fileerror_usernotfound#
+xboxone_fileerror_unknownerror#
+xboxone_fileerror_cantopenfile#
+xboxone_fileerror_blobnotfound#
+xboxone_fileerror_containernotinsync#
+xboxone_fileerror_containersyncfailed#
+xboxone_fileerror_invalidcontainername#
+xboxone_fileerror_noaccess#
+xboxone_fileerror_noxboxliveinfo#
+xboxone_fileerror_outoflocalstorage#
+xboxone_fileerror_providedbuffertoosmall#
+xboxone_fileerror_quotaexceeded#
+xboxone_fileerror_updatetoobig#
+xboxone_fileerror_usercanceled#
+
+xboxone_gamerpic_small#
+xboxone_gamerpic_medium#
+xboxone_gamerpic_large#
+
+xboxone_agegroup_unknown#
+xboxone_agegroup_child#
+xboxone_agegroup_teen#
+xboxone_agegroup_adult#
+
+xboxone_privilege_internet_browsing#
+xboxone_privilege_social_network_sharing#
+xboxone_privilege_share_kinect_content#
+xboxone_privilege_video_communications#
+xboxone_privilege_communications#
+xboxone_privilege_user_created_content#
+xboxone_privilege_multiplayer_sessions#
+xboxone_privilege_sessions#
+xboxone_privilege_fitness_upload#
+
+xboxone_privilege_result_aborted#
+xboxone_privilege_result_banned#
+xboxone_privilege_result_no_issue#
+xboxone_privilege_result_purchase_required#
+xboxone_privilege_result_restricted#
+
+network_type_xboxone_connection_established#
+
+xboxone_match_visibility_usetemplate#
+xboxone_match_visibility_open#
+xboxone_match_visibility_private#
+
+achievement_filter_friends_alt#
+achievement_filter_favorites_alt#
+achievement_stat_event#
+
+MATCHMAKING_SESSION#
+MATCHMAKING_INVITATION#
+
+xboxone_get_user_count()
+xboxone_get_user(index)
+xboxone_get_activating_user()
+xboxone_user_is_active(user)
+xboxone_user_is_guest(user)
+xboxone_user_is_signed_in(user)
+xboxone_user_is_remote(user)
+xboxone_gamedisplayname_for_user(user)
+xboxone_appdisplayname_for_user(user)
+xboxone_agegroup_for_user(user)
+xboxone_gamerscore_for_user(user)
+xboxone_reputation_for_user(user)
+xboxone_user_for_pad(padindex)
+xboxone_pad_count_for_user(user)
+xboxone_pad_for_user(user, slot)
+xboxone_sponsor_for_user(user)
+xboxone_show_account_picker(padindex,mode)
+xboxone_sprite_add_from_gamerpicture(user, size, xorigin, yorigin)
+xboxone_show_profile_card_for_user(requestinguser, targetuser)
+
+xboxone_set_savedata_user(user)
+xboxone_get_savedata_user()
+xboxone_get_file_error()
+
+xboxone_was_terminated()
+xboxone_was_closed_by_user()
+xboxone_is_suspending()
+xboxone_is_constrained()
+xboxone_suspend()
+
+xboxone_show_help(user)
+
+xboxone_license_trial_version()
+xboxone_license_trial_user()
+xboxone_license_trial_time_remaining()
+xboxone_check_privilege(user,privilege_id,attempt_resolution)
+
+xboxone_user_id_for_user(user)
+xboxone_fire_event(eventname,...)
+xboxone_get_stats_for_user(user,service_config_id,...)
+xboxone_stats_setup(user_id, service_config, title_id)
+xboxone_set_rich_presence(user_id, is_user_active, presence_string, [service_config_id])
+
+xboxone_stats_set_stat_real(user, stat, value)
+xboxone_stats_set_stat_int(user, stat, value)
+xboxone_stats_set_stat_string(user, stat, value)
+xboxone_stats_delete_stat(user, stat)
+xboxone_stats_get_stat(user, stat)
+xboxone_stats_get_stat_names(user)
+xboxone_stats_add_user(user)
+xboxone_stats_remove_user(user)
+xboxone_stats_flush_user(user, high_priority)
+xboxone_stats_get_leaderboard(user, stat, num_entries, start_rank, start_at_user, ascending)
+xboxone_stats_get_social_leaderboard(user, stat, num_entries, start_rank, start_at_user, ascending, favourites_only)
+xboxone_achievements_set_progress(user, achievement, progress)
+
+xboxone_matchmaking_create(user, visibility, template, hopper, sdatemplate, [matchattributes])
+xboxone_matchmaking_find(user, template, hopper, sdatemplate, [matchattributes])
+xboxone_matchmaking_start(user)
+xboxone_matchmaking_stop(user)
+
+xboxone_matchmaking_session_get_users(sessionid)
+xboxone_matchmaking_session_leave(sessionid)
+xboxone_matchmaking_send_invites(user, sessionid, some_string)
+xboxone_matchmaking_set_joinable_session(user, sessionid)
+xboxone_matchmaking_join_invite(user, invite_id, invite_host, sdatemplate)
+xboxone_matchmaking_join_session(user, session_handle, sdatemplate)
+
+xboxone_matchmaking_set_find_timeout(timeout)
+
+xboxone_chat_add_user_to_channel(user, channel)
+xboxone_chat_remove_user_from_channel(user, channel)
+xboxone_chat_set_muted(user_id)
+
+xboxone_set_service_configuration_id(service_configuration_id)
+xboxone_generate_player_session_id()
+
+xboxone_read_player_leaderboard(leaderboard_or_stat_name, player_name, num_items_to_get, friend_filter)
+
+xboxone_package_check_license(package_product_id)
+
+xboxone_product_show_details(user,product_id)
+
+xboxone_debug(dbg_name, enable)
+
+video_open(filename)
+video_close()
+video_draw()
+video_set_volume(volume)

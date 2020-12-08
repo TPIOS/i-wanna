@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|ORBIS">
+      <Configuration>Debug</Configuration>
+      <Platform>ORBIS</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|ORBIS">
+      <Configuration>Release</Configuration>
+      <Platform>ORBIS</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>${YYProjectName}</ProjectName>
+    <ProjectGuid>${YYProjectGUID}</ProjectGuid>
+    <RootNamespace>dkdev</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <GnmProjectType>Sample</GnmProjectType>
+  </PropertyGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+    <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+    <Import Project="$(SolutionDir)\SceGnm.props" Condition="Exists('$(SolutionDir)\SceGnm.Development.props')" />
+    <Import Project="$(SCE_ORBIS_SDK_DIR)\host_tools\msbuild\SceGnm.props" Condition="!Exists('$(SolutionDir)\SceGnm.Development.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ORBIS'" Label="Configuration" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'" Label="Configuration" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|ORBIS'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <GnmUseSampleCommon Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'">false</GnmUseSampleCommon>
+    <GnmUseSampleCommon Condition="'$(Configuration)|$(Platform)'=='Release|ORBIS'">false</GnmUseSampleCommon>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ORBIS'">
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>$(GnmAdditionalDependencies);%(AdditionalDependencies);-lSceNet_stub_weak;-lSceNetCtl_stub_weak;-lSceHttp_stub_weak;-lSceSsl_stub_weak;-lSceDbg_stub_weak;-lScePosix_stub_weak;-lSceCommonDialog_stub_weak;-lSceMsgDialog_stub_weak;-lSceSystemService_stub_weak;-lSceInvitationDialog_stub_weak;-lSceMd5;-lSceNpCommon_stub_weak;-lSceNpManager_stub_weak;-lSceNpProfileDialog_stub_weak;-lSceNpFriendlistDialog_stub_weak;-lSceImeDialog_stub_weak;-lSceNpWebApi_stub_weak;-lSceJson2_stub_weak;-lSceSaveData_stub_weak;-lSceSaveDataDialog_stub_weak;-lSceWebBrowserDialog_stub_weak;-lSceGameCustomDataDialog_stub_weak;-lSceSysModule_stub_weak;-lSceAudioOut_stub_weak;-lSceAudioIn_stub_weak;-lSceVideoRecording_stub_weak;-lSceScreenShot_stub_weak;-lSceErrorDialog_stub_weak;-lSceNpAuth_stub_weak;-lSceNpCommerce_stub_weak;-lSceNpMatching2_stub_weak;-lSceNpScore_stub_weak;-lSceNpSnsFacebookDialog_stub_weak;-lSceNpSns_stub_weak;-lSceNpToolkit2_stub_weak;-lSceNpTrophy_stub_weak;-lSceNpTus_stub_weak;-lSceNpUtility_stub_weak;-lSceRtc_stub_weak;-lSceUserService_stub_weak;-lSceXml_stub_weak;-lSceSigninDialog_stub_weak;-lSceAvPlayer_stub_weak;-lYoYo</AdditionalDependencies>
+      <AdditionalLibraryDirectories>${YYLLVMLibDir};%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>${YYLLVMIncludeDir}</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;YYPS4;YYLLVM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>-Wno-deprecated-writable-strings -Wno-self-assign %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProcessorNumber>$(NUMBER_OF_PROCESSORS)</ProcessorNumber>
+      <CharUnsigned>true</CharUnsigned>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ORBIS'">
+    <Link>
+      <AdditionalOptions>%(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>$(GnmAdditionalDependencies);%(AdditionalDependencies);-lSceNet_stub_weak;-lSceNetCtl_stub_weak;-lSceHttp_stub_weak;-lSceSsl_stub_weak;-lScePosix_stub_weak;-lSceCommonDialog_stub_weak;-lSceMsgDialog_stub_weak;-lSceSystemService_stub_weak;-lSceInvitationDialog_stub_weak;-lSceMd5;-lSceNpCommon_stub_weak;-lSceNpManager_stub_weak;-lSceNpProfileDialog_stub_weak;-lSceNpFriendlistDialog_stub_weak;-lSceImeDialog_stub_weak;-lSceNpWebApi_stub_weak;-lSceJson2_stub_weak;-lSceSaveData_stub_weak;-lSceSaveDataDialog_stub_weak;-lSceWebBrowserDialog_stub_weak;-lSceGameCustomDataDialog_stub_weak;-lSceSysModule_stub_weak;-lSceAudioOut_stub_weak;-lSceAudioIn_stub_weak;-lSceVideoRecording_stub_weak;-lSceScreenShot_stub_weak;-lSceErrorDialog_stub_weak;-lSceNpAuth_stub_weak;-lSceNpCommerce_stub_weak;-lSceNpMatching2_stub_weak;-lSceNpScore_stub_weak;-lSceNpSnsFacebookDialog_stub_weak;-lSceNpSns_stub_weak;-lSceNpToolkit2_stub_weak;-lSceNpTrophy_stub_weak;-lSceNpTus_stub_weak;-lSceNpUtility_stub_weak;-lSceRtc_stub_weak;-lSceUserService_stub_weak;-lSceXml_stub_weak;-lSceSigninDialog_stub_weak;-lSceAvPlayer_stub_weak;-lYoYo</AdditionalDependencies>
+      <AdditionalLibraryDirectories>${YYLLVMLibDir};%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;YYPS4;YYLLVM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions>-Wno-deprecated-writable-strings -Wno-self-assign  %(OrbisPreprocessorDefinitions) %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>${YYLLVMIncludeDir}</AdditionalIncludeDirectories>
+      <OptimizationLevel>Level3</OptimizationLevel>
+      <FastMath>true</FastMath>
+      <UnrollLoops>false</UnrollLoops>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProcessorNumber>$(NUMBER_OF_PROCESSORS)</ProcessorNumber>
+      <CharUnsigned>true</CharUnsigned>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    ${YYCPPFiles}
+  </ItemGroup>
+  <ItemGroup>
+    ${YYHFiles}
+  </ItemGroup>
+  <ItemGroup>
+    ${YYCGFiles}
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="$(SolutionDir)\SceGnm.targets" Condition="Exists('$(SolutionDir)\SceGnm.Development.props')" />
+  <Import Project="$(SCE_ORBIS_SDK_DIR)\host_tools\msbuild\SceGnm.targets" Condition="!Exists('$(SolutionDir)\SceGnm.Development.props')" />
+</Project>

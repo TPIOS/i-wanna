@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0">
+<channel>
+	<title>YoYo Tips</title>
+	<description>Tips feed for GameMaker: Studio 1.4</description>
+	<item>
+		<title>Get GameMaker Studio 2</title>
+		<link>upsell_gms2.html</link>
+	</item>
+	<item>
+		<title>Knowledge Base</title>
+		<link>tipKB.html</link>
+	</item>
+	<item>
+		<title>Tip 1</title>
+		<link>tip01.html</link>
+	</item>
+	<item>
+		<title>Tip 2</title>
+		<link>tip02.html</link>
+	</item>
+	<item>
+		<title>Tip 3</title>
+		<link>tip03.html</link>
+	</item>
+	<item>
+		<title>Tip 4</title>
+		<link>tip04.html</link>
+	</item>
+	<item>
+		<title>Tip 5</title>
+		<link>tip05.html</link>
+	</item>
+	<item>
+		<title>Tip 6</title>
+		<link>tip06.html</link>
+	</item>
+	<item>
+		<title>Tip 7</title>
+		<link>tip07.html</link>
+	</item>
+	<item>
+		<title>Tip 8</title>
+		<link>tip08.html</link>
+	</item>
+	<item>
+		<title>Tip 9</title>
+		<link>tip09.html</link>
+	</item>
+	<item>
+		<title>Tip 10</title>
+		<link>tip10.html</link>
+	</item>
+	<item>
+		<title>Tip 11</title>
+		<link>tip11.html</link>
+	</item>	
+	<item>
+		<title>Tip 12</title>
+		<link>tip12.html</link>
+	</item>
+	<item>
+		<title>Tip 13</title>
+		<link>tip13.html</link>
+	</item>
+	<item>
+		<title>Tip 14</title>
+		<link>tip14.html</link>
+	</item>
+	<item>
+		<title>Tip 15</title>
+		<link>tip15.html</link>
+	</item>
+	<item>
+		<title>Tip 16</title>
+		<link>tip16.html</link>
+	</item>
+	<item>
+		<title>Tip 17</title>
+		<link>tip17.html</link>
+	</item>
+	<item>
+		<title>Tip 18</title>
+		<link>tip18.html</link>
+	</item>
+	<item>
+		<title>Tip 19</title>
+		<link>tip19.html</link>
+	</item>
+	<item>
+		<title>Tip 20</title>
+		<link>tip20.html</link>
+	</item>
+	<item>
+		<title>Tip 21</title>
+		<link>tip21.html</link>
+	</item>
+	<item>
+		<title>Tip 22</title>
+		<link>tip22.html</link>
+	</item>	
+	<item>
+		<title>Tip 23</title>
+		<link>tip23.html</link>
+	</item>
+	<item>
+		<title>Tip 24</title>
+		<link>tip24.html</link>
+	</item>
+	<item>
+		<title>Tip 25</title>
+		<link>tip25.html</link>
+	</item>
+	<item>
+		<title>Tip 26</title>
+		<link>tip26.html</link>
+	</item>
+	<item>
+		<title>Tip 27</title>
+		<link>tip27.html</link>
+	</item>
+	<item>
+		<title>Tip 28</title>
+		<link>tip28.html</link>
+	</item>
+	<item>
+		<title>Tip 29</title>
+		<link>tip29.html</link>
+	</item>
+	<item>
+		<title>Tip 30</title>
+		<link>tip30.html</link>
+	</item>
+	<item>
+		<title>Tip 31</title>
+		<link>tip31.html</link>
+	</item>
+	<item>
+		<title>Tip 32</title>
+		<link>tip32.html</link>
+	</item>
+	<item>
+		<title>Tip 33</title>
+		<link>tip33.html</link>
+	</item>	
+	<item>
+		<title>Tip 34</title>
+		<link>tip34.html</link>
+	</item>
+	<item>
+		<title>Tip 35</title>
+		<link>tip35.html</link>
+	</item>
+	<item>
+		<title>Tip 36</title>
+		<link>tip36.html</link>
+	</item>
+	<item>
+		<title>Tip 37</title>
+		<link>tip37.html</link>
+	</item>
+	<item>
+		<title>Tip 38</title>
+		<link>tip38.html</link>
+	</item>
+	<item>
+		<title>Tip 39</title>
+		<link>tip39.html</link>
+	</item>
+	<item>
+		<title>Tip 40</title>
+		<link>tip40.html</link>
+	</item>
+	<item>
+		<title>Tip 41</title>
+		<link>tip41.html</link>
+	</item>
+	<item>
+		<title>Tip 42</title>
+		<link>tip42.html</link>
+	</item>
+	<item>
+		<title>Tip 43</title>
+		<link>tip43.html</link>
+	</item>
+	<item>
+		<title>Tip 44</title>
+		<link>tip44.html</link>
+	</item>	
+	<item>
+		<title>Tip 45</title>
+		<link>tip45.html</link>
+	</item>
+	<item>
+		<title>Tip 46</title>
+		<link>tip46.html</link>
+	</item>
+	<item>
+		<title>Tip 48</title>
+		<link>tip48.html</link>
+	</item>	
+	<item>
+		<title>Tip 49</title>
+		<link>tip49.html</link>
+	</item>	
+	<item>
+		<title>Tip 50</title>
+		<link>tip50.html</link>
+	</item>	
+	<item>
+		<title>Tip 52</title>
+		<link>tip52.html</link>
+	</item>	
+	<item>
+		<title>Tip 53</title>
+		<link>tip53.html</link>
+	</item>	
+	<item>
+		<title>Tip 54</title>
+		<link>tip54.html</link>
+	</item>	
+	<item>
+		<title>Tip 55</title>
+		<link>tip55.html</link>
+	</item>	
+	<item>
+		<title>Tip 56</title>
+		<link>tip56.html</link>
+	</item>	
+	<item>
+		<title>Tip 57</title>
+		<link>tip57.html</link>
+	</item>	
+	<item>
+		<title>Tip 59</title>
+		<link>tip59.html</link>
+	</item>	
+	<item>
+		<title>Tip 60</title>
+		<link>tip60.html</link>
+	</item>	
+	<item>
+		<title>Tip 61</title>
+		<link>tip61.html</link>
+	</item>	
+	<item>
+		<title>Tip 62</title>
+		<link>tip62.html</link>
+	</item>	
+	<item>
+		<title>Tip 63</title>
+		<link>tip63.html</link>
+	</item>
+	<item>
+		<title>Tip 64</title>
+		<link>tip64.html</link>
+	</item>
+	<item>
+		<title>Tip 65</title>
+		<link>tip65.html</link>
+	</item>	
+	<item>
+		<title>Tip 66</title>
+		<link>tip66.html</link>
+	</item>	
+	<item>
+		<title>Tip 67</title>
+		<link>tip67.html</link>
+	</item>	
+	<item>
+		<title>Tip 68</title>
+		<link>tip68.html</link>
+	</item>	
+	<item>
+		<title>Tip 69</title>
+		<link>tip69.html</link>
+	</item>	
+	<item>
+		<title>Tip 70</title>
+		<link>tip70.html</link>
+	</item>
+	<item>
+		<title>Tip 71</title>
+		<link>tip71.html</link>
+	</item>
+	<item>
+		<title>Tip 72</title>
+		<link>tip72.html</link>
+	</item>
+	<item>
+		<title>Tip 73</title>
+		<link>tip73.html</link>
+	</item>
+	<item>
+		<title>Tip 74</title>
+		<link>tip74.html</link>
+	</item>
+	<item>
+		<title>Tip 75</title>
+		<link>tip75.html</link>
+	</item>
+	<item>
+		<title>Tip 76</title>
+		<link>tip76.html</link>
+	</item>
+	<item>
+		<title>Tip 77</title>
+		<link>tip77.html</link>
+	</item>
+	<item>
+		<title>Tip78</title>
+		<link>tip78.html</link>
+	</item>
+	<item>
+		<title>Tip 79</title>
+		<link>tip79.html</link>
+	</item>
+	<item>
+		<title>Tip 80</title>
+		<link>tip80.html</link>
+	</item>
+	<item>
+		<title>Tip 81</title>
+		<link>tip81.html</link>
+	</item>
+	<item>
+		<title>Tip 82</title>
+		<link>tip82.html</link>
+	</item>
+	<item>
+		<title>Tip 83</title>
+		<link>tip83.html</link>
+	</item>
+	<item>
+		<title>Tip 84</title>
+		<link>tip84.html</link>
+	</item>
+	<item>
+		<title>Tip 85</title>
+		<link>tip85.html</link>
+	</item>
+	<item>
+		<title>Tip 86</title>
+		<link>tip86.html</link>
+	</item>
+	<item>
+		<title>Tip 87</title>
+		<link>tip87.html</link>
+	</item>
+	<item>
+		<title>Tip 88</title>
+		<link>tip88.html</link>
+	</item>
+	<item>
+		<title>Tip 89</title>
+		<link>tip89.html</link>
+	</item>
+	<item>
+		<title>Tip 90</title>
+		<link>tip90.html</link>
+	</item>
+	<item>
+		<title>Tip 91</title>
+		<link>tip91.html</link>
+	</item>
+	<item>
+		<title>Tip 92</title>
+		<link>tip92.html</link>
+	</item>
+	<item>
+		<title>Tip 93</title>
+		<link>tip93.html</link>
+	</item>
+	<item>
+		<title>Tip 94</title>
+		<link>tip94.html</link>
+	</item>	
+	<item>
+		<title>Tip 95</title>
+		<link>tip95.html</link>
+	</item>
+	<item>
+		<title>Tip 96</title>
+		<link>tip96.html</link>
+	</item>
+	<item>
+		<title>Tip 97</title>
+		<link>tip97.html</link>
+	</item>
+	<item>
+		<title>Tip 98</title>
+		<link>tip98.html</link>
+	</item>	
+	<item>
+		<title>Tip 99</title>
+		<link>tip99.html</link>
+	</item>	
+	<item>
+		<title>Tip 100</title>
+		<link>tip100.html</link>
+	</item>
+	<item>
+		<title>Tip 102</title>
+		<link>tip102.html</link>
+	</item>
+	<item>
+		<title>Tip 103</title>
+		<link>tip103.html</link>
+	</item>
+	<item>
+		<title>Tip 105</title>
+		<link>tip105.html</link>
+	</item>
+	<item>
+		<title>Tip 106</title>
+		<link>tip106.html</link>
+	</item>
+	<item>
+		<title>Tip 107</title>
+		<link>tip107.html</link>
+	</item>
+	<item>
+		<title>Tip 108</title>
+		<link>tip108.html</link>
+	</item>
+	<item>
+		<title>Tip 109</title>
+		<link>tip109.html</link>
+	</item>
+	<item>
+		<title>Tip 110</title>
+		<link>tip110.html</link>
+	</item>
+	<item>
+		<title>Tip 111</title>
+		<link>tip111.html</link>
+	</item>
+	<item>
+		<title>Tip 112</title>
+		<link>tip112.html</link>
+	</item>
+	<item>
+		<title>Tip 113</title>
+		<link>tip113.html</link>
+	</item>
+	<item>
+		<title>Tip 114</title>
+		<link>tip114.html</link>
+	</item>
+	<item>
+		<title>Tip 115</title>
+		<link>tip115.html</link>
+	</item>
+	<item>
+		<title>Tip 116</title>
+		<link>tip116.html</link>
+	</item>
+	<item>
+		<title>Tip 117</title>
+		<link>tip117.html</link>
+	</item>
+	<item>
+		<title>Tip 118</title>
+		<link>tip118.html</link>
+	</item>
+	<item>
+		<title>Tip 119</title>
+		<link>tip119.html</link>
+	</item>
+	<item>
+		<title>Tip 120</title>
+		<link>tip120.html</link>
+	</item>
+	<item>
+		<title>Tip 121</title>
+		<link>tip121.html</link>
+	</item>
+	<item>
+		<title>Tip 122</title>
+		<link>tip122.html</link>
+	</item>
+	<item>
+		<title>Tip 123</title>
+		<link>tip123.html</link>
+	</item>
+	<item>
+		<title>Tip 124</title>
+		<link>tip124.html</link>
+	</item>
+	<item>
+		<title>Tip 125</title>
+		<link>tip125.html</link>
+	</item>
+	<item>
+		<title>Tip 126</title>
+		<link>tip126.html</link>
+	</item>
+	<item>
+		<title>Tip 127</title>
+		<link>tip127.html</link>
+	</item>
+	<item>
+		<title>Tip 128</title>
+		<link>tip128.html</link>
+	</item>
+	<item>
+		<title>Tip 129</title>
+		<link>tip129.html</link>
+	</item>
+	<item>
+		<title>Tip 130</title>
+		<link>tip130.html</link>
+	</item>
+	<item>
+		<title>Tip 131</title>
+		<link>tip131.html</link>
+	</item>
+</channel>
+</rss>

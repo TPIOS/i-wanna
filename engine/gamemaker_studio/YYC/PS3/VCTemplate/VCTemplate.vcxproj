@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|PS3">
+      <Configuration>Debug</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PS3">
+      <Configuration>Release</Configuration>
+      <Platform>PS3</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath11)</VCTargetsPath>
+    <ProjectGuid>${YYProjectGUID}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>SNC</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(DebuggerFlavor)'=='PS3Debugger'" Label="OverrideDebuggerDefaults">
+    <!--LocalDebuggerCommand>$(TargetPath)</LocalDebuggerCommand-->
+    <!--LocalDebuggerCommandArguments></LocalDebuggerCommandArguments-->
+    <!--LocalDebuggerCommandLine>-r -e -m</LocalDebuggerCommandLine-->
+    <!--LocalRunCommandLine>-r</LocalRunCommandLine-->
+    <!--LocalTunerCommandLine></LocalTunerCommandLine-->
+    <!--LocalDebuggerFileServingDirectory>$(ProjectDir)</LocalDebuggerFileServingDirectory-->
+    <!--LocalDebuggerHomeDirectory>$(ProjectDir)</LocalDebuggerHomeDirectory-->
+    <!--LocalDebuggerProjectFile></LocalDebuggerProjectFile-->
+    <!--LocalDebuggerResetType>Soft</LocalDebuggerResetType-->
+    <!--LocalDebuggerClearTty>False</LocalDebuggerClearTty-->
+  </PropertyGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <TargetExt>.elf</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <TargetExt>.elf</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>DEBUG;YYPS3;YYLLVM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>${YYLLVMIncludeDir}</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProcessorNumber>$(NUMBER_OF_PROCESSORS)</ProcessorNumber>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libsn.a;libm.a;libio_stub.a;libfs_stub.a;libnet_stub.a;libsysutil_stub.a;libsysmodule_stub.a;libresc_stub.a;libhttp_stub.a;libhttp_util_stub.a;libaudio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libgcm_cmd.a;$(SCE_PS3_ROOT)\target\ppu\lib\libgcm_sys_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\PSGL\RSX\debug\libPSGL.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_game_stub.a;libYoYo.a;-lsysutil_np_stub;libssl_stub.a;libmic_stub.a;libsysutil_avconf_ext_stub.a;libc_libent.o;libm_libent.o;libstdc++_libent.o;-lsysutil_np_trophy_stub;libnetctl_stub.a</AdditionalDependencies>
+      <AdditionalLibraryDirectories>${YYLLVMLibDir};%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <OutputFormat>ELFFile</OutputFormat>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SCE_PS3_ROOT)\host-win32\bin\make_fself "$(TargetPath)" "$(OutDir)$(TargetName).self"
+$(SCE_PS3_ROOT)\host-win32\bin\make_fself_npdrm "$(TargetPath)" "$(OutDir)\EBOOT.BIN"
+</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>creating self...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PS3'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;YYPS3;YYLLVM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>${YYLLVMIncludeDir}</AdditionalIncludeDirectories>
+      <OptimizationLevel>Level2</OptimizationLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProcessorNumber>$(NUMBER_OF_PROCESSORS)</ProcessorNumber>
+      <FastMath>true</FastMath>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libsn.a;libm.a;libio_stub.a;libfs_stub.a;libnet_stub.a;libsysutil_stub.a;libsysmodule_stub.a;libresc_stub.a;libhttp_stub.a;libhttp_util_stub.a;libaudio_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\libgcm_cmd.a;$(SCE_PS3_ROOT)\target\ppu\lib\libgcm_sys_stub.a;$(SCE_PS3_ROOT)\target\ppu\lib\PSGL\RSX\opt\libPSGL.a;$(SCE_PS3_ROOT)\target\ppu\lib\libsysutil_game_stub.a;libYoYo.a;-lsysutil_np_stub;libssl_stub.a;libmic_stub.a;libsysutil_avconf_ext_stub.a;libc_libent.o;libm_libent.o;libstdc++_libent.o;-lsysutil_np_trophy_stub;libnetctl_stub.a</AdditionalDependencies>
+      <AdditionalLibraryDirectories>${YYLLVMLibDir};%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFormat>ELFFile</OutputFormat>
+    </Link>
+    <PostBuildEvent>
+      <Command>$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objdump.exe -t "$(TargetPath)" &gt; "$(OutDir)\symbol_table.txt"
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-strip.exe -s "$(TargetPath)" -o "$(TEMP)\stripped.elf"
+$(SCE_PS3_ROOT)\host-win32\bin\make_fself "$(TEMP)\stripped.elf" "$(OutDir)$(TargetName).self"
+$(SCE_PS3_ROOT)\host-win32\bin\make_fself_npdrm "$(TEMP)\stripped.elf" "$(OutDir)\EBOOT.BIN"</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Generating selfs...</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    ${YYCPPFiles}
+  </ItemGroup>
+  <ItemGroup>
+    ${YYHFiles}
+  </ItemGroup>
+  <ItemGroup>
+    ${YYCGFiles}
+  </ItemGroup>
+  <Import Condition="'$(ConfigurationType)' == 'Makefile' and Exists('$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets')" Project="$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,28 @@
+"installscript"
+{
+	"registry"
+	{
+		"hkey_current_user\\software\\gmstudio_steam\\version 1.0\\preferences"
+		{
+			"string"
+			{
+				"5piceassetcompilerlocation"		"%INSTALLDIR%\\GMAssetCompiler.exe"
+				"5picecpprunnerlocation"		"%INSTALLDIR%\\Runner.exe"
+				"5picehtmlrunnerlocation"		"%INSTALLDIR%\\scripts.html5.zip"
+			}
+		}
+	}
+	"Run Process"
+	{
+		".net3.5"
+		{
+			"hasrunkey"		"HKEY_CURRENT_USER\\Software\\GMStudio_Steam\\Version 1.0\\Preferences"
+			"process 1"		"%INSTALLDIR%\\dotNetFx35setup.exe"
+			"nocleanup"		"1"
+		}
+	}
+}
+"kvsignatures"
+{
+	"installscript"		"6d4d696ed823ca55649a8dd6ba6fca906f3a4a62c6f79079fa353b6e1bae5e9deba3b75fd00e499f8bcc42c08dc62ab91d916a991433f07a37cebdcc933e82de4916c8afd4378f2a172674e4b621f56b90c878ebb744138bad639042b74338ea53e994ae6f048817b7538c60ccdc3178c1e3708aa6efcbbfcce8ca37a3336a0d"
+}

@@ -1,0 +1,203 @@
+﻿<doc>
+  <members>
+<member name="T:Microsoft.Xbox.GameChat.ChatManager"><summary>Manages a chat session.</summary></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.#ctor(Microsoft.Xbox.GameChat.ChatSessionPeriod)"><summary>Initializes a ChatManager object with a specified chat session period</summary><param name="chatSessionPeriod">The chat session period to use. Larger buffers add latency, but may improve overall performance.</param></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.#ctor(Microsoft.Xbox.GameChat.ChatSessionPeriod,System.Boolean)"><summary>Initializes a ChatManager object with a specified chat session period and title enforced privilege and privacy value.</summary><param name="chatSessionPeriod">The chat session period, in milliseconds, to use. Larger buffers add latency, but may improve overall performance.</param><param name="titleEnforcedPrivilegeAndPrivacy">Indicates whether or not a title is taking ownership of privilege and privacy checks. True indicates that a title is taking ownership - the underlying Chat library will create no communication restrictions based on privileges or privacy. When taking ownership, the title must maintain XR compliance. False indicates that GameChat will continue to enforce these restrictions. This value cannot be modified during the lifetime of a chat session. To change the value, the ChatManager must be recreated.</param></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.#ctor"><summary>Initializes a ChatManager object using a default ChatSessionPeriod of 40 milliseconds.</summary></member>
+
+<member name="E:Microsoft.Xbox.GameChat.ChatManager.OnCompareUniqueConsoleIdentifiers"><summary>Raised to compare two console identifiers.</summary></member>
+
+<member name="E:Microsoft.Xbox.GameChat.ChatManager.OnDebugMessage"><summary>Raised when the chat manager has a debug message.</summary><param name="" /></member>
+
+<member name="E:Microsoft.Xbox.GameChat.ChatManager.OnOutgoingChatPacketReady"><summary>Raised when an outgoing chat package is ready to send.</summary><param name="" /></member>
+
+<member name="E:Microsoft.Xbox.GameChat.ChatManager.OnPostDecodeAudioBuffer"><summary>Raised after the audio buffer has been decoded.</summary></member>
+
+<member name="E:Microsoft.Xbox.GameChat.ChatManager.OnPreEncodeAudioBuffer"><summary>Raised before an audio buffer is encoded.</summary></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.GetChatUsers"><summary>Gets metadata about the users in the chat.</summary></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.AddLocalUsersToChatChannelAsync(System.Byte,Windows.Foundation.Collections.IVectorView{Windows.Xbox.System.User})"><summary>Adds local users to a chat channel.</summary><param name="channelIndex">The index of the chat channel.</param><param name="users">A collection of the local users to add.</param></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.Close"><summary>Shuts down the chat manager.</summary></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.AddLocalUserToChatChannelAsync(System.Byte,Windows.Xbox.System.IUser)"><summary>Adds a local user to a chat channel.</summary><param name="channelIndex">The index of the chat channel.</param><param name="user">The local user to add.</param></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.MuteAllUsersFromAllChannels"><summary>Mutes all the users in the chat.</summary></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.MuteUserFromAllChannels(Microsoft.Xbox.GameChat.ChatUser)"><summary>Mutes a specified user from all chat channels.</summary><param name="user">The user to mute.</param></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.HandleNewRemoteConsole(System.Object)"><summary>Sends all existing local users to a new console.</summary><param name="uniqueRemoteConsoleIdentifier">The unique console identifier for the chat.</param></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.ProcessIncomingChatMessage(Windows.Storage.Streams.IBuffer,System.Object)"><summary>Processes incoming chat messages.</summary><param name="chatPacket">The incoming chat packet.</param><param name="uniqueRemoteConsoleIdentifier">The unique console identifier of the receiving console.</param></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.MuteUserIfReputationIsBadAsync(Microsoft.Xbox.GameChat.ChatUser)"><summary>Mutes a non-friend chat user who fails a reputation check, that is, a user who is considered to have a bad reputation.</summary><param name="user">An object representing a remote user.</param></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.UnmuteAllUsersFromAllChannels"><summary>Unmutes all users from all chat channels.</summary></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.RemoveRemoteConsoleAsync(System.Object)"><summary>Removes all users from a remote console.</summary><param name="uniqueRemoteConsoleIdentifier">The unique identifier of the remote console.</param></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.RemoveLocalUserFromChatChannelAsync(System.Byte,Windows.Xbox.System.IUser)"><summary>Removes a local user from a chat channel.</summary><param name="channelIndex">The chat channel.</param><param name="user">The user to remove.</param></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatManager.UnmuteUserFromAllChannels(Microsoft.Xbox.GameChat.ChatUser)"><summary>Unmutes a specified user from all chat channels.</summary><param name="user">The user to unmute.</param></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManager.ChatPerformanceCounters"><summary>Performance counters from the chat manager for profiling.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManager.ChatSettings"><summary>Settings for the chat manager.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManager.HasMicFocus"><summary>Value that indicates whether the title has the microphone focus.</summary></member>
+
+<member name="T:Microsoft.Xbox.GameChat.ChatManagerSettings"><summary>Contains settings for the chat manager.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.AudioThreadAffinityMask"><summary>The affinity mask for the audio thread.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.AudioThreadPeriodInMilliseconds"><summary>The time between audio thread processing time slices.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.AudioEncodingQuality"><summary>The compression ratio used by the audio encoder.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.AudioThreadPriority"><summary>The audio thread priority class.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.CombineCaptureBuffersIntoSinglePacket"><summary>A value that indicates whether microphone data from multiple local users is combined into a single packet before sending.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.DiagnosticsTraceLevel"><summary>The trace level of debug messages sent to ChatManager.OnDebugMessage.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.AutoMuteBadReputationUsers"><summary>A value that indicates if the title should mute new chat session members who have bad reputations and who are not friends of a local user.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.JitterBufferLowestNeededPacketCount"><summary>The lowest acceptable packet count in the jitter buffer.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.JitterBufferMaxPackets"><summary>The maximum packet count for the jitter buffer.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.JitterBufferPacketsBeforeRelaxingNeeded"><summary>The packet count before relaxing in the jitter buffer.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.UseKinectAsCaptureSource"><summary>A value that indicates if the Kinect Sensor is the capture source.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.PostDecodeCallbackEnabled"><summary>A value that indicates if the system raises the ChatManager.OnPostDecodeAudioBuffer Event, which allows titles to apply sound effects to chat voice data.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.PerformanceCountersEnabled"><summary>A value that indicates if performance counters are enabled.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatManagerSettings.PreEncodeCallbackEnabled"><summary>A value that indicates if the system raises the ChatManager.OnPreEncodeAudioBuffer Event, which allows titles to apply sound effects to the capture stream.</summary></member>
+
+<member name="T:Microsoft.Xbox.GameChat.ChatPacketEventArgs"><summary>Contains arguments for chat packet events.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPacketEventArgs.ChatMessageType"><summary>The chat message type.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPacketEventArgs.ChatUser"><summary>Information about the chat user.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPacketEventArgs.PacketBuffer"><summary>The buffer for an audio packet that will be sent to remote consoles.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPacketEventArgs.SendInOrder"><summary>A value that indicates if the system should send packets in the order recorded.</summary></member>
+
+<member name="T:Microsoft.Xbox.GameChat.ChatPerformanceCounters"><summary>Represents performance counters for the chat manager.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPacketEventArgs.SendPacketToAllConnectedConsoles"><summary>A value that indicates if packets are sent to all connected consoles.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPacketEventArgs.SendReliable"><summary>A value that indicates if packets are being sent on a reliable channel.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPacketEventArgs.UniqueTargetConsoleIdentifier"><summary>The remote console to receive a packet.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceCounters.AudioThreadExecutionTime"><summary>Performance time information measured on the audio thread.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceCounters.AudioThreadPeriodTime"><summary>Performance time information indicating how often the audio thread wakes up to do work.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceCounters.CaptureExecutionTime"><summary>Information about the performance time required for capturing a buffer.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceCounters.IncomingPacketBandwidthBitsPerSecond"><summary>The bandwidth for incoming packets.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceCounters.IncomingPacketTime"><summary>Information about the performance time required to process incoming packets.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceCounters.OutgoingPacketBandwidthBitsPerSecond"><summary>The bandwidth used for outgoing packets.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceCounters.RenderExecutionTime"><summary>Information about the performance time required for rendering audio buffers.</summary></member>
+
+<member name="T:Microsoft.Xbox.GameChat.ChatPerformanceTime"><summary>Contains time data for testing chat manager performance.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceCounters.SendExecutionTime"><summary>Information about the performance time required for sending packets.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceTime.AverageTimeInMilliseconds"><summary>The rolling average time, which is refreshed every 500 milliseconds while the audio thread is running.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceTime.MaxTimeInMilliseconds"><summary>The maximum performance time.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatPerformanceTime.MinTimeInMilliseconds"><summary>The minimum performance time.</summary></member>
+
+<member name="T:Microsoft.Xbox.GameChat.ChatUser"><summary>Contains information about user in a chat session.</summary></member>
+
+<member name="M:Microsoft.Xbox.GameChat.ChatUser.GetAllChannels"><summary>Retrieves a list of all channels used by the chat user.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.IsLocalUserMuted"><summary>A value that indicates if the local chat user is muted so as to not receive capture packets from the system.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.DynamicNeededPacketCount"><summary>The number of packets needed before audio starts playing, which is dynamically adjusted based on how often packets arrive from the network.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.IsLocal"><summary>A value that indicates if the user is local.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.LocalRenderTargetVolume"><summary>The volume for the chat audio.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.IsMuted"><summary>Indicates if the chat user is muted.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.NumberOfPendingAudioPacketsToPlay"><summary>The number of audio packets to play, controlled by the jitter buffer.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.ParticipantType"><summary>A value indicating how the chat user is participating.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.RestrictionMode"><summary>A value indicating the chat restriction for the user.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.TalkingMode"><summary>The talking mode for the chat user.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.UniqueConsoleIdentifier"><summary>The unique console identifier for the console used by the chat user.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.User"><summary>The user interface for the chat user.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.Volume"><summary>The volume setting for the chat user.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.ChatUser.XboxUserId"><summary>The Xbox identifier for the chat user.</summary></member>
+
+<member name="T:Microsoft.Xbox.GameChat.DebugMessageEventArgs"><summary>Contains arguments for debug message events.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.DebugMessageEventArgs.ErrorCode"><summary>The error code for the debug message event.</summary></member>
+
+<member name="P:Microsoft.Xbox.GameChat.DebugMessageEventArgs.Message"><summary>The debug message for the debug message event.</summary></member>
+
+<member name="T:Microsoft.Xbox.GameChat.CompareUniqueConsoleIdentifiersHandler"><summary>Compares two console identifiers.</summary><param name="__param0">An object representing the console identifier to compare.</param><param name="__param1">An object representing the other console identifier.</param></member>
+
+<member name="T:Microsoft.Xbox.GameChat.ProcessAudioBufferHandler"><summary>Retrieves data from an unencoded audio buffer.</summary><param name="__param0">A stream buffer containing raw audio data.</param><param name="__param1">An object representing the format of the audio data.</param><param name="__param2">A collection of objects representing the chat users associated with the audio buffer.</param></member>
+
+<member name="T:Microsoft.Xbox.GameChat.ChatMessageType"><summary>Chat message types.</summary></member>
+
+<member name="F:ChatVoiceDataMessage"><summary>Voice data, along with a unique LOOKUP_ID that is built from the local name of the remote console and an audio device index.</summary></member>
+
+<member name="F:InvalidMessage"><summary>An invalid packet.</summary></member>
+
+<member name="F:UserAddedMessage"><summary>A byte array that is used to create an IUser interface on the remote console.</summary></member>
+
+<member name="F:UserRemovedMessage"><summary>The Xbox user ID string of the user to remove.</summary></member>
+
+<member name="T:Microsoft.Xbox.GameChat.ChatSessionPeriod"><summary>Buffer sizes, in milliseconds, for the chat session period.</summary></member>
+
+<member name="F:ChatPeriodOf20Milliseconds"><summary>Buffer size is 20 milliseconds.</summary></member>
+
+<member name="F:ChatPeriodOf40Milliseconds"><summary>Buffer size is 40 milliseconds.</summary></member>
+
+<member name="F:ChatPeriodOf80Milliseconds"><summary>Buffer size is 80 milliseconds.</summary></member>
+
+<member name="T:Microsoft.Xbox.GameChat.ChatUserTalkingMode"><summary>Talking modes for the chat user.</summary></member>
+
+<member name="F:NotTalking"><summary>The user is not talking. This mode is set if chat for the user is either muted or blocked.</summary></member>
+
+<member name="F:TalkingOverHeadset"><summary>The user is talking with a headset microphone.</summary></member>
+
+<member name="F:TalkingOverKinect"><summary>The user is talking with the sensor microphone.</summary></member>
+
+<member name="T:Microsoft.Xbox.GameChat.GameChatDiagnosticsTraceLevel"><summary>Trace levels for game chat debugging.</summary></member>
+
+<member name="F:Error"><summary>Tracing all errors.</summary></member>
+
+<member name="F:Info"><summary>Tracing debugging information.</summary></member>
+
+<member name="F:Off"><summary>Not tracing.</summary></member>
+
+<member name="F:Verbose"><summary>Giving verbose trace information.</summary></member>
+
+<member name="F:Warning"><summary>Tracing warnings.</summary></member>
+</members>
+</doc>

@@ -1,0 +1,138 @@
+///////////////////////////////
+// Windows UAP specific
+///////////////////////////////
+
+// # = constant
+// * = readonly
+// & = obsolete
+
+xboxlive_fileerror_noerror#
+xboxlive_fileerror_outofmemory#
+xboxlive_fileerror_usernotfound#
+xboxlive_fileerror_unknownerror#
+xboxlive_fileerror_cantopenfile#
+xboxlive_fileerror_blobnotfound#
+xboxlive_fileerror_containernotinsync#
+xboxlive_fileerror_containersyncfailed#
+xboxlive_fileerror_invalidcontainername#
+xboxlive_fileerror_noaccess#
+xboxlive_fileerror_noxboxliveinfo#
+xboxlive_fileerror_outoflocalstorage#
+xboxlive_fileerror_providedbuffertoosmall#
+xboxlive_fileerror_quotaexceeded#
+xboxlive_fileerror_updatetoobig#
+xboxlive_fileerror_usercanceled#
+
+xboxlive_gamerpic_small#
+xboxlive_gamerpic_medium#
+xboxlive_gamerpic_large#
+
+xboxlive_agegroup_unknown#
+xboxlive_agegroup_child#
+xboxlive_agegroup_teen#
+xboxlive_agegroup_adult#
+
+achievement_filter_friends_alt#
+achievement_filter_favorites_alt#
+
+uwp_privilege_internet_browsing#
+uwp_privilege_social_network_sharing#
+uwp_privilege_share_kinect_content#
+uwp_privilege_video_communications#
+uwp_privilege_communications#
+uwp_privilege_user_created_content#
+uwp_privilege_multiplayer_sessions#
+uwp_privilege_sessions#
+uwp_privilege_fitness_upload#
+
+uwp_privilege_result_aborted#
+uwp_privilege_result_banned#
+uwp_privilege_result_no_issue#
+uwp_privilege_result_purchase_required#
+uwp_privilege_result_restricted#
+
+xboxlive_match_visibility_usetemplate#
+xboxlive_match_visibility_open#
+xboxlive_match_visibility_private#
+
+xboxlive_get_user_count()
+xboxlive_get_user(index)
+xboxlive_get_activating_user()
+xboxlive_user_is_active(user)
+xboxlive_user_is_guest(user)
+xboxlive_user_is_signed_in(...)
+xboxlive_user_is_signing_in(...)
+xboxlive_user_is_remote(user)
+xboxlive_gamedisplayname_for_user(...)
+xboxlive_appdisplayname_for_user(...)
+xboxlive_gamertag_for_user(...)
+xboxlive_agegroup_for_user(user)
+xboxlive_gamerscore_for_user(user)
+xboxlive_reputation_for_user(user)
+xboxlive_user_for_pad(padindex)
+xboxlive_pad_count_for_user(user)
+xboxlive_pad_for_user(user, slot)
+xboxlive_sponsor_for_user(user)
+xboxlive_show_account_picker(...)
+xboxlive_sprite_add_from_gamerpicture(user, size, xorigin, yorigin)
+xboxlive_show_profile_card_for_user(requestinguser, targetuser)
+
+xboxlive_set_savedata_user(user)
+xboxlive_get_savedata_user()
+xboxlive_get_file_error()
+
+uwp_was_terminated()
+uwp_was_closed_by_user()
+uwp_is_suspending()
+uwp_is_constrained()
+uwp_suspend()
+
+uwp_show_help(user)
+
+uwp_license_trial_version()
+uwp_license_trial_user()
+uwp_license_trial_time_remaining()
+uwp_check_privilege(user,privilege_id,attempt_resolution)
+
+xboxlive_user_id_for_user(user)
+xboxlive_fire_event(eventname,...)
+xboxlive_get_stats_for_user(user,service_config_id,...)
+xboxlive_stats_setup(user_id, service_config, title_id)
+xboxlive_set_rich_presence(user_id, is_user_active, presence_string, [service_config_id])
+
+xboxlive_stats_set_stat_real(user, stat, value)
+xboxlive_stats_set_stat_int(user, stat, value)
+xboxlive_stats_set_stat_string(user, stat, value)
+xboxlive_stats_delete_stat(user, stat)
+xboxlive_stats_get_stat(user, stat)
+xboxlive_stats_get_stat_names(user)
+xboxlive_stats_add_user(user)
+xboxlive_stats_remove_user(user)
+xboxlive_stats_flush_user(user, high_priority)
+xboxlive_stats_get_leaderboard(user, stat, num_entries, start_rank, start_at_user, ascending)
+xboxlive_stats_get_social_leaderboard(user, stat, num_entries, start_rank, start_at_user, ascending, favourites_only)
+xboxlive_achievements_set_progress(user, achievement, progress)
+
+xboxlive_matchmaking_create(user, visibility, template, hopper, sdatemplate, [matchattributes])
+xboxlive_matchmaking_find(user, template, hopper, sdatemplate, [matchattributes])
+xboxlive_matchmaking_start(user)
+xboxlive_matchmaking_stop(user)
+
+xboxlive_matchmaking_session_get_users(sessionid)
+xboxlive_matchmaking_session_leave(sessionid)
+xboxlive_matchmaking_send_invites(user, sessionid, some_string)
+xboxlive_matchmaking_set_joinable_session(user, sessionid)
+xboxlive_matchmaking_join_invite(user, invite_id, invite_host, sdatemplate)
+xboxlive_matchmaking_join_session(user, session_handle, sdatemplate)
+
+xboxlive_matchmaking_set_find_timeout(timeout)
+
+xboxlive_chat_add_user_to_channel(user, channel)
+xboxlive_chat_remove_user_from_channel(user, channel)
+xboxlive_chat_set_muted(user_id)
+
+xboxlive_set_service_configuration_id(service_configuration_id)
+xboxlive_generate_player_session_id()
+
+xboxlive_read_player_leaderboard(leaderboard_name, player_name, num_items_to_get, friend_filter)
+

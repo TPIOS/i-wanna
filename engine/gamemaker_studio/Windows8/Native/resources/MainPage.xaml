@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="WinMetroRunner.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WinMetroRunner"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <AppBar x:Name="BottomAppBar1" Padding="10,0,10,0" AutomationProperties.Name="Bottom App Bar" Visibility="Collapsed">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*"/>
+                    <ColumnDefinition Width="50*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="LeftPanel" Orientation="Horizontal" Grid.Column="0" HorizontalAlignment="Left">
+                </StackPanel>
+                <StackPanel x:Name="RightPanel" Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
+                </StackPanel>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+
+    <SwapChainBackgroundPanel x:Name="DXSwapChainPanel">
+
+        <local:SettingsFlyout
+            x:Name="CommandSettingsFlyout"
+            x:Uid="SettingsFlyout"
+            HeaderText="Options">
+            <StackPanel
+                    x:Name="FlyoutStackPanel">
+            </StackPanel>
+        </local:SettingsFlyout>
+
+        <StackPanel x:Name="InputDialog" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#B21B1B1B">
+            <TextBlock x:Name="InputTitle" TextWrapping="Wrap" Text="Text" HorizontalAlignment="Center" FontSize="20" />
+            <TextBox x:Name="InputTextBox" Height="72" TextWrapping="Wrap" Width="456"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:ConnectionId='6' Content="OK" Width="200" HorizontalAlignment="Right"                      />
+                <Button x:ConnectionId='7' Content="Cancel" HorizontalAlignment="Right" Width="200"                          />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="QuestionDialog" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#B21B1B1B">
+            <TextBlock x:Name="QuestionTitle" TextWrapping="Wrap" Text="Text" HorizontalAlignment="Center" FontSize="20" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:ConnectionId='4' Content="Yes" Width="200" HorizontalAlignment="Right"                          />
+                <Button x:ConnectionId='5' Content="No" HorizontalAlignment="Right" Width="200"                         />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="LoginDialog" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#B21B1B1B">
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock TextWrapping="Wrap" Text="User Name" HorizontalAlignment="Center" FontSize="40" Width="200" />
+                <TextBox x:Name="LoginUserName" Height="72" TextWrapping="Wrap" Width="300"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock TextWrapping="Wrap" Text="Password" HorizontalAlignment="Center" FontSize="40" Width="200" />
+                <TextBox x:Name="LoginPassowrd" Height="72" TextWrapping="Wrap" Width="300"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:ConnectionId='2' Content="OK" Width="200" HorizontalAlignment="Right"                      />
+                <Button x:ConnectionId='3' Content="Cancel" HorizontalAlignment="Right" Width="200"                          />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="MessageDialog" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="#B21B1B1B">
+            <TextBlock x:Name="MessageTitle" TextWrapping="Wrap" Text="Text" HorizontalAlignment="Center" FontSize="20" />
+            <ScrollViewer>
+                <TextBlock x:Name="MessageBody" TextWrapping="Wrap" Text="Text" HorizontalAlignment="Center" FontSize="20" />
+            </ScrollViewer>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:ConnectionId='1' Content="OK" Width="200" HorizontalAlignment="Right"                        />
+            </StackPanel>
+        </StackPanel>
+
+    </SwapChainBackgroundPanel>
+        
+</Page>
+

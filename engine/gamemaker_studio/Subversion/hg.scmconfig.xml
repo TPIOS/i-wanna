@@ -1,0 +1,176 @@
+<SCM_Config>
+  <SCM_Commands>
+    <pre-add></pre-add>
+    <add>add</add>
+    <post-add></post-add>
+    <pre-blame></pre-blame>
+    <blame>blame</blame>
+    <post-blame></post-blame>
+    <pre-changelog></pre-changelog>
+    <changelog>log</changelog>
+    <post-changelog></post-changelog>
+    <pre-checkout></pre-checkout>
+    <checkout>clone</checkout>
+    <post-checkout></post-checkout>
+    <pre-clean></pre-clean>
+    <clean></clean>
+    <post-clean></post-clean>
+    <pre-commit></pre-commit>
+    <commit>commit</commit>
+    <post-commit></post-commit>
+    <pre-delete></pre-delete>
+    <delete>rm</delete>
+    <post-delete></post-delete>
+    <pre-info></pre-info>
+    <info></info>
+    <post-info></post-info>
+    <pre-import></pre-import>
+    <import>init</import>
+    <post-import></post-import>
+    <pre-lock></pre-lock>
+    <lock></lock>
+    <post-lock></post-lock>
+    <pre-rename></pre-rename>
+    <rename>mv</rename>
+    <post-rename></post-rename>
+    <pre-resolve></pre-resolve>
+    <resolve>resolve</resolve>
+    <post-resolve>resolve</post-resolve>
+    <pre-resolved></pre-resolved>
+    <resolved>resolve</resolved>
+    <post-resolved></post-resolved>
+    <pre-revert></pre-revert>
+    <revert>revert</revert>
+    <post-revert></post-revert>
+    <pre-showlog></pre-showlog>
+    <showlog>log</showlog>
+    <post-showlog></post-showlog>
+    <pre-status></pre-status>
+    <status>status</status>
+    <post-status></post-status>
+    <pre-unlock></pre-unlock>
+    <unlock></unlock>
+    <post-unlock></post-unlock>
+    <pre-update></pre-update>
+    <update>pull</update>
+    <post-update></post-update>
+    <pre-revision-revert></pre-revision-revert>
+    <revision-revert>revert</revision-revert>
+    <post-revision-revert></post-revision-revert>
+  </SCM_Commands>
+  <SCM_Command_Options>
+    <pre-add></pre-add>
+    <add>$FILE</add>
+    <post-add></post-add>
+    <pre-blame></pre-blame>
+    <blame>$FILE</blame>
+    <post-blame></post-blame>
+    <pre-changelog></pre-changelog>
+    <changelog>--rev $REVISION --template "commit:{rev} | {author} | {date|isodate} | \n{desc}\nChanged paths:\n{file_adds % 'A\t{file}\n'}{file_dels % 'D\t{file}\n'}{file_mods % 'M\t{file}\n'}"</changelog>
+    <post-changelog></post-changelog>
+    <pre-checkout></pre-checkout>
+    <checkout>$SERVERURL $PATH</checkout>
+    <post-checkout></post-checkout>
+    <pre-clean></pre-clean>
+    <clean></clean>
+    <post-clean></post-clean>
+    <pre-commit></pre-commit>
+    <commit>$FILE -m $MESSAGE -u $USERNAME</commit>
+    <post-commit></post-commit>
+    <pre-delete></pre-delete>
+    <delete>$FILE -f</delete>
+    <post-delete></post-delete>
+    <pre-info></pre-info>
+    <info></info>
+    <post-info></post-info>
+    <pre-import></pre-import>
+    <import>.</import>
+    <post-import></post-import>
+    <pre-lock></pre-lock>
+    <lock></lock>
+    <post-lock></post-lock>
+    <pre-rename></pre-rename>
+    <rename>$FILE $RENAMED</rename>
+    <post-rename></post-rename>
+    <pre-resolve></pre-resolve>
+    <resolve>$FILE</resolve>
+    <resolve-mine>$FILE -t internal:local</resolve-mine>
+    <resolve-theirs>$FILE -t internal:other</resolve-theirs>
+    <post-resolve>$FILE -m</post-resolve>
+    <pre-resolved></pre-resolved>
+    <resolved>$FILE -m</resolved>
+    <post-resolved></post-resolved>
+    <pre-revert></pre-revert>
+    <revert>$FILE</revert>
+    <post-revert></post-revert>
+    <pre-showlog></pre-showlog>
+    <showlog>--template "commit:{rev} | {author} | {date|isodate} | {desc}\n"</showlog>
+    <post-showlog></post-showlog>
+    <pre-status></pre-status>
+    <status>$FILE</status>
+    <post-status></post-status>
+    <pre-unlock></pre-unlock>
+    <unlock></unlock>
+    <post-unlock></post-unlock>
+    <pre-update></pre-update>
+    <update>$SERVERURL</update>
+    <post-update></post-update>
+    <pre-revision-revert></pre-revision-revert>
+    <revision-revert>-r $REVISION $FILE</revision-revert>
+    <post-revision-revert></post-revision-revert>
+    <status-all>$FILE</status-all>
+  </SCM_Command_Options>
+  <SCM_External_Tools>
+    <mergetool>hg</mergetool>
+  </SCM_External_Tools>
+  <SCM_External_Tools_Options>
+    <mergetool>merge $MERGED</mergetool>
+  </SCM_External_Tools_Options>
+  <SCM_StatusLog_Headers>
+    <status>Status</status>
+    <filepath>FilePath</filepath>
+  </SCM_StatusLog_Headers>
+  <SCM_StatusLog_Format>
+    <status> ,M,A,R,U,I,C,?,!</status>
+    <filepath>$projectpath</filepath>
+  </SCM_StatusLog_Format>
+  <SCM_StatusLog_Codes>
+    <Unmodified></Unmodified>
+    <Modified>M</Modified>
+    <Added>A</Added>
+    <Deleted>R</Deleted>
+    <Replaced>R</Replaced>
+    <Conflicted>U</Conflicted>
+    <Updated>M</Updated>
+    <External></External>
+    <Ignored>I</Ignored>
+    <Unversioned>?</Unversioned>
+    <Missing>!</Missing>
+    <Wrong-Type></Wrong-Type>
+    <Copied></Copied>
+    <Clean>C</Clean>
+  </SCM_StatusLog_Codes>
+  <SCM_Common_Functions>
+    <CommitAll>Commit All</CommitAll>
+    <Refresh>Refresh</Refresh>
+    <RefreshAll>Refresh All</RefreshAll>
+    <Revert>Revert</Revert>
+    <RevertAll>Revert All</RevertAll>
+    <UpdateAll>Update All</UpdateAll>
+    <AddAll>Add All</AddAll>
+  </SCM_Common_Functions>
+  <SCM_Additional_Functions>
+    <blame>Blame</blame>
+    <push>Push</push>
+    <pull>Pull</pull>
+    <phase>Switch to Public</phase>
+    <phase>Switch to Private</phase>
+  </SCM_Additional_Functions>
+  <SCM_Additional_Function_Options>
+    <blame>$FILE</blame>
+    <push>$SERVERURL --new-branch</push>
+    <pull>$SERVERURL</pull>
+    <phase>-fp tip</phase>
+    <phase>-fs tip</phase>
+  </SCM_Additional_Function_Options>
+</SCM_Config>

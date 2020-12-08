@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<psproject fmt="gp4" version="0990">
+  <volume>
+    <volume_type>pkg_ps4_app</volume_type>
+    <volume_id></volume_id>
+    <volume_ts>2014-01-29 14:45:45</volume_ts>
+    <package content_id="IV0002-NPXS29122_00-APP0990000000022" passcode="GvE6xCpZxd96scOUGuLPbuLp8O800B0s" storage_type="bd25" app_type="full"/>
+    <chunk_info chunk_count="1" scenario_count="1">
+      <chunks supported_languages="">
+        <chunk id="0" layer_no="0" label="Chunk #0"/>
+      </chunks>
+      <scenarios default_id="0">
+        <scenario id="0" type="sp" initial_chunk_count="1" label="Scenario #0">0</scenario>
+      </scenarios>
+    </chunk_info>
+  </volume>
+  <files img_no="0">
+    <file targ_path="games/game.win" orig_path="app\games\game.win"/>
+    <file targ_path="sce_sys/icon0.png" orig_path="app\sce_sys\icon0.png"/>
+    <file targ_path="sce_sys/nptitle.dat" orig_path="app\sce_sys\nptitle.dat"/>
+    <file targ_path="sce_sys/param.sfo" orig_path="app\sce_sys\param.sfo"/>
+    <file targ_path="sce_sys/pic1.png" orig_path="app\sce_sys\pic1.png"/>
+    <file targ_path="ps4/save_data_icon.png" orig_path="app\ps4\save_data_icon.png"/>
+    <file targ_path="sce_module/libc.prx" orig_path="app\sce_module\libc.prx"/>
+    <file targ_path="sce_module/libSceFios2.prx" orig_path="app\sce_module\libSceFios2.prx"/>
+    <file targ_path="eboot.bin" orig_path="app\eboot.bin"/>
+  </files>
+  <rootdir>
+    <dir targ_name="games"/>
+    <dir targ_name="sce_module"/>
+    <dir targ_name="sce_sys"/>
+    <dir targ_name="ps4"/>
+  </rootdir>
+</psproject>

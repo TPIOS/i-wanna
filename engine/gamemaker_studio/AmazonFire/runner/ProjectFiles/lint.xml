@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <lint>
+        <!-- list of issues to configure -->
+		<issue id="Override" severity="ignore"/> <!-- Using pre-release sdks confuses lint as to the target sdk being used & makes it throw spurious errors -->
+</lint>
+
+

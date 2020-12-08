@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/2010/manifest"
+         xmlns:mx="http://schemas.microsoft.com/appx/2013/xbox/manifest"
+         IgnorableNamespaces="mx">
+  
+  <Identity Name="${YYGuid}"
+            Publisher="${YYPublisherCN}"
+            Version="${YYVersionNum}" />
+  
+  <Properties>
+    <DisplayName>${YYDisplayName}</DisplayName>
+    <PublisherDisplayName>${YYPublisherDisplayName}</PublisherDisplayName>
+    <Logo>StoreLogo.png</Logo>
+    <Description>${YYApplicationDescription}</Description>
+  </Properties>
+  
+  <Prerequisites>
+    <OSMinVersion>6.2</OSMinVersion>
+    <OSMaxVersionTested>6.2</OSMaxVersionTested>
+  </Prerequisites>
+  
+  <Resources>
+    <Resource Language="en-us"/>
+		${YYXboxLanguages}
+  </Resources>
+  
+  <Applications>
+    <Application Id="App" 
+        Executable="$targetnametoken$.exe" 
+        EntryPoint="XboxOneRunner.App">
+				${YYXboxRatings}
+        <VisualElements 
+            DisplayName="${YYDisplayName}"
+            Logo="Logo.png"
+            SmallLogo="SmallLogo.png"
+            Description="${YYApplicationDescription}"
+            ForegroundText="${YYForegroundText}"
+            BackgroundColor="${YYBackgroundColour}">
+						<DefaultTile ShowName="allLogos" WideLogo="WideLogo.png" />
+            <SplashScreen BackgroundColor="${YYSplashBackgroundColour}" Image="SplashScreen.png" />
+            <mx:ViewStates>
+              <mx:ViewState Name="filled" />
+            </mx:ViewStates>
+        </VisualElements>
+      <Extensions>        
+        ${YYXboxLive}
+        ${YYXboxNetworking}
+
+        <mx:Extension Category="xbox.system.resources"> 
+          <mx:XboxSystemResources> 
+            <mx:TitleMemory ConsoleType="Xbox_One_X" Size="8"/> 
+          </mx:XboxSystemResources> 
+        </mx:Extension>
+      </Extensions>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClientServer" />
+		${YYXboxCapabilities}
+  </Capabilities>
+</Package>
+
+
+
+
+
+
+
+
+
+
+
+

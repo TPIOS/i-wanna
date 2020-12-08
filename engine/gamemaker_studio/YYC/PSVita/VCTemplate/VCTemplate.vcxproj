@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|PSVita">
+      <Configuration>Debug</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|PSVita">
+      <Configuration>Release</Configuration>
+      <Platform>PSVita</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    ${YYCPPFiles}
+  </ItemGroup>
+  <ItemGroup>
+    ${YYHFiles}
+  </ItemGroup>
+  <ItemGroup>
+    ${YYCGFiles}
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and '$(VisualStudioVersion)' == ''">$(VCTargetsPath11)</VCTargetsPath>
+    <ProjectGuid>${YYProjectGUID}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(DebuggerFlavor)'=='PSVitaDebugger'" Label="OverrideDebuggerDefaults">
+    <!--LocalDebuggerCommand>$(TargetPath)</LocalDebuggerCommand-->
+    <!--LocalDebuggerReboot>false</LocalDebuggerReboot-->
+    <!--LocalDebuggerCommandArguments></LocalDebuggerCommandArguments-->
+    <!--LocalDebuggerTarget></LocalDebuggerTarget-->
+    <!--LocalDebuggerWorkingDirectory>$(ProjectDir)</LocalDebuggerWorkingDirectory-->
+    <!--LocalMappingFile></LocalMappingFile-->
+    <!--LocalRunCommandLine></LocalRunCommandLine-->
+  </PropertyGroup>
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|PSVita'">
+    <ClCompile>
+      <PreprocessorDefinitions>NDEBUG;YYPSVITA;YYLLVM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <OptimizationLevel>Level3</OptimizationLevel>
+      <FastMath>true</FastMath>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>${YYLLVMIncludeDir}</AdditionalIncludeDirectories>
+      <AdditionalOptions>--diag_suppress=1421,1772,112 %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProcessorNumber>$(NUMBER_OF_PROCESSORS)</ProcessorNumber>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>-lSceDbgFont;-lSceGxm_stub;-lSceCtrl_stub;-lSceDisplay_stub;-lSceDbg_stub;-lSceNet_stub;-lSceRazorCapture_stub_weak;-lSceSysmodule_stub;-lSceTouch_stub;-lSceMotion_stub;-lSceSsl_stub_weak;-lSceHttp_stub_weak;-lSceNetCtl_stub;-lSceAppMgr_stub;-lSceRtc_stub;-lSceCommonDialog_stub;-lSceAppUtil_stub;-lSceAudio_stub;-lSceAudioIn_stub;-lSceNpManager_stub_weak;-lSceNpTrophy_stub_weak;-lSceNpBasic_stub_weak;-lSceNpScore_stub_weak;-lSceNpMatching2_stub_weak;-lSceNpUtility_stub_weak;-lSceNpToolkit;-lSceNpToolkitUtils;-lSceJson_stub_weak;-lSceNpWebApi_stub_weak;-lSceNpWebApiCommonDialog_stub_weak;-lYoYo</AdditionalDependencies>
+      <DataStripping>StripFuncsAndData</DataStripping>
+      <AdditionalLibraryDirectories>${YYLLVMLibDir};%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|PSVita'">
+    <ClCompile>
+      <PreprocessorDefinitions>_DEBUG;YYPSVITA;YYLLVM;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>${YYLLVMIncludeDir}</AdditionalIncludeDirectories>
+      <AdditionalOptions>--diag_suppress=1421,1772,112 %(AdditionalOptions)</AdditionalOptions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ProcessorNumber>$(NUMBER_OF_PROCESSORS)</ProcessorNumber>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>-lSceDbgFont;-lSceGxm_stub;-lSceCtrl_stub;-lSceDisplay_stub;-lSceDbg_stub;-lSceNet_stub;-lSceRazorCapture_stub_weak;-lSceSysmodule_stub;-lSceTouch_stub;-lSceMotion_stub;-lSceSsl_stub_weak;-lSceHttp_stub_weak;-lSceNetCtl_stub;-lSceAppMgr_stub;-lSceRtc_stub;-lSceCommonDialog_stub;-lSceAppUtil_stub;-lSceAudio_stub;-lSceAudioIn_stub;-lSceNpManager_stub_weak;-lSceNpTrophy_stub_weak;-lSceNpBasic_stub_weak;-lSceNpScore_stub_weak;-lSceNpMatching2_stub_weak;-lSceNpUtility_stub_weak;-lSceNpToolkit;-lSceNpToolkitUtils;-lSceJson_stub_weak;-lSceNpWebApi_stub_weak;-lSceNpWebApiCommonDialog_stub_weak;-lYoYo</AdditionalDependencies>
+      <AdditionalLibraryDirectories>${YYLLVMLibDir};%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Condition="'$(ConfigurationType)' == 'Makefile' and Exists('$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets')" Project="$(VCTargetsPath)\Platforms\$(Platform)\SCE.Makefile.$(Platform).targets" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

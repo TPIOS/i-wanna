@@ -1,0 +1,385 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define IDC_STATIC -1
+#include "winresrc.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_FORMVIEW DIALOGEX 0, 0, 185, 93
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x0
+BEGIN
+    LTEXT           "TODO: layout formview",IDC_STATIC,55,42,74,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_FORMVIEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 178
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 86
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.K.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_RUNNER_FORM DIALOGEX 0, 0, 320, 201
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_CONTROLPARENT | WS_EX_APPWINDOW
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+END
+
+IDD_RUNNER_LOAD DIALOGEX 0, 0, 248, 69
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_LOADIMAGE,"Static",SS_BLACKFRAME,0,0,247,68
+END
+
+IDD_INPUTQUERY DIALOGEX 0, 0, 319, 74
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION
+EXSTYLE WS_EX_TOPMOST | WS_EX_COMPOSITED
+CAPTION "GameMaker"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,205,53,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,262,53,50,14
+    EDITTEXT        IDC_EDITBOX,17,27,282,14,ES_AUTOHSCROLL
+    LTEXT           "Prompt",IDC_PROMPT,17,16,248,8,0,WS_EX_TRANSPARENT
+END
+
+IDD_ERROR_CODE DIALOGEX 0, 0, 399, 307
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOPMOST
+CAPTION "Code Error"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Copy",IDC_COPY,291,286,50,14
+    PUSHBUTTON      "Clear",IDC_CLEAR,342,286,50,14
+    DEFPUSHBUTTON   "Abort",IDC_ABORT,7,286,50,14
+    DEFPUSHBUTTON   "Ignore",IDC_IGNORE,65,286,50,14
+    EDITTEXT        IDC_ERROR_TEXT,7,7,385,273,ES_MULTILINE | ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY | WS_VSCROLL | WS_HSCROLL
+END
+
+IDD_HELP DIALOGEX 0, 0, 471, 325
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,355,304,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,414,304,50,14
+    EDITTEXT        IDC_EDIT1,7,7,457,289,ES_MULTILINE | ES_AUTOHSCROLL | WS_VSCROLL
+END
+
+IDD_QUESTION DIALOGEX 0, 0, 319, 74
+STYLE DS_SYSMODAL | DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_CAPTION
+EXSTYLE WS_EX_TOPMOST | WS_EX_COMPOSITED
+CAPTION "GameMaker"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Yes",QUESTION_IDOK,60,53,50,14
+    PUSHBUTTON      "No",QUESTION_IDCANCEL,211,53,50,14
+    CTEXT           "Prompt",QUESTION_IDC_PROMPT,17,16,286,30,0,WS_EX_TRANSPARENT
+END
+
+IDD_LOGIN_ASYNC DIALOGEX 0, 0, 197, 82
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST
+CAPTION "Login"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,61,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,140,61,50,14
+    EDITTEXT        IDC_LOGIN_USERNAME,55,20,124,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_LOGIN_PASSWORD,55,38,123,14,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "Username",QUESTION_IDC_PROMPT,14,20,38,12,0,WS_EX_TRANSPARENT
+    LTEXT           "Password",QUESTION_IDC_PROMPT2,15,39,38,12,0,WS_EX_TRANSPARENT
+END
+
+IDD_MESSAGE_ASYNC DIALOGEX 0, 0, 316, 92
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION
+EXSTYLE WS_EX_TOPMOST
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,259,71,50,14
+    LTEXT           "Static",IDC_MESSAGE_STATIC,17,14,279,51
+END
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_RUNNER_FORM, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 200
+    END
+
+    "IDD_DEBUG_FORM", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 380
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 336
+    END
+
+    "IDD_INPUTQUERY", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    "IDD_ERROR_CODE", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 392
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 300
+    END
+
+    "IDD_HISCORE", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 244
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 283
+    END
+
+    IDD_HELP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 464
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 318
+    END
+
+    "IDD_QUESTION", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 312
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    "IDD_LOGIN_ASYNC", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 190
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    "IDD_DEBUG_INFO_GLOBALS", DIALOG
+    BEGIN
+        RIGHTMARGIN, 333
+        BOTTOMMARGIN, 125
+    END
+
+    "IDD_DEBUG_INFO_INSTANCES", DIALOG
+    BEGIN
+        RIGHTMARGIN, 336
+    END
+
+    "IDD_DEBUG_INFO_MESSAGES", DIALOG
+    BEGIN
+        RIGHTMARGIN, 330
+    END
+
+    "IDD_DEBUG_INFO_LOCALS", DIALOG
+    BEGIN
+        BOTTOMMARGIN, 151
+    END
+
+    "IDD_MESSAGE_ASYNC", DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 85
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)\r\n"
+    "LANGUAGE 9, 2\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\Runner.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "Game.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 99,99,99,99
+ PRODUCTVERSION 99,99,99,99
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x9L
+#else
+ FILEFLAGS 0x8L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080904b0"
+        BEGIN
+            VALUE "CompanyName", "YoYo Games Ltd.                                                 "
+            VALUE "FileDescription", "GameMaker:Studio Runner (c) YoYo Games Ltd. 2015                "
+            VALUE "FileVersion", "99.99.99.99"
+            VALUE "InternalName", "GameMaker:Studio Windows C++ Runner"
+            VALUE "LegalCopyright", "(c)Copyright 2015 YoYo Games Ltd.                               "
+            VALUE "PrivateBuild", "99.99.99.99"
+            VALUE "ProductName", "GameMaker:Studio                                                "
+            VALUE "ProductVersion", "99.99.99.99"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x809, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIF
+//
+
+IDR_GIF1                GIF                     "res\\particles\\prtcl0.gif"
+IDR_GIF2                GIF                     "res\\particles\\prtcl1.gif"
+IDR_GIF3                GIF                     "res\\particles\\prtcl2.gif"
+IDR_GIF4                GIF                     "res\\particles\\prtcl3.gif"
+IDR_GIF5                GIF                     "res\\particles\\prtcl4.gif"
+IDR_GIF6                GIF                     "res\\particles\\prtcl5.gif"
+IDR_GIF7                GIF                     "res\\particles\\prtcl6.gif"
+IDR_GIF8                GIF                     "res\\particles\\prtcl7.gif"
+IDR_GIF9                GIF                     "res\\particles\\prtcl8.gif"
+IDR_GIF10               GIF                     "res\\particles\\prtcl9.gif"
+IDR_GIF11               GIF                     "res\\particles\\prtcl10.gif"
+IDR_GIF12               GIF                     "res\\particles\\prtcl11.gif"
+IDR_GIF13               GIF                     "res\\particles\\prtcl12.gif"
+IDR_GIF14               GIF                     "res\\particles\\prtcl13.gif"
+IDR_GIF15               GIF                     "res\\particles\\prtcl14.gif"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDP_SOCKETS_INIT_FAILED "Windows sockets initialization failed."
+    IDP_RUN_DATA            "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+END
+
+#endif    // English (U.K.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+

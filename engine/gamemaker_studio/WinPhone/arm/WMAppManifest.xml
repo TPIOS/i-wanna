@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2012/deployment" AppPlatformVersion="8.0">
+  <DefaultLanguage xmlns="" code="en-US" />
+  <App xmlns="" ProductID="${YYProjectGuid}" Title="${YYDisplayName}" RuntimeType="Silverlight" Version="${YYVersionNum}" Genre="${YYAppGenre}" Author="${YYAuthorName}" Description="${YYApplicationDescription}" Publisher="${YYPublisherDisplayName}" PublisherID="${YYPublisherGuid}">
+    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    ${YYCapabilities}
+    <Tasks>
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="${YYTileTitle}Token" TaskName="_default">
+        ${YYTileXML}
+      </PrimaryToken>
+    </Tokens>
+    <ActivatableClasses>
+      <InProcessServer>
+        <Path>WinPhoneRunnerAppComponent.dll</Path>
+        <ActivatableClass ActivatableClassId="WinPhoneRunnerAppComponent.Direct3DBackground" ThreadingModel="both" />
+        <ActivatableClass ActivatableClassId="WinPhoneRunnerAppComponent.AudioInterface" ThreadingModel="both" />
+      </InProcessServer>
+    </ActivatableClasses>
+    <ScreenResolutions>
+      ${YYResolutionSupported}
+      
+      
+    </ScreenResolutions>
+  </App>
+</Deployment>
+<!-- WPSDK Version 8.0.9900 -->
+
+
+
+
+
+
+
+
+
+
+
+

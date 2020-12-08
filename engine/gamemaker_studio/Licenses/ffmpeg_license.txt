@@ -1,0 +1,7 @@
+GameMaker currently uses ffmpeg.exe "as is". You may replace this with your own build/version if you wish.
+
+The GNU General Public License (GPL) version 3 for ffmpeg can be found here: https://raw.githubusercontent.com/FFmpeg/FFmpeg/master/COPYING.GPLv3
+
+Legal details for ffmpeg can be found here: http://ffmpeg.org/legal.html
+
+ 

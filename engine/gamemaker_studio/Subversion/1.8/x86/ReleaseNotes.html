@@ -1,0 +1,2623 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+   "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Apache Subversion 1.8 Release Notes</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<style type="text/css">
+  @import url("/style/site.css");
+</style>
+</head>
+
+<body>
+<!--#include virtual="/site-banner.html" -->
+<!--#include virtual="/site-nav.html" -->
+<div id="site-content">
+<!--#include virtual="/site-notice.html" -->
+<!-- **************** BEGIN CONTENT ***************** -->
+
+<h1 style="text-align: center">Apache Subversion 1.8 Release Notes</h1>
+
+<div class="h2" id="news">
+<h2>What's New in Apache Subversion 1.8
+  <a class="sectionlink" href="#news"
+    title="Link to this section">&para;</a>
+</h2>
+
+<ul>
+  <li><a href="#moves"
+      >Working copy records moves as first-class operation</a></li>
+  <li><a href="#auto-reintegrate"
+      >Automatic reintegration merge</a></li>
+  <li><a href="#iprops"
+      >Inherited properties</a></li>
+  <li><a href="#repos-dictated-config"
+      >Repository dictated configuration</a></li>
+  <li><a href="#neon-deleted"
+      >HTTP client support based on neon has been removed</a></li>
+  <li><a href="#bdb-deprecated"
+      >The Berkeley DB-based repository back-end has been deprecated</a></li>
+  <li><a href="#gpg-agent"
+      >In-memory password caching via GnuPG Agent (<em>Unix client</em>)</a></li>
+  <li><a href="#fsfs-enhancements"
+      >FSFS size and performance enhancements</a></li>
+  <li><a href="#in-repo-authz"
+      >Storage of authz files in the repository</a></li>
+  <li><a href="#new-tools"
+      >New tools for administrators and infrastructure</a></li>
+  <li><a href="#enhancements"
+      >Many enhancements and bug fixes</a></li>
+  <li><a href="#issues"
+      >Known issues in the release</a></li>
+</ul>
+
+<p>Apache Subversion 1.8 is a superset of all previous Subversion
+releases, and is as of the time of its release considered the current
+"best" release.  Any feature or bugfix in 1.0.x through 1.7.x is also
+in 1.8, but 1.8 contains features and bugfixes not present in any
+earlier release.  The new features will eventually be documented in a
+1.8 version of the free Subversion book
+(<a href="http://svnbook.red-bean.com" >svnbook.red-bean.com</a>).</p>
+
+<p>This page describes only major changes.  For a complete list of
+changes, see the 1.8 section of the <a
+href="http://svn.apache.org/repos/asf/subversion/trunk/CHANGES" >CHANGES</a>
+file.</p>
+
+</div>  <!-- news -->
+
+<div class="h2" id="compatibility">
+<h2>Compatibility Concerns
+  <a class="sectionlink" href="#compatibility"
+    title="Link to this section">&para;</a>
+</h2>
+
+<p>Older clients and servers interoperate transparently with 1.8
+servers and clients.  However, some of the new 1.8 features may not be
+available unless both client and server are the latest version.  There are
+also cases where a new feature will work but will run less efficiently if
+the client is new and the server old.</p>
+
+<p>There is <strong>no need</strong> to <a href="http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.migrate.svnadmin"
+>dump and reload</a> your repositories. 
+Subversion 1.8 servers can read and write to repositories created by
+earlier versions.  To upgrade an existing server installation, just install the
+newest libraries and binaries on top of the older ones.</p>
+
+<p>Subversion 1.8 maintains API/ABI compatibility with earlier
+releases, by only adding new functions, never removing old ones.  A
+program written to any previous 1.x API can both compile
+and run using 1.8 libraries.  However, a program written for 1.8
+cannot necessarily compile or run against older libraries.</p>
+
+<p>There may be limited cases where the behavior of old APIs has been
+slightly modified from previous releases.  These are cases where edge cases
+of the functionality has been deemed buggy, and therefore improved or removed.
+Please consult the
+<a href="http://svn.apache.org/repos/asf/subversion/trunk/notes/api-errata/1.8/"
+>API errata</a> for more detailed information on what these APIs are
+and what impact these changes may have.</p>
+
+<div class="h3" id="new-feature-compatibility-table">
+<h3>New Feature Compatibility Table
+  <a class="sectionlink" href="#new-feature-compatibility-table"
+    title="Link to this section">&para;</a>
+</h3>
+<table border="1">
+  <tr>
+    <th>New Feature</th>
+    <th>Minimum Client<sup>1</sup></th>
+    <th>Minimum Server</th>
+    <th>Minimum Repository</th>
+    <th>Notes</th></tr>
+  <tr>
+    <td><a href="#moves">working copy records moves</a></td>
+    <td>1.8</td>
+    <td>any</td>
+    <td>any</td>
+    <td></td></tr>
+  <tr>
+    <td><a href="#auto-reintegrate">Automatic reintegration merge</a></td>
+    <td>1.8</td>
+    <td>1.5</td>
+    <td>1.5</td>
+    <td></td></tr>
+  <tr>
+    <td><a href="#neon-deleted">neon support removed</a></td>
+    <td>1.8</td>
+    <td>any</td>
+    <td>any</td>
+    <td><a href="#neon-deleted">Server-side configuration changes</a>
+      might be required for optimal performance with 1.8 clients which
+      access the repository via HTTP.</td></tr>
+  <tr>
+    <td><a href="#iprops">Inheritable properties</a></td>
+    <td>1.8</td>
+    <td>any</td>
+    <td>any</td>
+    <td>A 1.8 server isn't required but will deliver superior performance
+      when asked for inherited properties.</td></tr>
+  <tr>
+    <td><a href="#repos-dictated-config">Repos dictated config props</a></td>
+    <td>1.8</td>
+    <td>any</td>
+    <td>any</td>
+    <td></td></tr>
+  <tr>
+    <td><a href="#gpg-agent">Password caching with gpg-agent</a></td>
+    <td>1.8</td>
+    <td>any</td>
+    <td>any</td>
+    <td></td></tr>
+  <tr>
+    <td><a href="#fsfs-enhancements">FSFS enhancements</a></td>
+    <td>any</td>
+    <td>1.8</td>
+    <td>1.8</td>
+    <td><a href="#fsfs-deltification">Repository size reduction</a>
+        requires <a href="http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.migrate.svnadmin" 
+        >dump/load</a>.</td></tr>
+  <tr>
+    <td><a href="#in-repo-authz">Authz file in repository</a></td>
+    <td>any</td>
+    <td>1.8</td>
+    <td>any</td>
+    <td></td></tr>
+   <tr>
+     <td colspan="5"><sup>1</sup>Reminder: when using the <tt>file://</tt>
+       repository access method, the Subversion program is both the client
+       <em>and</em> the server.</td></tr>
+</table>
+
+</div>  <!-- new-feature-compatibility-table -->
+
+<div class="h3" id="wc-upgrade">
+<h3>Upgrading the Working Copy
+  <a class="sectionlink" href="#wc-upgrade"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Subversion 1.8 introduces changes to the working copy format.
+In previous releases of Subversion (1.6 and earlier), Subversion would
+automatically upgrade the working copy to the new format when a write
+operation was performed. Subversion 1.8, however, requires an upgrade for
+both read and write operations on the working copy, and makes the upgrade
+a manual step.</p>
+
+<p>Before using Subversion 1.8 with existing working copies, users will be
+required to run the <tt>svn upgrade</tt> command to upgrade working copy
+metadata to the new format. This command may take a while, and for some users,
+it may be more practical to simply checkout a new working copy.</p>
+
+<p>Subversion 1.8 can only upgrade working copies created with Subversion 1.6
+and Subversion 1.7.</p>
+
+<p><strong>Note:</strong> Subversion 1.8 cannot upgrade working copies that
+a 1.6 client would have refused to operate upon before an <tt>svn cleanup</tt>
+was run (with a 1.6 client).  In other words, before upgrading to 1.8, a 1.6
+client must be used to run <tt>svn cleanup</tt> on all 1.6 working copies that
+require cleanup.  Likewise, Subversion 1.8 cannot upgrade corrupt 1.6 working
+copies. Unfixable problems can arise from missing or corrupt meta-data inside
+<tt>.svn</tt> directories.  Such damage to the 1.6 working copy is permanent,
+and cannot be fixed even if <tt>svn cleanup</tt> is run prior to the upgrade.</p>
+
+<p>If your working copy does not upgrade cleanly, please check out a new one.</p>
+
+</div>  <!-- wc-upgrade -->
+
+<div class="h3" id="output-changes">
+<h3>Command Line Output Changes
+  <a class="sectionlink" href="#output-changes"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Although we try hard to keep output from the command line programs
+compatible between releases, new information sometimes has to be
+added.  This can break scripts that rely on the exact format of the
+output.  For this reason, we encourage programs which consume the output
+of the commandline client to consider using the <tt>--xml</tt> option,
+or accessing Subversion through the various bindings interfaces.</p>
+
+<!-- Insert items here, of the following form:
+<div class="h4" id="foo">
+<h4>Improved output of <tt>svn foo</tt>
+  <a class="sectionlink" href="#foo"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The output of <tt>svn foo</tt> has been improved.  The following
+example illustrates these changes.</p>
+
+<pre>
+   $ svn foo
+   BAR
+   BAZ
+   BLAH
+   BIN
+   $ 
+</pre>
+
+</div>
+-->
+
+<div class="h4" id="svn-mergeinfo">
+<h4>Improved output of <tt>svn mergeinfo</tt>
+  <a class="sectionlink" href="#svn-mergeinfo"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The default output of <tt>svn mergeinfo</tt> has been changed.  Instead
+of being equivalent to <tt>svn mergeinfo --show-revs=merged</tt>, it now
+shows a diagrammatic summary of some information about merges between the
+two specified branches:</p>
+<pre>
+$ svn mergeinfo ^/subversion/branches/moves-scan-log
+    youngest common ancestor
+    |         last full merge
+    |         |        tip of branch
+    |         |        |         repository path
+
+    1186287            1445648 
+    |                  |       
+       --| |------------         subversion/branches/moves-scan-log
+      /         /              
+     /         /               
+  -------| |------------         subversion/trunk
+              |        |       
+              1241413  1445640 
+$ 
+</pre>
+
+<p>Scripts using <tt>svn mergeinfo</tt> without a <tt>--show-revs=</tt>
+option should be updated to add <tt>--show-revs=merged</tt>.</p>
+
+</div>
+
+<div class="h4" id="svn-proplist-propget">
+<h4>New options for <tt>svn proplist</tt> and <tt>svn propget</tt>
+  <a class="sectionlink" href="#svn-proplist-propget"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The default output for these commands remains the same, but both
+support the new option <tt>--show-inherited-props</tt> which may produce
+output changes from 1.7.x. See <a href="#iprops">inheritable properties</a>
+for more information.</p>
+
+</div>
+
+<div class="h4" id="svnlook-proplist-propget">
+<h4>Improved output and new options for <tt>svnlook proplist</tt> and <tt>
+  svnlook propget</tt>
+  <a class="sectionlink" href="#svnlook-proplist-propget"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The output of <tt>svnlook proplist</tt> and
+<tt>svnlook proplist --verbose</tt> has changed and now mimics the output
+of <tt>svn proplist</tt> and <tt>svn proplist --verbose</tt> respectively.
+<tt>svnlook propget</tt> now supports the <tt>--verbose</tt> option, which
+produces output similar to <tt>svn propget --verbose</tt>.</p>
+
+<p>Both <tt>svnlook proplist</tt> and <tt>svnlook propget</tt> now support the
+new option <tt>--show-inherited-props</tt> which may produce output changes
+from 1.7.x. See <a href="#iprops">inheritable properties</a>
+for more information.</p>
+
+</div>
+
+<div class="h4" id="svn-status-info-moves">
+<h4><tt>svn status</tt> and <tt>svn info</tt> now show local moves
+  <a class="sectionlink" href="#svn-status-info-moves"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p><tt>svn status</tt> now shows moves in its output.
+See the <a href="#moves">section about local moves</a> for more information.</p>
+
+<p><tt>svn status</tt> shows an extra line for each item involved in a move:</p>
+<pre>$ svn move epsilon/zeta zeta-moved
+$ svn status
+D       epsilon/zeta
+        <b>&gt; moved to zeta-moved</b>
+A  +    zeta-moved
+        <b>&gt; moved from epsilon/zeta</b>
+$ 
+</pre>
+
+<p><tt> svn info</tt> shows extra lines for locally moved items, too.
+For example, if the file <tt>beta</tt> was moved to <tt>beta-new</tt>,
+<tt>svn info beta</tt> will show the following (some unrelated output
+has been omitted in this example):</p>
+<pre>
+$ svn info beta      
+Path: beta
+[...]
+Schedule: delete
+<b>Moved To: beta-new</b>
+[...]
+</pre>
+
+</div>
+
+<div class="h4" id="svn-info">
+<h4><tt>svn info</tt> now shows repository-relative URLs
+  <a class="sectionlink" href="#svn-info"
+    title="Link to this section">&para;</a>
+</h4>
+
+<tt>svn info</tt> now includes repository-relative URLs of items
+in the working copy in its output.
+The command line client has been
+<a href="http://subversion.apache.org/docs/release-notes/1.6.html#repository-root-relative-urls"
+>accepting this URL notation since Subversion 1.6</a>.
+
+<pre>$ svn info README                                       
+Path: README
+Name: README
+Working Copy Root Path: /tmp/svn-trunk
+URL: https://svn.apache.org/repos/asf/subversion/trunk/README
+<b>Relative URL: ^/subversion/trunk/README</b>
+Repository Root: https://svn.apache.org/repos/asf
+Repository UUID: 13f79535-47bb-0310-9956-ffa450edef68
+Revision: 1467597
+Node Kind: file
+Schedule: normal
+Last Changed Author: danielsh
+Last Changed Rev: 1242804
+Last Changed Date: 2012-02-10 15:58:53 +0100 (Fri, 10 Feb 2012)
+Text Last Updated: 2012-09-20 01:33:22 +0200 (Thu, 20 Sep 2012)
+Checksum: a27c71319a591c4eebe2bb81129413947336a7c6
+</pre>
+
+</div>
+
+</div>  <!-- output-changes -->
+
+<div class="h3" id="neon-deleted">
+<h3>HTTP client support based on neon has been removed
+  <a class="sectionlink" href="#neon-deleted"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>HTTP client support based on <a href="http://webdav.org/neon">neon</a>
+has been removed in favor of HTTP client support based on
+<a href="http://code.google.com/p/serf/">serf</a>.</p>
+
+<p>serf is a high-performance HTTP client library which has formed the basis
+of an alternative HTTP repository access method for many years.
+In an effort to decrease the development burden of maintaining multiple
+HTTP client interfaces (and sets of bugs!) serf is now the only HTTP
+client provider for Subversion.</p>
+
+<div class="notice">
+<p>Note that 
+<a href="http://svn.haxx.se/dev/archive-2011-01/0320.shtml"
+>server-side configuration changes</a> might be required to avoid
+performance regressions for serf clients in some setups.</p>
+<p>The <strong>MaxKeepAliveRequests</strong> option in <tt>httpd.conf</tt>
+needs to be increased from 100 (the default) to <b>at least</b> 1000
+(there is no reason why it could not be 10000).
+This will improve performance by allowing serf clients to use fewer
+TCP connections to the server.
+Clients using neon will also work fine with this configuration.</p>
+</div>
+
+<div class="h4" id="serf-skelta-default">
+<h4>Skelta style updates are now the default
+  <a class="sectionlink" href="#serf-skelta-default"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The svn 1.8 client with serf defaults to skelta mode for update
+operations (checkout, update, merge and export) instead of the bulk update mode
+used by previous versions. Skelta mode was introduced in Subversion 1.6.0 and
+improved in 1.8.0. It uses one HTTP request and response per resource that needs
+to be fetched from the server, whereas bulk update mode fetches all resources in
+one massive reponse.</p>
+
+<p>The main benefit of skelta mode is that it allows a correctly set up Apache
+server or intermediate proxy server to cache <tt>mod_dav_svn</tt>’s responses to
+handle later requests from the cache. This results in improved performance of
+svn client operations and reduced CPU usage on the server side. It also allows
+a more detailed audit of clients accessing resources in a Subversion
+repository.</p>
+
+<p>Skelta mode has some disadvantages:</p>
+<ul>
+<li>Apache server access log files will grow more quickly due to the larger
+number of requests and responses. As of 1.7.3, the httpd error logs may also
+grow more rapidly with serf clients than with neon clients; see
+<a href="http://svn.apache.org/viewvc?rev=1239697&amp;view=rev"
+>r1239697</a>.</li>
+<li>Network traffic can increase drastically when Kerberos or NTLM
+authentication is used, as these add a 2 - 4 KB header per HTTP request and
+response.</li>
+</ul>
+
+<p>This release introduces two options to control if the svn client will use
+skelta or bulk update mode.</p>
+<p>
+<ul>
+<li> For the server administrator: The <tt>SVNAllowBulkUpdates</tt> directive for
+<tt>mod_dav_svn</tt> now accepts <tt>Prefer</tt>. This will advise the svn
+client to always use bulk update mode. All svn client versions with a default
+configuration (see table) will respect this preference.</li>
+
+<li>For the user: Set the new option <tt>http-bulk-updates</tt> in the servers
+runtime configuration file to <em>yes</em> to force the use of bulk updates,
+<em>no</em> to never use bulk updates. The default option <em>auto</em> makes
+svn use skelta mode with a 1.8 server (unless it has <tt>SVNAllowBulkUpdates</tt>
+set to <tt>Prefer</tt>), and bulk updates mode with
+older servers and 1.8 servers which prefer bulk updates.</li>
+</ul>
+</p>
+
+<p>Table explaining the mode used between each combination of svn client and
+server version and relevant configuration directives:</p>
+
+<table border="1">
+  <tr>
+    <th></th>
+    <th colspan="3">1.8 Server<br/>with SVNAllowBulkUpdates:</th>
+    <th colspan="2">1.7 and older Server<br/>with SVNAllowBulkUpdates:</th>
+  </tr>
+  <tr>
+    <th>Subversion Client</th>
+    <th>Off</th>
+    <th>On<sup>*</sup></th>
+    <th>Prefer</th>
+    <th>Off</th>
+    <th>On<sup>*</sup></th>
+  </tr>
+  <tr>
+    <td>1.8, <tt>http-bulk-updates: auto</tt><sup>*</sup></td>
+    <td>Skelta mode</td>
+    <td>Skelta mode</td>
+    <td>Bulk mode</td>
+    <td>Skelta mode</td>
+    <td>Bulk mode</td>
+  </tr>
+  <tr>
+    <td>1.8, <tt>http-bulk-updates: yes</tt></td>
+    <td>Skelta mode</td>
+    <td>Bulk mode</td>
+    <td>Bulk mode</td>
+    <td>Skelta mode</td>
+    <td>Bulk mode</td>
+  </tr>
+  <tr>
+    <td>1.8, <tt>http-bulk-updates: no</tt></td>
+    <td>Skelta mode</td>
+    <td>Skelta mode</td>
+    <td>Skelta mode</td>
+    <td>Skelta mode</td>
+    <td>Skelta mode</td>
+  </tr>
+  <tr>
+    <td>1.7 and older with neon<sup>*</sup></td>
+    <td>Skelta mode</td>
+    <td>Bulk mode</td>
+    <td>Bulk mode</td>
+    <td>Skelta mode</td>
+    <td>Bulk mode</td>
+  </tr>
+  <tr>
+    <td>1.7 and older with serf</td>
+    <td>Skelta mode</td>
+    <td>Skelta mode</td>
+    <td>Skelta mode</td>
+    <td>Skelta mode</td>
+    <td>Skelta mode</td>
+  </tr>
+</table>
+<p><sup>*</sup>Default configuration</p>
+
+</div>  <!-- serf-skelta-default -->
+
+</div>  <!-- neon-deleted -->
+
+<div class="h3" id="bdb-deprecated">
+<h3>The Berkeley DB-based repository back-end has been deprecated
+  <a class="sectionlink" href="#bdb-deprecated"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>The Subversion developers have decided to <em>deprecate</em> the
+repository back-end based on Berkeley DB. We simply do not have the
+necessary resources to continue developing two distinct repository
+back-ends. Instead, we will concentrate our efforts on improving FSFS
+with new features, robustness and performance and architectural
+enhancements.</p>
+
+<div class="h4" id="bdb-deprecated-means">
+<h4>What this means:
+  <a class="sectionlink" href="#bdb-deprecated-means"
+    title="Link to this section">&para;</a>
+</h4>
+<ul>
+<li>New repository features that may appear in future versions of
+Subversion will not be implemented for the BDB back-end,
+nor will we make any effort to improve its performance.</li>
+<li>We will fix bugs and
+security issues that may be found.</li>
+<li>At some point, support for the BDB back-end will be completely
+removed. We will announce such removal well in advance of its
+happening.</li>
+</ul>
+</div>  <!-- bdb-deprecated-means -->
+
+<div class="h4" id="bdb-deprecated-does-not-mean">
+<h4>What this <em>does not</em> mean:
+  <a class="sectionlink" href="#bdb-deprecated-does-not-mean"
+    title="Link to this section">&para;</a>
+</h4>
+<ul>
+<li>Users do not have to immediately migrate their repositories to
+FSFS. The BDB back-end will continue to work, and will receive as
+much test coverage as it has until now.</li>
+</ul>
+</div>  <!-- bdb-deprecated-does-not-mean -->
+
+<p>This being a volunteer project, we are of course always happy
+to accept contributions towards maintaining the Berkeley DB
+back-end.</p>
+
+<div class="h4" id="bdb-deprecated-changes">
+<h4>User-visible changes
+  <a class="sectionlink" href="#bdb-deprecated-changes"
+    title="Link to this section">&para;</a>
+</h4>
+<p>The only visible effect of the deprecation is that the
+<code>svnadmin</code> utility will print a warning when it
+creates a new Berkeley DB-based repository.</p>
+</div>  <!-- bdb-deprecated-changes -->
+
+</div>  <!-- bdb-deprecated -->
+
+<div class="h3" id="compat-misc">
+<h3>Miscellaneous Compatibility Notes
+  <a class="sectionlink" href="#compat-misc"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>There are some additional specific areas where changes made in this
+release might necessitate further adjustment by administrators or
+users.  We'll cover those in this section.</p>
+
+<div class="h4" id="authz-fspath-syntax">
+<h4>FS paths syntax in authz access rules
+  <a class="sectionlink" href="#authz-fspath-syntax"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>Prior to this release, the section headers in Subversion's authz
+access files&mdash;which contain repository names and repository
+filesystem paths&mdash;accepted section headers that would never be
+looked up, because the repository filesystem path (such as
+<tt>/trunk/secretdir</tt>) embedded in the section header is formatted
+differently from how Subversion formats those paths when it looks them
+up in the file.  Subversion&nbsp;1.7 and earlier would silently ignore
+those sections of the authz file; directives in those sections would
+never apply.</p>
+
+<p>That's been fixed in this release: Subversion will now
+error out if a section header contains a repository filesystem path that
+either does not begin with a slash or contains two consecutive slashes.
+The practical fallout, though, is
+that your existing authz files might be depending (perhaps
+unintentionally) on the old behavior and the new behavior could result
+in <em>all</em> access to items in your repositories being unexpectedly
+<!-- it's not possible for access to be granted as a result of this
+change, unless a failure to parse the authz file results in access
+for everyone... which would not be a sane way to configure a server. -->
+denied as a result of upgrading to Subversion
+1.8.  The <a
+href="#svnauthz"
+>svnauthz</a> tool, when linked to Subversion&nbsp;1.8
+libraries, can be used to test an authz file for validity using the validate
+subcommand.  (The tool will error out on a file that the Subversion server will
+error out on.)</p>
+
+</div>  <!-- authz-fspath-syntax -->
+
+<div class="h4" id="repos-listing-authz-support">
+<h4>Repository listing now honors authz configuration
+  <a class="sectionlink" href="#repos-listing-authz-support"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>When Apache is configured with the <code>SVNParentPath</code>
+directive, the "Collection of Repositories" list will now be filtered
+based on read access to the root of each repository.  Previously, all
+repositories were included in the list even if navigating to a
+repository would be forbidden.  The "Collection of Repositories" will
+now be consistent with the directory lists within repositories.</p>
+
+<p>NOTE: Access to "Collection of Repositories" is <em>not</em>
+restricted by mod_authz_svn, but is instead managed by mod_dav_svn
+itself.  In order to require authentication on this location, the
+location should have "Satisfy All" (which is the default value of this
+directive).  See examples in mod_authz_svn's <a
+href="http://svn.apache.org/repos/asf/subversion/trunk/subversion/mod_authz_svn/INSTALL"
+>INSTALL</a> document for additional details.</p>
+
+</div>  <!-- repos-listing-authz-support -->
+
+<div class="h4" id="verify-issue4129">
+<h4>FSFS 'svnadmin verify' finds mergeinfo-count and predecessor-count discrepancies
+  <a class="sectionlink" href="#verify-issue4129"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>Up to 1.7.0, Subversion could create erroneous metadata on nodes in a
+FSFS-backed repository in certain situations involving concurrent commit
+attempts.  (Only <em>metadata</em> was affected; file contents and properties
+was not.)  As of 1.7.1 Subversion 
+<!-- r1303070 -->
+prevents new instances of the corruption, but
+only as of 1.8.0 does 'svnadmin verify' 
+<!-- r1304656 -->
+detect instances of that corruption in the history of a repository.</p>
+
+<p>The fix to these issues is simple: perform a <a
+href=http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.migrate.svnadmin
+>dump/load cycle</a>.  (As usual, svnsync can be used instead of dump/load.)
+The cycle can be done with any version of Subversion, and after the cycle the
+repository should be served exclusively by Subversion 1.7.5 or newer to prevent
+further instances of the bug from entering the repository.</p>
+
+<p>See <a href="../issue4129">this summary of issue #4129</a> for more information
+about these problems.</p>
+
+</div>  <!-- verify-issue4129 -->
+
+<div class="h4" id="client-cert-prompt-suppression">
+<h4>Client prompting for SSL client certificates
+  <a class="sectionlink" href="#client-cert-prompt-suppression"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>Subversion has long supported the use of SSL client certificates
+for authentication against a server which accepts such.  Users
+typically employ the <code>ssl-client-cert-file</code> option in their
+'servers' runtime configuration file to inform the client regarding
+the location of the relevant certificate file.  In interactive
+scenarios, Subversion can also prompt the user for the location of the
+certificate file when that runtime-configured value isn't set or
+otherwise suitable.</p>
+
+<p>Prior to 1.8.0, this prompting was enabled by default.
+Unfortunately, not every server which accepts client certificates
+also <em>requires</em> them.  Some users were being prompted for
+client certificate file locations in scenarios where no certificate
+was required (or perhaps even available).  So in Subversion 1.8.0, the
+Subversion client defaults to <em>not</em> prompting for the location
+of an SSL client certificate file unless the user has set the new
+<code>ssl-client-cert-file-prompt</code> runtime configuration
+option (found in the <code>[auth]</code> section of the 'config' file)
+to "yes".</p>
+
+<p>See <a href="http://subversion.tigris.org/issues/show_bug.cgi?id=2410">issue
+#2410</a> for discussion and details.</p>
+
+</div>  <!-- client-cert-prompt-suppression -->
+
+<div class="h4" id="swig-py-star">
+<h4>Star-imports in the SWIG-Python bindings
+  <a class="sectionlink" href="#swig-py-star"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The swig-py bindings have been changed to make <tt>*</tt>-imports
+of submodules to do the right thing:
+<tt>from svn.client import *</tt> will now import only symbols beginning with
+<tt>svn_</tt> or <tt>SVN_</tt>.  (Most of these symbols will be
+<tt>svn_client_*</tt> symbols, of course.)  Star-imports of <tt>from svn</tt> have
+not changed (they import <a
+href="http://svn.apache.org/repos/asf/subversion/trunk/subversion/bindings/swig/python/svn/core.py"
+>just the bare submodule names</a>: 'fs', 'ra', etc), and
+star imports of <tt>from svn.core</tt> currently imports some select symbols
+(notably 'Pool' and 'SubversionException').</p>
+
+<p>This change is incompatible: code that expected symbols such as 'commit_txn'
+(in 'fs') and 'apr_initialize' to be pulled by a star-import will have to change.</p>
+
+</div>  <!-- swig-py-star --> 
+
+<div class="h4" id="svnserve-config-file">
+<h4>svnserve --config-file behavior with password and authz dbs
+  <a class="sectionlink" href="#svnserve-config-file"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The behavior of the <tt>--config-file</tt> option to svnserve has changed.
+The password db and authz db files will be reloaded on each connection.  In past
+versions these files were cached on startup when <tt>--config-file</tt> was
+used.</p>
+
+<p>The svnserve.conf file directly passed to <tt>--config-file</tt> will still
+be cached.  Provided that the locations you wish to use for the authz and
+password dbs have not changed, you will not need to restart svnserve in order to
+have the changes you make to these files applied. This makes the behavior of
+<tt>--config-file</tt> more consistent with configurations that do not use this
+option.</p>
+
+<p>If you were depending on the configuration changes not being applied until
+you restarted svnserve you will need to adjust accordingly.</p>
+
+</div>  <!-- svnserve-config-file -->
+
+<div class="h4" id="svnauthz">
+<h4>svnauthz-validate renamed to svnauthz
+  <a class="sectionlink" href="#svnauthz"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The svnauthz-validate command has been renamed to svnauthz and now has
+a 'validate' subcommand.  Meaning the equivalent to <tt>svnauthz-validate
+file</tt> in 1.8 is <tt>svnauthz validate file</tt>.  To maintain command
+line compatibility, if the svnauthz command is run with the command name of
+<tt>svnauthz-validate</tt> then it emulates the behavior of the
+<tt>svnauthz-validate</tt> command from 1.7.  <tt>make install-tools</tt>
+installs a symlink <tt>svnauthz-validate</tt> to provide this compatibility
+functionality.</p>
+
+<p>svnauthz also provides new functionality.
+See <a href="#svnauthz_accessof">this section</a> for details.</p>
+
+</div>  <!-- svnauthz -->
+
+</div>  <!-- compat-misc -->
+
+</div>  <!-- compatibility -->
+
+<div class="h2" id="new-features">
+<h2>New Features
+  <a class="sectionlink" href="#new-features"
+    title="Link to this section">&para;</a>
+</h2>
+
+<div class="h3" id="moves">
+<h3>Working copy records moves as first-class operation
+  <a class="sectionlink" href="#moves"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>The effect of the <tt>svn move</tt> command is now different
+from running <tt>svn copy</tt> followed by <tt>svn delete</tt>.
+Moves are represented within the working copy as a copy and a delete which
+are linked to one another.
+These links are shown by <tt>svn status</tt> and <tt>svn info</tt>.</p>
+
+<p>Some Subversion operations will now treat locally moved files and directories
+specially. Behavioural changes include:</p>
+<ul>
+  <li><p><tt>svn move</tt> now refuses to move a
+  <a href="http://svnbook.red-bean.com/nightly/en/svn.basic.in-action.html#svn.basic.in-action.mixedrevs"
+ >mixed-revision working copy</a>.</p></li>
+  <li><p><tt>svn commit</tt> will only commit a moved file or directory
+    if both sides of the move are part of the same commit. This ensures
+    that moves are an atomic operation upon future updates and merges.</p></li>
+  <li><p><tt>svn update</tt>, <tt>svn switch</tt>, and <tt>svn resolve</tt>
+    can now resolve tree conflicts involving locally moved files or
+    directories. By picking the 'mine-conflict' option at the conflict
+    prompt, the update or switch operation can be applied to the new location
+    of the moved file or directory, which resolves the tree conflict and
+    allows the move to be committed. It is also possible to break a move
+    instead of updating it, in which case the move becomes a copy which
+    is no longer linked to a deletion.</p></li>
+</ul>
+
+<p>Limitations:</p>
+<ul>
+  <li><p>Moves are recorded as such only within the working copy. The link
+    between the copy and the delete is established only when a local move
+    operation is performed, and is lost upon commit.  The committed revision
+    will show a copy and a delete, instead of a move.</p></li>
+</ul>
+
+<p>Known issues:</p>
+<ul>
+  <li><p>Tree conflicts involving replacements are currently
+    not detected when updating a moved file or directory (see <a
+    href="http://subversion.tigris.org/issues/show_bug.cgi?id=4318"
+    >issue #4318</a>).</p></li>
+  <li><p>Tree conflicts flagged by <tt>svn merge</tt> cannot be automatically
+    resolved yet. This will be addressed in a future release.</p></li>
+</ul>
+
+</div>  <!-- moves -->
+
+<div class="h3" id="auto-reintegrate">
+<h3>Automatic reintegration merge (--reintegrate option deprecated)
+  <a class="sectionlink" href="#auto-reintegrate"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>During merges which merge all eligible revisions from another
+branch, Subversion 1.8 will automatically decide whether or not
+the merge is <a
+href="http://svnbook.red-bean.com/en/1.7/svn.branchmerge.basicmerging.html#svn.branchemerge.basicmerging.reintegrate"
+>reintegrating a branch</a>.
+Therefore, reintegrating a branch does no longer require the
+<tt>--reintegrate</tt> option for correct operation.</p>
+
+<p>The <tt>--reintegrate</tt> option of <tt>svn merge</tt> is now
+deprecated and its use is discouraged. To reintegrate a branch,
+have a clean working copy of trunk and run the following command
+in its top-level directory:</p>
+
+<pre>$ svn merge ^/branches/my-branch</pre>
+
+<p>This merge will still perform similar sanity checks which
+<tt>svn merge --reintegrate</tt> performed in earlier releases:
+<ul>
+<li>The working copy must not be a <a
+href="http://svnbook.red-bean.com/en/1.7/svn.basic.in-action.html#svn.basic.in-action.mixedrevs"
+>mixed-revision working copy</a>.</li>
+<li>The working copy must not have <a
+href="http://svnbook.red-bean.com/en/1.7/svn.branchmerge.switchwc.html"
+>switched subtrees</a>.</li>
+<li>There must be no gaps in revision ranges merged from the reintegration
+target (e.g. the trunk) to the reintegration source (i.e. the branch to be
+reintegrated).</li>
+</ul></p>
+
+<p>If any of these conditions are detected, the merge is aborted and
+the necessary steps must be taken to fix the problem before the
+branch can be reintegrated.
+In contrast to a <tt>--reintegrate</tt> merge, an automatic reintegration
+merge into a working copy with local modifications is allowed.</p>
+
+<p>Merging to-and-fro between two branches in any order is possible
+using the automatic reintegration merge (the &quot;<a
+href="http://svnbook.red-bean.com/en/1.7/svn.branchmerge.advanced.html#svn.branchmerge.advanced.reintegratetwice"
+>keep-alive dance</a>&quot; is no longer necessary).
+
+For best results, it is recommended to
+always merge all eligible revisions, i.e. not using the
+<tt>-r</tt> or <tt>-c</tt> options of <tt>svn merge</tt>.
+Merging just a subset of eligible revisions increases the
+likelihood of problems during future merges.</p>
+
+<p>Using <tt>--reintegrate</tt> in Subversion 1.8 will force a
+reintegration merge, whether or not that's the right merge to perform
+in the given situation.</p>
+
+</div>  <!-- auto-reintegrate -->
+
+<div class="h3" id="iprops">
+<h3>Inherited Properties
+  <a class="sectionlink" href="#iprops"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Property inheritance provides a mechanism to find the versioned
+properties set on the <em>parents</em> of a given working copy or
+URL path. Conversely it can be viewed as a mechanism by which a
+versioned property set on a path also applies to that path's
+children.</p>
+
+<p>It is important to note that this change <b>does not</b> introduce
+any such thing as an "inheritable" property. Any versioned property,
+explicitly set on a path, can be interpreted as inheritable by that
+path's children.  No changes have been made to the ways in which
+properties are set or what valid property names and values are permitted.
+Nor does this change grant access to parent paths which a user doesn't
+have read access to.  If a user has no read access to a parent path, he
+cannot inherit properties from that parent.</p>
+
+<p>Other than the changes detailed <a href="#repos-dictated-config"
+>below</a>, the only user visible changes resulting from inheritable
+properties are to the <tt>svn proplist</tt>, <tt>svn propget</tt>,
+<tt>svnlook proplist</tt>, and <tt>svnlook propget</tt> subcommands
+when used with the new <tt>--show-inherited-props</tt> option.</p>
+
+<p>This new option finds the explicit properties set on a given path's
+parent(s) lists them prior to the explicit properties on the target path
+itself. For example:</p>
+
+<pre>
+   &gt; svn propget -vR --show-inherited-props tsvn:logwidthmarker ^/subversion/trunk/subversion/po
+   <b>Inherited properties</b> on 'https://svn.apache.org/repos/asf/subversion/trunk/subversion/po',
+   from 'https://svn.apache.org/repos/asf/subversion/trunk':
+     tsvn:logwidthmarker
+       78
+   Properties on 'https://svn.apache.org/repos/asf/subversion/trunk/subversion/po':
+     tsvn:logwidthmarker
+       80
+</pre>
+
+<p>If a working copy is the target, some properties may be inherited
+from the working copy and some may be inherited from repository parent
+paths not present in the working copy.  These are shown as inherited
+from a URL:</p>
+
+<pre>
+   &gt; svn propget -vR --show-inherited-props tsvn:logwidthmarker po-wc\de.po
+   <b>Inherited properties</b> on 'po-wc\de.po',
+   from 'https://svn.apache.org/repos/asf/subversion/trunk':
+     tsvn:logwidthmarker
+       78
+   <b>Inherited properties</b> on 'po-wc\de.po',
+   from 'po-wc':
+     tsvn:logwidthmarker
+       80
+</pre>
+
+<p>The output with the <tt>--xml</tt> option also returns inherited
+properties, wrapping them in <tt>inherited_property</tt> rather than
+<tt>property</tt> tags:</p>
+
+<pre>
+   &gt; svn propget --show-inherited-props --xml tsvn:logwidthmarker ^/subversion/trunk/subversion/po
+   &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+   &lt;properties&gt;
+   &lt;target
+      path="https://svn.apache.org/repos/asf/subversion/trunk"&gt;
+   &lt;<b>inherited_property</b>
+      name="tsvn:logwidthmarker"&gt;78&lt;/inherited_property&gt;
+   &lt;/target&gt;
+   &lt;target
+      path="https://svn.apache.org/repos/asf/subversion/trunk/subversion/po"&gt;
+   &lt;property
+      name="tsvn:logwidthmarker"&gt;80&lt;/property&gt;
+   &lt;/target&gt;
+   &lt;/properties&gt;
+</pre>
+
+<p>The <tt>svnlook proplist</tt> and <tt>svnlook propget</tt> subcommands
+also support the new <tt>--show-inherited-props</tt> option.  The output
+is similar to <tt>svn proplist --show-inherited-props</tt> and
+<tt>svn propget --show-inherited-props</tt> except that the paths are not
+working copy paths or URLs, but absolute repository paths:</p>
+
+<pre>
+   &gt; svnlook propget asf-repos-mirror tsvn:logwidthmarker /subversion/trunk/subversion/po \
+       --show-inherited-props -v
+   <b>Inherited properties</b> on '/subversion/trunk/subversion/po',
+   from '/subversion/trunk':
+     tsvn:logwidthmarker
+       78
+   Properties on '/subversion/trunk/subversion/po':
+     tsvn:logwidthmarker
+       80
+</pre>
+
+<p>Subversion working copies maintain a cache of the properties that the
+root of the working copy inherits from its parent(s) in the repository.
+This cache is updated each time you checkout, update, or switch a working
+copy. This cache allows the working copy to access properties inherited
+from the repository without contacting the repository.</p>
+
+<p>For the full details about inheritable properties see the
+<a href="http://wiki.apache.org/subversion/InheritedProperties"
+>design wiki</a>. Some of this wiki is intended for Subversion developers
+and will be of little interest to most users.  If you fall into the latter
+group you can focus on these particular sections:</p>
+
+<ul>
+  <li>
+    <a href="http://wiki.apache.org/subversion/InheritedProperties#Differentiating_.27Inheritable.27_Vs._.27Normal.27_Properties">
+    Differentiating 'Inheritable' Vs. 'Normal' Properties</a>
+  </li>
+  <li>
+    <a href="http://wiki.apache.org/subversion/InheritedProperties#General_Inheritance_Rules">
+    General Inheritance Rules</a>
+  </li>
+  <li>
+    <a href="http://wiki.apache.org/subversion/InheritedProperties#Repository_Inheritance_Rules">
+    Repository Inheritance Rules</a>
+  </li>
+  <li>
+    <a href="http://wiki.apache.org/subversion/InheritedProperties#Working_Copy_Inheritance_Rules">
+    Working Copy Inheritance Rules</a>
+  </li>
+  <li>
+    <a href="http://wiki.apache.org/subversion/InheritedProperties#Authentication">
+    Authentication</a>
+  </li>
+  <li>
+    <a href="http://wiki.apache.org/subversion/InheritedProperties#Subcommand_Changes">
+    Subcommand Changes</a>
+  </li>
+</ul>
+
+</div>  <!-- iprops -->
+
+<div class="h3" id="repos-dictated-config">
+<h3>Repository Dictated Configuration (<em>For auto-props and ignores</em>)
+  <a class="sectionlink" href="#repos-dictated-config"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Two new Subversion reserved properties, <tt>svn:auto-props</tt>
+and <tt>svn:global-ignores</tt> make use of the new
+<a href="#iprops">inherited properties</a> feature to provide additional
+configuration information that overrides/extends some of the settings
+found in the user's <a href="http://svnbook.red-bean.com/en/1.7/svn-book.html#svn.advanced.confarea.opts.config"
+>runtime configuration</a>. The <tt>svn:auto-props</tt>
+property overrides/extends the <tt>auto-props</tt> configuration setting.
+The <tt>svn:global-ignores</tt> property extends the
+<tt>global-ignores</tt> configuration setting as well as the
+<tt>svn:ignore</tt> property.</p>
+
+<p>The <a href="http://wiki.apache.org/subversion/Inheritable-Ignores-AutoProps#Auto-Props_Format"
+>format</a> of <tt>svn:auto-props</tt> property values
+are the same as for the <tt>auto-props</tt> runtime configuration.
+The <a href="http://wiki.apache.org/subversion/Inheritable-Ignores-AutoProps#Ignores_Format"
+>format</a> of <tt>svn:global-ignores</tt> property values are the
+same as for the <tt>global-ignores</tt> runtime configuration.</p>
+
+<p>Both properties work just like their analogs in the runtime
+configuration with two exceptions:</p>
+
+<ul>
+  <li>The new properties only effect the subtrees rooted at the path
+      on which the property is set. Thus a given path may be affected
+      by multiple <tt>svn:auto-props</tt> or <tt>svn:global-ignores</tt>
+      properties set on different parents of that path.</li>
+  <li>The <tt>svn:auto-props</tt> property is not tied to the
+      <tt>enable-auto-props</tt> runtime configuration option. So even
+      if you have <tt>enable-auto-props=no</tt> set in your configuration
+      or via the <tt>--config-option</tt> option, <tt>svn:auto-props</tt>
+      are still applicable. Note however, that exactly like the runtime
+      configuration and <tt>svn:ignore</tt> property, both the
+      <tt>svn:auto-props</tt> and <tt>svn:global-ignores</tt> properties
+      can be disregarded with the <tt>--no-ignore</tt> and
+      <tt>--no-auto-props</tt> options respectively.</li>
+</ul>
+
+<p>When multiple <tt>svn:global-ignores</tt> properties apply to a
+path, then the different values are appended to any runtime
+<tt>global-ignores</tt> in effect and the value of any <tt>svn:ignore</tt>
+property that applies to the path.</p>
+
+<p>Patterns defined in <tt>svn:auto-props</tt> property
+override any identical patterns in the <tt>auto-props</tt> runtime
+config. When multiple <tt>svn:auto-props</tt> properties
+apply to a file, the pattern from the nearest inheritable property takes
+precedence. See <a href="http://wiki.apache.org/subversion/Inheritable-Ignores-AutoProps#Auto-Props_Hierarchy_and_Precedence"
+>this section of design wiki</a> for a full explanation.</p>
+
+<p>The <a href="http://wiki.apache.org/subversion/Inheritable-Ignores-AutoProps#Auto-Props_Hierarchy_and_Precedence"
+>design wiki</a> for the repository dictated configuration feature was
+originally written for developers, but will prove useful to any repository
+administrator who wants to use the feature.</p>
+
+</div>  <!-- repos-dictated-config -->
+
+<div class="h3" id="gpg-agent">
+<h3>In-memory password caching via GnuPG Agent (<em>Unix client</em>)
+  <a class="sectionlink" href="#gpg-agent"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Subversion 1.8 allows the use of the GnuPG Agent (gpg-agent) daemon
+to temporarily store Subversion passwords in memory.</p>
+
+<p>This feature does <em>not</em> use PGP to encrypt passwords on disk!
+Rather, it caches passwords in memory (in plaintext) instead of saving
+them to disk.</p>
+
+<p>To take advantage of this password cache, you'll need Subversion binaries
+built with gpg-agent support (which is the default on UNIX-like systems),
+the gpg-agent itself, and a suitable pinentry program which the gpg-agent
+will use to ask the user for the password.
+The gpg-agent must be running, and the Subversion client will
+need the <tt>GPG_AGENT_INFO</tt> and <tt>GPG_TTY</tt> environment
+variables set up correctly.
+See <a href="http://www.gnupg.org/documentation/manuals/gnupg/Invoking-GPG_002dAGENT.html">this page</a> for more information about
+running the gpg-agent.</p>
+
+<p>Cached passwords will persist in memory until the agent process
+is terminated, its configured time-to-live threshold is reached, or a
+HUP signal is sent to the daemon using the UNIX <tt>kill(1)</tt> utility.</p>
+
+<p>Communication to the gpg-agent happens over a UNIX socket, which is
+located in a directory which only the user running Subversion can access.
+However, any program the user runs could access this socket and get
+the Subversion password if the program knows the "cache ID" Subversion
+uses for the password.</p>
+
+<p>The cache ID is very easy to obtain for programs running as the same user.
+Subversion uses the MD5 of the realmstring as cache ID, and these checksums
+are also used as filenames within <tt>~/.subversion/auth/svn.simple</tt>.
+Unlike with GNOME Keyring or KDE Wallet, the user is not prompted for
+permission if another program attempts to access the password.</p>
+
+<div class="notice">
+<p><span style="color: red"><b>WARNING:</b></span> Therefore, while the
+gpg-agent is running and has the password cached, the password cache
+is no more secure than a file storing the password in plaintext.</p>
+</div>
+
+</div>  <!-- gpg-agent -->
+
+<div class="h3" id="fsfs-enhancements">
+<h3>FSFS size and performance enhancements
+  <a class="sectionlink" href="#fsfs-enhancements"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Subversion 1.8 introduces a number of improvements that can reduce
+the size of FSFS repositories, the total number of files on disk, the
+I/O overhead and gives the user fine-grained control over all of that.
+Some of these changes require a format bump, others are backward-compatible.
+</p>
+
+<div class="h4" id="fsfs-format-6">
+<h4>FSFS format bump
+  <a class="sectionlink" href="#fsfs-format-6"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The default repository format created by <tt>svnadmin create</tt> is
+now FSFS version 6 which is not accessible by Subversion 1.7 or older.
+Older repository formats remain fully supported by Subversion 1.8 but
+will not support <a href="#revprop-packing">revprop packing</a>.
+To create FSFS repositories compatible with Subversion 1.6 and 1.7, use
+the <tt>--compatible-version 1.6</tt> parameter.</p>
+
+<p>You may use <tt>svnadmin upgrade</tt> to upgrade existing repositories.
+However, to fully benefit from the latest <a href="#fsfs-deltification">repository size reductions</a>,
+it is recommended to create a new repository, adjust its settings and then
+<a href=http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.migrate.svnadmin
+>dump/load</a> or svnsync the contents into it.
+</p>
+
+</div>  <!-- fsfs-format-6 -->
+
+<div class="h4" id="revprop-packing">
+<h4>Packing revision properties
+  <a class="sectionlink" href="#revprop-packing"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p><a href="#fsfs-format-6">Format 6 repositories</a> will not only
+pack the revision files but also the revision property files. Upgrading
+existing packed repositories will automatically pack existing revision 
+properties. Using default settings, this will reduce the number of
+revprop files to less than 10 per 1000 revisions in typical usage
+scenarios.</p>
+
+<p>The <tt>db/fsfs.conf</tt> file allows you to fine-tune the
+revprop packing strategy.  See the comments in that file for a
+detailed description of the available options.  Please note that no
+change in this configuration file will affect any existing data.
+Moreover, upgrading repositories will not extend the existing
+configuration file, i.e. the server will use the default settings
+unless the new options are added explicitly.</p>
+
+<p>It is recommended to also activate <a href="#revprop-caching"
+>revprop caching</a> when you use revprop packing. Otherwise, access
+to timestamps etc. will suffer significant processing overhead.</p>
+
+</div>  <!-- revprop-packing -->
+
+<div class="h4" id="revprop-caching">
+<h4>Caching revision properties
+  <a class="sectionlink" href="#revprop-caching"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>Many operations will access revision properties to e.g. retrieve
+the commit time stamp. Therefore, thousands of revision property files
+may need to be read during a checkout. The UI to enable the revprop
+cache is similar to that for the other caches: <tt>svnserve</tt>
+now accepts the <tt>--cache-revprops yes</tt> parameter. For
+<tt>mod_dav_svn</tt>, the same looks like this in <tt>httpd.conf</tt>
+</p>
+
+<pre>
+&lt;IfModule dav_svn_module&gt;
+    SVNCacheRevProps on
+&lt;/IfModule&gt;
+</pre>
+
+<p>With <a href="#revprop-packing">revision property packing</a>
+enabled, revprop caching allows you to read hundreds of revprops
+at once from a single file. This can give a significant performance
+boost to e.g. <tt>svn log</tt> .</p>
+
+</div>  <!-- revprop-caching -->
+
+<div class="h4" id="fsfs-deltification">
+<h4>Directory and property storage reduction
+  <a class="sectionlink" href="#fsfs-deltification"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>For each changed node in a FSFS repository, new versions of 
+all parent directories will be created. Larger repositories tend
+to have relatively deep directory structures with at least one
+level (branches, modules or projects) having tens of entries.
+The total size of that data may well exceed the size of the actual
+change. Subversion 1.8 now supports directory deltification
+which eliminates most of that overhead.</p>
+
+<p>In <tt>db/fsfs.conf</tt>, you may now enable and disable
+directory deltification at any time and these settings will be
+applied in new revisions. For completeness, node properties may
+now be deltified as well although the reductions in repository
+size will usually be minimal.</p>
+
+<div class="notice">
+  <p>By default, directory and property deltification are <em>disabled</em>.
+  You must edit <tt>db/fsfs.conf</tt> to enable these features.  The reason
+  is that deltification may amplify I/O in certain situations.  To minimize
+  that effect, enable the <a
+  href="http://subversion.apache.org/docs/release-notes/1.7.html#data-caches"
+  >txdelta cache</a>.</p>
+</div>
+
+<p>Also, <tt>db/fsfs.conf</tt> now allows for fine-grained control over
+how deltification will be applied. 
+See the comments in that file for a detailed description of the
+individual options.
+</p>
+
+<p>Another optimization in 1.8 is that node properties with the
+same contents will only be stored once and then merely referenced.
+This not only slightly reduces the size of the repository but greatly
+improves cache effectiveness and may reduce I/O significantly.
+</p>
+
+<p><b>It's backward compatible!</b> Please note that the mechanism
+to read deltified data is the same for file contents as for directories
+and properties. Hence, Subversion 1.6 and 1.7 will be able to read
+them but will always write new revisions without that optimization.
+It is therefore perfectly legal to create a pre-1.8-compatible
+repository in 1.8, to enable various deltification options, to <a 
+href=http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.migrate.svnadmin
+>dump/load</a> into that new repository using 1.8 tooling and to
+finally use the repository with a 1.6 or 1.7 server.
+</p>
+
+</div>  <!-- fsfs-deltification -->
+
+<div class="h4" id="fsfs-rep-sharing">
+<h4>Rep-sharing within revisions
+  <a class="sectionlink" href="#fsfs-rep-sharing"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>When representation sharing has been enabled, Subversion 1.8 
+will now be able to detect files and properties with identical contents
+within the same revision and only store them once. This is a common
+situation when you for instance import a non-incremental dump file or
+when users apply the same change to multiple branches in a single commit.
+</p>
+
+</div>  <!-- fsfs-rep-sharing -->
+
+</div>  <!-- fsfs-enhancements -->
+
+<div class="h3" id="in-repo-authz">
+<h3>In repository authz
+  <a class="sectionlink" href="#in-repo-authz"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Subversion 1.8 allows authz files to be stored inside a Subversion
+repository.  This allows you to employ the versioning features of
+Subversion for the configuration of the path-based authorization
+feature.  You need not store the authz file in the same repository as
+the one to which its rules are being applied.  However, the server
+which uses the authz file does require filesystem access to the
+repository in which that file is stored.  Administrators should
+consider that one benefit of having the authz file stored in the same
+repository as the one to which its rules are being applied allows the
+authz file to be replicated by <tt>svnsync</tt> along with the rest
+of the data in the repository, simplifying administration of mirrored
+repositories.</p>
+
+<p>When specifying the location of the authz file to Apache HTTP
+Server or svnserve, there are now four formats an administrator may
+use:</p>
+
+<ol>
+<li>Absolute path to a file (outside of a repository):
+    <tt>/path/to/file</tt> or <tt>C:\path\to\file</tt></li>
+<li>Relative path to a file (outside of a repository):
+    <tt>path/to/file</tt> or <tt>path\to\file</tt></li>
+<li>Absolute URL to file in repository:
+    <tt>file:///path/to/repo/file</tt></li>
+<li>Relative URL to file in a repository:
+    <tt>^/file</tt></li>
+</ol>
+
+<p>The first two formats are those that were already supported in
+versions prior to 1.8; the latter two are the new formats.</p>
+
+<p>The new absolute URL format is similar to what you might use
+with <tt>svn cat</tt> to list the contents of a file versioned in a
+local repository.  (Note that at this time, support exists
+for <tt>file://</tt> URLs only, not for other Subversion URL flavors
+such as <tt>http://</tt>, <tt>svn://</tt>, and so on.)</p>
+
+<p>The relative URL syntax should also look familiar, as it mimics
+<a href="http://svn.apache.org/repos/asf/subversion/trunk/notes/cli-repo-root-relative-support.txt"
+>the relative URL syntax</a> that the command-line client recognizes.
+When parsing path specifications in this format, Subversion simply
+ignores the leading <tt>^/</tt> and looks for authz file at the
+remaining path in the repository which is being accessed.</p>
+
+<p>Apache HTTP Server accepts all four formats for both the
+<tt>AuthzSVNAccessFile</tt> and <tt>AuthzSVNReposRelativeAccessFile</tt>
+configuration directives.  The only difference between these two
+directives is the root path for the "relative path to a file outside a
+repository" format.</p>
+
+<div class="notice">
+<p><span style="color: red"><b>WARNING:</b></span> Unlike authz files
+stored on the server's local disk, authz files stored in the repository
+are accessible via Subversion clients just like any other file in the
+repository.  If you wish to protect the contents of the authz file you
+should configure appropriate access restrictions for it in the
+applicable authz file (which could potentially be the same file!).</p>
+</div>
+
+<div class="notice">
+<p><span style="color: red"><b>WARNING:</b></span> As with other
+versioned files, Subversion servers do not validate the internal
+syntax of a versioned authz file in any way.  Administrators may wish
+to set up a pre-commit hook script to validate that the authz file is
+well-formed and/or the committing user has not removed all permissions
+to edit the file.  If permissions have been removed to edit it via the
+network server(s) you can of course always edit it via a local
+(<tt>file://</tt>) checkout since ra_local does not observe path based
+permissions.  See the <tt>validate-files.py</tt> hook script and its
+related configuration files in Subversion's <tt>tools/hook-scripts</tt>
+for examples of how to validate a versioned authz file's syntax and
+specific permissions.</p>
+</div>
+
+</div>  <!-- in-repo-authz -->
+
+<div class="h3" id="new-tools">
+<h3>New tools and utilities
+  <a class="sectionlink" href="#new-tools"
+    title="Link to this section">&para;</a>
+</h3>
+
+<div class="h4" id="benchmarking">
+<h4><tt>svn-bench</tt> benchmarking client
+  <a class="sectionlink" href="#benchmarking"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>Identifying bottlenecks in your Subversion infrastructure may be
+difficult because client-side influences (virus scanners, slow disks
+etc.) tend to mask other limitations.  Therefore, Subversion 1.8
+introduces a very lightweight client that skips most of that local
+processing.</p>
+
+<p><tt>svn-bench</tt> provides commands similar to the standard
+command line interface, adding a <tt>null-</tt> prefix to them.
+Currently implemented are <tt>null-export</tt>, <tt>null-list</tt>
+and <tt>null-log</tt>. They support most of the parameters of their
+standard command counterparts.</p>
+
+<pre>
+$ time svn-bench null-export svn://localhost/tsvn_repos/trunk
+            179 directories
+          3,661 files
+     84,902,674 bytes in files
+         20,560 properties
+        315,031 bytes in properties
+
+real  0m0.185s
+user  0m0.128s
+sys   0m0.040s
+</pre>
+
+<p>By running the client close to or directly on the server machine,
+you will be able to determine the raw server speed and compare that
+to what the client-side is seeing.</p>
+
+</div>  <!-- benchmarking -->
+
+<div class="h4" id="fsfs-stats">
+<h4><tt>fsfs-stats</tt> repository statistics
+  <a class="sectionlink" href="#fsfs-stats"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>This server-side tool will read a whole format 4 (Subversion 1.6)
+or newer repository and print out various statistics on the contents
+of the rev and pack files in it.  It starts of with very general 
+information and then breaks it down into various sub-demographics.
+The statistics include:
+
+<ul>
+  <li>Total repository size bytes</li>
+  <li>Number of revisions and changes</li>
+  <li>Sum of original and deltified file sizes</li>
+  <li>Sum of original and deltified directory sizes</li>
+  <li>Structural overhead due to node revisions, change lists etc.</li>
+  <li>Effectiveness of representation sharing</li>
+  <li>Paths and revisions of the 64 largest single changes</li>
+  <li>By file extension: Number of changes, total file size and total
+      internal representation size</li>
+  <li>Histograms on the above</li>
+</ul>
+</p>
+
+<p>Administrators may use this information to decide whether directory
+deltification should be enabled (ratio of directory representation
+vs. file representation sizes) or whether commit policies might to
+be revised (e.g. large .zip files accout for most of the repository).
+Some of the data, however, is useful for performance analysis by SVN
+developers only.</p>
+
+<pre>
+$ fsfs-stats /repositories/wesnoth_org 500 | gedit &amp;
+</pre>
+
+<p><tt>fsfs-stats</tt> takes a local path to the repository root and
+an optional cache size parameter.  The latter is in MBytes and speeds
+up the analysis of large repositories.  Because the tool's output may
+be up to a 1000 lines of text, you may want to redirect it to some file
+or application.</p>
+
+<div class="notice">
+<p>Note that the 32 bit version of this tool may fail on repositories
+with millions of changes or with revision / pack files larger than 4 GB.
+Use a 64 bit executable instead for those repositories.</p>
+</div>
+
+</div>  <!-- fsfs-stats -->
+
+</div>  <!-- new-tools -->
+
+</div>  <!-- new-features -->
+
+<div class="h2" id="enhancements">
+<h2>Enhancements and Bugfixes
+  <a class="sectionlink" href="#enhancements"
+    title="Link to this section">&para;</a>
+</h2>
+
+<!-- Don't need to highlight every bugfix, just major ones which aren't in
+     any patch release. -->
+
+<div class="h3" id="conflicts">
+<h3>Improved conflict resolution
+  <a class="sectionlink" href="#conflicts"
+    title="Link to this section">&para;</a>
+</h3>
+
+<div class="h4" id="conflicts-postponed">
+<h4>Conflicts are now always postponed during updates and merges
+  <a class="sectionlink" href="#conflicts-postponed"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The <tt>svn update</tt>, <tt>svn switch</tt>, and <tt>svn merge</tt>
+commands line client now always postpone conflicts. Once the operation has
+completed, the interactive conflict resolver is automatically run on paths
+which received conflicts during the operation, which will either run in
+interactive mode or perform conflict resolution based on the value of
+the <tt>--accept</tt> option, if given.</p>
+
+<p>This approach has the advantage that the connection to the server
+is not held open while interactive conflict resolution is performed.
+In Subversion 1.7, the connection could time out if the user spent
+too much time resolving a conflict (see
+<a href="http://subversion.tigris.org/issues/show_bug.cgi?id=3846"
+>issue #3846</a>).</p>
+
+</div>  <!-- conflicts-postponed -->
+
+<div class="h4" id="svn-resolve">
+<h4>'svn resolve' can resolve conflicts interactively
+  <a class="sectionlink" href="#svn-resolve"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The <tt>svn resolve</tt> command does not require the <tt>--accept</tt>
+option anymore. If invoked without any arguments, <tt>svn resolve</tt>
+will now perform interactive conflict resolution for any conflicted
+paths within the current working directory.</p>
+
+</div>  <!-- svn-resolve -->
+
+<div class="h4" id="file-merge-tool">
+<h4>Built-in file merge tool for interactive conflict resolution
+  <a class="sectionlink" href="#file-merge-tool"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The command-line client now has a built-in file merge tool which
+merges any non-conflicting changes automatically and asks the user
+what to do about each individual merge conflict.</p>
+
+<p>The built-in file merge tool can be invoked from the interactive
+conflict resolution prompt by choosing the <tt>(m) merge</tt> option.
+It displays conflicting file sections in a side-by-side view and
+offers various ways of resolving the conflict, as shown below:</p>
+
+<pre>
+$ svn update
+Updating '.':
+C    subversion/svn/file-merge.c
+Updated to revision 1358165.
+Summary of conflicts:
+  Text conflicts: 1
+Conflict discovered in file 'subversion/svn/file-merge.c'.
+Select: (p) postpone, (df) diff-full, (e) edit, (m) merge,
+        (mc) mine-conflict, (tc) theirs-conflict,
+        (s) show all options: m
+Merging 'subversion/svn/file-merge.c'.
+Conflicting section found during merge.
+(1) their version (at line 298)       |(2) your version (at line 391)        
+--------------------------------------+--------------------------------------
+  if (buf-&gt;len &gt;= 2 &amp;&amp;                |  if (buf-&gt;len &gt; 1)                   
+      buf-&gt;data[buf-&gt;len - 2] == '\r' |    {                                 
+      buf-&gt;data[buf-&gt;len - 1] == '\n')|      if (buf-&gt;data[buf-&gt;len - 2] == '
+    svn_stringbuf_chop(buf, 2);       |        svn_stringbuf_chop(buf, 2);   
+  else if (buf-&gt;len &gt;= 1 &amp;&amp;           |    }                                 
+           (buf-&gt;data[buf-&gt;len - 1] ==|  else if (buf-&gt;len &gt; 0)              
+            buf-&gt;data[buf-&gt;len - 1] ==|    {                                 
+    svn_stringbuf_chop(buf, 1);       |      if (buf-&gt;data[buf-&gt;len - 1] == '
+                                      |        svn_stringbuf_chop(buf, 1);   
+                                      |    }                                 
+--------------------------------------+--------------------------------------
+Select: (1) use their version, (2) use your version,
+        (e1) edit their version and use the result,
+        (e2) edit your version and use the result,
+        (eb) edit both versions and use the result,
+        (p) postpone this conflicting section leaving conflict markers,
+        (a) abort file merge and return to main menu: 
+</pre>
+</div>  <!-- file-merge-tool -->
+
+</div> <!-- conflicts -->
+
+<div class="h3" id="pristines">
+<h3>Checkout and update download pristine file data just once
+  <a class="sectionlink" href="#pristines"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Subversion keeps a cache of pristine copies of files in the
+working copy's meta data area inside the <tt>.svn</tt> directory.
+Before Subversion 1.8, pristine data was always downloaded from
+the server even if the same data already existed in the cache.</p>
+
+<p>Subversion 1.8 avoids downloading pristine content that is already
+present in the cache, based on the content's SHA1 or MD5 checksum.
+This results in more efficient use of network throughput in cases where
+a lot of files in the working copy share the same content (for example,
+if a single working copy contains multiple branches).</p>
+
+</div> <!-- pristines -->
+
+<div class="h3" id="cmdline-admin">
+<h3>Administration command-line tools improvements (<em>server</em>)
+  <a class="sectionlink" href="#cmdline-admin"
+    title="Link to this section">&para;</a>
+</h3>
+
+<div class="h4" id="incremental-hotcopy">
+<h4>'svnadmin hotcopy' can now operate incrementally (FSFS only)
+  <a class="sectionlink" href="#incremental-hotcopy"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The <tt>svnadmin hotcopy</tt> command now supports incremental
+operation, triggered by the new <tt>--incremental</tt> option.</p>
+
+<p>In prior releases of Subversion, <tt>svnadmin hotcopy</tt> refused
+to copy over an existing destination repository, and always copied
+the entire repository. For large repositories, performing a hotcopy
+could take several hours, preventing an efficient backup process.</p>
+
+<p>In incremental hotcopy mode, revision data which has already been
+copied from the source to the destination repository will not be
+copied again. <tt>svnadmin hotcopy --incremental</tt> will only copy
+new revisions, and revisions which have changed in size or had their
+modification time stamp changed since the previous hotcopy operation.</p>
+
+<p>Up to now, <tt>svnsync</tt> or <tt>svnadmin dump --incremental</tt>
+were the only alternatives for incremental repository backup. However,
+these commands need to perform additional processing while transforming
+revision data into an intermediate format before creating revision
+files in the destination repository. Performance of <tt>svnadmin
+hotcopy</tt> is only limited by disk I/O.</p>
+
+<p>Incremental hotcopy is not supported for BDB repositories.
+See <a href="http://subversion.tigris.org/issues/show_bug.cgi?id=4081"
+>issue 4081</a> for more information.</p>
+
+<div class="notice">
+<p>Using general-purpose incremental backup tools, such as
+<a href="http://rsync.samba.org">rsync</a>, with Subversion repositories
+is dangerous if the repository can receive commits while the backup
+tool is running. The resulting copy might end up being corrupt because
+general-purpose backup tools do not know anything about consistency
+requirements of Subversion repositories. It is recommended to use
+incremental hotcopy instead. Alternatively, if network support is
+required for the backup procedure, <tt>svnsync</tt> should be used.
+There is also a new <a href="#svnadmin-freeze">svnadmin freeze</a> command
+which allows third-party tools to access a live repository safely.</p>
+</div>
+
+</div>  <!-- incremental-hotcopy -->
+
+<div class="h4" id="svnadmin-load">
+<h4>'svnadmin load' now supports the --revision option
+  <a class="sectionlink" href="#svnadmin-load"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p><tt>svnadmin load</tt> now supports the <tt>--revision</tt>
+(<tt>-r</tt>) option, which causes it to only load revisions from
+the dump stream within the specified revision number range.</p>
+
+</div> <!-- svnadmin-load -->
+
+<div class="h4" id="svnadmin-lock">
+<h4>New 'svnadmin lock' and 'svnadmin unlock' commands
+  <a class="sectionlink" href="#svnadmin-lock"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The new <tt>svnadmin lock</tt> and <tt>svnadmin unlock</tt> commands
+can be used to lock and unlock paths in the repository directly,
+without requiring a working copy for use with <tt>svn lock</tt> or
+<tt>svn unlock</tt>.</p>
+
+</div> <!-- svnadmin-lock -->
+
+<div class="h4" id="svnadmin-freeze">
+<h4>New 'svnadmin freeze' command
+  <a class="sectionlink" href="#svnadmin-freeze"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The new <tt>svnadmin freeze</tt> command can be used to run an arbitrary
+program while preventing concurrent commits to the repository. The program
+is invoked by <tt>svnadmin</tt> with a provided parameter list. This can
+be used to safely use third-party backup tools on a live repository:</p>
+<pre>
+$ svnadmin freeze /svn/my-repos rsync -av /svn/my-repos /backup/my-repos
+</pre>
+
+<p>The above will obtain a write lock on the <tt>my-repos</tt> repository
+to prevent concurrent commits, and run
+<a href="http://rsync.samba.org">rsync</a> to back up the repository.
+Clients trying to commit concurrently will wait until the write lock
+becomes available again. If the command takes too much time clients
+trying to commit might time out. It is recommended to run commands
+which complete very quickly, such as a command to trigger creation
+of a filesystem snapshot.</p>
+
+</div> <!-- svnadmin-freeze -->
+
+<div class="h4" id="svndumpfilter-deltas">
+<h4>'svndumpfilter' now supports dump files with deltas
+  <a class="sectionlink" href="#svndumpfilter-deltas"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p><tt>svndumpfilter</tt> can now filter dump files containing
+deltas, as generated by <tt>svnadmin dump --deltas</tt>.</p>
+
+</div> <!-- svndumpfilter-deltas -->
+
+<div class="h4" id="svnauthz_accessof">
+<h4>svnauthz can print user's access to a path in a repository
+  <a class="sectionlink" href="#svnauthz_accessof"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p><tt>svnauthz</tt> (<a href="#svnauthz"
+>formerly known as <tt>svnauthz-validate</tt></a>)
+has an 'accessof' subcommand that can print or test what the
+permissions would be in a given circumstance, allowing you to validate that
+your changes have effected the permissions that you intended.</p>
+
+<p><tt>svnauthz accessof</tt> supports <tt>--username</tt>,
+<tt>--repository</tt>, and <tt>--path</tt> arguments.
+When these are passed, it prints <tt>no</tt>, <tt>r</tt>,
+or <tt>rw</tt> depending on what access the given username has:
+none, read-only, or read-write.</p>
+
+</div>  <!-- svnauthz_accessof -->
+
+<div class="h4" id="svnlook-diff">
+<h4>'svnlook diff' improvements
+  <a class="sectionlink" href="#svnlook-diff"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p><tt>svnlook diff</tt> now supports the following new options
+(analogous to <tt>svn diff</tt>):
+<ul>
+<li><tt>--ignore-properties</tt> suppresses output of property changes</li>
+<li><tt>--properties-only</tt> shows only property changes</li>
+<li><tt>--diff-cmd ARG</tt> use ARG as diff command</li>
+</ul>
+</p>
+
+</div> <!-- svnlook-diff -->
+
+</div> <!-- cmdline-admin -->
+
+<div class="h3" id="svnserve">
+<h3>Support for high-speed networks in 'svnserve'
+  <a class="sectionlink" href="#svnserve"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>If your server has a 10 Gbit/s or faster network connection, the
+multi-stage data copying from Subversion's caches to the network stack
+plus frequent status checks become a bottleneck. Today, most clients
+won't be able to generate enough aggregated traffic to make this an
+issue and an 8-core server should be able to send about 40Gb/s at 100%
+CPU load. Future clients may be able, however, to process 1Gb or even
+10Gb per second and to create significant server loads.
+</p>
+
+<p>When the server is given the <tt>--client-speed N</tt> parameter,
+it will assume that most clients are able to process data at rates of
+N Mbit/s; N being a non-negative integer.  Future server releases may
+apply different strategies for different ranges of client bandwidth
+to optimize the network performance.  In 1.8 and if N&gt;=1000, the
+server will take various shortcuts to reduce internal processing overhead.
+On the downside, a very slow or hanging client may degrade the server
+performance for other clients as well. Setting N to values above 100.000
+is legal but will often result in a net throughput loss.
+</p>
+
+<p><strong>Note:</strong> This option will have little effect in 1.8
+without configuring large fulltext caches.
+</p>
+
+</div> <!-- svnserve -->
+
+<div class="h3" id="cmdline">
+<h3>Command-line client improvements (<em>client</em>)
+  <a class="sectionlink" href="#cmdline"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>There are far too many enhancements and new options to the
+command-line client to list them all here.  Aside from all the ones
+mentioned already in these release notes, below are a few more that we
+consider important, but please see the 1.8.0 section in the <a
+href="http://svn.apache.org/repos/asf/subversion/trunk/CHANGES">CHANGES</a> file
+for a complete list.</p>
+
+<!-- Insert selected items here -->
+
+<div class="h4" id="commit-externals">
+<h4>'svn commit' can now recurse into externals
+  <a class="sectionlink" href="#commit-externals"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The <tt>svn commit</tt> command supports a new <tt>--include-externals</tt>
+option, which causes it to commit changes within externals in the current
+working copy, in addition to the changes in the current working copy.
+This works by implicitly adding all externals within the commit target
+to the list of commit targets.</p>
+
+</div> <!-- commit-externals -->
+
+<div class="h4" id="svn-diff">
+<h4>'svn diff' improvements
+  <a class="sectionlink" href="#svn-diff"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The <tt>svn diff</tt> command can compare arbitrary files with one
+another, using the invocation:</p>
+<pre>
+$ svn diff --old foo.c --new bar.c 
+Index: bar.c
+===================================================================
+--- bar.c       (.../foo.c)     (working copy)
++++ bar.c       (.../bar.c)     (working copy)
+@@ -1,6 +1,6 @@
+ #include &lt;stdio.h&gt;
+ int main()
+ {
+-       printf("Hello world!\n");
++       printf("Good bye world!\n");
+        return 0;
+ }
+</pre>
+
+<p>This works with any combination of versioned and unversioned files.
+Comparing arbitrary directories is also supported, in which case the
+directories are walked recursively and files within them are compared.</p>
+
+<p><tt>svn diff</tt> also supports the following new options:
+<ul>
+<li><tt>--ignore-properties</tt> suppresses output of property changes</li>
+<li><tt>--properties-only</tt> shows only property changes</li>
+<li><tt>--patch-compatible</tt> produces output compatible with third party patch programs</li>
+</ul>
+</p>
+
+<p><tt>svn diff --summarize</tt> is extended to match all scenarios that
+<tt>svn diff</tt> supports, including the new arbitrary file diff.</p>
+
+</div>  <!-- svn-diff -->
+
+<div class="h4" id="svn-log-search">
+<h4>'svn log' can filter log messages based on search terms
+  <a class="sectionlink" href="#svn-log-search"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The <tt>svn log</tt> command supports a new <tt>--search</tt>
+option that can be used to show only log messages matching any
+of one or more provided search patterns. A log message is shown only
+if a revision's author, date, log message text, or list of changed paths,
+matches a search pattern.</p>
+
+<p>The log could be searched for revisions which deleted a particular
+file, or more generally for revisions which affected a given file on
+any branch in the repository:</p>
+<pre>$ svn log -v --search &quot;src/foo.c&quot; http://svn.example.com/svn/</pre>
+
+<p>The new <tt>--search-and</tt> option can be used for grouping search
+terms such that they must match together.
+For example, when run in a working copy, the following command shows
+log messages for revisions which were committed by (or otherwise match)
+author <tt>james</tt> in September 2012:</p>
+<pre>$ svn log --search james --search-and &quot;Sep 2012&quot;</pre>
+
+</div>  <!-- svn-log-search -->
+
+<div class="h4" id="svn-merge-check-related">
+<h4>'svn merge' will refuse to merge from an unrelated branch
+  <a class="sectionlink" href="#svn-merge-check-related"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The <tt>svn merge</tt> command without a revision range
+now checks that the source branch is related to the target branch, and
+fails if not. Branches are 'related' if their histories, when traced
+back following copies, eventually arrive at the same node. One useful
+case is when an automatic merge is attempted from the wrong level of
+subdirectory in an otherwise related branch. Example:</p>
+<pre>$ svn merge ^/trunk branch-wc/subdir
+svn: E205000: Source and target must be different but related branches
+svn: E205000: Source and target have no common ancestor: 'https://.../trunk@head' and 'branch-wc/subdir@unspecified'
+</pre>
+
+<p>It is still possible to merge from an unrelated branch by specifying a
+revision range, even a catch-all range such as <tt>1:HEAD</tt>.</p>
+
+</div>  <!-- svn-merge-check-related -->
+
+</div>  <!-- cmdline -->
+
+<div class="h3" id="custom-keywords">
+<h3>Custom keyword definitions
+  <a class="sectionlink" href="#custom-keywords"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Subversion now supports the definition of custom keywords, which can be
+defined using a special syntax within the <tt>svn:keywords</tt> property.</p>
+
+<p>For example, <tt>MyKeyword=%r%_%a%_%P</tt> defines a keyword called
+&quot;MyKeyword&quot; which contains the number of the last-changed
+revision, the author of that revision, and the file's path in the
+repository, each separated by one space character.
+Once a custom keyword has been defined it can be used within the
+file like any other keyword: <tt>$MyKeyword$</tt></p>
+
+<p>The <tt>svn help propset</tt> command lists the known format codes
+which can be used in custom keyword definitions, which are also shown
+in the table below. Any characters in the keyword definition which are
+not format codes are expanded literally, i.e. a keyword such as
+<tt>MyAuthor=Author:%_%a</tt> will expand to <tt>Author: joe</tt>
+if the last-changed revision's author is &quot;joe&quot;.</p>
+
+<table border="1">
+<tr>
+  <td>%a</td><td>The author of the revision given by %r.</td>
+</tr>
+<tr>
+  <td>%b</td><td>The basename of the URL of the file.</td>
+</tr>
+<tr>
+  <td>%d</td><td>Short format of the date of the revision given by %r.</td>
+</tr>
+<tr>
+  <td>%D</td><td>Long format of the date of the revision given by %r.</td>
+</tr>
+<tr>
+  <td>%P</td><td>The file's path, relative to the repository root.</td>
+</tr>
+<tr>
+  <td>%r</td><td>The number of the revision which last changed the file.</td>
+</tr>
+<tr>
+  <td>%R</td><td>The URL to the root of the repository.</td>
+</tr>
+<tr>
+  <td>%u</td><td>The URL of the file.</td>
+</tr>
+<tr>
+  <td>%_</td><td>A space (keyword definitions cannot contain a literal space).</td>
+</tr>
+<tr>
+  <td>%%</td><td>A literal '%'.</td>
+</tr>
+<tr>
+  <td>%H</td><td>Equivalent to %P%_%r%_%d%_%a.</td>
+</tr>
+<tr>
+  <td>%I</td><td>Equivalent to %b%_%r%_%d%_%a.</td>
+</tr>
+</table>
+
+<p>Note that keyword expansions which exceed 255 bytes in length are
+truncated, and keywords with names that exceed 255 bytes are not expanded.</p>
+
+</div> <!-- custom-keywords -->
+
+<div class="h3" id="apis">
+<h3>API changes, improvements and language bindings
+    (<em>client and server</em>)
+  <a class="sectionlink" href="#apis"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>There are too many new and revised APIs in Subversion 1.8.0 to list
+them all here.  See the <a
+href="http://subversion.apache.org/docs/api/1.8/" >Subversion API
+Documentation</a> page for general API information.  If you develop a
+3rd-party client application that uses Subversion APIs, you should
+probably look at the header files for the interfaces you use and see
+what's changed.</p>
+
+<p>A small number of APIs have slightly changed functionality from their
+historical roots.  Each of these cases has been documented as an
+<a href="http://svn.apache.org/repos/asf/subversion/trunk/notes/api-errata/1.8/">errata</a>,
+detailing the impact of these changes.  All of the errata were the result of
+behavior which was deemed buggy, and the API changes are an attempt to fix
+these bugs.  The circumstances under which each is triggered are relatively
+rare, and we anticipate the actual impact to end users will be minimal.</p>
+
+<p>Language bindings have mostly been updated for the new APIs, though
+some may lag more than others.</p>
+
+</div>  <!-- apis -->
+
+<div class="h3" id="bug-fixes">
+<h3>Bug fixes (<em>client and server</em>)
+  <a class="sectionlink" href="#bug-fixes"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>A great many bugs have been fixed.  See the 1.8.0 section in the <a
+href="http://svn.apache.org/repos/asf/subversion/trunk/CHANGES">CHANGES</a> file
+for details.</p>
+
+</div>  <!-- bug-fixes -->
+
+
+<div class="h3" id="merge-tracking-enhancements">
+<h3>Merge-Tracking Enhancements
+  <a class="sectionlink" href="#merge-tracking-enhancements"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>While there are scores of bug fixes, performance improvements, and other
+changes to merge-tracking, the following are the major changes.  See the
+1.8.0 section in the <a
+href="http://svn.apache.org/repos/asf/subversion/trunk/CHANGES">CHANGES</a>
+file for a complete list.</p>
+
+<div class="h4" id="mergeinfo-r">
+<h4>'svn mergeinfo' now honors the -r option
+  <a class="sectionlink" href="#mergeinfo-r"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The <tt>svn mergeinfo</tt> command now honors the <tt>-r</tt> option.
+While the option has always been accepted and documented, it was silently
+ignored, such that <tt>svn mergeinfo</tt> always operated on the entire
+history of the repository.</p>
+
+<p>In Subversion 1.8, the <tt>-r</tt> option restricts the output of
+<tt>svn mergeinfo</tt> to the specified revision range, which is useful
+when determining whether or not a given revision, or range of revisions,
+is eligible for merging, or whether it has already been merged.
+In the following example, r682012 has not been merged from trunk yet,
+while r26112011 has already been merged:</p>
+<pre>
+  $ svn mergeinfo --show-revs=eligible -r 682012 ^/trunk
+  r682012
+  $ svn mergeinfo --show-revs=merged -r 26112011 ^/trunk
+  r26112011
+  $
+</pre>
+
+</div>  <!-- mergeinfo-r -->
+
+</div>  <!-- merge-tracking-enhancements -->
+
+<div class="h3" id="hooks">
+<h3>Hook scripts improvements (<em>server</em>)
+  <a class="sectionlink" href="#hooks"
+    title="Link to this section">&para;</a>
+</h3>
+
+<div class="h4" id="hooks-env">
+<h4>Hook script environment variables are now configurable
+  <a class="sectionlink" href="#hooks-env"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>In Subversion 1.7 and earlier, hook scripts always run in an empty
+environment. If environment variables are needed hook scripts had to
+configure them manually. Subversion 1.8 supports configuration of hook
+script environment variables on a per-server or per-repository basis.</p>
+
+<p>The hook script environment is configured via a new configuration file
+located either at <tt>conf/hooks-env</tt> in a repository, or at a
+server-wide location specified in <tt>svnserve.conf</tt> (using the
+new <tt>hooks-env</tt> option) or <tt>httpd.conf</tt> (using the
+new <tt>SVNHooksEnv</tt> option).</p>
+
+<p>The hook script environment configuration file uses a format similar
+to that of other Subversion configuration files:</p>
+<pre>
+### This file is an example hook script environment configuration file.
+### Hook scripts run in an empty environment by default.
+### As shown below each section defines environment variables for a
+### particular hook script. The [default] section defines environment
+### variables for all hook scripts, unless overridden by a hook-specific
+### section.
+
+### This example configures a UTF-8 locale for all hook scripts, so that 
+### special characters, such as umlauts, may be printed to stderr.
+### If UTF-8 is used with a mod_dav_svn server, the <a href="#mod-dav-svn-utf8">SVNUseUTF8</a> option must
+### also be set to 'yes' in httpd.conf.
+### With svnserve, the LANG environment variable of the svnserve process
+### must be set to the same value as given here.
+[default]
+# LANG = en_US.UTF-8
+
+### This sets the PATH environment variable for the pre-commit hook.
+# [pre-commit]
+# PATH = /usr/local/bin:/usr/bin:/usr/sbin
+</pre>
+
+</div>  <!-- hooks-env -->
+
+<div class="h4" id="mod-dav-svn-utf8">
+<h4><tt>mod_dav_svn</tt> now supports hook script UTF-8 input/output
+  <a class="sectionlink" href="#hooks-post-commit"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>As documented in <a
+href="http://subversion.tigris.org/issues/show_bug.cgi?id=2487"
+>issue #2487</a>, hook scripts run on a <tt>mod_dav_svn</tt>-based
+Subversion server previously had problems with non-ASCII input and output.
+Because Apache HTTPD modules always run in the &quot;C&quot; locale,
+which is restricted to ASCII, <tt>mod_dav_svn</tt> usually failed
+trying to process non-ASCII characters.</p>
+
+<p>Among other problems, this prevented <tt>pre-lock</tt> and
+<tt>post-unlock</tt> hook scripts from operating on paths containing
+non-ASCII characters, and prevented non-ASCII error output from
+<tt>start-commit</tt> and <tt>pre-commit</tt> hooks from reaching
+SVN clients.</p>
+
+<p>Subversion 1.8 addresses these problems with a new <tt>SVNUseUTF8</tt>
+option for <tt>mod_dav_svn</tt>. If this option is set, <tt>mod_dav_svn</tt>
+assumes that all hook script input/output is encoded in UTF-8.
+This is always the case for paths passed to hook scripts, since Subversion
+uses UTF-8 internally for all paths. If this option is set, hook scripts
+<b>must</b> write error messages to stderr in UTF-8. Because ASCII is a
+subset of UTF-8 existing hook scripts will continue to work unmodified.</p>
+
+<p>For best results, hook scripts should use a UTF-8 locale if the
+<tt>SVNUseUTF8</tt> option is active. It is recommended to configure
+a UTF-8 locale using the <a href="#hooks-env"
+>hook script environment configuration file</a>.</p>
+
+</div>  <!-- mod-dav-svn -->
+
+<div class="h4" id="hooks-start-commit">
+<h4><tt>start-commit</tt> hook invocation point changed
+  <a class="sectionlink" href="#hooks-start-commit"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>Prior to this release, the <tt>start-commit</tt> hook script was
+invoked by Subversion just prior to the creation of the commit
+transaction.  An errorful return from the hook would be marshaled back
+to the client without the commit transaction having ever been created.
+A successful return would permit the creation of the commit
+transaction, and allow the commit process to proceed as expected.
+Administrators generally employed the <tt>start-commit</tt> hook to
+immediately deny <em>all</em> commits to a repository, as the amount
+of information available to the hook by which to do so
+<em>conditionally</em> was pretty slim.</p>
+
+<p>Beginning with Subversion 1.8, the <tt>start-commit</tt> hook is
+invoked immediately <em>after</em> Subversion creates the commit
+transaction and sets its initial properties.  This
+allows <tt>start-commit</tt> implementations to examine the commit
+transaction's properties (such as the revision log message and the new
+<a href="#ephemeral-txnprops">ephemeral transaction properties</a>)
+when deciding whether or not to allow the commit to proceed.
+Subversion will abort the created transaction upon detecting an
+errorful return from the hook and will, of course, still marshal that
+error condition back to the client.</p>
+
+<p>This change empowers administrators to disallow certain commits via
+the <tt>start-commit</tt> hook rather than doing so much later &mdash;
+after the client's changes are transmitted across the network &mdash;
+in the <tt>pre-commit</tt> hook.  Imagine the frustration of a user
+who has endured the lengthy upload of 2 Gb of commit data only to have
+his or her commit bounced because of an insufficiently formatted log
+message!  These changes to <tt>start-commit</tt> allow the go/no-go
+decision on such a commit to be made before that large commit payload
+is transmitted across the wire.</p>
+
+<p><strong>Note:</strong> Subversion does not require that commit
+transaction properties (such as the revision log message) be attached
+to the transaction as part of its initialization.  As such, some
+clients will still not provide that information to the server until
+after the <tt>start-commit</tt> hook has been invoked.  Here is a list
+of such clients we are aware of:</p>
+
+<ul>
+<li>Pre-1.8 clients communicating via HTTP</li>
+<li>Clients communicating via HTTP when mod_dav_svn's
+    "SVNAdvertiseV2Protocol" option has been set to "off"</li>
+</ul>
+
+<p>Administrators should consider modularizing the tests that their
+hooks perform on transaction properties, invoke those tests from both
+the <tt>start-commit</tt> and <tt>pre-commit</tt> hook scripts.</p>
+
+</div>  <!-- hooks-start-commit -->
+
+<div class="h4" id="hooks-post-commit">
+<h4><tt>post-commit</tt> hook grows <tt>txn-name</tt> argument
+  <a class="sectionlink" href="#hooks-post-commit"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>The <tt>post-commit</tt> hook has grown a <tt>txn-name</tt> argument as the
+third positional argument (<tt>argv[3]</tt>).  This argument is the name of the
+transaction that has become the revision triggering the <tt>post-commit</tt>
+hook; it is the same as the second positional argument to the
+<tt>pre-commit</tt>, and thus enables the <tt>pre-commit</tt> and
+<tt>post-commit</tt> hooks to easily transfer state between them.</p>
+
+<p>Generically, if the <tt>pre-commit</tt> hook makes an expensive computation
+against the would-be-revision, it can store the result of that computation in a
+persistent hash keyed by the transaction name, which the <tt>post-commit</tt>
+hook will use to avoid re-doing the computation.  One concrete usage of this
+would be to implement a pre-commit hook that tests compilability only, while
+a post-commit hook or a continuous integration tool runs more thorough tests
+--- on the binaries built at pre-commit, without having to rebuild them
+itself.</p>
+
+</div>  <!-- hooks-post-commit -->
+
+<div class="h4" id="ephemeral-txnprops">
+<h4>Commit transactions now carry client information
+  <a class="sectionlink" href="#ephemeral-txnprops"
+    title="Link to this section">&para;</a>
+</h4>
+
+<p>Subversion 1.8 clients communicating to 1.8 servers
+(via <tt>http[s]:</tt> or <tt>svn:</tt>) will now attach "ephemeral
+transaction properties" to commit transactions which carry metadata
+considered useful to server-side hook scripts.  These special
+properties are set on the commit transaction as early as possible
+(generally prior to the invocation of
+the <a href="#hooks-start-commit"><tt>start-commit</tt></a> hook, but
+certainly prior to the invocation of the <tt>pre-commit</tt> hook),
+and then automatically removed by Subversion just prior to the commit
+transaction being promoted to a new revision.</p>
+
+<p>Currently, the following ephemeral transaction properties are
+available to hook scripts for examination:</p>
+
+<ul>
+<li><strong>svn:txn-user-agent</strong> - carries the "user agent"
+    string which describes the committing client program.  (Developers
+    of third-party clients which link against the Subversion libraries
+    may modify the customizable portion of this string by implementing
+    the <tt>get_client_string()</tt> RA callback API which was
+    introduced in Subversion 1.5.)</li>
+<li><strong>svn:txn-client-compat-version</strong> - carries the
+    Subversion library version string with which the connecting client
+    claims compatibility.  (For Subversion clients which use the
+    Apache Subversion C API and libraries, this version is precisely
+    the version of those libraries.)</li>
+</ul>
+
+<p><strong>Note:</strong> Administrators who deem the information
+carried in these properties to be of long-term value may of course log
+the information as they see fit.  For example, such an administrator
+may wish to use a <tt>pre-commit</tt> hook script
+to copy the values of those
+properties to new, custom transaction properties (which
+do <em>not</em> have names within the reserved <tt>svn:</tt>
+namespace, of course!)  for long-term storage associated with the
+commit.  An example hook script that renames the revision properties from
+<tt>svn:txn-*</tt> to <tt>svn:revision-*</tt> is 
+<a href="http://svn.apache.org/viewvc/subversion/trunk/tools/hook-scripts/persist-ephemeral-txnprops.py?view=markup"
+>distributed with Subversion itself</a>.</p>
+
+</div>  <!-- ephemeral-txnprops -->
+
+</div>  <!-- hooks -->
+
+<div class="h3" id="svnpubsub">
+<h3>New <tt>svnpubsub</tt> framework for pushing post-commit notifications
+    (<em>server</em>)
+  <a class="sectionlink" href="#svnpubsub"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p><tt>svnpubsub</tt> is a daemon that pushes post-commit notifications to
+clients in streaming JSON over HTTP.  The notifications are typically
+pushed to the daemon by a <tt>post-commit</tt> hook.  The code lives in
+the <a href="https://svn.apache.org/repos/asf/subversion/trunk/tools/server-side/svnpubsub/"
+>tools/server-side/svnpubsub</a> directory of the source tree.</p>
+
+<p>A typical notification looks like this (newlines added for readability):</p>
+
+<pre>
+% curl -i http://svn.foo.org:2069/commits
+{"commit": {
+   "type": "svn",
+   "format": 1,
+   "id": 1334845,
+   "repository": "13f79535-47bb-0310-9956-ffa450edef68",
+   "changed": {"httpd/site/trunk/content/dev/": {"flags": " U "}},
+   "committer": "joes",
+   "log": "spacing",
+   "date": "2012-05-07 00:30:25 +0000 (Mon, 07 May 2012)"}}
+^@
+...
+</pre>
+
+<p>svnpubsub was written by <a href="http://people.apache.org/~pquerna/"
+rel="nofollow">Paul Querna</a> for the <a href="http://www.apache.org/dev/"
+>ASF Infrastructure Team</a>.</p>
+
+</div>  <!-- svnpubsub -->
+
+<div class="h3" id="svnmasterversion">
+<h3>New <tt>SVNMasterVersion</tt> Apache HTTP Server configuration directive
+  <a class="sectionlink" href="#svnmasterversion"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Subversion's HTTP protocol continues to mature and expand over time
+to support new features or better ways to accomplish things.
+Fortunately, Subversion servers and clients happily negotiate which
+bits of that protocol they both understand.  Unfortunately, WebDAV
+proxy configurations can throw this negotiation for a loop, as the
+slave server does the negotiating but not necessarily all the
+operating.  Thus, a Subversion 1.7 WebDAV proxy slave will by default
+tell the client that it's okay to use the <a href="./1.7.html#httpv2"
+>HTTPv2 protocol</a>, and a Subversion 1.7 or better client will do
+so, even if the <em>master</em> server behind the proxy is running
+Subversion 1.6 and unable to understand the new protocol.</p>
+
+<p>When Subversion 1.7 was released, this specific problem was
+addressed by providing an Apache HTTP Server configuration
+directive &mdash; <tt>SVNAdvertiseV2Protocol</tt> &mdash; which allowed
+administrators in such a scenario to "dumb down" the communications of
+the Subversion 1.7 slave server so that connecting clients would use
+the older protocol and, in doing so, not confuse the Subversion 1.6
+master server when requests were proxied to it.  As development
+continued toward 1.8, though, there where several new features and
+protocol changes made which would likewise require a toggle switch
+to avoid confusing pre-1.8 WebDAV proxy master servers.</p>
+
+<p>Rather than exposing a suite of such toggles &mdash; some of which
+were for behaviors that are entirely specific to the protocol itself
+and not tied to any user-visible feature &mdash; Subversion 1.8 allows
+administrators to simply declare to the slave servers the version of
+Subversion which is powering the master server, allowing the slave
+servers to enable and disable features as makes sense for that
+scenario.  Administrators of Subversion deployments which use the
+WebDAV write-through proxy feature are strongly encouraged to use the
+new <tt>SVNMasterVersion</tt> httpd.conf directive in all slave server
+configurations running Subversion 1.8 or better.</p>
+
+<p>For example, if your master server is running Subversion 1.7.7, your
+Subversion 1.8 slave server's Apache HTTP Server configuration might
+contain something like this:</p>
+
+<pre>&lt;Location /svn&gt;
+DAV svn
+&hellip;
+SVNMasterURI http://master.svn.company.com/svn
+SVNMasterVersion 1.7.7
+&hellip;
+&lt;/Location&gt;
+</pre>
+
+<div class="notice">
+<p>In the general case, the new <tt>SVNMasterVersion</tt> directive
+supercedes the need for <tt>SVNAdvertiseV2Protocol</tt>.  By declaring
+the version of the master server, the slave will assume the default
+level of feature support for that server.  However, if you have a
+master server which <em>can</em> support the HTTPv2 protocol but for
+which you've disabled this intentionally, you will need to also
+explicitly disable the feature (again, via
+the <tt>SVNAdvertiseV2Protocol off</tt> directive) in your slave
+servers as well.</p>
+</div>
+
+</div>  <!-- svnmasterversion -->
+
+<div class="h3" id="davkeywordexpansion">
+<h3>Keyword expansion via DAV repository browser
+  <a class="sectionlink" href="#davkeywordexpansion"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>One of the earliest features of the mod_dav_svn Subversion server
+was the ability for users to browse their repositories directly with a
+web browser.  <tt>GET</tt> requests issued by browser and aimed at
+Subversion directory URLs return a directory listing; those aimed at
+file URLs return the file's current contents.</p>
+
+<p>In Subversion 1.6, we expanded that feature to allow browsing of
+historical artifacts in your repository via
+new <a href="/docs/release-notes/1.6.html#historical-uris"
+><tt>p=<em>PEGREV</em></tt> and <tt>r=<em>REV</em></tt> CGI
+parameters</a>.</p>
+
+<p>Now in Subversion 1.8, we've added still another CGI
+parameter: <tt>kw=1</tt>.</p>
+
+    <pre>http://host/repos/path?kw=1</pre>
+
+<p>Users who include <tt>kw=1</tt> in the query string portion
+of <tt>GET</tt> requests aimed at a versioned file will now be
+delivered that file's contents with any Subversion keywords expanded
+therein.  Because keyword substitution is typically performed by the
+Subversion client as part of its working copy administration and
+management, this is handy way to get the server to deliver a
+keyword-expanded form of your versioned file without the use of a
+working copy.  Omitting the <tt>kw</tt> parameter or using something
+other than "1" for its value will cause Subversion to use its default
+behavior, which is to deliver the file's contents without any keywords
+expanded.  (NOTE: We reserve the right to recognize new meaningful
+values for the <tt>kw</tt> flag in the future, so please avoid
+specifying any value other than "1" when using the parameter at
+all.)</p>
+
+<p>As with client-side keyword expansion, only those keywords which
+are explicitly designated for expansion via the <tt>svn:keywords</tt>
+property set on the file itself will be expanded.</p>
+
+</div>  <!-- davkeywordexpansion -->
+
+<div class="h3" id="exclusivelocking">
+<h3>Exclusive SQLite locking of working copies
+  <a class="sectionlink" href="#exclusivelocking"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>In the root of every Subversion working copy there is an
+<a href="http://sqlite.org" >SQLite</a> database in the <tt>.svn</tt>
+directory and Subversion clients use this database when accessing the
+working copy.  By default Subversion uses shared SQLite locking and
+this allows simultaneous access to the working copy by multiple
+clients with exclusive locks only being held for short periods.  The
+1.8 command line client can be configured to use exclusive SQLite
+locking by setting the following in the <tt>.subversion/config</tt>
+file:</p>
+<pre>
+[working-copy]
+exclusive-locking-clients = svn
+</pre>
+
+<p>or by using the command line option <tt>--config-option config:working-copy:exclusive-locking-clients=svn</tt>.</p>
+
+<p>This reduces the locking overhead but does mean that only one
+Subversion client will be able to access the working copy at a time. A
+second client attempting to access a locked working copy will block
+for 10 seconds and then get an error. In most cases shared locking is
+preferred but if the working copy is on a network disk rather than a
+local disk the locking overhead is more significant.  When dealing
+with large working copies on network disks exclusive locking may give
+a significant performance gain, two or three times faster in some
+cases.</p>
+
+</div>  <!-- exclusivelocking -->
+
+</div>  <!-- enhancements -->
+
+<div class="h2" id="issues">
+<h2>Known issues in the release
+  <a class="sectionlink" href="#issues"
+    title="Link to this section">&para;</a>
+</h2>
+
+<p>There are some known issues in the Subversion 1.8 releases.  These
+may be fixed in later 1.8.x releases.</p>
+
+<div class="h3" id="411-length-required">
+<h3>1.8.0 and chunked Transfer-Encoding
+  <a class="sectionlink" href="#411-length-required"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Subversion 1.8.0 has <a href="#neon-deleted">switched from <tt>neon</tt>
+to <tt>serf</tt> for HTTP access</a>.  The Serf-based HTTP access library would
+use <tt>chunked</tt> transfer encoding for most requests.  When the
+<tt>mod_dav_svn</tt> Subversion server is fronted by a proxy or reverse proxy
+(such as Nginx
+prior to 1.3.9) which responds with a <tt>411 Length Required</tt>, Subversion
+would sometimes either treat this as a fatal error, such as:</p>
+
+<pre>
+% svn commit &lt;arguments&gt;
+POST of '/svn/[project name]/!svn/me': 411 Length Required
+</pre>
+
+<p>or</p>
+
+<pre>
+svn: E175009: XML parsing failed: (411 Length Required)
+</pre>
+
+<p>and sometimes would fail to notice the failure of the request and issue an
+unrelated error, such as:</p>
+
+<pre>
+svn: E175004: The PROPFIND response did not include the requested properties
+</pre>
+
+<p>Subversion 1.8.1 fixes this issue by detecting automatically
+whether <tt>chunked</tt>
+requests are supported at the set up of a session.  This is done
+by issuing one additional request at the start of the session.</p>
+
+<!-- "Dangerous curve"; additional technical details not required for
+     understanding the context -->
+<div class="notice" style="background-color: inherit">
+<p>Technical details:
+A session is often equivalent to calling one <tt>svn</tt> subcommand (or
+one <tt>svn_client_*</tt> function, for <a href="/docs/#1.8">API users</a>).
+However several subcommands currently open multiple sessions.  The extra
+request cost is incurred for each session.  A single session may make numerous
+TCP connections (usually 2 and never more than 8) and the extra request will
+only be made once for all the connections in a session.</p>
+
+<p>The net effect is that the cost of the additional request may be incurred
+multiple times, and thus be more noticeable.  For example <tt>svn log --diff</tt>
+ends up opening 2 sessions for every revision in order to request the diff.</p>
+</div>
+
+<p>We expect that the default configuration of Subversion 1.8.1+ will work well
+out of the box for most users.  A <tt>http-chunked-requests</tt> option has been
+added to the <tt>~/.subversion/servers</tt> (Windows:
+<tt>%APPDATA%\Subversion\servers</tt> file.  Users who wish to avoid the
+additional request may set that option to <tt>yes</tt> or <tt>no</tt> in order
+to short-circuit the additional request and avoid making it.  We recommend not
+to set that option (or to set it to its default value, <tt>auto</tt>) unless
+you have special circumstances which require it (such as an unusually high
+latency), and even then to set it only in the config sections of specific
+groups and not in the <tt>[global]</tt> section.  See <a
+href="http://mail-archives.apache.org/mod_mbox/subversion-dev/201307.mbox/%3cCADkdwvQUaWaC5=AvwsthjSQWcn48tKHVfWoVCUHjLT=Abu13YA@mail.gmail.com>">this dev@ list post</a> for an example.</p>
+
+
+</div>  <!-- 411-length-required -->
+
+<div class="h3" id="mod_dav_svn-fsmap">
+<h3>mod_dav_svn Maps Requests to Local Filesystem
+  <a class="sectionlink" href="#mod_dav_svn-fsmap"
+    title="Link to this section">&para;</a>
+</h3>
+
+<p>Prior to Subversion 1.7.12 and 1.8.2 all previous versions of
+<tt>mod_dav_svn</tt> would allow Apache httpd to map requests handled by
+<tt>mod_dav_svn</tt> to the local file system. When this happened httpd would
+believe that it was serving a file or directory located at the path that
+comprises the URI path appended to the <tt>DocumentRoot</tt> of the server but
+ending at the first path component that does not actually exist on the local
+disk.  For example if your <tt>DocumentRoot</tt> was <tt>/var/www</tt> and you
+were accessing <tt>/svn/repo/README</tt> and <tt>/var/www/svn</tt> did not
+exist then httpd would believe it was serving <tt>/var/www/svn</tt>, but if
+<tt>/var/www/svn</tt> existed while <tt>/var/www/svn/repo</tt> did not then
+it would believe it was serving <tt>/var/www/svn/repo</tt>.  This had several
+undesired side effects.</p>
+
+<ul>
+  <li><tt>&lt;Directory&gt;</tt> blocks could match requests being served by
+    mod_dav_svn.  This would allow directives applied in these configuration
+    blocks (most notably access control directives) to be applied.</li>
+  <li>When using Apache httpd 2.4.x and <tt>mod_dir</tt>, if a file from the
+    <tt>DirectoryIndex</tt> directive existed at the path Apache httpd believed
+    it was serving then the request would be rewritten to access that file,
+    which may or may not exist.  If the path was the <tt>SVNParentPath</tt>
+    then SVN would try to access a repository with the name of the
+    <tt>DirectoryIndex</tt> file that was found.</li>
+  <li>When using the <tt>%f</tt> variable in your log directives you would log
+    the path constructed as described above.  This was confusing since it was
+    not the content that was actually served.</li>
+</ul>
+
+<p>Starting with Subversion 1.7.12 and 1.8.2 the requests being served by
+<tt>mod_dav_svn</tt> will not be mapped to the local file system and when
+logging with the <tt>%f</tt> variable you will see a <tt>&quot;-&quot;</tt>
+logged. <tt>&lt;Directory&gt;</tt> blocks will no longer apply to such requests.
+Subversion 1.7.14 and 1.8.5 changed this further and the filename for the request
+will now be set as <tt>svn:/path/to/repo/path/in/repo</tt> (e.g. if your repo is at
+<tt>/var/svn/repo</tt> and the request is accessing <tt>/trunk/myfile</tt> in
+the repo then the filename for the request will be set to 
+<tt>svn:/var/svn/repo/trunk/myfile</tt>.  Note that the svn: prefix will
+prevent the filename from matching an actual path on disk since it isn't a
+valid path and as such <tt>&lt;Directory&gt;</tt> blocks will still not apply.
+</p>
+
+<div class="notice">
+<p><span style="color: red"><b>WARNING:</b></span>Therefore, if you were
+using <tt>&lt;Directory&gt;</tt> blocks to restrict access to paths served
+by <tt>mod_dav_svn</tt> you will need to adjust your configuration.  Since
+the local filesystem path was not complete this never would have been very
+useful for path based authorization, but it could be misused for simple
+things like blocking an IP.  These directives must be moved inside the
+appropriate <tt>&lt;Location&gt;</tt> blocks.</p>
+</div>
+
+<div class="notice">
+<p><span style="color: red"><b>WARNING:</b></span>This change may cause checksum
+errors with misconfigured httpd servers.  Since 1.7.14 and 1.8.5 the filename
+in the request record now includes the filename in the repository, there have
+been cases of mod_mime interfering with Subversion.  Users will see a
+<tt>svn: E200014: Checksum mismatch</tt> error when working with files that
+end in .gz if a configuration setting like <tt>AddEncoding x-gzip .gz</tt> is
+in their configuration file and applies to the locations that Subversion is
+being served from.  This happens because the setting now matches on the
+Subversion traffic and sets the Content-Encoding header to specify that the
+file has been gziped for transmport without changing the file content.  Since
+the Subversion client supports gzip content-encoding it decompresses the file
+and ends up with the decompressed file which does not match the checksum of the
+file it expected.  It is possible that this change may cause other filters to
+match Subversion requests that would not have in the past and trigger other
+similar errors with other httpd configurations.</p>
+</div>
+
+</div> <!-- mod_dav_svn-fsmap -->
+
+</div>  <!-- issues -->
+
+<div class="h2" id="svn-1.6-deprecation">
+<h2>Subversion 1.6.x series no longer supported
+  <a class="sectionlink" href="#svn-1.6-deprecation"
+    title="Link to this section">&para;</a>
+</h2>
+
+<p>The Subversion 1.6.x line is no longer supported.  This doesn't
+mean that your 1.6 installation is doomed; if it works well and is all
+you need, that's fine.  "No longer supported" just means we've stopped
+accepting bug reports against 1.6.x versions, and will not make any
+more 1.6.x bugfix releases.</p>
+
+</div>  <!-- svn-1.6-deprecation -->
+
+<!-- ***************** END CONTENT ****************** -->
+</div> <!-- #site-content -->
+</body>
+</html>

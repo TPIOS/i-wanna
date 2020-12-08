@@ -1,0 +1,1 @@
+osascript -e 'tell app "Xcode" to quit'

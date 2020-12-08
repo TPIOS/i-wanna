@@ -1,0 +1,36 @@
+# The name of the compiler
+COMPILER        = clang
+COMPILEOPTS 	+= -m64 -O3 -Wno-deprecated-writable-strings
+LINKEROPTS      = -m64 -Wl,-s
+
+# The location of the system libraries
+LINUX_LIBDIR_USR	= /usr/lib/x86_64-linux-gnu
+LINUX_LIBDIR	= /lib/x86_64-linux-gnu
+
+LIBS          = $(LINUX_LIBDIR_USR)/libstdc++.so.6 \
+				$(LINUX_LIBDIR)/libz.so.1 \
+				$(LINUX_LIBDIR_USR)/libXxf86vm.so.1 \
+				$(LINUX_LIBDIR_USR)/mesa/libGL.so.1 \
+				$(LINUX_LIBDIR_USR)/libcurl.so.3 \
+				$(LINUX_LIBDIR_USR)/libopenal.so.1 \
+				$(LINUX_LIBDIR)/libm.so.6 \
+				$(LINUX_LIBDIR)/librt.so.1 \
+				$(LINUX_LIBDIR)/libpthread.so.0 \
+				$(LINUX_LIBDIR)/libdl.so.2 \
+				$(LINUX_LIBDIR_USR)/libcrypto.so \
+				$(LINUX_LIBDIR_USR)/libXext.so.6 \
+				$(LINUX_LIBDIR_USR)/libX11.so.6 \
+				$(LINUX_LIBDIR_USR)/libXrandr.so.2 \
+				$(LINUX_LIBDIR_USR)/libGLU.so.1 \
+				$(LINUX_LIBDIR_USR)/libssl.so
+
+${YYProjectName} : make_outdir ${YYObjectFiles} libyoyo_yyc-x64.a
+	$(COMPILER) $(COMPILEOPTS) $(LINKEROPTS) -I . -o ${YYProjectName} out/*.o -DYYLLVM libyoyo_yyc-x64.a $(LIBS) 
+
+make_outdir:
+	mkdir -p out
+
+clean:
+	rm -rf out
+
+${YYFileOptions}

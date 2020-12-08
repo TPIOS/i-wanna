@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=9" />
+		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="style" charset="utf-8"/>
+	</head>
+	<body>
+		<div class="tip">
+			<div class="tiptext">
+				<h1>Functions</h1>
+				<p>
+				Texture pages are loaded into memory as they are needed by your game, but you can optimise this by calling the function 
+				<a href="http://docs.yoyogames.com/source/dadiospice/002_reference/drawing/draw_texture_flush.html"><tt>draw_texture_flush</tt></a> in the create event of an instance in your game (preferably 
+				the first one created in each room), then doing draw function calls to only those texture pages that you require for the current room. In this way old textures that are no longer needed are removed and your 
+				game runs more efficiently.
+				</p>
+			</div>
+		</div>
+	</body>
+</html>

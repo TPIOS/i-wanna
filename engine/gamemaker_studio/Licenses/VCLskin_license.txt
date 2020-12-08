@@ -1,0 +1,69 @@
+Copyright:
+The VCLSkin (software) and everything that comes with it 
+is copyrighted by (C) 2001-2006 by Link rank Inc. 
+All rights reserved.
+
+Liability disclaimer:
+
+THIS SOFTWARE IS DISTRIBUTED "AS IS" AND WITHOUT 
+WARRANTIES AS TO PERFORMANCE OF MERCHANTABILITY 
+OR ANY OTHER WARRANTIES WHETHER EXPRESSED OR 
+IMPLIED. YOU USE IT AT YOUR OWN RISK. THE AUTHOR 
+WILL NOT BE LIABLE FOR DATA LOSS, DAMAGES, LOSS 
+OF PROFITS OR ANY OTHER KIND OF LOSS WHILE USING 
+OR MISUSING THIS SOFTWARE.
+I. PROHIBITED USES.
+
+You may not, without the prior written permission of Link Rank:
+
+A. Disassemble, decompile or "unlock", decode or otherwise reverse 
+translate or engineer, or attempt in any manner to reconstruct or 
+discover any source code or underlying algorithms of SOFTWARE 
+provided in object code form only.
+
+B. Use, copy, modify, or merge copies of the SOFTWARE and 
+any accompanying documents except as permitted in this LICENSE.
+
+C. Transfer, rent, lease, or sublicense the SOFTWARE.
+
+D. Separate the software programs comprising the SOFTWARE for use by more than one user at a time.
+
+E. YOU MAY NOT DISTRIBUTE REGISTERED VERSION OF VCLSKIN. 
+IT WILL BE VIOLATION OF INTERNATIONAL COPYRIGHT LAWS.
+II. PERMITTED USES.
+
+A. The SOFTWARE is licensed per individual developer. 
+You may make copies on more than one computer, 
+as long as the use of the SOFTWARE is by the same developer.
+
+B. Once you have registered, you will receive a 
+personal registered copy via email. This copy may 
+not be copied or lend. You have the non-exclusive 
+right to use registered version of the software 
+only by a single person, on a single computer at a 
+time. YOU MAY use the components and classes from 
+this unit in any your (or your company's) 
+FREEWARE/SHAREWARE or COMMERCIAL application. 
+Back-up and transfer:
+
+You may make one copy of the software solely for 
+"back-up" purposes, as prescribed by international 
+copyright laws. You must reproduce and include the 
+copyright notice on the back-up copy. 
+Terms:
+
+This license is effective until terminated. You may 
+terminate it by destroying the program, the 
+documentation and copies thereof. This license will 
+also terminate if you fail to comply with any terms 
+or conditions of this agreement. You agree upon such 
+termination to destroy all copies of the program and 
+of the documentation, or return them to author
+
+Other rights and restrictions:
+
+All other rights and restrictions not specifically 
+granted in this license are reserved by author.
+If you have any questions regarding this agreement, 
+please contact at e-mail addresses: 
+info@link-rank.com

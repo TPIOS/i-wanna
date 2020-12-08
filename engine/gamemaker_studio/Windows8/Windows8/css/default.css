@@ -1,0 +1,54 @@
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    -ms-flex-align: center;
+    -ms-flex-direction: column;
+    -ms-flex-pack: center;
+    display: -ms-flexbox;
+}
+
+.fixedlayout {
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    height: 768px;
+    width: 1024px;
+}
+
+@media screen and (-ms-view-state: fullscreen-landscape) {
+}
+
+@media screen and (-ms-view-state: filled) {
+}
+
+@media screen and (-ms-view-state: snapped) {
+}
+
+@media screen and (-ms-view-state: fullscreen-portrait) {
+}
+
+.gm4html5_div_class #canvas {    
+    image-rendering: optimizeSpeed;
+    -webkit-interpolation-mode: nearest-neighbor;    
+    text-align:center;
+    outline:none;
+    /* stretch */
+}
+
+.extendedSplashScreen {     
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    /* splash screen colour */
+}
+
+.extendedSplashScreen.hidden {
+    display: none;
+}

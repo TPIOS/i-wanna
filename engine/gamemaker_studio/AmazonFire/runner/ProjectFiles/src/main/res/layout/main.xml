@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent">
+
+  <${YYAndroidPackageName}.DemoGLSurfaceView
+    android:id="@+id/demogl"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"/>
+
+  <AbsoluteLayout
+  	android:layout_width="fill_parent"
+  	android:layout_height="fill_parent"
+    android:layout_gravity="center"
+	android:id="@+id/ad" >
+  </AbsoluteLayout>
+
+</FrameLayout>

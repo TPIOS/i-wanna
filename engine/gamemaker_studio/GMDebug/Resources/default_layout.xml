@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Panel Type="eVertical" Width="888" Height="558" Distance="444">
+  <Left>
+    <Panel Type="eNone">
+      <Window Type="Source" />
+    </Panel>
+  </Left>
+  <Right>
+    <Panel Type="eHorizontal" Width="440" Height="558" Distance="279">
+      <Left>
+        <Panel Type="eNone">
+          <Window Type="Globals" />
+        </Panel>
+      </Left>
+      <Right>
+        <Panel Type="eNone">
+          <Window Type="Locals" />
+        </Panel>
+      </Right>
+    </Panel>
+  </Right>
+</Panel>

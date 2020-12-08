@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "${YYProjectName}", "${YYProjectName}.vcxproj", "${YYProjectGUID}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|PSVita = Debug|PSVita
+		Release|PSVita = Release|PSVita
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		${YYProjectGUID}.Debug|PSVita.ActiveCfg = Debug|PSVita
+		${YYProjectGUID}.Debug|PSVita.Build.0 = Debug|PSVita
+		${YYProjectGUID}.Release|PSVita.ActiveCfg = Release|PSVita
+		${YYProjectGUID}.Release|PSVita.Build.0 = Release|PSVita
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

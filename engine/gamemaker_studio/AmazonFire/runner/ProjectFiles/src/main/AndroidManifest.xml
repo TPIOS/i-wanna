@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="${YYAndroidPackageName}" android:versionCode="${YYAndroidVersionCode}" android:versionName="${YYAndroidMajorVersion}.${YYAndroidMinorVersion}.${YYAndroidBuildVersion}" android:installLocation="${YYAndroidInstallLocation}" xmlns:tools="http://schemas.android.com/tools"
+android:allowBackup="false"
+>
+
+<!-- This is the androidmanifest.xml used as the basis for building game .apk's from Studio -->
+
+  
+  <!-- uses here -->
+  ${YYAndroidManifestPermission}
+
+  ${YYAndroidManifestManifestInject}
+  
+  <!-- <uses-feature android:glEsVersion="0x00020000" android:required="true" /> -->
+  <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+  <uses-feature android:name="android.software.leanback" android:required="false" />
+
+<!--   <uses-sdk android:minSdkVersion="${YYAndroidMinSDKVersion}" android:targetSdkVersion="${YYAndroidTargetSDKVersion}"/>  -->
+  
+  <supports-screens android:resizeable="true" android:largeScreens="true"/>
+  
+  
+  <!-- application -->
+  <application android:name="${YYAndroidPackageName}.RunnerApplication" android:label="@string/app_name" android:icon="@drawable/icon" tools:replace="android:label" ${YYAndroidIsGame} ${YYAndroidTVBanner}>
+    <activity android:name="${YYAndroidPackageName}.RunnerActivity" android:theme="@android:style/Theme.NoTitleBar.Fullscreen" android:label="@string/app_name" 
+              android:launchMode="singleTop" android:alwaysRetainTaskState="true"  android:configChanges="orientation|keyboardHidden|screenSize" tools:replace="android:label">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+        <category android:name="android.intent.category.LEANBACK_LAUNCHER"/>
+        ${YYAndroidExtraCategories}
+      </intent-filter>
+	  ${YYAndroidManifestActivityInject}
+    </activity>
+    <activity android:name="${YYAndroidPackageName}.RunnerPreferenceActivity" android:label="@string/menu_settings">
+    </activity>
+    
+    <!-- services -->
+    
+    ${YYAndroidManifestServices}
+
+	${YYAndroidManifestApplicationInject}
+
+   	<!-- activities here -->
+    ${YYAndroidManifestActivities}
+
+    <!-- receivers here -->    
+	  ${YYAndroidManifestReceivers}
+    
+	
+    <!-- This is XPeria Play specific, we have decided to make this standard though for all applications, just in case -->
+    <meta-data android:name="xperiaplayoptimized_content" android:resource="@string/xperiaplayoptimized_content" />
+    <meta-data android:name="game_display_name" android:resource="@string/app_name" />
+ <!--    <meta-data android:name="game_icon" android:resource="@drawable/icon" />
+ Removing due to following warning:
+ Resources referenced from the manifest cannot vary by configuration (except for version qualifiers, e.g. '-v21'.) Found variation in hdpi, ldpi, mdpi, xhdpi, xxhdpi, xxxhdpi
+ -->
+    
+    <!-- meta-data here -->
+    ${YYAndroidManifestMetadata}
+   
+   
+  </application>
+</manifest>
+
+
+
+
+
+
+
+

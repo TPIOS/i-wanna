@@ -1,0 +1,9 @@
+
+[Desktop Entry]
+Name=${YYDisplayName}
+Comment=Created with GameMaker Studio
+Exec=YYAppExePath/${YYExeName}
+Icon=YYAppExePath/assets/icon.png
+Terminal=false
+Type=Application
+Categories=Games;

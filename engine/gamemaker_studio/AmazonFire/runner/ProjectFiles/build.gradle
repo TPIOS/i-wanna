@@ -1,0 +1,45 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion ${YYAndroidCompileSDKVersion}
+    buildToolsVersion '${YYAndroidBuildToolsVersion}'
+
+	${YYAndroidJavaMaxHeapSize}
+
+    defaultConfig {
+        applicationId "${YYAndroidPackageName}"
+        minSdkVersion ${YYAndroidMinSDKVersion}
+        targetSdkVersion ${YYAndroidTargetSDKVersion}
+		multiDexEnabled true
+    }
+
+	signingConfigs {
+        release {
+            storeFile file("${YYAndroidKeyStoreFile}")
+            storePassword "${YYAndroidKeyStoreFilePassword}"
+            keyAlias "${YYAndroidKeyAlias}"
+            keyPassword "${YYAndroidKeyPassword}"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+			signingConfig signingConfigs.release
+        }
+    }
+
+	${YYAndroidSplits}
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:${YYAndroidSupportLibVersion}'
+	compile 'com.android.support:multidex:1.0.1'
+    compile files('libs/ini4j-0.5.2.jar')
+
+
+
+	${YYAndroidGradleDependencies}
+
+}

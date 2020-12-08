@@ -1,0 +1,891 @@
+<html>
+<head>
+<title>GameMaker:Studio 1.x release notes</title>
+		<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1" />
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="expires" content="-1" />
+<style type="text/css">
+body{
+	margin:0;
+	padding:0 10px 5px 10px;
+	background:#212121;
+	font:14px "Trebuchet MS","Arial",sans-serif;
+	color:#fafafa;
+	cursor:default;
+}
+
+a{
+	text-decoration:underline; 
+	color:#00a000;
+}
+
+a:hover, a:active{
+	text-decoration:underline; 
+	color:#00ff00;
+}
+
+a:visited{
+	text-decoration:none; 
+	color:#007500;
+}
+
+h1{
+	margin:20px 0 10px 0;
+	padding:10px 10px 10px 17px;
+	border:1px #111 solid;
+	background:#3a3a3a;
+	font-size:30px;
+	font-weight:normal;
+	color:#f0f0f0;
+}
+
+h1 a{
+	text-decoration:none;
+}
+
+h2{
+	margin:0 0 5px 20px;
+	font-size:20px;
+	font-weight:normal;
+}
+
+ul{
+	margin:10px 0 15px 0;
+	list-style-type:square;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.4.9999                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1">
+<a href="http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-1.4.9999.exe">Version 1.4.9999</a> 04/10/2018 
+<a href="http://help.yoyogames.com/entries/91625158"> (Required SDKs FAQ)</a>
+</h1> 
+<!-- 04/10/2018  13:25 -->
+<br>
+<h2>Headline Changes Since 1804</h2>
+<ul>
+	<li>Removal of Online Connectivity in the IDE</li>
+	<ul>
+		<li>The News feed has been disabled (also stops the script errors shown on startup in previous versions)</li>
+		<li>Links to the Marketplace and for managing your YoYo Account have been removed - please use your browser to do this now</li>
+		<li>Demos and Tutorials now work off a download, rather than the online feeds - see <a href="https://help.yoyogames.com/hc/en-us/articles/217571368-Download-Studio-1-4-Demos-And-Tutorials">this "Download Studio 1.4 Demos And Tutorials" Hepdesk FAQ</a> for more info</li>
+		<li>GGS support for automatically downloading our third-party extensions has been removed - please download in your browser and drag the package onto the IDE to import the extension to your project</li>
+	</ul>
+	<li>macOS</li>
+	<ul>
+		<li>In order to comply with current AppStore requirements and ahead of Xcode and Mojave being 64bit-only, we've removed the 32bit components of macOS packages</li>
+		<li><font color="red">NOTE:</font> This will require you to update any 32bit extensions you're using, to ensure your projects are Xcode/AppStore/Mojave compliant</li>
+		<li><font color="red">NOTE:</font> If you do not need AppStore support and want to instead continue using the older Xcode and 32bit packages, please continue using 1804 for this</li>
+		<li>Deprecated the synchronous developer get_...() dialog functions, so they now do nothing in-game (avoids errors) - use the ..._async() versions instead</li>
+	</ul>
+	<li>iOS</li>
+	<ul>
+		<li>As per Mac above, only 64bit information is added into packages now, in order to avoid AppStore submission issues. See the two Notes above.</li>
+		<li>Fixed playing music externally and then running your game could crash the game or result in broken audio</li>
+		<li>Fixed getting a call or other system notification sound crashed your game</li>
+		<li>Fixed the iPhone X home bar being visible all the time</li>
+		<li>Fixed message dialogs to stop crashes when trying to show code errors on iOS 11+ because the OS has changed how message dialogs work</li>
+		<li>Ignore GGS's "Minimum Time to Display" to fix black splash screen on startup if you had set this option greater than 0 in versions since we changed the splash screen method</li>
+		<li>Deprecated the synchronous developer get_...() dialog functions, so they now do nothing in-game (avoids errors) - use the ..._async() versions instead</li>
+	</ul>
+	<li>Ubuntu</li>
+	<ul>
+		<li>Fixed the name of the audio library the runner looks for on starting the game - fixes lack of audio for some users</li>
+		<li>Fixed "Error deleting sources + buffers" error when trying to close games</li>
+		<li>Fixed sounds popping when stopped if another sound is played directly afterwards</li>
+	</ul>
+	<li>Android</li>
+	<ul>
+		<li>Fixed memory leak when using HTTP functionality and also a memory management issue which could have crashed the game if lots of HTTP traffic</li>
+		<li>Deprecated the synchronous developer get_...() dialog functions, so they now do nothing in-game (avoids errors) - use the ..._async() versions instead</li>
+	</ul>
+	<li>UWP</li>
+	<ul>
+		<li>Fixed the window size always being locked to a fixed size dictated by the UWP tools</li>
+		<li>Fixed url_open() so it now works the same as Windows native</li>
+	</ul>
+	<li>HTML5</li>
+	<ul>
+		<li>Fixed 0029360: HTML5: Audio doesn't play on iOS Safari, iOS Chrome or Android Chrome</li>
+		<li><font color="red">NOTE:</font> Fix is for iOS and Android only - Windows Chrome betas currently exhibit this also, but Chrome are not yet committed to keeping the change on desktops</li>
+		<li><font color="red">NOTE:</font> This change does mean initial loading times for HTML5 will now be longer while the audio files in your game are downloaded</li>
+		<li>Fixed Mouse Pressed events not working on scaled canvases because the collision mask is offset</li>
+		<li>Fixed mouse coordinates aren't scaled to match when your window or view is scaled</li>
+		<li>Fixed functions to set the gain on an audio resource so they work as per native platforms</li>
+		<li>Fixed high refresh rate monitors cause the game to run quicker than intended in Chrome and Firefox</li>
+	</ul>
+	<li>Changed the default size of the GUI layer</li>
+	<ul>
+		<li>Changed the default GUI size for Draw GUI events to match the application_surface size so it is more consistent cross-platform</li>
+		<li>Fixes various issues, such as text placement on some platforms (e.g., Mac)</li>
+		<li><font color="red">NOTE:</font> If you use a Draw GUI event to scale your GUI and draw the application_surface, you might need to change your project to maintain your expected results:</li>
+		<li>In your first object's Create/Game Start, you could do "var pos = application_get_position(); display_set_gui_maximise(1, 1, pos[0], pos[1]);"</li>
+		<li>Depending on your project, you might find also that simply changing your Draw GUI event to be a Post Draw gives the intended result</li>
+		<li>See the manual for more information</li>
+	</ul>
+	<li>Fast Collisions Fixes</li>
+	<ul>
+		<li>Lots of fixes have been added for the Fast-Collisions system (if you enabled this for your project in GGS)</li>
+		<li>Includes deactivating and reactivating instances doesn't refresh collision status, collision information persisting in the wrong room or after game_restart()</li>
+		<li>Multiple fixes for Spine sprites and collisions, also ensuring that Animation Events fire correctly</li>
+	</ul>
+	<li>New Audio System Fixes</li>
+	<ul>
+		<li>Lots of fixes for the new audio engine released with 1804</li>
+		<li>Better support for stereo files being incorrectly used for positional audio</li>
+		<li>Fixes for: volume levels and sync groups, audio distortion or lower quality output files than expected, whitespace "hissing" from very high bitrate ogg files, and more</li>
+		<li>Fixes for the wrong sounds playing on audio_play_sound(), especially after using an emitter to play audio.
+	</ul>
+	<li>Misc</li>
+	<ul>
+		<li>Fixed sprite_add_from_surface() to now show a code error if the sprite has not already been duplicated (as is required), rather than crashing the game</li>
+	</ul>
+	<li>Known Issues</li>
+	<ul>
+		<li>iOS and macOS Entitlements for IAPs and Game Center are not being set correctly in Xcode during builds, so you need to enable these manually when doing Create Exe</li>
+		<li>For UWP YYC builds, you must have the old Windows SDK 10.0.10240.0 as well as our stated minimum, as Visual Studio 2015 expects Windows SDK 10.0.10240.0 to be installed</li>
+		<li>Some audio devices can cause the runner to take longer than normal to initialise when running projects, so you might need to disable these temporarily</li>
+		<li>Monitors with refresh rates higher than 60hz can cause timing issues on Windows, games run more slowly than expected on these devices</li>
+		<li>Android NDK 17b above is not supported and neither is ARM64 package builds</li>
+	</ul>
+</ul>
+<h2>Headline Bugs Fixed Since 1804</h2>
+<ul>
+	<li>This release contains all in-game <b>fixes</b> in GMS2 2.1.5 (so there are a lot of fixes since 1804!) and this release also has:</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0016711">0016711</a> HTML5: Last used sound plays when changing tabs back to game</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0024834">0024834</a> Spine: Memory leak in skeleton_bone_state_get()</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0025418">0025418</a> Functions: Using Fast Collision system will cause incorrect results when using collision_line()</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026336">0026336</a> UWP: Window resolution is always locked at 1200 x 900, regardless of what your room or view size is</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027794">0027794</a> UWP: url_open() fails to open protocol applications, nothing happens</li>	
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028089">0028089</a> HTML5: Safari won't play streaming MP3s until after the user interacts with the game</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028839">0028839</a> Build Mac: Putty doesn't quote your password or escape the string so your password fails if it starts with a symbol</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029055">0029055</a> Importing Projects: Unable to Import Project while project isn't saved and clicking 'No' on confirmation</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029132">0029132</a> Audio: Sounds differ between the runner and IDE within the latest update</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029261">0029261</a> Build iOS: Unable to create an executable as we look for xcuserdata rather than xc*data</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029428">0029428</a> HTML5: path_endaction doesn't work</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029632">0029632</a> Audio: Sync groups don't have any audio if you've set the position of a listener</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029735">0029735</a> HTML5: keyboard_string doesn't repeat characters whilst key is held down</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029761">0029761</a> Build Mac: No support for 64bit builds, which is now mandatory for Apple submission</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029763">0029763</a> Audio: Crackling occurs if you set an emitter's velocity</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029817">0029817</a> Audio: Clicking occurs if you change the pitch of an emitter</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029774">0029774</a> Build Mac: Includes 32bit support in packages, which blocks AppStore submission uploads as of end of June 2018</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029810">0029810</a> Mac: "Allow resize window" with "Keep aspect ratio" doesn't allow resizing window left/right, must be "full scale"</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029816">0029816</a> Mac: get_open_filename() doesn't check the load whitelist correctly, stopping files outside the sandbox being read</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029818">0029818</a> Build UWP: Debugger doesn't connect when debugging PC games, works fine for remote targets [issue was not in 1804]</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029819">0029819</a> UWP: GML errors from your game are no longer shown, game silently closes [issue was not in 1804]</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029853">0029853</a> Functions: Random seed is different if you restart your game after a room change has occurred</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029857">0029857</a> Audio: 3D Audio falloff not working anymore</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029873">0029873</a> GGS: Setting iPhoneX Landscape splash screen fails to actually apply the image</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029884">0029884</a> General: Fast collisions have issues with collision masks that are very small such as a single pixel</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029928">0029928</a> Build Android: Building with Lint enabled will always fail unless you have Bluetooth permissions enabled</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029966">0029966</a> General: 502 website error dialogue on startup, often/usually accompanied by a broken tips feed</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029970">0029970</a> Build Android: Access Violation if any part of your GGS package name is blank and you try to run/compile</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029991">0029991</a> Debugger: Watches panel is defunct</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029992">0029992</a> General: image_blend behaves differently in GMS1 to GMS2</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029995">0029995</a> Font: font_add_sprite() is incorrectly offset in 1.4.9999, need to use font_add_sprite_ext() as workaround</li>
+</ul>
+<br>
+<center><h2>Massive thanks from all of us at YoYo Games to you for using GameMaker: Studio 1!</li></center></h2>
+<br>
+<br>
+
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.4.1804 (1.4 Stable #8)                  --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1">
+<a href="http://store.yoyogames.com/downloads/gm-studio/GMStudio-Installer-1.4.1804.exe">Version 1.4.1804</a> 13/03/2018 
+</h1> 
+<br>
+<h2>Changes Since 1788</h2>
+<ul>
+	<li>IDE</li>
+	<ul>
+		<li>Fixed Configs being hidden in the resource tree if you cancelled opening a different project</li>
+		<li>Added Windows 8 Native and Windows Phone 8 back in as licensed targets</li>
+		<li>Removed Supersonic Ads from GGS > Advertising > HTML5, as this has been unsupported for a while</li>
+	</ul>
+	<li>Windows</li>
+	<ul>
+		<li>Fixed games crashing if no audio device found</li>
+		<li>Fixed several issues with audio stuttering or resuming from the wrong offset when paused</li>
+	</ul>
+	<li>HTML5</li>
+	<ul>
+		<li>Added ds_map_replace_map() and ds_map_replace_list()</li>
+	</ul>	
+	<li>Android / Amazon Fire</li>
+	<ul>
+		<li>Fix for YYC builds not giving you an APK Expansion .zip file</li>
+		<li>Re-added support for extra . in package names as much as we can - will still error if the . placement would causes issues with Google's tools</li>
+	</ul>
+	<li>Misc In-Game</li>
+	<ul>
+		<li>Fixed issues with Steam-enabled games not forcibly relaunching the Steam copy of the game if you manually run the exe you have built</li>
+		<li>Fixed issues with Steam-enabled games not insisting on the Steam client being running at the time</li>
+	</ul>
+</ul>
+<h2>Bugs Fixed Since 1788</h2>
+<ul>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0023293">0023293</a> Networking: Evidence of network_send_udp() causing memory leak</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028789">0028789</a> Global Game Settings: 'Supersonic Ads' listing is incorrect, needs updating</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028876">0028876</a> Configs: Open Project button makes configs disappear</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028921">0028921</a> Windows: Games crash if you have no audio devices</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028933">0028933</a> Steam: Leaderboards - Emojis in usernames cause runner crash</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029054">0029054</a> Global Game Settings: Windows 8 Analytics provider 'markedup' no longer exists, should be removed from GGS</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029062">0029062</a> Build Android: 'APKExpansion' extension generates differently named zips for VM and YYC builds</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0029109">0029109</a> Global Game Settings: Android package names with a '.' anywhere in the string are disallowed, blocks updating published games</li>
+</ul>
+
+<br>
+<br>
+<h2>Download links for versions older than 1.4.1804 have been removed from this page, and super-old versions have now been removed completely</h2>
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.4.1788                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1">Version 1.4.1788 08/02/2018</h1> 
+<!-- 08/02/2018  11:56 -->
+<br>
+<h2>Changes Since 1773</h2>
+<ul>
+	<li>IDE</li>
+	<ul>
+		<li>Fixed an issue with incorrectly checking for missing resources was blocking beng able to create new configs</li>
+		<li>Fixed clearing backup and assets cache folders in Preferences does nothing - added support for clearing only the current project (default) or wiping everything</li>
+		<li>Fixed an issue stopping texture page previews from being shown because a different part of the build process failed</li>
+		<li>Changed the "Checking Resources" phase of project saves to speed up project save/loads</li>
+		<li>Changed texture group generation to reduce build times in projects with very large numbers of groups (generally affects projects that make extensive use of "Used for 3D")</li>
+		<li>Added preference to disable thumbnail icon generation when loading projects - can greatly improve project load times</li>
+		<li>Added extra logging for users who use 2-step with Google Authenticator, as this stopped working for some people for a while - if you have this issue, please send us a ticket with your traceIDE.log</li>
+		<li>Removed Tizen, Windows 8 and Windows Phone 8, as these platforms are all very out-of-date and cannot be submitted as packages anymore (Win 8/WP8 are 8.0, not 8.1)</li>
+	</ul>
+	<li>Compiler</li>
+	<ul>
+		<li>Changed "unknown" resources to be a warning, not an error (although we would recommend you still fix/remove these)</li>
+	</ul>
+	<li>Debugger</li>
+	<ul>
+		<li>Fixed lots of issues for Watches window functionality</li>
+		<li><font color="red">NOTE:</font> To connect to an IPv6-enabled iOS device you now need to use IPv6 in your PC's network settings also, otherwise it will time-out</li>
+	</ul>
+	<li>Windows</li>
+	<ul>
+		<li>Aligned Windows runner to use our own custom audio engine, as already used on console platforms, UWP and macOS. Shouldn't notice any difference, but please cross check with your games.</li>
+		<li><font color="red">NOTE:</font> Microphone and audio-recording support is not available in this release - it will return in the next one</li>
+		<li>Changed gamepad support to work with the SDL2 game controller database, as used by Steam, so more controllers should work</li>
+	</ul>
+	<li>Mac</li>
+	<ul>
+		<li>Fixed/Added Xcode 8.3/9 and Sierra/High Sierra support</li>
+		<li>Fixed support for 8bit indexed pngs as your splash screen</li>
+		<li>Changed the way we package splash screens to match Apple's requirements</li>
+		<li>Changed the build process so now if you make a non-AppStore build IAPs won't be included</li>
+		<li>Added the gamepad changes as per Windows</li>
+		<li>Added basic get_open_filename and get_save_filename functionality for Mac (does not handle filetypes filter properly yet)</li>
+		<li>Added 64bit support into packages, as per Apple's submission requirements</li>
+	</ul>
+	<li>Ubuntu</li>
+	<ul>
+		<li>Added the gamepad changes as per Windows</li>
+	</ul>
+	<li>Windows UWP</li>
+	<ul>
+		<li>Fixed YYC not always building the correct architecture</li>
+		<li>Fixed splash screen background colour always shows blue in-game</li>
+		<li>Fixed games crashing when restoring focus if you had taken focus away for long enough that the OS suspended the app</li>
+		<li>Changed Win 10 SDK version used for building projects to 10.0.14393.0</li>
+		<li>Added support for "Minimum" and "Target" versions</li>
+	</ul>
+	<li>iOS</li>
+	<ul>
+		<li>Fixed NSLocaleCountryCode returning nil and causing submission failures</li>
+		<li>Fixed touches right up to the screen edges, as discussed on the GMC <a href="https://forum.yoyogames.com/index.php?threads/ios-11-screen-edge-dead-zones.38580/">ios-11-screen-edge-dead-zones.38580</a></li>
+		<li>Fixed black screen flash when adding or removing subview, as seen with admob banner ads</li>
+		<li>Changed the way we package splash screens to match Apple's requirements - stops "missing Icon Asset Catalog" submission fails</li>
+		<li><font color="red">NOTE:</font> You will need to update/re-link all of your iOS icons before next submitting to Apple</li>
+		<li>Added support for newer iOS device splashes/icons and changed the GGS presentation of this</li>
+		<li>Added support for IPv6 into our networking fuctions, stops submission fails if your game has networking support</li>
+		<li>Added HTTP async events for loading files, so can use this for progress bars, etc.</li>
+		<li>Added keyboard_key_press() and keyboard_key_release() to match as they are on Android</li>
+	</ul>
+	<li>Android / Amazon Fire</li>
+	<ul>
+		<li>Fixed build fails if the project folder path contains special characters</li>
+		<li>Fixed build script occasionally failed to launch Gradle properly, meaning you immediately needed to build again</li>
+		<li>Changed Gradle script to include the new download location for SDKs 27+</li>
+		<li>Changed build process to abort and advise you to change the bundle ID if this contains a Java reserved word, stops Gradle failing later in the build</li>
+		<li>Added support for NDK 16+</li>
+		<li>Added the "IsGame" flag (set to true) into builds to stop submission issues</li>
+	</ul>
+	<li>HTML5</li>
+	<ul>
+		<li>Fixed/Added lots of missing functions and increase consistency with the native runner - implemented all the function changes announced in GMS2 since the last 1.4 release</li>
+		<li>Fixed if an object or instance ID can not be found, HTML5 now returns undefined as the native runners do</li>
+		<li>Fixed font rendering to now ignore any glpyh it does not understand - the samde as native runners do - rather than stopping the page loading</li>
+		<li>Fixed gml_release_mode() to work the same as native and is required to access the faster "release" mode of the functions which support this</li>
+		<li>Fixed buffer_resize() crashing if buffer was reduced</li>
+		<li>Fixed a Firefox audio compatibility issue some users had discussed on the GMC <a href="https://forum.yoyogames.com/index.php?threads/game-wont-run-in-firefox.37184/">game-wont-run-in-firefox.37184</a></li>
+		<li>Changed grid indexes to be floored, not rounded, as this gives a huge perfomance increase (and arrays are already floored, so this increases consistency also)</li>
+		<li>Changed default index.html template to include "window.onload = GameMaker_Init" to allow delayed game start, so you can inject startup code into your pages, etc.</li>
+		<li><font color="red">NOTE:</font> If you are using a custom index.html you will need to add that new line, otherwise you'll just get a black screen on startup</li>
+	</ul>
+	<li>Misc In-Game</li>
+	<ul>
+		<li>Fixed an unstacking issue if you called more than one surface_set_target() in the Draw GUI event</li>
+		<li>Changed game_end() to be ignored on Android and iOS, following crash logs that indicated this was causing memory corruption and crashes in subsequent runs of your app</li>
+		<li>Changed frame-timing to now be done via Vsync on all platforms, should result in better efficiency and therefore battery life (not loads more FPS) - please test well</li>
+		<li>Added font_add_enable_aa() to toggle antialiasing for subsequent font_add() calls. font_add_get_enable_aa() returns whether a font was added using font_add() with antialiasing enabled or not</li>
+		<li>Added YYC versions of vertex_normal(), vertex_position_3d(), vertex_colour(), vertex_texcoord(), vertex_begin(), and vertex_end()</li>
+	</ul>
+</ul>
+<h2>Headline Bugs Fixed Since 1773</h2>
+<ul>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0014810">0014810</a> Functions: base64 encode/decode works incorrect with Cyrillic in HTML5</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0015358">0015358</a> json_decode() bugs with giant numbers</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0015607">0015607</a> iOS: Error report on previewing a texture page</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0018208">0018208</a> HTML5: sprite_add_from_surface unimplemented</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0018419">0018419</a> Functions: Buffers behaving weirdly</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020156">0020156</a> Functions: Inconsistent behaviour of array dimension functions between Windows and HTML5</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020903">0020903</a> General: Clearing backup and assets cache folders in Preferences does nothing</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0023413">0023413</a> HTML5: surfaces are broken</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0025577">0025577</a> HTML5: file_text_write_string turns "#" into newlines</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026163">0026163</a> Input Devices: Disconnecting and reconnecting a PS4 gamepad crashes games on Windows</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026317">0026317</a> Build Android: Compile fails if the word "break" appears in the package name</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026327">0026327</a> HTML5: Text alignment when using international characters and font_add_sprite_ext() is wrong</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026331">0026331</a> Windows (YYC): Bitshifting in YYC provides different results than VM</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026465">0026465</a> Suggestion: Functions: Make buffer_set_surface work on all platforms</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026804">0026804</a> Mac YYC: xcodebuild error "Scheme is not currently configured for the archive action" when exporting</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026917">0026917</a> file_text_readln behavior is not consistent between HTML5 and native targets</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027116">0027116</a> Android: http_post_string does not use the given parameter for the payload, instead, sends NULL</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027213">0027213</a> Functions: draw_text_ext() doesn't work correctly if the string has multiple consecutive spaces (even crashes HTML5 tabs)</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027215">0027215</a> HTML5: string_height() incorrect when using newlines in the code editor</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027239">0027239</a> General: Pressing both the left and right modifier at the same time will only remove one of them when both are released</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027496">0027496</a> Spine: skeleton_attachment_create() won't work when using sprite from sprite_create_from_surface()</li>	
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027608">0027608</a> Physics: Assigning to a physics variable while physics is disabled gives unclear error message</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027644">0027644</a> Functions: string_delete() with a count 0 of deletes everything before starting position [also an issue with negative count on HTML5]</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027646">0027646</a> HTML5: variable_..._set() functions not working</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027760">0027760</a> Windows (YYC): Array assignment involving nested arrays and function calls as index is bugged</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028224">0028224</a> Android: Extension crashes game because http_post_string() fails with return code 404 and an IOException</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028320">0028320</a> Build iOS: Unable to submit due to missing Icon Asset Catalog</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028343">0028343</a> iOS: NSLocaleCountryCode returning nil causes submission failures</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028344">0028344</a> Ubuntu: File paths for Steam Workshop items appear to not be whitelisted or a part of the file sandbox</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028358">0028358</a> Spine: Event information only takes the default value and ignores the value at individual keyframes</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028384">0028384</a> Build Android: NDK 16 is not supported, so YYC builds fail</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028428">0028428</a> Licensing: [Google Authenticator 2-step authentication code doesn't work for some users]</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028484">0028484</a> HTML5: Uncaught TypeError: _uC1.getParameter is not a function when setting collision mask in GML</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028555">0028555</a> Resource Tree: Dragging objects around in the tree can cause unwanted renaming and creation of "blank" objects</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028593">0028593</a> Build Mac: Mac .zip will not open  [potential fix]</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028613">0028613</a> UWP: Games crash upon being restored after the OnSuspended event has been fired</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028627">0028627</a> HTML5: Keyword "undefined" works by a total fluke</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028643">0028643</a> HTML5: Runner crashes if you use draw_text_ext with string_width</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028723">0028723</a> Functions: steam_set_stat_float doesn't work correctly</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028729">0028729</a> Pressing the cancel button when attempting to close the IDE with unsaved changes will still close the IDE</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028742">0028742</a> Global Game Settings: Windows UWP splashscreen background colour only shows blue on build</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028754">0028754</a> Build Android: Gradle Daemon doesn't start correctly on first run and in turn launches the web server for some reason</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028757">0028757</a> Mac: Providing a larger splash screen than your display resolution causes your splash screen to break</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028766">0028766</a> Build Ubuntu: Changing the scaling method in GGS has no effect</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028773">0028773</a> Code Editor: Closing and saving a shader adds an empty line to the top of your fragment shader</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028775">0028775</a> Global Game Settings: Update the description for Mac OSX code signing</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028777">0028777</a> UI: Knowledge Base search goes to broken result on helpdesk</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028783">0028783</a> General: Steam Workshop Agreement shows YoYo homepage instead of agreement when exporting to Workshop</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028787">0028787</a> Global Game Settings: Millennial Media Ads setting still exists, despite this being no longer supported</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028786">0028786</a> Global Game Settings: Flurry hyperlink leads to dead page, needs updating</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028788">0028788</a> Global Game Settings: Amazon Ads hyperlink leads to dead page, needs updating</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028813">0028813</a> General: Incomplete description error for Exporting to SteamWorkshop has spelling mistake</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0028857">0028857</a> Saving: Using "Add Existing" for a script doesn't actually save the imported script, lost when project is next loaded</li>
+</ul>
+
+
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.4.1773                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1">Version 1.4.1773 14/09/2017</h1> 
+<!-- 14/09/2017  12:26 -->
+<br>
+<h2>Only Change Since 1772</h2>
+<ul>
+	<li>Windows UWP</li>
+	<ul>
+		<li>Removed freetype requesting an unwanted permission, fixes store package submission fails</li>
+	</ul>
+</ul>
+<h2>Bug Fixed Since 1772</h2>
+<ul>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=27734">0027734</a> Build UWP: Users reporting submission fails for unallowed functionality when submitting their games to the store</li>
+</ul>
+
+
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.4.1772 (1.4 Stable #7)                  --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1">Version 1.4.1772 26/07/2017</h1> 
+<!-- 26/07/2017  15:41 -->
+<center><h2><font color="red">If you are coming from 1763/1765, this will be a huge update - see 1767's notes below also!</font></h2></center>
+<br>
+<h2><u>Headline</u> Changes Since 1767</h2>
+<ul>
+	<li>Compiler</li>
+	<ul>
+		<li>Changed the check for the "!!No ini file" warning, so nothing is shown on platforms which don't require the ini (most of them)</li>
+		<li><font color="red">NOTE:</font> Many devs thought the above warning was why their Windows builds failed, but this is not the case</li>
+	</ul>
+	<li>Windows</li>
+	<ul>
+		<li>Reverted <a href="http://bugs.yoyogames.com/view.php?id=17315">this old change to word wrapping on Windows</a>, as ever since then HTML5 has been different</li>
+	</ul>
+	<li>HTML5</li>
+	<ul>	
+		<li>Fixed that the alpha value set in the room editor for an instance is actually now used in-game</li>
+		<li>Fixed bug in sprite fonts where space character was provided, but not applied correctly</li>
+		<li>Changed/fixed HTML5 games to now "frame count" if room_speed is an even divisor of 60 (so 60,30,20,10,6 etc.), removes all stutters from gameplay + updates</li>
+		<li>Added WebGL now does proper font colour blending. Fonts should now be the same as native</li>
+		<li>Added JSON try/catch added to many places, but particularly around highscore loading</li>
+	</ul>
+	<li>Misc In-game</li>
+	<ul>
+		<li>Fixed sprite_create_from_surface() being broken on Android (and others) in EA551/1.4.1767</li>
+		<li>Fixed skeleton_attachment_set() to check the current skin for the attachment before any others (fixes using straight after after skeleton_skin_set())</li>
+		<li>Added "worldAngleX" and "worldAngleY" as new values in the ds map you get from skeleton_bone_state_get()</li>
+	</ul>
+</ul>
+<h2>Bugs Fixed Since 1767</h2>
+<ul>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0025821">0025821</a> Spine: worldAngle from Spine animation [ds map] gives the value "<undefined>" [see the notes, as you will have to change your code]</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026327">0026327</a> HTML5: Text alignment when using international characters and font_add_sprite_ext() is wrong</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026972">0026972</a> Mac: Cursor does not show in-game</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0027115">0027115</a> Debugger: Showing <unknown instance> on all instances [if project contains greater than 512 resources]</li>
+</ul>
+
+
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.4.1767                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1">Version 1.4.1767 10/07/2017</h1> 
+<!-- 10/07/2017  11:39 -->
+<center><h2><font color="red">This is a very big update! Please read all of this release's notes carefully!</font></h2></center>
+<br>
+<h2><u>Headline</u> Changes Since 1.4.1763 (aka 1765 on Steam)</h2>
+<ul>
+	<li>IDE</li>
+	<ul>
+		<li>Fixed issues with large numbers of resource windows being opened causing them to stop drawing properly (much more of an issue in Steam IDE)</li>
+		<li>Fixed saying "no" to importing/opening other projects when you have unsaved changes in current project aborts loading the new project</li>
+		<li>Fixed method of creating a duplicate project when you have unsaved changes in current project and attempt to create a new one</li>
+		<li>Fixed extensions not always saving changes in some situations</li>
+		<li>Fixed YoYo Account login dialogue to accept accented characters in passwords</li>
+		<li>Fixed Marketplace asset importing so Spine files import correctly</li>
+		<li>Fixed the Room Editor so 'Clear all instances from the room' does remove the instances from the instance order list</li>
+		<li>Fixed the Room Editor so it won't paste an "invisible" object instance if you copy, rename the object, then try to paste it</li>
+		<li>Fixed the Sprite Editor so importing a different image into a sprite doesn't reset its texture group to "default"</li>
+		<li>Fixed objects so a change to its "Applies To" value is automatically saved when running the project</li>
+		<li>Fixed copying a texture group would re-use the same name - now automatically gives a different name, the same as Add does</li>
+		<li>Fixed the save dialogue shown on closing the IDE so it doesn't save all even when you say "no"</li>
+		<li>Fixed objects could be overwritten by creating a new object with the original name of a recently-renamed one</li>
+		<li>Changed Targets Manager so it now shows only the platforms you have on your license</li>
+		<li>Changed Visual Studio paths to be the paths to the vcvars32.bat (automatically updates your old-style paths)</li>
+		<li>Changed the old "license validation" screen to be up-to-date useful Studio 1.4 info, not useless GM8.1 info</li>
+		<li>Changed the package name field in GGS > Android to reject hyphens "-" in names</li>
+		<li>Changed the URL field in GGS > Ubuntu and GGS > Tizen to use the project name with spaces removed (will also fix projects in this state)</li>
+		<li>Changed SWF importing and building to now use multiple threads, so should be faster (depends on the individual SWF how much faster)</li>
+		<li>Changed setting extension platforms to export to into the top level of the extension, not each file</li>
+		<li>Added checks to prevent creating/renaming scripts to be Windows reserved keywords</li>
+		<li>Added checks to prevent creating/renaming audio group names to use invalid chars</li>
+		<li>Added checks to prevent duplicate/invalid names for scripts being dragged-in</li>
+		<li>Added caching of shader compilation results to reduce build times (currently only supports HLSL11 and PSSL targets)</li>
+		<li>Added GGS checkbox for downloading/enabling new Google Play Services IAP support extension, as IAPs are now separate from the rest of GPS</li>
+		<li>Added GGS checkbox for new fast collisions "compatibility mode" in case fast collisions has issues with your code</li>
+		<li>Removed module upsell screens and tips (including the license key entry forms on these dialogs)</li>
+		<li>Removed all references to the GameMaker: Player (including the installer)</li>
+		<li>Removed the licensing panel to request a free 1.4 license, replaced it with a link to get GMS2 trial</li>		
+	</ul>
+	<li>Compiler</li>
+	<ul>
+		<li>Changed switch statements to detect invalid case type combinations, rather than allowing these</li>
+		<li>Added macros can be used to replace function names (<a href =https://forum.yoyogames.com/index.php?threads/suggestion-aliases-via-macros.14366/>see this GMC thread</a>)</li>
+	</ul>
+	<li>Windows</li>
+	<ul>
+		<li>Fixed splash screens not showing even though GGS setting is enabled</li>
+	</ul>
+	<li>Mac</li>
+	<ul>
+		<li>Fixed icon-creation in builds</li>
+		<li>Fixed YYC runs of Steam-enabled projects didn't actually launch Steam integration (create exe was fine)</li>
+		<li>Changed GGS default for "Build for Mac App Store" to be false, rather than true (builds quicker during testing, also seeing lots of Steam devs)</li>
+		<li>Added Preference for Mac "supress build" option - needs to be enabled if building on macOS Sierra</li>
+		<li>Added Preferences for setting the default Mac/iOS Team ID to be used in new projects' GGS</li>
+	</ul>
+	<li>Ubuntu</li>
+	<ul>
+		<li>Fixed the game drawing in lower left corner if set to launch fullscreen</li>
+		<li>Fixed games which use 3D functionality drawing their splash screen upside-down</li>
+		<li>Fixed various issues with the Debian package type not building if spaces/mixed text case/invalid chars in project name</li>
+		<li>Fixed a chmod issue during the game install proess</li>
+		<li>Fixed "create exe" putting steamworks .dll in wrong place</li>
+	</ul>
+	<li>UWP</li>
+	<ul>
+		<li>Changed to always use your certificate and app name when building, even runs, so that services that require this information (like Xbox Live) work properly</li>
+		<li>Added support for basic Xbox Live sign-in handling</li>
+		<li>Added support for fullscreen - new GGS settings for this, plus Alt+Enter and window_..._fullscreen() all work</li>
+		<li>Added support for window_set_cursor() and window_get_cursor()</li>
+		<li>Added GGS textbox for specifying your UWP/Win8 publisher name, removed the code which determined it from the certificate</li>
+	</ul>
+	<li>Android</li>
+	<ul>
+		<li>Fixed that a different temp folder was being made and used when building</li>
+		<li>Changed clang to use more CPU cores during builds (was always 1 before)</li>
+		<li>Added os_check_permission() and os_request_permission()</li>
+		<li>Removed the Immersion "Haptics SDK" integration on VM builds</li>
+	</ul>
+	<li>iOS</li>
+	<ul>
+		<li>Fixed audio not working after a call or if external music playing during startup</li>
+		<li>Changed shop_leave_rating() to use Apple's required new api for leaving a rating</li>
+	</ul>
+	<li>HTML5</li>
+	<ul>
+		<li>Fixed loads of functions or added them, so now much closer to native platforms in terms of feature set</li>
+		<li>Fixed keyboard mappings so everything isn't as per an en-GB keyboard</li>
+		<li>Fixed detection of Edge browser - added a new constant for this also</li>
+		<li>Fixed collisions system so the results are now the same as Windows</li>
+		<li>Fixed md5 system so the results are now the same as Windows</li>
+		<li><font color="red">NOTE:</font> If your game stores old HTML5 md5 hashes and re-uses them, these will now be wrong!</li>
+		<li>Fixed several missing UK/US spellings of function names</li>
+		<li>Fixed images set as "Used for 3D" stil being added into texture pages</li>
+		<li>Updated Facebook version to 2.8</li>
+		<li>Added draw_flush() support</li>
+		<li>Added a workaround for a Chrome bug where default emitters and default listeners would play sound out of right speaker only</li>
+		<li><font color="red">NOTE:</font> If you hear this issue, check your emitters and listeners are not in exactly the same place. If so, move the emitter forward a tiny distance (0.01 or so).</li>
+	</ul>
+	<li>Spine</li>
+	<ul>
+		<li>Fixed slot colours not being applied properly on HTML5</li>
+		<li>Fixed draw_skeleton_instance() to copy custom attachments from referenced instance rather than ignoring</li>
+		<li>Fixed sprite_add() so runtime-downloaded images can be used for attaching</li>
+		<li>Changed name skeleton_get_imageindex() to skeleton_animation_get_frame() to be more consistent with other animation functions</li>
+		<li>Added skeleton_animation_set_frame() to partner the above change</li>
+		<li>Updated Spine version to v3.4.0.2 (Native and HTML5)</li>
+		<li><font color="red">NOTE:</font> If your game crashes on startup now, clear your cache and build again</li>
+		<li><font color="red">NOTE2:</font> If issues persist, or if a Spine is now not working correctly, re-export from Spine using v3.4.0.2</li>
+		<li>Added new "Animation Event" object event</li>
+		<li>Added support for objects using Spine to use Collision events (needs bounding box added in Spine)</li>
+	</ul>
+	<li>Misc In-game</li>
+	<ul>
+		<li>Removed Scissoring testing of surfaces on mobiles (in most cases), gives a decent performance boost on some devices</li>
+		<li>Fixed a few memory leaks in YYC functions</li>
+		<li>Fixes for SWF antialiasing not working</li>
+		<li>Fixed the view intersection events - "Outside View" and "Boundary View" - to be much more accurate</li>
+		<li>Fixed memory leaks in screen_save() and surface_save()</li>
+		<li>Fixed glitches when rotating large sprites and at angles close to zero</li>
+		<li>Fixed crash if calling iap_activate() more than once</li>
+		<li>Fixed taps in corners of iPhones sometimes don't give clicks even though tap gestures occur on the phone</li>
+		<li>Fixed UDP networking timings to match fixes made for TCP a few releases ago</li>
+		<li>Changed untextured primitive rendering on DX11 and WebGL to be more consistent with DX9</li>
+		<li>Changed instance_destroy() so it can destroy an optional specified instance (see the manual)</li>
+		<li>Changed ds maps so they don't reserve as much space when you create them</li>
+		<li>Changed surface management so you can't free surfaces that are on the stack</li>
+		<li>Updated freetype from 2.3.5 to 2.8 - test your games to see if text is still positioned/sized per your needs, as you may well need to recalculate your values now</li>
+		<li><font color="red">NOTE:</font> If you have used font_add() and then drawn using this font, this will very likely need tweaking now - reduce the point size by 25%</li>
+		<li>Added DX11 information into os_get_info() for UWP + Windows 8</li>		
+		<li>Added anti-aliasing support on DX11 platforms (Win 8 N, WP8, Xbox One, UWP) - also fixed not being able to toggle Vsync on these</li>
+		<li>Added extra checks into alternate sync mode so you don't get a harsh drop from 60 to 30 if the framerate briefly drops to (e.g.) 59</li>
+		<li>Added "Large Address Aware" support for Windows games (VM and YYC)</li>
+		<li>Added extra info to background_get_uvs() to allow compensating for tpage cropping (now matches the info returned from sprite_get_uvs())</li>
+	</ul>
+</ul>
+<h2>Bugs Fixed Since <a href="http://store.yoyogames.com/downloads/gm-studio-ea/release-notes-studio.html">EA551</a></h2>
+<ul>
+	<li>There are a LOT fixed since 1.4.1763! (See the link above and read all the way down to EA525)</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0026944">0026944</a> HTML5: asset_get_index does not work for scripts</li>
+	<li>Fix for xboxlive_user_is_signed_in() returning 1 even if the user wasn't signed in</li>
+	<li>Fix for HTML5 rendering only top-left portion of games which resize the application_surface</li>
+</ul>
+
+
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.4.1763 (1.4 Stable #6)                  --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1">Version 1.4.1763 06/10/2016</h1> 
+<!-- 06/10/2016  15:11 -->
+<br>
+<h2>Changes since 1760</h2>
+<ul>
+	<li>IDE</li>
+	<ul>
+		<li>Added GGS > Android item for controlling the device sleep margin, allows you to fix performance issues on some devices</li>
+	</ul>
+	<li>iOS</li>
+	<ul>
+		<li>Added GGS entry for setting the team ID for signing, fixes Xcode 8 requiring manual input of this detail each time</li>
+		<li>Removed check for "setup" function (Supersonic) and other legacy SDK info from packages - helps fix odd Apple submission error</li>
+		<li>Removed unused camera roll functionality to fix Apple submission error</li>
+		<li>Fixed permissions issue for enabling push notification support in iOS 8.0+</li>
+	</ul>
+	<li>Compiler</li>
+	<ul>
+		<li>Fixed localisation issues in some functions (projects wouldn't build if , used for decimals in your region)</li>
+	</ul>
+	<li>Debugger</li>
+	<ul>
+		<li>Fixed displaying of watched variables</li>
+		<li>Fixed editing of instance variables</li>
+	</ul>
+</ul>
+<h2>Bugs Fixed Since 1760</h2>
+<ul>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0016588">0016588</a> Functions: Push notifications don't fire in iOS 8</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020135">0020135</a> Extensions: Google Play Services doesn't pause the game when an advert is running</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0023702">0023702</a> Mac: window_mouse_set() has highly offset coordinates</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0024003">0024003</a> General: Constant number comparison behaves differently</li>
+</ul>
+
+
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.4.1760                   --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1">Version 1.4.1760 30/08/2016</h1> 
+<!-- 30/08/2016  13:06 -->
+<center><h2><font color="red">This is a very big update! Please read all of this release's notes carefully!</font></h2></center>
+<br>
+<h2>Changes since 1757</h2>
+<ul>
+	<li>IDE</li>
+	<ul>
+		<li>Fixed image editor AVs when reopening sprites</li>
+		<li>Fixed image editor crash when frames have been removed on disk, but a sprite still refers to them</li>
+		<li>Fixed being unable to add texture groups because the IDE has wrongly counted the number of existing groups</li>
+		<li>Fixed saving issue when running/building games with unsaved resource name changes</li>
+		<li><font color="red">NOTE:</font> If you close the project in this situation it will now trigger a full project save, just to be safe</li>
+		<li>Fixed deferred resource tree thumbnail generation so it starts generating thumbnails again</li>
+		<li>Fixed SCM-enabled projects so they do not load much more slowly than non-SCM projects</li>
+		<li>Fixed the application oven to return new-style certificates on the Mac to GGS > iOS > Provisioning</li>
+		<li>Fixed Mercurial authentication issues when a default user has not been setup correctly</li>
+		<li>Fixed GGS internal name for MMedia ads extension being incorrect and stopping import</li>
+		<li>Fixed issue where shutting the IDE whilst tree thumbnails were still being made could cause AVs</li>
+		<li>Changed the IDE to defer the creation of resource tree icons until after a project is loaded - speeds up project loads</li>
+		<li><font color="red">NOTE:</font> this might result in tree resources missing their icons for a moment after the project is loaded</li>
+		<li>Changed the naming convention when duplicating scripts so we avoid a potential naming conflict route</li>
+		<li>Added working default Mercurial SCM config</li>
+		<li>Added more Visual Studio path fields to Preferences so you can fully control which VS builds which target</li>
+		<li>Added GGS entries for disabling Lint analysis during Android builds</li>
+		<li>Added a new Preference for the Java heap size used for Android builds with many/large extensions</li>
+		<li><font color="red">NOTE:</font> If you're using a lot of extensions and so require the larger heap size you will need to use 64bit JDK</li>
+		<li>Added new extension properties for injecting into Android manifest at different points, required by some extensions</li>
+		<li>Added new extension properties for injecting into iOS plist at different points, required by some extensions</li>
+		<li>Removed GGS entries for iAds extension, as Apple no longer support</li>
+	</ul>
+	<li>Compiler</li>
+	<ul>
+		<li>Changed to fully remove the 16 arguments per function limitation</li>
+		<li>Added several optimisations to help projects build more quickly</li>
+	</ul>
+	<li>Debugger</li>
+	<ul>
+		<li>Fixed an issue with local variables not being presented properly</li>	
+		<li>Fixed Boolean values to now show "true" or "false" rather than just being blank</li>
+		<li>Added Watch window allows entering local variables</li>
+	</ul>
+	<li>Windows</li>
+	<ul>
+		<li>Fixed old(er) Steam Workshop games crashing on startup in EA475's Steam Player</li>
+		<li>Fixed Alt+F4 to allow quickly exiting games again (although this won't apply when playing games in the GameMaker: Player)</li>
+		<li>Fixed "self" keyword when using YYC so it now behaves the same as non-YYC and/or using "-1"</li>
+		<li>Fixed cancelling file dialogues giving corrupted strings when using YYC</li>
+		<li>Added support for DirectInput devices, allows a wider range of devices</li>
+		<li>Added support for checking up to 8 more in-game devices (Xinput is still 0-3, DirectInput is now 4-11)</li>
+	</ul>
+	<li>UWP</li>
+	<ul>
+		<li>Fixed games crashing on startup in EA493</li>
+	</ul>
+	<li>Mac OSX</li>
+	<ul>
+		<li>Fixed Steam support in YYC packages</li>
+		<li>Fixed splash screens to now render at their correct resolution</li>
+		<li>Fixed toggling fullscreen to be a much smoother and better-looking transition</li>
+		<li>Fixed issues running games on OSX 10.9</li>
+		<li>Fixed clearing Steam library out of the build folder to stop Steam leaking into future builds</li>
+		<li>Changed to not sign packages when not building for the AppStore by allowing a blank signing identity</li>
+		<li>Added GGS checkbox for enabling Retina support in-game - off by default</li>
+	</ul>
+	<li>HTML5</li>
+	<ul>
+		<li>Fixed looping sounds not resuming after switching tabs</li>
+		<li>Fixed d3d_set_perspective(false) to set view as orthographic</li>
+		<li>Fixed d3d_set_perspective() to set the correct values</li>
+		<li>Changed sprite_add() to work like Windows and add a sprite if second parameter is 0</li>
+		<li>Added cross-origin support for images to allow loading sprites in from other sites</li>
+	</ul>
+	<li>iOS</li>
+	<ul>
+		<li>Fixed Facebook SDK not getting unzipped when your project name had spaces in it and causing a build error</li>
+		<li>Fixed extension linker flags not being passed on to the Xcode project</li>
+		<li>Fixed launchscreen xib name preventing AppStore submission when deploy target is "8.0"</li>
+		<li>Fixed IPv6 internet connection check to comply with Apple's submission guidelines</li>
+		<li>Added 4096x4096 as an available texture page size in GGS</li>
+	</ul>
+	<li>Android</li>
+	<ul>
+		<li>Fixed a lot of the Lint analysis warnings specific to the runner, so less compiler window spam</li>
+		<li>Fixed Google submission/security issue by upgrading libPNG to v1.4.19</li>
+		<li>Fixed checking targets mask when adding extension contants so we don't always add everything</li>
+		<li>Fixed building-in multiple extensions when making YYC packages</li>
+		<li>Fixed Lint and the compiler to not always require Bluetooth pads to be enabled</li>
+		<li>Changed to use Gradle v2.1.0 and Multidex v1.0.1 - see the Java heap size change above if you have issues</li>
+		<li>Changed build system to make temporary drive mount using Preference for temp folder - reduces 256 character path limit issues</li>
+		<li>Changed GGS > Android to accept letters or numbers for Build Tools version identifiers</li>
+		<li>Added Android N support</li>
+		<li>Added support for NDK 12 and 12b</li>
+		<li>Added display_set_ui_visibility() to control "immersive mode" system UI</li>
+		<li>Added support for using .aar files in extensions</li>
+	</ul>
+	<li>HTML5</li>
+	<ul>
+		<li>Fixed flash of black screen when loading - more noticable when using custom loading bar</li>
+		<li>Fixed audio_create_stream() so it no longer crashes games</li>
+	</ul>
+	<li>Misc In-Game</li>
+	<ul>
+		<li>Fixed random_get_seed() and random_set_seed() precision to be consistent</li>
+		<li>Fixed audio gain could be set to less than 0</li>
+		<li>Fixed ogg sync group mixing clipping the end off sounds when gain set to 0</li>
+		<li>Fixed/Changed lots of functions to give better memory management - more have been made into YYC versions also</li>
+		<li>Fixed problems with DS read\write functions handling bools, pointers, in64s, etc., that we've added recently</li>
+		<li><font color="red">NOTE:</font> the format of string returned by ds_map_write() has changed, but ds_map_read() will read an old-style formatted string</li>
+		<li>Fixed writing of U32 variables to a buffer</li>
+		<li>Fixed "fast collision" issues where items could end up in the tree twice and cause issues</li>	
+		<li>Fixed various issues with strings in 1757</li>
+		<li>Fixed using pre-decrement "(--variable)" on a variable which hasn't been declared causing the game to crash</li>
+		<li>Fixed arguments being freed before being used when passing the result of a function as an argument in YYC builds</li>
+		<li>Fixed fast collision position_meeting() not doing precise collision checks and returning false-positive collisions</li>
+		<li>Fixed more ways to get incorrect results in fast collision calculations, plus lots of various optimisations</li>
+		<li>Fixed fast collision calculation checks against a specific instance to only check that one instance</li>
+		<li>Fixed/Changed/Added YYC operators for int64</li>
+		<li><font color="red">NOTE:</font> this resulted in lots of changes to how YYC handles variables, so test well</li>
+		<li>Fixed DX11 render path (Xbox One, WP8, Win 8 N) where data could overrun the internal buffer if you used custom vertex formats</li>
+		<li>Fixed a memory leak when doing draw_getpixel(0,0)</li>
+		<li>Fixed first and last animation frame in a Spine sprite becoming confused when playing backwards</li>
+		<li>Fixed issues with opening files sometimes failing when the filepath contains non-Latin characters</li>
+		<li>Fixed base64 decode not working correctly</li>
+		<li>Fixed YYC error compiling pre-increment switch statements "switch(++myvar)"</li>
+		<li>Fixed various issues with ds_map_secure_load() and ds_map_secure_load_buffer() to stop memory leaks/overwrites</li>
+		<li>Fixed issues with shader compilation on DX11 platforms</li>
+		<li>Fixed a crash when you have many ogg sync groups and lots of files, also fixed a group to not play twice</li>
+		<li>Changed math_set_epsilon(0) to actually set to (0.00000000001) so we maintain 64bit precision</li>
+		<li>Changed return value of external_define() to -1 if the function cannot be found in the dll</li>
+		<li>Changed rendering without any texture to use solid white, ensures shaders use white rather than platform-specific settings to choose base colour</li>
+		<li>Changed DX11 3D model handling to increase performance by using static vertex buffers rather than the dynamic geometry path</li>
+		<li><font color="red">NOTE:</font> Changed iOS so if an extension implements onOpenUrl you will now need to add "annotation:(id)annotation" as a new argument</li>
+		<li>Added steam_upload_score_ext() and steam_upload_score_buffer_ext() for setting the always-update flag for leaderboards</li>
+		<li>Added texture_get_uvs(), which returns an array of UV-related values for a texture page entry</li>
+		<li>Added sanity check that there is an emitter for a particle system to use, now logs an error rather than crashing the game</li>
+		<li>Added ds_map_secure_load_buffer() to allow loading secure data structures when you don't have direct download access to a remote file</li>
+	</ul>
+</ul>
+<h2>Bugs fixed since 1757</h2>
+<ul>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0019005">0019005</a> Scripts: Adding an existing script issue</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0019065">0019065</a> Mac: Mac app Splash Screen is low-resolution on compile, doesn't show on runs</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020026">0020026</a> Functions: is_undefined() does not work on HTML5</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020045">0020045</a> Extensions: ["fatal error: 'FacebookSDK/FacebookSDK.h' file not found" blocks iOS builds]</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020046">0020046</a> Add a function to copy Steam cloud files to local storage</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020096">0020096</a> Function: parameter_ functions report a duplicate set of command-line arguments</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020549">0020549</a> Image Editor: Consecutive uses of 'Open' in image editor gives access violation at address 00404F9F</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020026">0020026</a> Functions: is_undefined() does not work on HTML5</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0019005">0019005</a> Scripts: Adding an existing script issue</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0009558">0009558</a> 3D: Scaling models/primitives also scales their normals</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0011656">0011656</a> Windows (YYC): 'self' not working in quite identical fashion to windows platform</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0015583">0015583</a> Win(YYC): YYC glitch - passing other/self into functions</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0018073">0018073</a> HTML5: If looping sound resumes from paused state, it does not loop anymore if not marked as Compressed - Streamed</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0018708">0018708</a> Functions: draw_getpixel(0,0) = instant memory leak</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0018963">0018963</a> HTML5: Using !true as array index does not address position 0</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0019083">0019083</a> Functions: Cancelling file dialogs gives corrupted string when using Windows (YYC)</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0019556">0019556</a> Windows (YYC): Using self as a script argument causes code to fail</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0019908">0019908</a> Shaders: problem with vertex_format_add_custom</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020214">0020214</a> Source Control: SCM-enabled projects load extremely slowly compared to their non-SCM-enabled equivalents</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020321">0020321</a> HTML5: switching tabs in Chrome stops audio looping</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020554">0020554</a> Spine: Loading a Spine sprite from an included file doesn't free itself from memory afterwards</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020571">0020571</a> Issues with strings in 1747</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020780">0020780</a> d3d_set_perspective(false) fails to set view as orthographic for HTML5</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020812">0020812</a> Equivalent expressions return different variable types</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0021297">0021297</a> HTML5: sprite_add() does not support cross origin</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0021357">0021357</a> YYC: No operators appear to be implemented for int64</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0021695">0021695</a> If you decrement a variable using -- that hasn't been delclared, the runner crashes</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0021771">0021771</a> md5_file() crashes on some computers</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0021978">0021978</a> Android: Using multiple extensions can cause CPU and RAM usage to become too high for Java, causing gradle to abort builds</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0022011">0022011</a> Windows (YYC): `repeat (1) continue;` is an infinite loop</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0022288">0022288</a> Android: "Duplicate constant" on build even though there are no files with constant included</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0022303">0022303</a> HTML5: Lack of Flurry analytics exception handling causes lag/hang</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0022525">0022525</a> Saving: Possible to corrupt resources by running project whilst unsaved name changes</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0022697">0022697</a> HTML5: Chrome draw_text performance issue (desktop only)</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020458">0020458</a> Functions: Facebook Feed dialog crashes in iOS</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020752">0020752</a> Functions: DLLs cannot be loaded when the game path contains non-latin characters</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0021920">0021920</a> Compiler: unchecking bluetooth gamepads disallows Android YYC building</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0022493">0022493</a> Scripts: Creating a duplicate script gives incorrect naming</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0022504">0022504</a> Extensions: Google Analytics Extension causes Android builds to fail</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0023076">0023076</a> Extensions: AndroidManifest.xml wrong injection</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0023167">0023167</a> Android: dex options setting to javaMaxHeapSize "4g" stops compile for android on 32 bit systems</li>
+</ul>
+
+
+
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- 							           Version 1.4.1757 (1.4 Stable #5)                  --> 
+<!-- ************************************************************************************************************************ --> 
+<!-- ************************************************************************************************************************ --> 
+<h1 id="H1">Version 1.4.1757 13/04/2016</h1> 
+<!-- 13/04/2016  12:24 -->
+<br>
+<h2>Changes since 1749</h2>
+<ul>
+	<li>IDE</li>
+	<ul>
+		<li>Removed Android API installation check from Preferences, stops issues with Google making 7, 8 and 13 unavailable</li>
+		<li>Fixed Steam IDE launching Steam-enabled games and this causing a crash on game startup</li>
+		<li>Fixed Preferences to show Android tab and GGS to show Amazon tab if using a Standard licence and you have the 60-day Amazon Fire trial</li>
+	</ul>
+</ul>
+<h2>Bugs fixed since 1749</h2>
+<ul>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020944">0020944</a> UI: Amazon Fire when using Standard license, Android tab missing in Preferences and GGS</li>
+	<li><a href="http://bugs.yoyogames.com/view.php?id=0020904">0020904</a> Steam: Having a steam app ID in a project and running your project within the IDE on Steam will crash the runner</li>
+</ul>
+<br>
+<br>
+<center><h2>Please be aware we do not advise using versions this old! We would strongly recommend you only use the final release (download link is right at the top of this page).</center></h2>
+<br>
+<br>
+
+</body>
+</html>
+
