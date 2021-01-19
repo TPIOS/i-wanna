@@ -1,0 +1,5 @@
+sprite_index = set_default(spr, sprite_index)
+image_index = set_default(ind, image_index)
+image_speed = set_default(ispd, image_speed)
+image_xscale = set_default(xs, image_xscale)
+image_yscale = set_default(ys, image_yscale)

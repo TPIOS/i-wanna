@@ -1,0 +1,16 @@
+if(argument0=0){
+x+=16;
+}
+if(argument0=90){
+y-=16;
+}
+if(argument0=180){
+x-=16;
+}
+if(argument0=270){
+y+=16;
+}
+if(x<0){x+=room_width;}
+if(x>=room_width){x-=room_width;}
+if(y<0){y+=room_height;}
+if(y>=room_height){y-=room_height;}
