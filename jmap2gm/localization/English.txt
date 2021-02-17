@@ -1,0 +1,37 @@
+title=Map to GM
+
+update_label=There is a new map2gm version available. ({version})
+update_button=Visit forum thread
+
+label_project=Project:
+label_template_room=Template room:
+label_map=Map:
+label_object_enabled=Enabled
+open_project=Select project
+open_template_room=Select template room
+open_map=Select map
+open_object=Select object
+
+button_convert=Convert
+button_convert_working=Converting...
+
+menu_toplevel=Menu
+menu_language=Language
+menu_instructions=Open instructions
+menu_readme=Open readme
+menu_forum_thread=Open forum thread
+menu_more_tools=More of my tools
+
+convert_success_gmx=Successfully saved room as %s.\nTo import it, right click on the Rooms folder and select "Add existing room".
+convert_success_gmk=Successfully saved new project as %s.
+gmksplit_working=Gmksplit working...
+
+project_empty=Please select a project.
+template_room_empty=Please select a template room.
+map_empty=Please select a map.
+project_nonexsistent=The specified project file does not exist.
+template_room_nonexistent=The specified template room does not exist.
+map_nonexistent=The specified map does not exist.
+enabled_object_no_name=An enabled object has no name.
+object_nonexistent=Can't find object "%s" in the project.
+python_error=There was a Python error. Please contact Patrick with a screenshot of this traceback, so he can fix it. Thank you.

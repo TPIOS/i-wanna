@@ -1,0 +1,22 @@
+--- version 2.2   2/25/2016 ---
+Fix crash when checking for new version when offline
+
+--- version 2.1   2/25/2016 ---
+Should now work on Windows 8 and 10 (Compiled on Windows 10, previously was on 7)
+Check for new version on startup
+Fix bug when importing jtool 1.2.0+ maps
+Add link to tools website
+
+--- version 2.0   11/29/2015 ---
+Add GameMaker 8.x support using Gmksplit
+Add jtool map support
+For studio projects, output a .room.gmx file instead of modifying the .project.gmx file to import it
+Redo instructions and readme files
+Fix bug where template room couldn't have objects in it
+GUI tweaks
+Use pyinstaller to tidy up the tool's folder
+Lots of code refactoring and cleanup
+New name: map2gm
+
+--- version 1.0   7/7/2015 ---
+Initial release!

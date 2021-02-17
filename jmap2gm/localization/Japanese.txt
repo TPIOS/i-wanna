@@ -1,0 +1,37 @@
+title=Map to GM
+
+update_label=利用可能な新しいmap2gmのバージョンがあります。 「{version}」
+update_button=訪問のフォーラムのスレッド
+
+label_project=Project:
+label_template_room=鋳型room:
+label_map=Map:
+label_object_enabled=使用可能
+open_project=選び出すproject
+open_template_room=選び出す鋳型room
+open_map=選び出すmap
+open_object=選び出すobject
+
+button_convert=変化
+button_convert_working=稼働...
+
+menu_toplevel=品書き
+menu_language=言葉
+menu_instructions=使用方法
+menu_readme=Readme
+menu_forum_thread=討論会
+menu_more_tools=私のツールより
+
+convert_success_gmx=保存room:%s.\nマウスクリック"Rooms"無い"Add existing room"
+convert_success_gmk=保存新しいproject:%s.
+gmksplit_working=Gmksplit稼働...
+
+project_empty=選び出すproject
+template_room_empty=選び出す鋳型room
+map_empty=選び出すmap
+project_nonexsistent=無いproject
+template_room_nonexistent=無い鋳型room
+map_nonexistent=無いmap
+enabled_object_no_name=使用可能object選び名前
+object_nonexistent=project不足object:"%s"
+python_error=Python間違い お願いします連絡Patrick送るスクリーンショット
