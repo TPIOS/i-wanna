@@ -187,6 +187,7 @@
       <sprite>sprites\sprSnSpikeRight</sprite>
       <sprite>sprites\sprSnSpikeLeft</sprite>
       <sprite>sprites\sprSnSpikeDown</sprite>
+      <sprite>sprites\sprSnPlatform</sprite>
     </sprites>
     <sprites name="summer">
       <sprite>sprites\sprSummerBlock</sprite>

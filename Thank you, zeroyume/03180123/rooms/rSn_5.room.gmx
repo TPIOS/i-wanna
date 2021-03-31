@@ -127,7 +127,7 @@
     <instance objName="objSpikeUp" x="480" y="384" name="inst_B8FF2E9A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeLeft" x="656" y="384" name="inst_707C8649" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeRight" x="592" y="384" name="inst_74F9597F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objMovingPlatform" x="224" y="384" name="inst_06EEB692" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objMovingPlatform" x="224" y="384" name="inst_06EEB692" locked="0" code="sprite_index = sprSnPlatform&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="256" y="496" name="inst_FB00B2A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="528" y="336" name="inst_7668C1FE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSpikeDown" x="160" y="336" name="inst_5E6699B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
