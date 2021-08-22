@@ -1,0 +1,25 @@
+project|D:/Github/i-wanna/Jushi Needle 2021/GMS/Jushi Needle 2021/Jushi Needle 2021.project.gmx
+template|rT3
+block|obj3Block|1
+bulletblocker||0
+cherry||0
+hurtblock||0
+jumprefresher||0
+miniblock|obj3MiniBlock|1
+minidown|objMiniDown|1
+minileft|objMiniLeft|1
+miniright|objMiniRight|1
+miniup|objMiniUp|1
+platform||0
+save|objSave|1
+spikedown|objSpikeDown|1
+spikeleft|objSpikeLeft|1
+spikeright|objSpikeRight|1
+spikeup|objSpikeUp|1
+start|objPlayerStart|1
+vineleft||0
+vineright||0
+warp|objWarp|1
+water1||0
+water2||0
+water3||0

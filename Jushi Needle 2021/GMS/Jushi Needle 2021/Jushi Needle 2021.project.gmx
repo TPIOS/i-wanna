@@ -3,6 +3,25 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
+  <datafiles number="1" name="datafiles">
+    <datafile>
+      <name>DBGHELP.dll</name>
+      <exists>-1</exists>
+      <size>81962</size>
+      <exportAction>2</exportAction>
+      <exportDir></exportDir>
+      <overwrite>0</overwrite>
+      <freeData>-1</freeData>
+      <removeEnd>0</removeEnd>
+      <store>0</store>
+      <ConfigOptions>
+        <Config name="Default">
+          <CopyToMask>9223372036854775807</CopyToMask>
+        </Config>
+      </ConfigOptions>
+      <filename>DBGHELP.dll</filename>
+    </datafile>
+  </datafiles>
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="sfx">
@@ -19,8 +38,14 @@
       <sound>sound\sndSpikeTrap</sound>
     </sounds>
     <sounds name="music">
+      <sound>sound\musOnDeath1</sound>
       <sound>sound\musOnDeath</sound>
+      <sound>sound\musEnd</sound>
       <sound>sound\musGuyRock</sound>
+      <sound>sound\musStage02</sound>
+      <sound>sound\musStage03</sound>
+      <sound>sound\musStage01</sound>
+      <sound>sound\musTitle</sound>
       <sound>sound\musMegaman</sound>
       <sound>sound\musMiku</sound>
     </sounds>
@@ -56,6 +81,10 @@
       <sprite>sprites\sprSlideBlockR</sprite>
       <sprite>sprites\sprSlideBlockL</sprite>
       <sprite>sprites\sprSaveBlocker</sprite>
+      <sprite>sprites\spr1Block</sprite>
+      <sprite>sprites\spr2Block</sprite>
+      <sprite>sprites\spr3Block</sprite>
+      <sprite>sprites\spr3MiniBlock</sprite>
     </sprites>
     <sprites name="slopes">
       <sprite>sprites\sprSlopeBlock</sprite>
@@ -74,12 +103,24 @@
       <sprite>sprites\sprSpikeLeft</sprite>
       <sprite>sprites\sprSpikeDown</sprite>
       <sprite>sprites\sprMiniUp</sprite>
+      <sprite>sprites\spr2MiniUp</sprite>
       <sprite>sprites\sprMiniRight</sprite>
+      <sprite>sprites\spr2MiniRight</sprite>
       <sprite>sprites\sprMiniLeft</sprite>
+      <sprite>sprites\spr2MiniLeft</sprite>
       <sprite>sprites\sprMiniDown</sprite>
+      <sprite>sprites\spr2MiniDown</sprite>
       <sprite>sprites\sprCherry</sprite>
       <sprite>sprites\sprMiku</sprite>
       <sprite>sprites\sprCherryWhite</sprite>
+      <sprite>sprites\spr1SpikeUp</sprite>
+      <sprite>sprites\spr2SpikeUp</sprite>
+      <sprite>sprites\spr1SpikeDown</sprite>
+      <sprite>sprites\spr2SpikeDown</sprite>
+      <sprite>sprites\spr1SpikeLeft</sprite>
+      <sprite>sprites\spr2SpikeLeft</sprite>
+      <sprite>sprites\spr1SpikeRight</sprite>
+      <sprite>sprites\spr2SpikeRight</sprite>
     </sprites>
     <sprites name="misc">
       <sprite>sprites\sprWater</sprite>
@@ -102,6 +143,8 @@
       <sprite>sprites\sprSaveMask</sprite>
       <sprite>sprites\sprSaveMedium</sprite>
       <sprite>sprites\sprSave</sprite>
+      <sprite>sprites\spr2Save</sprite>
+      <sprite>sprites\spr1Save</sprite>
       <sprite>sprites\sprSaveVHard</sprite>
       <sprite>sprites\sprSaveMediumFlip</sprite>
       <sprite>sprites\sprSaveFlip</sprite>
@@ -121,6 +164,12 @@
     <background>background\bJumpThrough</background>
     <background>background\bTree</background>
     <background>background\bStars</background>
+    <background>background\bg1</background>
+    <background>background\bg2</background>
+    <background>background\bg3</background>
+    <background>background\bgColor</background>
+    <background>background\bgTitle</background>
+    <background>background\bgEnd</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -193,6 +242,7 @@
     <objects name="blocks">
       <object>objects\objBlock</object>
       <object>objects\objMiniBlock</object>
+      <object>objects\obj3MiniBlock</object>
       <object>objects\objSlipBlock</object>
       <object>objects\objBlockInvis</object>
       <object>objects\objBlockFake</object>
@@ -201,6 +251,9 @@
       <object>objects\objSlideBlockR</object>
       <object>objects\objBossBlock</object>
       <object>objects\objSaveBlocker</object>
+      <object>objects\obj1Block</object>
+      <object>objects\obj2Block</object>
+      <object>objects\obj3Block</object>
     </objects>
     <objects name="slopes">
       <object>objects\objSlope</object>
@@ -242,6 +295,22 @@
           <object>objects\objCherryRandomColBounce</object>
         </objects>
       </objects>
+      <objects name="First Stage">
+        <object>objects\obj1SpikeUp</object>
+        <object>objects\obj1SpikeRight</object>
+        <object>objects\obj1SpikeLeft</object>
+        <object>objects\obj1SpikeDown</object>
+      </objects>
+      <objects name="Free Style">
+        <object>objects\obj2SpikeUp</object>
+        <object>objects\obj2SpikeRight</object>
+        <object>objects\obj2SpikeLeft</object>
+        <object>objects\obj2SpikeDown</object>
+        <object>objects\obj2MiniUp</object>
+        <object>objects\obj2MiniLeft</object>
+        <object>objects\obj2MiniRight</object>
+        <object>objects\obj2MiniDown</object>
+      </objects>
     </objects>
     <objects name="triggers">
       <object>objects\objFreeTrigger</object>
@@ -267,6 +336,8 @@
     <objects name="saves">
       <object>objects\objSaveMedium</object>
       <object>objects\objSave</object>
+      <object>objects\obj1Save</object>
+      <object>objects\obj2Save</object>
       <object>objects\objSaveVHard</object>
       <object>objects\objSaveMediumFlip</object>
       <object>objects\objSaveFlip</object>
@@ -307,6 +378,29 @@
       <room>rooms\rTest</room>
     </rooms>
     <room>rooms\rTemplate</room>
+    <room>rooms\rT2</room>
+    <room>rooms\rT3</room>
+    <rooms name="First Stage">
+      <room>rooms\rs1</room>
+      <room>rooms\rs2</room>
+      <room>rooms\rs3</room>
+      <room>rooms\rs4</room>
+      <room>rooms\rs5</room>
+    </rooms>
+    <rooms name="Free Style">
+      <room>rooms\rs21</room>
+      <room>rooms\rs22</room>
+      <room>rooms\rs23</room>
+      <room>rooms\rs24</room>
+      <room>rooms\rs25</room>
+    </rooms>
+    <rooms name="Final Stage">
+      <room>rooms\rs31</room>
+      <room>rooms\rs32</room>
+      <room>rooms\rs33</room>
+      <room>rooms\rs34</room>
+      <room>rooms\rs35</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
