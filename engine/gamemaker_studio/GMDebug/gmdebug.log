@@ -8,3 +8,10 @@ Loading layout D:\Github\i-wanna\engine\gamemaker_studio\GMDebug\Resources\defau
 finished.
 Session init:True
 Socket Receive exception: 远程主机强迫关闭了一个现有的连接。
+***** 2021/10/2 : 20:37 *****
+VMCompiler:Loading assembly D:\Github\i-wanna\engine\gamemaker_studio\GMAssetCompiler.exe
+connect host:127.0.0.1 port6502
+ParseGameLayout: size=224886
+BIG ENDIAN=False
+Reading project file....finished.
+Session init:True
