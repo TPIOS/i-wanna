@@ -46,6 +46,8 @@
       <sound>sound\musMiku</sound>
       <sound>sound\musHub</sound>
       <sound>sound\musEbb174</sound>
+      <sound>sound\musRCBgm</sound>
+      <sound>sound\musYolomany</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -186,8 +188,35 @@
         <sprite>sprites\sprQcWalljumpR</sprite>
         <sprite>sprites\sprQcWalljumpL</sprite>
       </sprites>
+      <sprite>sprites\sprIcons</sprite>
     </sprites>
-    <sprite>sprites\sprIcons</sprite>
+    <sprites name="RedCrown">
+      <sprite>sprites\sprRCSpikeUp</sprite>
+      <sprite>sprites\sprRCHand</sprite>
+      <sprite>sprites\sprRCSpikeDown</sprite>
+      <sprite>sprites\sprRCSpikeLeft</sprite>
+      <sprite>sprites\sprRCSpikeRight</sprite>
+      <sprite>sprites\sprRCWalljumpL</sprite>
+      <sprite>sprites\sprRCWalljumpR</sprite>
+      <sprite>sprites\sprRCCherry</sprite>
+      <sprite>sprites\sprRCWater</sprite>
+      <sprite>sprites\sprRCBlock</sprite>
+    </sprites>
+    <sprites name="yolomany">
+      <sprite>sprites\sprYolomanyBoo</sprite>
+      <sprite>sprites\sprYolomanyBoom</sprite>
+      <sprite>sprites\sprYolomanyFade</sprite>
+      <sprite>sprites\sprYolomanyGhostblock</sprite>
+      <sprite>sprites\sprYolomanyGui</sprite>
+      <sprite>sprites\sprYolomanyGuigui</sprite>
+      <sprite>sprites\sprYolomanyZerowater</sprite>
+      <sprite>sprites\sprYolomanySpikeDown</sprite>
+      <sprite>sprites\sprYolomanySpikeLeft</sprite>
+      <sprite>sprites\sprYolomanySpikeRight</sprite>
+      <sprite>sprites\sprYolomanySpikeUp</sprite>
+      <sprite>sprites\sprYolomanyLine</sprite>
+      <sprite>sprites\sprYolomanyTwowater</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bAllTiles</background>
@@ -197,6 +226,13 @@
     <background>background\bStars</background>
     <background>background\bEbb174</background>
     <background>background\bQc</background>
+    <background>background\bRC</background>
+    <background>background\background5</background>
+    <background>background\background6</background>
+    <background>background\background7</background>
+    <background>background\background8</background>
+    <background>background\bgSHOOT111</background>
+    <background>background\bRCBlock</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -399,7 +435,38 @@
       <object>objects\objJushiYellowBeam</object>
       <object>objects\objJushiPurpleBeam</object>
     </objects>
-    <object>objects\objIcons</object>
+    <objects name="Needle Rush">
+      <object>objects\objIcons</object>
+    </objects>
+    <objects name="RedCrown">
+      <object>objects\objRCBlock</object>
+      <object>objects\objRCCherry</object>
+      <object>objects\objRCGrav</object>
+      <object>objects\objRCHand</object>
+      <object>objects\objRCSpikeDown</object>
+      <object>objects\objRCSpikeLeft</object>
+      <object>objects\objRCSpikeRight</object>
+      <object>objects\objRCSpikeUp</object>
+      <object>objects\objRCWalljumpL</object>
+      <object>objects\objRCWalljumpR</object>
+      <object>objects\objRCWater</object>
+    </objects>
+    <objects name="yolomany">
+      <object>objects\objYolomanyBoom</object>
+      <object>objects\objYolomanyGbfour</object>
+      <object>objects\objYolomanyGbtwo</object>
+      <object>objects\objYolomanyGhostblock</object>
+      <object>objects\objYolomanyGui</object>
+      <object>objects\objYolomanyGuigui</object>
+      <object>objects\objYolomanyL</object>
+      <object>objects\objYolomanyD</object>
+      <object>objects\objYolomanyR</object>
+      <object>objects\objYolomanyU</object>
+      <object>objects\objYolomanyMusic</object>
+      <object>objects\objYolomanyT</object>
+      <object>objects\objYolomanyZerowater</object>
+      <object>objects\objYolomanyLine</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <rooms name="init">
@@ -428,8 +495,6 @@
       <room>rooms\rJushiStage04</room>
       <room>rooms\rJushiStage05</room>
       <room>rooms\rJushiStage06</room>
-      <room>rooms\rJushiTest</room>
-      <room>rooms\rJushiTest2</room>
     </rooms>
     <rooms name="Needle Rush">
       <rooms name="ebb174">
@@ -442,6 +507,27 @@
         <room>rooms\rQc_2</room>
         <room>rooms\rQc_3</room>
       </rooms>
+      <rooms name="wujian">
+        <room>rooms\rWujian_1</room>
+        <room>rooms\rWujian_2</room>
+        <room>rooms\rWujian_3</room>
+        <room>rooms\rWujian_4</room>
+        <room>rooms\rWujian_5</room>
+      </rooms>
+    </rooms>
+    <rooms name="RedCrown Stage">
+      <room>rooms\rRCS1</room>
+      <room>rooms\rRCS2</room>
+      <room>rooms\rRCS3</room>
+      <room>rooms\rRCS4</room>
+      <room>rooms\rRCS5</room>
+    </rooms>
+    <rooms name="yolomany Stage">
+      <room>rooms\rYolomany_1</room>
+      <room>rooms\rYolomany_2</room>
+      <room>rooms\rYolomany_3</room>
+      <room>rooms\rYolomany_4</room>
+      <room>rooms\rYolomany_5</room>
     </rooms>
   </rooms>
   <help>

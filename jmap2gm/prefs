@@ -1,4 +1,4 @@
-project|D:/Github/i-wanna/i wanna play with Mr. Zombie/GMS/i wanna Play with Mr Zombie 20211003.gmx/i wanna Play with Mr Zombie 20211003.project.gmx
+project|D:/Github/i-wanna/i wanna play with Mr. Zombie/GMS/i wanna Play with Mr Zombie 20211005.gmx/i wanna Play with Mr Zombie 20211005.project.gmx
 template|rTemplate
 block|objBlock|1
 bulletblocker||0
@@ -21,5 +21,5 @@ vineleft|objWalljumpL|1
 vineright|objWalljumpR|1
 warp|objWaprAutosave|1
 water1|objWater|1
-water2||0
-water3||0
+water2|objWater2|1
+water3|objWater3|1
