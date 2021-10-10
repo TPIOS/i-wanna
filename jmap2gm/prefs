@@ -1,16 +1,16 @@
-project|D:/Github/i-wanna/i wanna play with Mr. Zombie/GMS/i wanna Play with Mr Zombie 20211005.gmx/i wanna Play with Mr Zombie 20211005.project.gmx
+project|D:/Github/i-wanna/i wanna play with Mr. Zombie/GMS/i wanna Play with Mr Zombie 20211010.gmx/i wanna Play with Mr Zombie 20211010.project.gmx
 template|rTemplate
 block|objBlock|1
 bulletblocker||0
-cherry||0
+cherry|objCherry|1
 hurtblock||0
-jumprefresher|objJumpRefresher|1
+jumprefresher|objJumpRefresher|0
 miniblock|objMiniBlock|1
 minidown|objMiniDown|1
 minileft|objMiniLeft|1
 miniright|objMiniRight|1
 miniup|objMiniUp|1
-platform||0
+platform|objPlatform|1
 save|objSave|1
 spikedown|objSpikeDown|1
 spikeleft|objSpikeLeft|1
@@ -19,7 +19,7 @@ spikeup|objSpikeUp|1
 start|objPlayerStart|1
 vineleft|objWalljumpL|1
 vineright|objWalljumpR|1
-warp|objWaprAutosave|1
+warp|objWarpAutosave|1
 water1|objWater|1
 water2|objWater2|1
 water3|objWater3|1

@@ -15,3 +15,19 @@ ParseGameLayout: size=224886
 BIG ENDIAN=False
 Reading project file....finished.
 Session init:True
+***** 2021/10/10 : 11:18 *****
+VMCompiler:Loading assembly D:\Github\i-wanna\engine\gamemaker_studio\GMAssetCompiler.exe
+connect host:127.0.0.1 port6502
+ParseGameLayout: size=516319
+BIG ENDIAN=False
+Reading project file....finished.
+Session init:True
+Socket Receive exception: 远程主机强迫关闭了一个现有的连接。
+***** 2021/10/10 : 12:34 *****
+VMCompiler:Loading assembly D:\Github\i-wanna\engine\gamemaker_studio\GMAssetCompiler.exe
+connect host:127.0.0.1 port6502
+ParseGameLayout: size=516181
+Reading project file....BIG ENDIAN=False
+finished.
+Session init:True
+Socket Receive exception: 远程主机强迫关闭了一个现有的连接。
