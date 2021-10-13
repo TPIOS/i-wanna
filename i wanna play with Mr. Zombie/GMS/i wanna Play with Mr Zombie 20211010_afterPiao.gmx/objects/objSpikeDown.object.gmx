@@ -40,7 +40,11 @@
     }
     case "sol": {
         sprite_index = sprSolSpikeDown;
-        break
+        break;
+    }
+    case "jushi": {
+        sprite_index = sprJushiSpikeDown;
+        break;
     }
 }
 </string>

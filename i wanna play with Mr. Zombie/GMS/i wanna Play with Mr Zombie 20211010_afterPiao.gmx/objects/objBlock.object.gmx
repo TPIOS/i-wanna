@@ -40,10 +40,12 @@
     }
     case "jushi": {
         visible = true;
+        sprite_index = sprJushiBlock;
         break;
     }
     case "wujian": {
         visible = true;
+        sprite_index = sprWujianBlock;
         break;
     }
     case "sol": {

@@ -57,6 +57,7 @@
       <sound>sound\musSolBGM</sound>
       <sound>sound\musJushiStage</sound>
       <sound>sound\musQianchou</sound>
+      <sound>sound\musWujian</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -166,6 +167,15 @@
       <sprite>sprites\sprJushiRedBeam</sprite>
       <sprite>sprites\sprJushiPurpleBeam</sprite>
       <sprite>sprites\sprJushiBlueBeam</sprite>
+      <sprite>sprites\sprJushiSpikeUp</sprite>
+      <sprite>sprites\sprJushiSpikeLeft</sprite>
+      <sprite>sprites\sprJushiSpikeDown</sprite>
+      <sprite>sprites\sprJushiSpikeRight</sprite>
+      <sprite>sprites\sprJushiMiniUp</sprite>
+      <sprite>sprites\sprJushiMiniLeft</sprite>
+      <sprite>sprites\sprJushiMiniDown</sprite>
+      <sprite>sprites\sprJushiMiniRight</sprite>
+      <sprite>sprites\sprJushiBlock</sprite>
     </sprites>
     <sprites name="Needle Rush">
       <sprites name="ebb174">
@@ -214,6 +224,9 @@
         <sprite>sprites\sprSolWater3</sprite>
         <sprite>sprites\sprSolPlatform</sprite>
         <sprite>sprites\sprSolCherry</sprite>
+      </sprites>
+      <sprites name="wujian">
+        <sprite>sprites\sprWujianBlock</sprite>
       </sprites>
       <sprite>sprites\sprIcons</sprite>
     </sprites>
@@ -343,9 +356,13 @@
       <background>background\bEbb174</background>
       <background>background\bQianchou</background>
       <background>background\bSol</background>
+      <background>background\bWujian</background>
     </backgrounds>
     <background>background\bgMainHub</background>
     <background>background\bgMainHubBlock</background>
+    <background>background\bJushi</background>
+    <background>background\bJushiBlock</background>
+    <background>background\bJushiBlockInside</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pU1</path>
