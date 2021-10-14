@@ -85,11 +85,11 @@ audio_play_sound(sndCreatorIcon, 1, false);
           <argument>
             <kind>1</kind>
             <string>if objPlayer.x &lt; view_xview + 400 &amp;&amp; objPlayer.y &lt; view_yview + 304 {
-    x = view_xview + view_wview - 150
+    x = view_xview + view_wview - 170
     y = view_yview + view_hview - 150
 }
 if objPlayer.x &lt; view_xview + 400 &amp;&amp; objPlayer.y &gt;= view_yview + 304 {
-    x = view_xview + view_wview - 150
+    x = view_xview + view_wview - 170
     y = view_yview 
 }
 
@@ -109,7 +109,7 @@ vy = view_yview
 
 for ( i = 0; i &lt; 5; i += 1) {
     for(j = 0; j &lt; 5; j += 1) {
-        xx[i,j] = random_range(x + 150 - 150, x + 150 + 150)
+        xx[i,j] = random_range(x + 150 - 170, x + 150 + 170)
         yy[i,j] = random_range(y + 75 - 150, y + 75 + 150);
         
     }
@@ -244,15 +244,15 @@ alarm[0] = 1;
             <kind>1</kind>
             <string>for (i = 0; i &lt; 5; i += 1) {
     for(j = 0; j &lt; 5; j += 1){
-        dis[i,j] = point_distance(xx[i,j],yy[i,j],x + 30 * i, y + 30 * j);
-        dir[i,j] = point_direction(xx[i,j],yy[i,j],x + 30 * i, y + 30 * j);
+        dis[i,j] = point_distance(xx[i,j],yy[i,j],x + 34 * i, y + 30 * j);
+        dir[i,j] = point_direction(xx[i,j],yy[i,j],x + 34 * i, y + 30 * j);
         spd[i,j] = dis[i,j] / 20 + 0.3;
-        if point_distance(xx[i,j],yy[i,j], x + 30 * i, y + 30 * j) &gt; 1{
+        if point_distance(xx[i,j],yy[i,j], x + 34 * i, y + 30 * j) &gt; 1{
             xx[i,j] += lengthdir_x(spd[i,j], dir[i,j]);
             yy[i,j] += lengthdir_y(spd[i,j], dir[i,j]);
         }
         else {
-            xx[i,j] = x + 30 * i;
+            xx[i,j] = x + 34 * i;
             yy[i,j] = y + 30 * j;
         }
     }
@@ -328,7 +328,7 @@ if distance_to_object(objPlayer) &gt; 100 &amp;&amp; alarm[2] &lt;= 0{
             <kind>1</kind>
             <string>for (i = 0; i &lt; 5; i += 1) {
     for ( j = 0; j &lt; 5; j += 1) {
-        draw_sprite_part_ext(sprite_index, image_index, 30 * i, 30 * j, 30, 30, xx[i,j] + view_xview - vx , yy[i,j] + view_yview - vy,1,1,c_white, alp);
+        draw_sprite_part_ext(sprite_index, image_index, 34 * i, 30 * j, 34, 30, xx[i,j] + view_xview - vx , yy[i,j] + view_yview - vy,1,1,c_white, alp);
     }
 }
 </string>

@@ -41,7 +41,7 @@ switch(room){
     case rRCHub:
         return "redcrown";
         break;
-    case rPiaoStage:
+    case rPiaoHubIn：
         return "Piao";
         break;
     default:

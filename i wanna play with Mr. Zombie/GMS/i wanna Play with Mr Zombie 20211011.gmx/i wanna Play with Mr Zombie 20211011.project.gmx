@@ -226,6 +226,7 @@
         <sprite>sprites\sprSolCherry</sprite>
       </sprites>
       <sprites name="wujian">
+        <sprite>sprites\sprWujianBlock_T</sprite>
         <sprite>sprites\sprWujianBlock</sprite>
         <sprite>sprites\sprWujianSpikeUp</sprite>
         <sprite>sprites\sprWujianSpikeLeft</sprite>
@@ -368,12 +369,17 @@
       <background>background\bEbb174</background>
       <background>background\bQianchou</background>
       <background>background\bSol</background>
+      <background>background\bSolBig</background>
       <background>background\bWujian</background>
     </backgrounds>
     <background>background\bgMainHub</background>
     <background>background\bgMainHubBlock</background>
     <background>background\bJushi</background>
     <background>background\bJushiHR</background>
+    <background>background\bgJushiBlockOut_T</background>
+    <background>background\bgJushiBlockOut</background>
+    <background>background\bgJushiBlockIn_T</background>
+    <background>background\bgJushiBlockIn</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pU1</path>
@@ -611,6 +617,7 @@
     </objects>
     <objects name="Needle Rush">
       <object>objects\objIcons</object>
+      <object>objects\objCloudEffect</object>
     </objects>
     <objects name="RedCrown">
       <object>objects\objRCBlock</object>
@@ -639,6 +646,7 @@
       <object>objects\objYolomanyT</object>
       <object>objects\objYolomanyZerowater</object>
       <object>objects\objYolomanyLine</object>
+      <object>objects\objYolomanyBlock</object>
     </objects>
     <objects name="Qinchui">
       <object>objects\objQCniseBlock</object>
@@ -839,6 +847,7 @@
     </rooms>
     <rooms name="Piao Stage">
       <room>rooms\rPiaoStage</room>
+      <room>rooms\rPiaoHubIn</room>
       <room>rooms\rPersonalHubTemplate</room>
     </rooms>
   </rooms>
