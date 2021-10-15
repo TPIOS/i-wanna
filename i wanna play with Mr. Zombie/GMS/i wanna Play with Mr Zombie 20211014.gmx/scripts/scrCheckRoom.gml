@@ -39,6 +39,11 @@ switch(room){
         return "jushi";
         break;
     case rRCHub:
+    case rRCS1:
+    case rRCS2:
+    case rRCS3:
+    case rRCS4:
+    case rRCS5:
         return "redcrown";
         break;
     case rPiaoHubIn:

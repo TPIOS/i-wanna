@@ -39,6 +39,7 @@
       <sound>sound\sndJushiCellingSwitch</sound>
       <sound>sound\sndCreatorIcon</sound>
       <sound>sound\sndPortal</sound>
+      <sound>sound\sndGravity</sound>
     </sounds>
     <sounds name="music">
       <sounds name="Qinchui">
@@ -618,7 +619,7 @@
     </objects>
     <objects name="Needle Rush">
       <object>objects\objIcons</object>
-      <object>objects\objCloudEffect</object>
+      <object>objects\objNeedleRushEffect</object>
     </objects>
     <objects name="RedCrown">
       <object>objects\objRCBlock</object>

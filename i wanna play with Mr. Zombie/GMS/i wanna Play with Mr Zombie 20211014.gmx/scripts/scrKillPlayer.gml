@@ -5,7 +5,9 @@ if (instance_exists(objPlayer) && (!global.noDeath && !global.debugNoDeath))
     if (global.gameStarted) //normal death
     {
         global.deathSound = audio_play_sound(sndDeath,0,false);
-        
+        if(room == rPiaoStage) {
+            audio_stop_all();
+        }
         if (!global.muteMusic)  //play death music
         {
             if (global.deathMusicMode == 1) //instantly pause the current music

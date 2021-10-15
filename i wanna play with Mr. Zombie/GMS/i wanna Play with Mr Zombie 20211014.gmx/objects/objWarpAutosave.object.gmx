@@ -68,6 +68,13 @@ switch(scrCheckRoom()){
             <kind>1</kind>
             <string>if (global.difficulty &lt; 3)  //make sure we're on a difficulty lower than impossible before autosaving
     global.autosave = true;
+
+switch(scrCheckRoom()){
+    case "redcrown": {
+        audio_play_sound(sndPortal, 0, false);
+        break;
+    }
+}    
     
 event_inherited();
 </string>
@@ -95,10 +102,20 @@ event_inherited();
             <string>draw_self();
 
 draw_set_font(fDefault12);
-draw_set_color(c_white);
-//draw_text_ext(x + 16, y - 12, text, 8, -1);
-draw_text_ext(x + 16, y - 20, text, 8, -1);
-draw_set_color(c_black);
+
+if(room == rHub) {
+    if(objHubIcon.icon == 7 and objHubIcon.bgList[7] == bWujian) {
+        draw_set_color(c_black);
+        draw_text_ext(x + 16, y - 20, text, 8, -1);
+    }
+    else {
+        draw_set_color(c_white);
+        //draw_text_ext(x + 16, y - 12, text, 8, -1);
+        draw_text_ext(x + 16, y - 20, text, 8, -1);
+        draw_set_color(c_black);
+    }
+}
+
 
 draw_set_halign(fa_center);
 </string>

@@ -27,7 +27,9 @@
             <kind>1</kind>
             <string>if (global.difficulty &lt; 3)  //make sure we're on a difficulty lower than impossible before autosaving
     global.autosave = true;
-    
+
+//audio_play_sound(sndPortal, 0, false);
+
 event_inherited();
 </string>
           </argument>

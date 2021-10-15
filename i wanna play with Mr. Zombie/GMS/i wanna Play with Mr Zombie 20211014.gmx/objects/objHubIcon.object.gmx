@@ -82,34 +82,6 @@ c = 0;
           <argument>
             <kind>1</kind>
             <string>if(room != rHub)instance_destroy();
-/*
-if(icon == 7 &amp;&amp; hasntDraw) {
-    hasntDraw = false;
-    selectRandom = random(5);
-    if(selectRandom &lt;= 1){
-        bgList[icon] = bEbb174;
-        iconList[icon] = sprEbb174Icon;
-    }
-    else if(selectRandom &lt;= 2) {
-        bgList[icon] = bQianchou;
-        iconList[icon] = sprQianchouIcon;
-    }
-    else if(selectRandom &lt;= 3) {
-        bgList[icon] = bSol;
-        iconList[icon] = sprSolIcon;
-    }
-    else if(selectRandom &lt;= 4) {
-        bgList[icon] = bWujian;
-        iconList[icon] = sprWujianIcon;
-    }
-    else {
-        bgList[icon] = bgMainHub;
-        iconList[icon] = sprNeedleRushIcon;
-    }
-}
-else {
-    hasntDraw = true;
-}*/
 </string>
           </argument>
         </arguments>

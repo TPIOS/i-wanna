@@ -91,19 +91,17 @@ a.alarm[9]=1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-a=instance_create(40,302,objPiaoFDDD)
+            <string>a=instance_create(38,303,objPiaoFDDD)
 
 a.direction=0
 a.sprite_index=sprPiaoGhost
 a.alarm[1]=1
 
-a=instance_create(760,302,objPiaoFDDD)
+a=instance_create(762,303,objPiaoFDDD)
 
 a.direction=180
 a.sprite_index=sprPiaoGhost2
 a.alarm[1]=1
-
 </string>
           </argument>
         </arguments>

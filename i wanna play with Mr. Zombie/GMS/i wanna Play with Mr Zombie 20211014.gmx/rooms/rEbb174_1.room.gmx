@@ -305,7 +305,7 @@
     <instance objName="objWarpAutosave" x="0" y="80" name="inst_739A2307" locked="0" code="roomTo = rEbb174_2;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSaveBlocker" x="32" y="256" name="inst_79598EC3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objSaveBlocker" x="736" y="288" name="inst_CE2EA8AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objCloudEffect" x="32" y="224" name="inst_E3EF8EFB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objNeedleRushEffect" x="32" y="224" name="inst_A9A75D09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

@@ -200,7 +200,7 @@
     <instance objName="objChangeIconArea" x="64" y="32" name="inst_31B97BC1" locked="0" code="icon = 1;&#xA;" scaleX="7" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objHubIcon" x="736" y="64" name="inst_9CEAC3A4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objChangeIconArea" x="64" y="192" name="inst_98F7DEB5" locked="0" code="icon = 2;&#xA;" scaleX="7" scaleY="3" colour="4294967295" rotation="0"/>
-    <instance objName="objChangeIconArea" x="64" y="352" name="inst_A9887522" locked="0" code="icon = 3&#xA;" scaleX="7" scaleY="3" colour="4294967295" rotation="0"/>
+    <instance objName="objChangeIconArea" x="64" y="352" name="inst_A9887522" locked="0" code="icon = 3" scaleX="7" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objChangeIconArea" x="512" y="32" name="inst_B29B1214" locked="0" code="icon = 4;&#xA;" scaleX="7" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objChangeIconArea" x="512" y="192" name="inst_B2F3F182" locked="0" code="icon = 5;&#xA;" scaleX="7" scaleY="3" colour="4294967295" rotation="0"/>
     <instance objName="objChangeIconArea" x="288" y="32" name="inst_BBDD0AC4" locked="0" code="icon = 7&#xA;" scaleX="7" scaleY="5" colour="4294967295" rotation="0"/>

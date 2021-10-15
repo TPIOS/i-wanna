@@ -25,8 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (global.grav == -1)
+            <string>if (global.grav == -1) {
     scrFlipGrav();  //flip player
+    audio_play_sound(sndGravity, 0, false);
+}
 </string>
           </argument>
         </arguments>
