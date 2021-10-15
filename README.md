@@ -1,5 +1,5 @@
 # i-wanna
-programmed by GameMaker 8 or GameMaker Studio 2
+programmed by GameMaker 8 or GameMaker Studio
 
 Game Engine: nikaple, documents: https://www.nikaple.com/engine/#/
 
@@ -15,6 +15,12 @@ Other Tools:
 4. **Snipaste**. A good screenshot tool when making game map.
 5. Two decompiler for Gamemaker 8.x.
 6. **QuickBMS** for decompiling Gamemaker Studio.
+7. **BongoCat**. Another keyboard mapping tool with cute cat and live2D support.
+8. **GearNT**. A tool to slow down the speed of i wanna game. Not allowed to be used in public performance.
+9. **iwpo**. Early in 2020, an amazing tool for transfer single player i wanna game to multi-players.
+10. Some tools related to NumLock, rotate the screen, and quickMacro.
+11. Working on some Python scripts to automatically beat the i wanna game.
+12. Some .dll files for fixing some issues related to GMS i wanna game.
 
 
 
