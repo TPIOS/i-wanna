@@ -24,7 +24,7 @@ Other Tools:
 
 
 
-**Second work**:  i wanna play with Mr.Ghost, download URL:  http://www.mediafire.com/file/m1hfodisung5ni3/i_wanna_play_with_Mr.Ghost.zip/file; Co-operate with zeroyume, sunlaoqq, Xiao_zoulv(Koyuyu), bao, ZZR, IWD.
+**Second work**:  i wanna play with Mr.Ghost, download URL: http://www.mediafire.com/file/m1hfodisung5ni3/i_wanna_play_with_Mr.Ghost.zip/file; Co-operate with zeroyume, sunlaoqq, Xiao_zoulv(Koyuyu), bao, ZZR and IWD.
 
 
 
@@ -32,4 +32,16 @@ Other Tools:
 
 
 
-**Fourth Work**: 
+**Fourth Work**: i wanna play with Mrs. Witch, download URL: https://www.mediafire.com/file/fl9ut39gmicxuxj/I_Wanna_Play_with_Mrs._Witch.zip/file; Co-operate with zeroyume, ZZR, Koyuyu, Qinchui, Wujian, Irkara and cloakman.
+
+
+
+**Fifth Work**: Happy Birthday to Zeroyume, download URL: https://www.mediafire.com/file/mg6i8kycn1cbbl2/Happy_Birthday_to_Zeroyume.zip/file; Co-operate with cloakman, Chance, Summer, wifie, SilentNight, loli_qc
+
+
+
+**Sixth Work**: Jushi 2021 Needle. More interesting design than first one, download URL: https://www.mediafire.com/file/77irteqno80ziz7/Jushi_Needle_2021.zip/file
+
+
+
+**Seventh Work**: i wanna play with Mr. Zombie. It is the fourth year of celebrating Halloween again. Work in process now!
