@@ -2,6 +2,47 @@
 
 var roomSong;
 
+//whichRoom = scrCheckRoom(room);
+switch(scrCheckRoom(room)) {
+    case "mainroom":
+        roomSong = musHub;
+        break;
+    case "ebb174":
+        roomSong = musEbb174;
+        break;
+    case "qianchou":
+        roomSong = musQianchou;
+        break;
+    case "sol":
+        roomSong = musSolBGM;
+        break;
+    case "wujian":
+        roomSong = musWujian;
+        break;
+    case "yolomany":
+        roomSong = musYolomany;
+        break;
+    case "redcrown":
+        roomSong = musRCBgm;
+        break;
+    case "jushi":
+        roomSong = musJushiStage;
+        break;
+    case "qinchuinormal":
+        roomSong = musQCstageBgm;
+        break;
+    case "qinchuipenalty":
+        roomSong = musQCpenaltyBgm;
+        break;
+    case "null":
+        roomSong = -1;
+        break;
+    default:                        //default option in case the room does not have a song set
+        roomSong = -1;
+        break;
+}
+
+/*
 switch (room)                       //determines which song to play
 {
     case rTitle:                    //add rooms here, if you have several rooms that play the same song they can be put together
@@ -80,7 +121,7 @@ switch (room)                       //determines which song to play
     default:                        //default option in case the room does not have a song set
         roomSong = -1;
         break;
-}
+}*/
 
 if (roomSong != -2)
     scrPlayMusic(roomSong,true); //play the song for the current room

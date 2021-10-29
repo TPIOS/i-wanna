@@ -1178,7 +1178,7 @@
     <instance objName="objRongLT" x="880" y="1536" name="inst_70F398AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="880" y="1696" name="inst_EFD919B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="880" y="1856" name="inst_D962A965" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRongLT" x="2784" y="1760" name="inst_9D52EBBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRongLT" x="2848" y="1728" name="inst_9D52EBBC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="1440" y="1504" name="inst_4206E9A3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="1024" y="1504" name="inst_7AC6A136" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="1152" y="1504" name="inst_C314E8CA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -1199,12 +1199,16 @@
     <instance objName="objRongLT" x="4448" y="1760" name="inst_C865A859" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="3488" y="1664" name="inst_25C81D6F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="3616" y="1664" name="inst_B948AEC2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="objRongLT" x="2432" y="1568" name="inst_B56FB3EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRongLT" x="2432" y="1440" name="inst_B56FB3EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="1664" y="1504" name="inst_3AF0BF66" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="4448" y="1504" name="inst_18C59D4E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="4736" y="1600" name="inst_E7CC0DEF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongLT" x="3392" y="1376" name="inst_B96751D6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRongBombItem" x="896" y="2064" name="inst_406B5240" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRongLT" x="2720" y="1728" name="inst_74B6FCCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRongDialogGen" x="2752" y="1728" name="inst_0DC99687" locked="0" code="text = &quot;按E打开和关闭望远镜，左右移动视角&quot;&#xA;" scaleX="3" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRongTelescope" x="2784" y="1728" name="inst_A59AC663" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objBlock" x="2720" y="1760" name="inst_5EE530DD" locked="0" code="" scaleX="5" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bRongSandBlock" x="2592" y="576" w="32" h="32" xo="0" yo="0" id="10012809" name="inst_80AF385F" depth="2000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
@@ -1303,6 +1307,11 @@
     <tile bgName="bRongSandBlock" x="4288" y="1472" w="32" h="32" xo="0" yo="0" id="10012918" name="inst_53078912" depth="2000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bRongSandBlock" x="4032" y="1664" w="32" h="32" xo="0" yo="0" id="10012919" name="inst_4E35B340" depth="2000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bRongSandBlock" x="4160" y="1664" w="32" h="32" xo="0" yo="0" id="10012920" name="inst_09C18F16" depth="2000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bRongSandBlock" x="2720" y="1760" w="32" h="32" xo="0" yo="0" id="10012921" name="inst_A6E0B0AC" depth="2000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bRongSandBlock" x="2752" y="1760" w="32" h="32" xo="0" yo="0" id="10012922" name="inst_BD547D8D" depth="2000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bRongSandBlock" x="2784" y="1760" w="32" h="32" xo="0" yo="0" id="10012923" name="inst_7EE19723" depth="2000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bRongSandBlock" x="2816" y="1760" w="32" h="32" xo="0" yo="0" id="10012924" name="inst_F90317F7" depth="2000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
+    <tile bgName="bRongSandBlock" x="2848" y="1760" w="32" h="32" xo="0" yo="0" id="10012925" name="inst_40E79E34" depth="2000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="" x="1056" y="416" w="16" h="16" xo="0" yo="0" id="10002415" name="inst_D95DE5EA" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="" x="1120" y="512" w="16" h="16" xo="0" yo="0" id="10002416" name="inst_BC6EF102" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>
     <tile bgName="bAllTiles" x="1344" y="1984" w="32" h="32" xo="32" yo="32" id="10006797" name="inst_3196286E" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

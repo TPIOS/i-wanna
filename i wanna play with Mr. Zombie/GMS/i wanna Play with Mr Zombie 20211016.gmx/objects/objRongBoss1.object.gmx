@@ -183,6 +183,7 @@ if(instance_exists(objPlayer) and !instance_exists(objRongGun)) {
             bullet.sprite_index=sprRongGhost
             bullet.image_xscale=sign(objPlayer.x-x)
             bullet.speed = 5;
+            bullet.depth=-10010;
             bullet.direction=point_direction(x,y,objPlayer.x,objPlayer.y);
             ShootGen = 0;
         }

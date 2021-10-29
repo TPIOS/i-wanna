@@ -1,4 +1,11 @@
 switch(room){
+    case rTitle:
+    case rMenu:
+    case rOptions:
+    case rDifficultySelect:
+    case rHub:
+        return "mainroom";
+        break;
     case rEbb174_1:
     case rEbb174_2:
     case rEbb174_3:
@@ -45,11 +52,23 @@ switch(room){
     case rRCS4:
     case rRCS5:
         return "redcrown";
+        break;    
+    case rQCstage01:
+    case rQCstage02:
+    case rQCstage04:
+    case rQCstage05:
+    case rQinchuiHub:
+        return "qinchuinormal";
+        break;
+    case rQCPenalty:
+    case rQCPenalty2:
+    case rQCstage03:
+        return "qinchuipenalty";
         break;
     case rPiaoHubIn:
         return "piao";
         break;
     default:
-        return 0;
+        return "null";
         break;
 }

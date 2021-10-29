@@ -45,3 +45,19 @@ SetBreakpoint: A8 34E1DF8 34E1EA0
 SetBreakpoint: D8 34E1DF8 34E1ED0
 SetBreakpoint: 14 34E1DF8 34E1E0C
 RestartButton Click!
+***** 2021/10/24 : 5:02 *****
+VMCompiler:Loading assembly D:\Github\i-wanna\engine\gamemaker_studio\GMAssetCompiler.exe
+connect host:127.0.0.1 port6502
+ParseGameLayout: size=710635
+BIG ENDIAN=False
+Reading project file....finished.
+Session init:True
+Socket Receive exception: 远程主机强迫关闭了一个现有的连接。
+***** 2021/10/24 : 5:21 *****
+VMCompiler:Loading assembly D:\Github\i-wanna\engine\gamemaker_studio\GMAssetCompiler.exe
+connect host:127.0.0.1 port6502
+ParseGameLayout: size=710635
+Reading project file....BIG ENDIAN=False
+finished.
+Session init:True
+Socket Receive exception: 远程主机强迫关闭了一个现有的连接。

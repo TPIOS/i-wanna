@@ -40,6 +40,7 @@
       <sound>sound\sndCreatorIcon</sound>
       <sound>sound\sndPortal</sound>
       <sound>sound\sndGravity</sound>
+      <sound>sound\sndRongBomb</sound>
     </sounds>
     <sounds name="music">
       <sounds name="Qinchui">
@@ -363,6 +364,7 @@
       <sprite>sprites\sprRongSLJ</sprite>
       <sprite>sprites\sprRongInput</sprite>
       <sprite>sprites\sprRongBlockBreakable</sprite>
+      <sprite>sprites\sprRongTelescope</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -811,6 +813,7 @@
       <object>objects\objectPiaoW</object>
       <object>objects\objTimelineAdjust</object>
       <object>objects\objPiaoHubDoorIn</object>
+      <object>objects\objPiaoStartSave</object>
     </objects>
     <objects name="MainHub">
       <object>objects\objLevelItem</object>
@@ -867,6 +870,7 @@
       <object>objects\objRongBG</object>
       <object>objects\objRongSlime</object>
       <object>objects\objRongLT</object>
+      <object>objects\objRongTelescope</object>
     </objects>
   </objects>
   <timelines name="timelines">

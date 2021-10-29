@@ -22,7 +22,7 @@ def circle(pictureName, outputName):
     imb = imb.resize((32, 32), resample=Image.LANCZOS)
     imb.save(outputName)
   
-circle("yolomany.jpg", "yolomany32.png")
+circle("zeroyume.jpg", "zeroyume32.png")
 # circle("bao.jpg", "bao32.png")
 # circle("jushi.jpg", "jushi32.png")
 # circle("zero.jpg", "zero32.png")

@@ -1,0 +1,12 @@
+objRongHunter 深度改为-10010
+objHiderFiler 深度改为-9
+objHiderFiler 和objPlayer碰撞事件改为step
+objRongBoss1  UserEvent1  bullet.depth=-10010
+(1440,1568)处贴图
+(2432,1568)处灯上移至天花板
+(3936,1568)处去除贴图
+新增objRongTelescope，objRongCamera EndStep代码改变
+boss下方房间调整
+objRongBossBomb step20行改为1700
+objRongBomb 和 objRongBossBomb 添加音效
+不知道为什么加上bgm就乱套了，不过bgm的播放逻辑写在scrGetMusic里

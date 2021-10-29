@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = 1000002
+            <string>depth = -10010
 flag = 0;
 
 trg = 0;
