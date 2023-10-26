@@ -563,6 +563,7 @@
     <background>background\bgYoloTiles</background>
     <background>background\bgHallowTiles</background>
     <background>background\bgHallowChoice</background>
+    <background>background\bgHallowEnd</background>
   </backgrounds>
   <paths name="paths">
     <path>paths\pU1_origin</path>

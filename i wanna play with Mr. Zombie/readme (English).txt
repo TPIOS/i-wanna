@@ -1,45 +1,10 @@
 Game Name：i wanna play with Mr. Zombie
 Creators：Jushi，Zeroyume，ZZR，RedCrown，yolomany，Qinchui，ebb174，loli_qc，sol，Wujian，Piao
 Testors: SAIRA, Tete, Flames, Cloakman, Oaildlo, sandcu, and all the creators
-Coders: Jushi, Cloakman, Huafa, IWD, ZZR, Piao, Ear.1
+Coders: Jushi, Cloakman, Huafa, IWD, ZZR, Piao, Ear.1, tw
 
 Main leader/Stage Integration: Jushi
-Artists: Zeroyume, 冇有猫猫
+Artists: Zeroyume, Cat
 
-BGM List:
-Hub Room:
-Crossroads - Christopher Larkin
 
-Jushi Stage:
-Aural - Imagine Music / Sergey Zubarev
-
-RedCrown Stage:
-JEWEL TEMPTATION (JEWEL MAN STAGE) - 礒谷浩生
-
-Rong Stage:
-ガウル平原 - 工藤ともり / 山中裕代 / 平松建治
-The Choice - Toby Fox
-Chrono Trigger: "Schala's Theme" (Remix Version) - JD Harding
-时の回廊 - Dxtliant Child
-
-Yolomany Stage:
-Grasshopper - Agnes Obel
-
-Qinchui Stage:
-Gentle Jena ～Extended Version～ - 戸越まごめ
-终日(ひねもす)のたりのたり - Falcom Sound Team jdk
-
-Zeroyume Stage:
-聖堂のレリーフ - 秋山裕和
-Suspense 4 - PeriTune
-
-Needle Rush:
-ebb174 Stage: Twinkle Lullaby - Steven Sharp Nelson
-loli_qc Stage: Haunted - Nox Arcana
-sol Stage: 命 - S9ryne
-Wujian Stage: Halloween 2018 Theme - War Robots
-
-Final Avoidance:
-Happy Halloween - あやぽんず* / ゆいこんぬ
-
-ED:
+This is the fourth year of the Halloween collaboration fangame. It combines gimmick, a simple needle rush and a little hard avoidance in the end. I hope everyone could enjoy it~

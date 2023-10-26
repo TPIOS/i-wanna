@@ -61,3 +61,11 @@ Reading project file....BIG ENDIAN=False
 finished.
 Session init:True
 Socket Receive exception: 远程主机强迫关闭了一个现有的连接。
+***** 2021/10/30 : 17:49 *****
+VMCompiler:Loading assembly D:\Github\i-wanna\engine\gamemaker_studio\GMAssetCompiler.exe
+connect host:127.0.0.1 port6502
+ParseGameLayout: size=934617
+BIG ENDIAN=False
+Reading project file....finished.
+Session init:True
+Socket Receive exception: 远程主机强迫关闭了一个现有的连接。
