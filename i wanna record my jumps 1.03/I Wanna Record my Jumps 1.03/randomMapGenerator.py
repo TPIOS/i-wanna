@@ -12,7 +12,7 @@ def checkPos(x, y, bigMap, blockSize):
         return False
     return True
 
-outputFile = "random_5.map"
+outputFile = "2024_random_5.map"
 f = open(outputFile, "w")
 f.write(" 1.030000\n")
 f.write("random_1\n")

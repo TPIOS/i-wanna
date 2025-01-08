@@ -1,21 +1,21 @@
-project|D:/Github/i-wanna/Jushi Needle 2023/GMS/Jushi Needle 2023/Jushi Needle 2023.project.gmx
-template|rTemplate
-block|obj3Block|1
+project|D:/Github/i-wanna/Jushi Needle 2024/GMS/Jushi Needle 2024.gmx/Jushi Needle 2024.project.gmx
+template|rT2
+block|obj2Block|1
 bulletblocker|objSaveBlocker|1
-cherry|objCherry|1
+cherry|objCherry|0
 hurtblock||0
 jumprefresher|objJumpRefresher|0
-miniblock|obj3MiniBlock|1
-minidown|objMiniDown|1
-minileft|objMiniLeft|1
-miniright|objMiniRight|1
-miniup|objMiniUp|1
+miniblock|obj3MiniBlock|0
+minidown|obj2MiniDown|1
+minileft|obj2MiniLeft|1
+miniright|obj2MiniRight|1
+miniup|obj2MiniUp|1
 platform|objPlatform|0
 save|objSave|1
-spikedown|objSpikeDown|1
-spikeleft|objSpikeLeft|1
-spikeright|objSpikeRight|1
-spikeup|objSpikeUp|1
+spikedown|obj2SpikeDown|1
+spikeleft|obj2SpikeLeft|1
+spikeright|obj2SpikeRight|1
+spikeup|obj2SpikeUp|1
 start|objPlayerStart|1
 vineleft|objWalljumpL|0
 vineright|objWalljumpR|0
