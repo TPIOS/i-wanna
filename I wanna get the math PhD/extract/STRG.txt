@@ -1,0 +1,1593 @@
+prototype
+@@array@@
+arguments
+y
+grav
+x
+place_meeting
+onPlatform
+jump
+vspeed
+djump
+audio_play_sound
+infJump
+debugInfJump
+jump2
+sprite_index
+instance_number
+instance_create
+mask_index
+instance_exists
+noDeath
+debugNoDeath
+gameStarted
+scrStopMusic
+deathSound
+muteMusic
+deathMusicMode
+currentMusic
+audio_pause_sound
+gameOverMusic
+event_user
+instance_destroy
+death
+scrSaveGame
+room_restart
+abs
+gravity
+scrSetPlayerMask
+scrSetGlobalOptions
+savenum
+difficulty
+time
+timeMicro
+
+saveRoom
+savePlayerX
+savePlayerY
+saveGrav
+question
+hints
+secretItemTotal
+i
+secretItem
+saveSecretItem
+bossItemTotal
+bossItem
+saveBossItem
+gameClear
+saveGameClear
+trigger
+noPause
+autosave
+gamePaused
+pauseSurf
+pauseDelay
+currentMusicID
+musicFading
+currentGain
+menuSelectPrev
+application_surface
+surface_get_width
+windowWidth
+surface_get_height
+windowHeight
+windowXPrev
+windowYPrev
+windowWidthPrev
+windowHeightPrev
+display_set_gui_size
+controllerMode
+controllerDelay
+randomize
+Use a calculator
+hint
+It rhymes with eleven
+It rhymes with yifty whore
+Find a number that divides evenly into both sides of the fraction, then divide them by that number
+Order of operations: PEDMAS
+You can't buy delicious fruit in fractions, and you can't pay more than you have!
+Dice have six faces each, with the numbers 1,2,3,4,5,6 on them
+(Distance to left side) + (Distance to right side) = (Total screen width)
+Distance = Speed * Time
+10% of anything is the same number with the decimal moved one place to the left
+Rearrange the equation to isolate x - the first move would be to add 4 to both sides of the '=' sign
+What is the largest number that divides evenly into these two numbers? (Ex: GCF(10,8) = 2)
+Area of a triangle = (Base * Height) / 2
+To multiply fractions, just multiply the top(numerators) and bottom(denominators) together. (Ex: 2/3 * 2/3 = 4/9)
+The perimeter of a square is four times its side length
+The greatest constant and greatest power of x that divides into both?
+Multiply everything out, then rearrange for x. You may need to use a calculator
+Prime numbers are only divisible by 1 and themselves
+Find two numbers that multiply to give the number in the last term, and add to give the number in the 2nd term. Factoring these quadratics results in (x+a)(x+b)
+Average = Sum of data / Number of data pieces
+Use the slope formula y = mx + b
+The y-intercept occurs at x=0
+sqrt(a) * sqrt(b) = sqrt(a*b)
+a * sqrt(b) = sqrt((a^2) * b)
+Example of a quadratic: 5x^2 + 4x - 4
+Use decomposition or the quadratic formula to solve for x
+The axis of symmetry for a polynomial of the form (ax^2 + bx + c) can be found at x = -b / 2a
+Set up a system of equations and solve via substitution or elimination: D + M = 15; 4D + 5M = 71
+sin(theta) = opposite / hypotenuse (remember SOH CAH TOA)
+This is a trig identity. Think about the connections between trig functions on a right angle triangle (SOH CAH TOA)
+360 degrees is equivalent to 2pi radians. When is cosine -1? Think of the unit circle.
+If f(2) is 2(2) + 3, try doing the same but instead of 2 use g(x)
+To find the inverse function, change all x to y and all y to x, then solve for y
+ln(x) is the natural logarithm. Is there a certain exponential function that 'undoes' this?
+P(A + B) = P(A) * P(B)
+Try drawing a tree diagram for this one and adding up the positive results.
+Logarhithm rule: log(a/b) = log(a) - log(b)
+ln(x) is log base e. log(a) / log(b) is the same as log base b of a
+The nth term of an expanded binomial (a + b) with exponent r is: (r choose n) * a^(r-n) * b(n). If (r choose n) is confusing, it has to do with pascal's triangle.
+The constant term is whenever the exponent on x is zero. Expanding out binomials like (a+b)^r results in: a^r + (some number)*a^(r-1)*b + ... + (some number)*a*b^(r-1) + b^r
+This question is asking for the derivative. Use the exponent rule
+There exists a 'small angle approximation' rule saying that sin(x) approaches x as x gets closer to 0.
+Only the x^2 terms are relevant to this question. What is the ratio between them?
+Use the chain rule: d/dx f(g(x)) = f'(g(x)) * g'(x)
+d/dx sin(x) = cos(x) and d/dx cos(x) = -sin(x). Also when antideriving there is a constant C at the end
+Set up an equation for the distance between the kid and the apple, and derive implicitly: (distance)^2 = 8^2 + x^2 where x is the distance of the apple.
+Find the area under the curve (e^(0.5t) - t) from 0 to 6.
+Use 'u' substitution to find the integral of the function, then plug in for x=0 and solve for C
+Exponential functions are of the form: c * e^(k*t) where c and k are constants.
+The answer to question 45 was 9.
+debugMode
+debugVisuals
+debugOverlay
+debugShowHitbox
+Kinata's Math Hell
+roomCaptionDef
+roomCaptionLast
+window_set_caption
+riushgytu98syh894rhuishgg897rw
+md5StrAdd
+startRoom
+menuMode
+menuSound
+adAlign
+timeWhenDead
+edgeDeath
+pauseDelayLength
+delayBow
+directionalTapFix
+playerAnimationFix
+autosaveSecretItems
+controllerEnabled
+controllerDelayLength
+extraSaveProtection
+config.ini
+ini_open
+Mute_music
+Settings
+ini_write_real
+volumeLevel
+Volume_level
+fullscreenMode
+Fullscreen_mode
+smoothingMode
+Smoothing_mode
+vsyncMode
+Vsync_mode
+leftButton
+Left
+Controls
+rightButton
+Right
+upButton
+Up
+downButton
+Down
+jumpButton
+Jump
+shootButton
+Shoot
+restartButton
+Restart
+skipButton
+Skip
+suicideButton
+Suicide
+pauseButton
+Pause
+alignLeftButton
+Align_left
+alignRightButton
+Align_right
+controllerIndex
+Index
+Controller
+ini_close
+ini_read_real
+floor
+clamp
+audio_master_gain
+window_set_fullscreen
+scrSetVsync
+menuLeftButton
+menuRightButton
+menuUpButton
+menuDownButton
+menuAcceptButton
+menuBackButton
+menuOptionsButton
+scrSaveConfig
+argument0
+savePosition
+room
+room_get_name
+place_free
+saveQuestion
+ds_map_create
+saveMap
+ds_map_add
+saveSecretItem[
+string
+]
+saveBossItem[
+json_encode
+md5_string_unicode
+mapMd5
+Data\\save
+ds_map_secure_save
+file_text_open_write
+f
+base64_encode
+file_text_write_string
+file_text_close
+ds_map_destroy
+loadFile
+ds_map_secure_load
+file_text_open_read
+file_text_read_string
+base64_decode
+json_decode
+saveValid
+ds_map_find_value
+is_string
+asset_get_index
+room_exists
+ds_map_delete
+genMd5
+Save invalid!
+show_message
+scrRestartGame
+room_goto
+roomCaption
+ -
+ Deaths: 
+ Time: 
+t
+:
+optionsText
+scrGetKeybind
+backButton
+acceptButton
+optionsButton
+scrGetControllerBind
+draw_set_font
+draw_set_halign
+[
+] Back
+draw_text
+] Accept
+] Options
+keyIn
+Space
+$$$$temp$$$$
+Shift
+Control
+Alt
+Enter
+Backspace
+Tab
+Insert
+Delete
+Page Up
+Page Down
+Home
+End
+Escape
+Print Screen
+F1
+F2
+F3
+F4
+F5
+F6
+F7
+F8
+F9
+F10
+F11
+F12
+Left Shift
+Right Shift
+Left Control
+Right Control
+Left Alt
+Right Alt
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+*
++
+-
+.
+/
+;
+=
+,
+`
+\\
+'
+chr
+buttonIn
+A/Cross
+B/Circle
+X/Square
+Y/Triangle
+Left Bumper
+Left Trigger
+Right Bumper
+Right Trigger
+Select/Touch-Pad
+Start/Options
+Left Stick (pressed)
+Right Stick (pressed)
+D-Pad Up
+D-Pad Down
+D-Pad Left
+D-Pad Right
+Unknown
+scrGetMusic
+BGM
+scrPlayMusic
+audio_stop_sound
+surface_exists
+surface_free
+game_restart
+window_get_x
+window_get_y
+window_get_width
+window_get_height
+display_reset
+alarm
+window_set_size
+roomSong
+songID
+argument1
+loopSong
+length
+list
+gamepad_button_check_pressed
+keyboard_check
+gamepad_button_check
+keyboard_check_pressed
+keyboard_check_released
+gamepad_button_check_released
+textX
+textY
+argument2
+textStr
+argument3
+textColor
+argument4
+outlineColor
+draw_set_color
+spawnX
+spawnY
+spawnAngle
+spawnEdges
+spawnNum
+argument5
+spawnSpeed
+argument6
+spawnObj
+degtorad
+th
+cos
+xx
+sin
+yy
+ddx
+ddy
+j
+dx
+dy
+a
+point_direction
+direction
+point_distance
+speed
+answers
+ds_list_add
+argument
+s
+n
+argument_count
+string_length
+rpt
+ds_list_create
+l
+string_copy
+real
+This function has not been implemented yet. Please use the 'add' function with a negative in front of the number you wish to subtract (eg. add('100', '-5'))
+show_error
+radix
+a1
+a2
+carry
+array_length_1d
+a1_len
+a2_len
+max
+result_est_size
+col
+a3
+array_get
+a1_cur
+a2_cur
+ceil
+extracols
+r
+_array_add
+array_pop
+new_s
+is_real
+round
+string_char_at
+_math_negate_notate
+_math_alphabet
+ds_list_find_index
+ds_list_find_value
+alphabet_to_numeric
+str
+glue
+numeric_to_alphabet
+ds_list_size
+_ensure_numberstring
+first
+neg_notate
+_math_radix
+string_to_radixval_array
+current
+cur_is_pos
+next
+bignumber_is_positive
+next_is_pos
+next_array
+array_reverse
+_array_sub
+Invalid operation
+array_radixval_to_string
+o
+c
+add
+b
+s_a
+s_b
+p
+math_dictionary_find_name
+ext
+preDec
+min
+postDec
+_maths_decimal
+ 
+Alphabet not big enough for radix of 
+Alphabet does not support the current radix size
+ds_list_destroy
+_math_create_alphabet
+string_to_list
+_maths_seperator
+long
+k
+ds_list_set
+million
+billion
+trillion
+quadrillion
+quintillion
+hexillion
+heptillion
+googol
+_maths_format_long
+dict
+n1
+n2
+l1
+l2
+sum
+z2
+add2
+z1
+add1
+string_repeat
+answer
+object_index
+window_get_fullscreen
+window_set_position
+texture_set_interpolation
+scrAnyControllerButton
+scrButtonCheckPressed
+instance_deactivate_all
+surface_create
+surface_copy
+instance_activate_all
+io_clear
+audio_resume_sound
+audio_sound_gain
+scrLoadGame
+delta_time
+scrButtonCheck
+scrSetRoomCaption
+mouse_x
+mouse_y
+room_last
+room_goto_next
+room_first
+room_goto_previous
+image_alpha
+image_blend
+game_end
+scrResetWindowSize
+scrToggleMusic
+audio_sound_get_gain
+room_speed
+scrInitializeGlobals
+scrLoadConfig
+drawX
+drawY
+drawAlign
+X: 
+scrDrawTextOutline
+Y: 
+Align: 
+Room name: 
+Room number: 
+God mode: 
+Infinite jump: 
+FPS: 
+fps
+Real FPS: 
+fps_real
+draw_clear
+draw_surface
+draw_set_alpha
+display_get_gui_height
+display_get_gui_width
+draw_rectangle
+PAUSE
+timeText
+Volume: 
+%
+Deaths: 
+Time: 
+Debug mode
+leaveRoom
+xFollow
+yFollow
+room_width
+room_height
+view_wview
+view_xview
+view_hview
+view_yview
+snapDiv
+difSelect
+select
+select2
+xSeperation
+Save 1
+Save 2
+Save 3
+warnText
+warnSelect
+appleIndex
+playerIndex
+file_exists
+exists
+is_undefined
+boss
+clear
+timeStr
+file_delete
+Save Data
+< Load game >
+< Start Game >
+< Hard >
+< Very Hard >
+< Impossible >
+Are you sure#you want to#overwrite this save?
+< Yes >
+< No >
+In-progress
+Hard
+Very Hard
+Impossible
+PhD Acquired
+draw_sprite
+No Data
+scrDrawButtonInfo
+xSelector
+ySelector
+ySeperation
+optionsNum
+Music
+strSelect
+Volume Level
+Screen Mode
+Smoothing Mode
+Vsync
+Set Keyboard Controls
+Controller Options
+Off
+On
+Fullscreen
+Windowed
+settingKey
+resetPrompt
+Left Button
+Right Button
+Up Button
+Down Button
+Jump Button
+Shoot Button
+Restart Button
+Skip Button
+Suicide Button
+Pause Button
+Reset Controls
+strKey
+keyboard_key
+keyChange
+Press the key to set
+Controls reset!
+settingButton
+Controller Index
+strButton
+-1
+Disabled
+buttonChange
+Press button to set
+Current controller: 
+controllerText
+gamepad_is_connected
+gamepad_get_description
+None
+frozen
+maxSpeed
+maxVspeed
+image_speed
+xScale
+scrKillPlayer
+notOnBlock
+onVineR
+onVineL
+L
+R
+h
+instance_place
+slipBlockTouching
+hspeed
+slip
+slideBlockTouching
+sign
+scrPlayerShoot
+scrPlayerJump
+scrButtonCheckReleased
+scrPlayerVJump
+moveLimit
+xLast
+yLast
+hLast
+vLast
+move_contact_solid
+onSlope
+slopeCheck
+hTest
+ySlope
+xprevious
+yprevious
+sprite_height
+yspeed
+image_angle
+image_yscale
+image_xscale
+image_index
+draw_sprite_ext
+bulletDir
+image_number
+irandom
+random
+visible
+distance_to_object
+itemNum
+event_inherited
+bounce
+move_bounce_solid
+choose
+id
+currentHP
+timer
+curve
+random_range
+make_color_rgb
+speedDown
+moveFromPlayer
+scrMakeCircle
+scrMakeShapes
+make_color_hsv
+trg
+v
+dir
+spd
+triggered
+refreshTime
+signText
+showText
+draw_self
+string_height
+yOffset
+sprite_width
+scrFlipGrav
+canSave
+dif
+Load Game
+difName
+warpX
+warpY
+roomTo
+draw_set_valign
+Extra
+smoothTransition
+answered
+A = ?
+get_string
+answer1
+B = ?
+answer2
+C = ?
+answer3
+D = ?
+answer4
+string_digits
+multiplybig
+p1
+p2
+p3
+pp
+p4
+correct
+n = ?
+4700063497
+m = ?
+string_pos
+m2
+n3
+bool
+check1
+m4
+n6
+50
+c2_1
+c2_2
+100
+c2_3
+bignumber_a_greaterthan_b
+check2
+Verifying the answer can take up to a half-hour
+apple = ?
+banana = ?
+pineapple = ?
+p1_1
+p1_1 done
+show_debug_message
+p1_2
+p1_2 done
+p1_3
+p1_3 done
+p1 done
+p2_1
+p2_1 done
+p2_2
+p2_2 done
+p2_3
+p2_3 done
+p2 done
+p3_1
+p3_1 done
+p3_2
+p3_2 done
+p3_3
+p3_3 done
+p3 done
+check1 done
+c2_3 done
+10
+Factor 1
+Factor 2
+the_answer
+588953239952374487661919053382031779203926702111610598655487203000438190597307862007751859300076622509169954998866056011806982351628877664849528505963824795819297268535971276980168649764213077148984736563208470768853734337326253545632699326306835948959953965961199637622875563461859984079963477769157
+2354024638195369096484615970884339820364456147543619758078791036601683550549457307734250132091348237679138365175431052395367197785226305983060913117780151701847341955178208368597048273685148832466980967826424129426918703837554365381987202581644055207294439281283465989299148386103333119266471392173618443929665694168419491445893554508312145211159678272609636102501230428807501374214287948209489922794049174568735277898089123328514098559487995775109530064742516289155842487937324115166995479992403844568229440067774588249691771929122269676355283078764925818544665476875565450677122533240801191691993850537069266814811421303138978077711478017700487114651351601764737051295848373315140397997090803794315079856953546188491644172521427470951375250077003634182703827942144576309122358369456491588427467710775884280408394754494151594511691983404256638999613567014727022803472837915664138948795302353410201541057681970330841514731793742263071861503079347455028937566794023056085249684891705541856417002502945739752918768387923426402567816291222511465758828944973345013184363023296235457948241
+font
+line
+depth
+q
+23 + 39 = ?
+ans
+Question 
+dtext
+What is your answer?
+r50
+lerp
+touching
+Use a hint?
+show_question
+Hints remaining: 
+No hints remaining
+scale
+home_room
+pos
+part_system_create
+partCloud_sys
+part_system_depth
+c1
+c2
+part_type_create
+partCloud
+part_type_shape
+part_type_size
+part_type_color2
+part_type_alpha1
+part_type_speed
+part_type_direction
+part_type_orientation
+part_type_life
+part_emitter_create
+partCloud_emit
+part_emitter_region
+part_emitter_stream
+particleGrace
+part_system_update
+part_system_clear
+part_type_destroy
+part_emitter_destroy
+part_system_destroy
+light
+draw_set_blend_mode
+surface_set_target
+size
+draw_ellipse_color
+surface_reset_target
+irandom_range
+stimer
+imod
+action_kill_object
+clipboard_set_text
+51036600
+51036800
+51035600
+5103660
+5103680
+Medium
+This is a sign
+You#can#make#multiple#lines#like#this
+IDK
+Press the spacebar to copy the number to your clipboard
+audio_is_playing
+0123456789abcdef
+math_set_radix
+math_setup_dictionary
+kinatas_math_hell
+Default
+I Wanna Be The Studio Engine YoYoYo Edition
+@@SleepMargin
+@@DrawColour
+4294967295
+BigNumbers
+bignumber_init.gml
+bignumber_init
+sndJump
+.wav
+sndJump.wav
+sndDJump
+sndDJump.wav
+sndWallJump
+sndWallJump.wav
+sndShoot
+sndShoot.wav
+sndDeath
+sndDeath.wav
+sndItem
+sndItem.wav
+sndBlockChange
+sndBlockChange.wav
+sndBossHit
+sndBossHit.wav
+sndCherry
+sndCherry.wav
+sndGlass
+sndGlass.wav
+sndSpikeTrap
+sndSpikeTrap.wav
+musOnDeath
+.mp3
+musOnDeath.ogg
+musGuyRock
+musGuyRock.ogg
+musMegaman
+musMegaman.ogg
+musMiku
+musMiku.ogg
+sndCorrect
+sndCorrect.wav
+sndWrong
+sndWrong.wav
+bgmEnd
+bgmEnd.ogg
+bgm1
+bgm1.ogg
+bgm2
+bgm2.ogg
+bgm3
+bgm3.ogg
+bgm4
+bgm4.ogg
+bgm5
+bgm5.ogg
+bgmExtra
+bgmExtra.ogg
+victory1
+victory1.ogg
+victory2
+victory2.ogg
+sprCamera
+sprPlayMusic
+sprPlayerKiller
+sprPlayerStart
+sprPlayerMask
+sprPlayerMaskFlip
+sprPlayerIdle
+sprPlayerJump
+sprPlayerFall
+sprPlayerRunning
+sprPlayerSliding
+sprBow
+sprBullet
+sprBlood
+sprGameOver
+sprBlockMask
+sprMiniBlockMask
+sprSlipBlockMask
+sprKillerBlock
+sprBlock
+sprBlock2
+sprSlideBlock
+sprSlideBlockR
+sprSlideBlockL
+sprSaveBlocker
+sprSlopeBlock
+sprSlopeDownLeft
+sprSlopeDownRight
+sprSlopeUpLeft
+sprSlopeUpRight
+sprPlatform
+sprMovingPlatform
+sprSpikeUp
+sprSpikeRight
+sprSpikeLeft
+sprSpikeDown
+sprMiniUp
+sprMiniRight
+sprMiniLeft
+sprMiniDown
+sprCherry
+sprMiku
+sprCherryWhite
+sprWater
+sprWalljumpR
+sprWalljumpL
+sprJumpRefresher
+sprSign
+sprGravityUp
+sprGravityDown
+sprTriggerMask
+sprButton
+sprSpikeTriggerDown
+sprSpikeTriggerLeft
+sprSpikeTriggerRight
+sprSpikeTriggerUp
+sprSaveMask
+sprSaveMedium
+sprSave
+sprSaveVHard
+sprSaveMediumFlip
+sprSaveFlip
+sprSaveVHardFlip
+sprWarp
+sprHintWarp
+sprSecretItem
+sprBossItem
+sprLastQuestion
+sprBlackSquare
+sprCorrect
+sprIncorrect
+spr_abort
+sprRMJBlock
+spr11_pieceSnow
+sprNangWater
+sprNangWater2
+sprTorch
+sprSunspikeCircle
+sprSunSquare
+sprSunSquare2
+sprConfetti
+sprTitle
+sprDarkness
+sprite84
+bAllTiles
+bMegaman
+bJumpThrough
+bTree
+bStars
+tile_last
+bg_last
+bg_end
+background30
+background31
+bg_ending
+background33
+background34
+background35
+background36
+background37
+string_to_array
+string_to_real_array
+BignumberAssistFunctions
+sub
+array
+ds_list_implode
+array_implode
+mult
+bignumber_format
+math_set_alphabet
+fDefault30
+Arial
+fDefault24
+fDefault18
+fDefault12
+f24
+FutureKid
+f35
+f72
+f10
+fDegree
+Bell MT
+objWorld
+objCamera
+objSmoothCamera
+objPlayMusic
+objTitleMenu
+objDifficultyMenu
+objOptionsMenu
+objKeyboardControlsMenu
+objControllerMenu
+objPlayerStart
+objPlayer
+objBow
+objBullet
+objBloodEmitter
+objBlood
+objGameOver
+objBlock
+objMiniBlock
+objSlipBlock
+objBlockInvis
+objBlockFake
+objSlideBlock
+objSlideBlockL
+objSlideBlockR
+objBossBlock
+objSaveBlocker
+objSlope
+objSlopeDownLeft
+objSlopeDownRight
+objSlopeUpLeft
+objSlopeUpRight
+objPlatform
+objMovingPlatform
+objMovingPlatformNoBounce
+objBlockRise
+objBlockFall
+objPlayerKiller
+objSpikeUp
+objSpikeRight
+objSpikeLeft
+objSpikeDown
+objMiniUp
+objMiniRight
+objMiniLeft
+objMiniDown
+objCherry
+objCherryBounce
+objCherryBounceRandom
+objCherryBounceLat
+objCherryBounceVert
+objKillerBlock
+objCherryEnemyTest
+objCherryBossTest
+objMiku
+objCherryRandomCol
+objCherryRandomColExplode
+objCherryRandomColBounce
+objFreeTrigger
+objTriggerButton
+objKillerTrigger
+objSpikeTriggerUp
+objSpikeTriggerRight
+objSpikeTriggerLeft
+objSpikeTriggerDown
+objCherryTrigger
+objWater
+objWater2
+objWater3
+objWalljumpR
+objWalljumpL
+objJumpRefresher
+objSign
+objGravityUp
+objGravityDown
+objSaveMedium
+objSave
+objSaveVHard
+objSaveMediumFlip
+objSaveFlip
+objSaveVHardFlip
+objWarpStart
+objRoomChanger
+objWarp
+objWarpNext
+objWarpAutosaveNext
+objOutsideRoomChanger
+objSecretItem
+objSecretIndicator
+objBossItem
+objBossIndicator
+objGameClear
+objAnswerWarp1
+objAnswerWarp2
+objAnswerWarp3
+objAnswerWarp4
+objAnswerWarp5
+objAnswerWarpBonus
+objQuestion
+objLastQuestion
+objAnswerWarp
+objFade
+objCorrect
+objHintWarp
+objAbort
+obj11_pieceSnow
+obj11_pieceSnowMaker
+objNangWater
+objTorch
+objFogWind
+objLight
+objSunspikeBG
+objSunspikeCircle
+objRectangle
+objConfetti
+objConfettiMaker
+objTitle
+object110
+object114
+object115
+object119
+rInit
+rTitle
+rMenu
+rOptions
+rDifficultySelect
+rStage01
+rCherryBoss
+rStage02
+rMiku
+rStage03
+rSampleRoom
+rTest
+rTemplate
+r01
+r02
+r03
+r04
+r05
+rEnd
+rExtra
+rTrueEnd
+gml_Script_scrPlayerJump
+gml_Script_scrPlayerVJump
+gml_Script_scrPlayerShoot
+gml_Script_scrSetPlayerMask
+gml_Script_scrKillPlayer
+gml_Script_scrFlipGrav
+gml_Script_scrInitializeGlobals
+gml_Script_scrSetGlobalOptions
+gml_Script_scrSaveConfig
+gml_Script_scrLoadConfig
+gml_Script_scrSaveGame
+gml_Script_scrLoadGame
+gml_Script_scrSetRoomCaption
+gml_Script_scrDrawButtonInfo
+gml_Script_scrGetKeybind
+gml_Script_scrGetControllerBind
+gml_Script_scrToggleMusic
+gml_Script_scrRestartGame
+gml_Script_scrSetVsync
+gml_Script_scrResetWindowSize
+gml_Script_scrGetMusic
+gml_Script_scrPlayMusic
+gml_Script_scrStopMusic
+gml_Script_scrAnyControllerButton
+gml_Script_scrButtonCheck
+gml_Script_scrButtonCheckPressed
+gml_Script_scrButtonCheckReleased
+gml_Script_scrDrawTextOutline
+gml_Script_scrMakeShapes
+gml_Script_scrMakeCircle
+gml_Script_ans
+gml_Script_dtext
+gml_Script_string_to_list
+gml_Script_string_to_array
+gml_Script_string_to_real_array
+gml_Script_BignumberAssistFunctions
+gml_Script_sub
+gml_Script__array_add
+gml_Script_array_reverse
+gml_Script_array
+gml_Script__array_sub
+gml_Script_array_pop
+gml_Script__ensure_numberstring
+gml_Script_bignumber_is_positive
+gml_Script_alphabet_to_numeric
+gml_Script_numeric_to_alphabet
+gml_Script_string_to_radixval_array
+gml_Script_array_radixval_to_string
+gml_Script_ds_list_implode
+gml_Script_array_implode
+gml_Script_add
+gml_Script_mult
+gml_Script_bignumber_a_greaterthan_b
+gml_Script_bignumber_format
+gml_Script_math_set_radix
+gml_Script_math_set_alphabet
+gml_Script__math_create_alphabet
+gml_Script_math_setup_dictionary
+gml_Script_math_dictionary_find_name
+gml_Script_multiplybig
+gml_Object_objWorld_Create_0
+gml_Object_objWorld_Alarm_1
+gml_Object_objWorld_Alarm_0
+gml_Object_objWorld_Step_0
+gml_Object_objWorld_Other_10
+gml_Object_objWorld_Other_4
+gml_Object_objWorld_Other_2
+gml_Object_objWorld_Draw_64
+gml_Object_objCamera_Create_0
+gml_Object_objCamera_Step_2
+gml_Object_objCamera_Other_10
+gml_Object_objSmoothCamera_Create_0
+gml_Object_objSmoothCamera_Step_2
+gml_Object_objPlayMusic_Create_0
+gml_Object_objPlayMusic_Other_4
+gml_Object_objTitleMenu_Step_0
+gml_Object_objDifficultyMenu_Create_0
+gml_Object_objDifficultyMenu_Step_0
+gml_Object_objDifficultyMenu_Draw_0
+gml_Object_objOptionsMenu_Create_0
+gml_Object_objOptionsMenu_Step_0
+gml_Object_objOptionsMenu_Draw_0
+gml_Object_objKeyboardControlsMenu_Create_0
+gml_Object_objKeyboardControlsMenu_Alarm_0
+gml_Object_objKeyboardControlsMenu_Step_0
+gml_Object_objKeyboardControlsMenu_Draw_0
+gml_Object_objControllerMenu_Create_0
+gml_Object_objControllerMenu_Alarm_0
+gml_Object_objControllerMenu_Step_0
+gml_Object_objControllerMenu_Draw_0
+gml_Object_objPlayerStart_Other_4
+gml_Object_objPlayer_Create_0
+gml_Object_objPlayer_Destroy_0
+gml_Object_objPlayer_Step_2
+gml_Object_objPlayer_Step_0
+gml_Object_objPlayer_Collision_36
+gml_Object_objPlayer_Collision_31
+gml_Object_objPlayer_Collision_16
+gml_Object_objPlayer_Draw_0
+gml_Object_objBow_Step_2
+gml_Object_objBow_Step_0
+gml_Object_objBow_Other_10
+gml_Object_objBullet_Create_0
+gml_Object_objBullet_Alarm_0
+gml_Object_objBullet_Collision_25
+gml_Object_objBullet_Collision_16
+gml_Object_objBloodEmitter_Create_0
+gml_Object_objBloodEmitter_Alarm_0
+gml_Object_objBloodEmitter_Step_0
+gml_Object_objBlood_Create_0
+gml_Object_objBlood_Collision_31
+gml_Object_objBlood_Collision_16
+gml_Object_objBlood_Other_0
+gml_Object_objGameOver_Create_0
+gml_Object_objGameOver_Alarm_0
+gml_Object_objGameOver_Step_0
+gml_Object_objGameOver_Draw_0
+gml_Object_objSlipBlock_Create_0
+gml_Object_objBlockInvis_Step_0
+gml_Object_objBlockFake_Collision_10
+gml_Object_objSlideBlock_Create_0
+gml_Object_objSlideBlockL_Create_0
+gml_Object_objSlideBlockR_Create_0
+gml_Object_objBossBlock_Create_0
+gml_Object_objBossBlock_Step_0
+gml_Object_objPlatform_Create_0
+gml_Object_objMovingPlatform_Create_0
+gml_Object_objMovingPlatform_Step_0
+gml_Object_objMovingPlatformNoBounce_Create_0
+gml_Object_objBlockRise_Step_0
+gml_Object_objBlockFall_Step_0
+gml_Object_objCherry_Create_0
+gml_Object_objCherry_Other_0
+gml_Object_objCherryBounce_Create_0
+gml_Object_objCherryBounce_Step_0
+gml_Object_objCherryBounceRandom_Create_0
+gml_Object_objCherryBounceLat_Create_0
+gml_Object_objCherryBounceVert_Create_0
+gml_Object_objCherryEnemyTest_Create_0
+gml_Object_objCherryEnemyTest_Collision_12
+gml_Object_objCherryBossTest_Create_0
+gml_Object_objCherryBossTest_Alarm_0
+gml_Object_objCherryBossTest_Collision_12
+gml_Object_objMiku_Create_0
+gml_Object_objMiku_Step_0
+gml_Object_objMiku_Other_11
+gml_Object_objMiku_Other_10
+gml_Object_objCherryRandomCol_Create_0
+gml_Object_objCherryRandomCol_Step_0
+gml_Object_objCherryRandomColExplode_Create_0
+gml_Object_objCherryRandomColExplode_Alarm_0
+gml_Object_objCherryRandomColBounce_Create_0
+gml_Object_objCherryRandomColBounce_Step_0
+gml_Object_objFreeTrigger_Create_0
+gml_Object_objFreeTrigger_Collision_10
+gml_Object_objFreeTrigger_Other_4
+gml_Object_objTriggerButton_Create_0
+gml_Object_objTriggerButton_Collision_12
+gml_Object_objTriggerButton_Other_4
+gml_Object_objKillerTrigger_Create_0
+gml_Object_objKillerTrigger_Step_0
+gml_Object_objSpikeTriggerUp_Create_0
+gml_Object_objSpikeTriggerRight_Create_0
+gml_Object_objSpikeTriggerLeft_Create_0
+gml_Object_objSpikeTriggerDown_Create_0
+gml_Object_objCherryTrigger_Create_0
+gml_Object_objWater_Collision_10
+gml_Object_objWater2_Collision_10
+gml_Object_objWater3_Collision_10
+gml_Object_objJumpRefresher_Create_0
+gml_Object_objJumpRefresher_Alarm_0
+gml_Object_objJumpRefresher_Step_0
+gml_Object_objJumpRefresher_Collision_10
+gml_Object_objSign_Create_0
+gml_Object_objSign_Step_0
+gml_Object_objSign_Draw_0
+gml_Object_objGravityUp_Collision_10
+gml_Object_objGravityDown_Collision_10
+gml_Object_objSaveMedium_Create_0
+gml_Object_objSave_Create_0
+gml_Object_objSave_Alarm_0
+gml_Object_objSave_Collision_12
+gml_Object_objSave_Collision_10
+gml_Object_objSave_Other_10
+gml_Object_objSave_Other_7
+gml_Object_objSaveVHard_Create_0
+gml_Object_objSaveMediumFlip_Create_0
+gml_Object_objSaveFlip_Create_0
+gml_Object_objSaveVHardFlip_Create_0
+gml_Object_objWarpStart_Create_0
+gml_Object_objWarpStart_Collision_10
+gml_Object_objWarpStart_Draw_0
+gml_Object_objRoomChanger_Create_0
+gml_Object_objRoomChanger_Collision_10
+gml_Object_objWarpNext_Collision_10
+gml_Object_objWarpNext_Draw_0
+gml_Object_objWarpAutosaveNext_Collision_10
+gml_Object_objOutsideRoomChanger_Create_0
+gml_Object_objOutsideRoomChanger_Collision_10
+gml_Object_objSecretItem_Create_0
+gml_Object_objSecretItem_Collision_10
+gml_Object_objSecretItem_Other_4
+gml_Object_objSecretIndicator_Create_0
+gml_Object_objSecretIndicator_Other_4
+gml_Object_objBossItem_Create_0
+gml_Object_objBossItem_Step_0
+gml_Object_objBossItem_Collision_10
+gml_Object_objBossIndicator_Create_0
+gml_Object_objBossIndicator_Other_4
+gml_Object_objGameClear_Collision_10
+gml_Object_objAnswerWarp1_Create_0
+gml_Object_objAnswerWarp1_Collision_10
+gml_Object_objAnswerWarp2_Create_0
+gml_Object_objAnswerWarp2_Collision_10
+gml_Object_objAnswerWarp3_Create_0
+gml_Object_objAnswerWarp3_Collision_10
+gml_Object_objAnswerWarp4_Create_0
+gml_Object_objAnswerWarp4_Collision_10
+gml_Object_objAnswerWarp5_Create_0
+gml_Object_objAnswerWarp5_Collision_10
+gml_Object_objAnswerWarpBonus_Create_0
+gml_Object_objAnswerWarpBonus_Collision_10
+gml_Object_objQuestion_Create_0
+gml_Object_objQuestion_Step_0
+gml_Object_objQuestion_Other_10
+gml_Object_objQuestion_Other_5
+gml_Object_objQuestion_Other_4
+gml_Object_objQuestion_Draw_0
+gml_Object_objLastQuestion_Create_0
+gml_Object_objLastQuestion_Step_0
+gml_Object_objLastQuestion_Other_4
+gml_Object_objAnswerWarp_Create_0
+gml_Object_objAnswerWarp_Collision_10
+gml_Object_objFade_Create_0
+gml_Object_objFade_Alarm_1
+gml_Object_objFade_Alarm_0
+gml_Object_objFade_Step_0
+gml_Object_objCorrect_Create_0
+gml_Object_objCorrect_Step_0
+gml_Object_objHintWarp_Create_0
+gml_Object_objHintWarp_Step_0
+gml_Object_objHintWarp_Collision_10
+gml_Object_objHintWarp_Draw_0
+gml_Object_objAbort_Step_0
+gml_Object_objAbort_Mouse_4
+gml_Object_obj11_pieceSnow_Create_0
+gml_Object_obj11_pieceSnow_Step_2
+gml_Object_obj11_pieceSnowMaker_Create_0
+gml_Object_obj11_pieceSnowMaker_Alarm_0
+gml_Object_objNangWater_Create_0
+gml_Object_objTorch_Create_0
+gml_Object_objFogWind_Create_0
+gml_Object_objFogWind_Destroy_0
+gml_Object_objFogWind_Step_0
+gml_Object_objFogWind_Other_5
+gml_Object_objLight_Create_0
+gml_Object_objLight_Destroy_0
+gml_Object_objLight_Step_2
+gml_Object_objLight_Step_0
+gml_Object_objLight_Other_5
+gml_Object_objLight_Draw_0
+gml_Object_objSunspikeBG_Create_0
+gml_Object_objSunspikeBG_Alarm_0
+gml_Object_objSunspikeBG_Step_0
+gml_Object_objSunspikeCircle_Step_0
+gml_Object_objRectangle_Create_0
+gml_Object_objRectangle_Alarm_0
+gml_Object_objConfetti_Create_0
+gml_Object_objConfetti_Other_0
+gml_Object_objConfettiMaker_Step_0
+gml_Object_object114_KeyPress_32
+gml_Object_object115_Create_0
+gml_Object_object119_Create_0
+gml_RoomCC_rDifficultySelect_273_Create
+gml_RoomCC_rDifficultySelect_274_Create
+gml_RoomCC_rDifficultySelect_275_Create
+gml_RoomCC_rDifficultySelect_276_Create
+gml_RoomCC_rDifficultySelect_277_Create
+gml_RoomCC_rStage01_278_Create
+gml_RoomCC_rStage01_279_Create
+gml_RoomCC_rStage01_280_Create
+gml_RoomCC_rStage01_281_Create
+gml_RoomCC_rStage01_282_Create
+gml_RoomCC_rStage01_283_Create
+gml_RoomCC_rStage01_284_Create
+gml_RoomCC_rStage01_285_Create
+gml_RoomCC_rStage01_286_Create
+gml_RoomCC_rStage01_287_Create
+gml_RoomCC_rCherryBoss_288_Create
+gml_RoomCC_rCherryBoss_289_Create
+gml_RoomCC_rCherryBoss_290_Create
+gml_RoomCC_rCherryBoss_291_Create
+gml_RoomCC_rCherryBoss_292_Create
+gml_RoomCC_rCherryBoss_293_Create
+gml_RoomCC_rCherryBoss_294_Create
+gml_RoomCC_rCherryBoss_295_Create
+gml_RoomCC_rCherryBoss_296_Create
+gml_RoomCC_rStage02_297_Create
+gml_RoomCC_rStage02_298_Create
+gml_RoomCC_rStage02_299_Create
+gml_RoomCC_rStage02_300_Create
+gml_RoomCC_rStage02_301_Create
+gml_RoomCC_rStage02_302_Create
+gml_RoomCC_rStage02_303_Create
+gml_RoomCC_rStage02_304_Create
+gml_RoomCC_rStage02_305_Create
+gml_RoomCC_rStage02_306_Create
+gml_RoomCC_rStage02_307_Create
+gml_RoomCC_rStage02_308_Create
+gml_RoomCC_rMiku_309_Create
+gml_RoomCC_rMiku_310_Create
+gml_RoomCC_rMiku_311_Create
+gml_RoomCC_rStage03_312_Create
+gml_RoomCC_rStage03_313_Create
+gml_RoomCC_rTest_314_Create
+gml_RoomCC_rTest_315_Create
+gml_RoomCC_rTest_316_Create
+gml_RoomCC_rTest_317_Create
+gml_RoomCC_rTest_318_Create
+gml_RoomCC_rTest_319_Create
+gml_RoomCC_rTest_320_Create
+gml_RoomCC_rTest_321_Create
+gml_RoomCC_rTest_322_Create
+gml_RoomCC_rTest_323_Create
+gml_RoomCC_rTest_324_Create
+gml_RoomCC_rTest_325_Create
+gml_RoomCC_rTest_326_Create
+gml_RoomCC_rTest_327_Create
+gml_RoomCC_rTest_328_Create
+gml_RoomCC_rTest_329_Create
+gml_RoomCC_rTest_330_Create
+gml_RoomCC_rTest_331_Create
+gml_RoomCC_rTest_332_Create
+gml_RoomCC_rTest_333_Create
+gml_RoomCC_rTest_334_Create
+gml_RoomCC_rTest_335_Create
+gml_RoomCC_rTest_336_Create
+gml_RoomCC_rTest_337_Create
+gml_RoomCC_rTest_338_Create
+gml_RoomCC_rTest_339_Create
+gml_RoomCC_rTest_340_Create
+gml_RoomCC_rTest_341_Create
+gml_RoomCC_rTest_342_Create
+gml_RoomCC_rTest_343_Create
+gml_RoomCC_rTest_344_Create
+gml_RoomCC_rTest_345_Create
+gml_RoomCC_rTest_346_Create
+gml_RoomCC_rTest_347_Create
+gml_RoomCC_rTest_348_Create
+gml_RoomCC_rTest_349_Create
+gml_RoomCC_rTest_350_Create
+gml_RoomCC_rTest_351_Create
+gml_RoomCC_rTest_352_Create
+gml_RoomCC_rTest_353_Create
+gml_RoomCC_rTest_354_Create
+gml_RoomCC_rTest_355_Create
+gml_RoomCC_rTest_356_Create
+gml_RoomCC_rTest_357_Create
+gml_RoomCC_rTest_358_Create
+gml_RoomCC_rTest_359_Create
+gml_RoomCC_rTest_360_Create
+gml_RoomCC_r01_361_Create
+gml_RoomCC_r01_362_Create
+gml_RoomCC_r02_363_Create
+gml_RoomCC_r02_364_Create
+gml_RoomCC_r03_365_Create
+gml_RoomCC_r03_366_Create
+gml_RoomCC_r04_367_Create
+gml_RoomCC_r04_368_Create
+gml_RoomCC_r05_369_Create
+gml_RoomCC_r05_370_Create
+gml_RoomCC_r05_371_Create
+gml_Room_rEnd_Create
+gml_Room_rExtra_Create
+gml_RoomCC_rExtra_374_Create
+gml_RoomCC_rExtra_375_Create
+gml_RoomCC_rExtra_376_Create
+gml_Room_rTrueEnd_Create
+gml_Script_bignumber_init
