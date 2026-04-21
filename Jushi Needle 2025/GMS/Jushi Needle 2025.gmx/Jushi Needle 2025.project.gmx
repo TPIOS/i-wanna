@@ -40,14 +40,14 @@
     <sounds name="music">
       <sound>sound\musOnDeath1</sound>
       <sound>sound\musOnDeath</sound>
-      <sound>sound\musEnd</sound>
       <sound>sound\musGuyRock</sound>
-      <sound>sound\musStage03</sound>
-      <sound>sound\musStage02</sound>
-      <sound>sound\musStage01</sound>
-      <sound>sound\musTitle</sound>
       <sound>sound\musMegaman</sound>
       <sound>sound\musMiku</sound>
+      <sound>sound\musTitle</sound>
+      <sound>sound\musStage01</sound>
+      <sound>sound\musStage02</sound>
+      <sound>sound\musEnd</sound>
+      <sound>sound\musStage03</sound>
     </sounds>
   </sounds>
   <sprites name="sprites">
@@ -82,6 +82,13 @@
       <sprite>sprites\sprSlideBlockL</sprite>
       <sprite>sprites\sprSaveBlocker</sprite>
       <sprite>sprites\spr1Block</sprite>
+      <sprite>sprites\spr1Block_I</sprite>
+      <sprite>sprites\spr1Block_J</sprite>
+      <sprite>sprites\spr1Block_L</sprite>
+      <sprite>sprites\spr1Block_O</sprite>
+      <sprite>sprites\spr1Block_S</sprite>
+      <sprite>sprites\spr1Block_T</sprite>
+      <sprite>sprites\spr1Block_Z</sprite>
       <sprite>sprites\spr2Block</sprite>
       <sprite>sprites\spr3Block</sprite>
       <sprite>sprites\spr3MiniBlock</sprite>
@@ -113,6 +120,10 @@
       <sprite>sprites\spr1SpikeDown</sprite>
       <sprite>sprites\spr1SpikeLeft</sprite>
       <sprite>sprites\spr1SpikeRight</sprite>
+      <sprite>sprites\spr1MiniUp</sprite>
+      <sprite>sprites\spr1MiniDown</sprite>
+      <sprite>sprites\spr1MiniLeft</sprite>
+      <sprite>sprites\spr1MiniRight</sprite>
       <sprite>sprites\spr2SpikeUp</sprite>
       <sprite>sprites\spr2SpikeDown</sprite>
       <sprite>sprites\spr2SpikeLeft</sprite>
@@ -157,6 +168,8 @@
       <sprite>sprites\sprSecretItem</sprite>
       <sprite>sprites\sprBossItem</sprite>
     </sprites>
+    <sprite>sprites\sprLeftGoodWall</sprite>
+    <sprite>sprites\sprRightGoodWall</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bAllTiles</background>
@@ -164,11 +177,11 @@
     <background>background\bJumpThrough</background>
     <background>background\bTree</background>
     <background>background\bStars</background>
-    <background>background\bg1</background>
-    <background>background\bg2</background>
-    <background>background\bg3</background>
     <background>background\bgColor</background>
     <background>background\bgTitle</background>
+    <background>background\bgT3</background>
+    <background>background\bgT2</background>
+    <background>background\bgT1</background>
     <background>background\bgEnd</background>
   </backgrounds>
   <paths name="paths"/>
@@ -220,6 +233,7 @@
     <font>fonts\fDefault24</font>
     <font>fonts\fDefault18</font>
     <font>fonts\fDefault12</font>
+    <font>fonts\fDefault10</font>
   </fonts>
   <objects name="objects">
     <objects name="world">
@@ -255,6 +269,13 @@
       <object>objects\objBossBlock</object>
       <object>objects\objSaveBlocker</object>
       <object>objects\obj1Block</object>
+      <object>objects\obj1Block_I</object>
+      <object>objects\obj1Block_J</object>
+      <object>objects\obj1Block_L</object>
+      <object>objects\obj1Block_O</object>
+      <object>objects\obj1Block_S</object>
+      <object>objects\obj1Block_T</object>
+      <object>objects\obj1Block_Z</object>
       <object>objects\obj2Block</object>
       <object>objects\obj3Block</object>
     </objects>
@@ -303,6 +324,10 @@
         <object>objects\obj1SpikeRight</object>
         <object>objects\obj1SpikeLeft</object>
         <object>objects\obj1SpikeDown</object>
+        <object>objects\obj1MiniUp</object>
+        <object>objects\obj1MiniLeft</object>
+        <object>objects\obj1MiniRight</object>
+        <object>objects\obj1MiniDown</object>
       </objects>
       <objects name="Free Style">
         <object>objects\obj2SpikeUp</object>
@@ -351,6 +376,7 @@
       <object>objects\objWarp</object>
       <object>objects\objWarpNext</object>
       <object>objects\objWarpAutosaveNext</object>
+      <object>objects\obj1WarpAutosaveNext</object>
       <object>objects\objOutsideRoomChanger</object>
     </objects>
     <objects name="items">
@@ -360,6 +386,8 @@
       <object>objects\objBossIndicator</object>
       <object>objects\objGameClear</object>
     </objects>
+    <object>objects\objLeftGoodWall</object>
+    <object>objects\objRightGoodWall</object>
   </objects>
   <rooms name="rooms">
     <rooms name="init">
@@ -394,14 +422,13 @@
       <room>rooms\rMapImport_7</room>
       <room>rooms\rMapImport_8</room>
       <room>rooms\rMapImport_9</room>
-      <room>rooms\rMapImport_10</room>
     </rooms>
     <rooms name="Final Stage">
       <room>rooms\rMapImport_11</room>
       <room>rooms\rMapImport_12</room>
       <room>rooms\rMapImport_13</room>
-      <room>rooms\rMapImport_14</room>
       <room>rooms\rMapImport_15</room>
+      <room>rooms\rMapImport_16</room>
       <room>rooms\rEnd</room>
     </rooms>
   </rooms>

@@ -1,13 +1,13 @@
 ///sets configurable global options
 
-global.debugMode = false;       //enables debug keys (check objWorld step to see all of them), make sure to set this to "false" before releasing your game
+global.debugMode = true;       //enables debug keys (check objWorld step to see all of them), make sure to set this to "false" before releasing your game
 global.debugVisuals = false;    //enables changing the color/alpha of player when infjump/god mode are toggled, make sure to disable this if you want to change the player's image_alpha or image_blend
 global.debugOverlay = false;    //enables showing the debug text overlay (shows player location, align, etc.)
 global.debugNoDeath = false;    //enables god mode (toggle with Home key)
 global.debugInfJump = false;    //enables infinite jump (toggle with End key)
 global.debugShowHitbox = false; //enables showing the player's hitbox (toggle with Del key)
 
-global.roomCaptionDef = "Jushi Needle 2024";  //sets default window caption (only works with the Professional version of Studio)
+global.roomCaptionDef = "Jushi Needle 2025";  //sets default window caption (only works with the Professional version of Studio)
 global.roomCaptionLast = global.roomCaptionDef;
 window_set_caption(global.roomCaptionDef);
 

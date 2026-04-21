@@ -3,7 +3,7 @@
   <spriteName>sprSign</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>10</depth>
+  <depth>1</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -85,8 +85,8 @@ else
 
 if (showText)
 {
-    draw_set_color(c_black);
-    draw_set_font(fDefault12);
+    draw_set_color(c_white);
+    draw_set_font(fDefault10);
     draw_set_halign(fa_center);
     
     var yOffset = string_height(signText);

@@ -21,14 +21,13 @@ switch (room)                       //determines which song to play
     case rMapImport_7:
     case rMapImport_8:
     case rMapImport_9:
-    case rMapImport_10:
         roomSong = musStage02;
         break;
     case rMapImport_11:
     case rMapImport_12:
     case rMapImport_13:
-    case rMapImport_14:
     case rMapImport_15:
+    case rMapImport_16:
         roomSong = musStage03;
         break;
     case rEnd:
