@@ -1,0 +1,108 @@
+{
+  "workbook": "D:\\GitHub\\i-wanna\\FGO报菜名\\看看龙大Master实力报名表_vFinal2_nameCorrected.xlsx",
+  "output_dir": "D:\\GitHub\\i-wanna\\FGO报菜名\\从者语音",
+  "total_in_workbook": 176,
+  "selected": 1,
+  "started_at": "2026-07-27 23:23:03",
+  "results": [
+    {
+      "status": "ok",
+      "column": "DA",
+      "class": "Assassin",
+      "name": "迦摩",
+      "page_url": "https://fgo.wiki/w/%E8%BF%A6%E6%91%A9/%E8%AF%AD%E9%9F%B3",
+      "page_cache": "从者语音\\.cache\\pages\\迦摩-f5b3bac3307b.html",
+      "clips": [
+        {
+          "label": "宝具卡 1",
+          "base_name": "宝具卡1",
+          "url": "https://media.fgo.wiki/1/1f/SV239_0_%E5%AE%9D%E5%85%B7%E5%8D%A11.mp3?v=q1pue6x8e76ffj4k9obq5ebdmjl0hfp",
+          "filename": "宝具卡1.mp3"
+        },
+        {
+          "label": "宝具卡 2",
+          "base_name": "宝具卡2",
+          "url": "https://media.fgo.wiki/f/fd/SV239_0_%E5%AE%9D%E5%85%B7%E5%8D%A12.mp3?v=ll16tgba5g6ke8wm4744x4jrw85k87y",
+          "filename": "宝具卡2.mp3"
+        },
+        {
+          "label": "宝具 1",
+          "base_name": "宝具1",
+          "url": "https://media.fgo.wiki/f/f0/SV239_0_%E5%AE%9D%E5%85%B71.mp3?v=h60f4vn0gq9xt4g3ixdf5wrvjivehgi",
+          "filename": "宝具1.mp3"
+        },
+        {
+          "label": "宝具 2",
+          "base_name": "宝具2",
+          "url": "https://media.fgo.wiki/1/11/SV239_0_%E5%AE%9D%E5%85%B72.mp3?v=npdc7qt10vtbjc3bs5r7su181f2qiiy",
+          "filename": "宝具2.mp3"
+        },
+        {
+          "label": "宝具卡 1",
+          "base_name": "宝具卡1",
+          "url": "https://media.fgo.wiki/9/98/SV239_1_%E5%AE%9D%E5%85%B7%E5%8D%A11.mp3?v=fycy9moqnw8uzbkrg6uwha9titver4q",
+          "filename": "宝具卡1_2.mp3"
+        },
+        {
+          "label": "宝具卡 2",
+          "base_name": "宝具卡2",
+          "url": "https://media.fgo.wiki/e/eb/SV239_1_%E5%AE%9D%E5%85%B7%E5%8D%A12.mp3?v=duamobo3srnil968en2xup5rqi40j5m",
+          "filename": "宝具卡2_2.mp3"
+        },
+        {
+          "label": "宝具 1",
+          "base_name": "宝具1",
+          "url": "https://media.fgo.wiki/f/f4/SV239_1_%E5%AE%9D%E5%85%B71.mp3?v=982ashrnmkj9jjyr1kpbr115f3zd81d",
+          "filename": "宝具1_2.mp3"
+        },
+        {
+          "label": "宝具 2",
+          "base_name": "宝具2",
+          "url": "https://media.fgo.wiki/e/e4/SV239_1_%E5%AE%9D%E5%85%B72.mp3?v=4sc4c4dwcbnh80j8keibf982vd2hpj1",
+          "filename": "宝具2_2.mp3"
+        },
+        {
+          "label": "宝具卡 1",
+          "base_name": "宝具卡1",
+          "url": "https://media.fgo.wiki/1/14/SV239_2_%E5%AE%9D%E5%85%B7%E5%8D%A11.mp3?v=1vzafq5s8dx3i9f1klx9crlvkcmn6eu",
+          "filename": "宝具卡1_3.mp3"
+        },
+        {
+          "label": "宝具卡 2",
+          "base_name": "宝具卡2",
+          "url": "https://media.fgo.wiki/5/52/SV239_2_%E5%AE%9D%E5%85%B7%E5%8D%A12.mp3?v=010xjobpi0h9zg7uywc02w0su36cf62",
+          "filename": "宝具卡2_3.mp3"
+        },
+        {
+          "label": "宝具 1",
+          "base_name": "宝具1",
+          "url": "https://media.fgo.wiki/2/29/SV239_2_%E5%AE%9D%E5%85%B71.mp3?v=o57t4v2phnns2p41p0ghntrzqh0425s",
+          "filename": "宝具1_3.mp3"
+        },
+        {
+          "label": "宝具 2",
+          "base_name": "宝具2",
+          "url": "https://media.fgo.wiki/4/47/SV239_2_%E5%AE%9D%E5%85%B72.mp3?v=aip37xafw5w65y7mvhw67nksytnrpmj",
+          "filename": "宝具2_3.mp3"
+        }
+      ],
+      "downloaded": [
+        "从者语音\\Assassin\\迦摩\\宝具卡1.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具卡2.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具1.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具2.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具卡1_2.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具卡2_2.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具1_2.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具2_2.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具卡1_3.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具卡2_3.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具1_3.mp3",
+        "从者语音\\Assassin\\迦摩\\宝具2_3.mp3"
+      ],
+      "skipped": []
+    }
+  ],
+  "finished_at": "2026-07-27 23:31:56",
+  "failures": 0
+}

@@ -1,0 +1,1689 @@
+{
+  "source": "D:\\GitHub\\i-wanna\\FGO报菜名\\看看龙大Master实力报名表_vFinal2_StatisticsCorrected.xlsx",
+  "sheet": "工作表1",
+  "master_count": 20,
+  "classes": [
+    {
+      "class": "Saber",
+      "servant_count": 20,
+      "master_count": 20,
+      "highest": {
+        "name": "阿尔托莉雅·潘德拉贡",
+        "holding_count": 20,
+        "holding_rate": 1.0,
+        "implementation_order": 5,
+        "wiki_page": "https://fgo.wiki/w/%E9%98%BF%E5%B0%94%E6%89%98%E8%8E%89%E9%9B%85%C2%B7%E6%BD%98%E5%BE%B7%E6%8B%89%E8%B4%A1",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\阿尔托莉雅·潘德拉贡.png",
+          "source_url": "https://media.fgo.wiki/e/ec/%E9%98%BF%E5%B0%94%E6%89%98%E8%8E%89%E9%9B%85-%E5%8D%A1%E9%9D%A24.png?v=065lziaodxskhf5cpfvm8767od7x6v2",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "理查一世",
+        "holding_count": 1,
+        "holding_rate": 0.05,
+        "implementation_order": 24,
+        "wiki_page": "https://fgo.wiki/w/%E7%90%86%E6%9F%A5%E4%B8%80%E4%B8%96",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\理查一世.png",
+          "source_url": "https://media.fgo.wiki/0/09/%E7%90%86%E6%9F%A5%E4%B8%80%E4%B8%96%E6%BB%A1%E7%A0%B4.png?v=ogjtsvlhlu1ku3i8os6eg6xcqj6ewzo",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 18,
+      "best_masters": [
+        "爱玉藻太好了"
+      ],
+      "servants": [
+        {
+          "name": "阿尔托莉雅·潘德拉贡",
+          "holding_count": 20,
+          "holding_rate": 1.0,
+          "implementation_order": 5
+        },
+        {
+          "name": "阿蒂拉",
+          "holding_count": 13,
+          "holding_rate": 0.65,
+          "implementation_order": 6
+        },
+        {
+          "name": "冲田总司",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 7
+        },
+        {
+          "name": "莫德雷德",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 8
+        },
+        {
+          "name": "尼禄·克劳狄乌斯〔新娘〕",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 9
+        },
+        {
+          "name": "两仪式",
+          "holding_count": 13,
+          "holding_rate": 0.65,
+          "implementation_order": 10
+        },
+        {
+          "name": "宫本武藏",
+          "holding_count": 9,
+          "holding_rate": 0.45,
+          "implementation_order": 11
+        },
+        {
+          "name": "亚瑟·潘德拉贡〔Prototype〕",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 12
+        },
+        {
+          "name": "齐格鲁德",
+          "holding_count": 6,
+          "holding_rate": 0.3,
+          "implementation_order": 13
+        },
+        {
+          "name": "红阎魔",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 14
+        },
+        {
+          "name": "阿斯托尔福(Saber)",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 15
+        },
+        {
+          "name": "狄俄斯库里",
+          "holding_count": 6,
+          "holding_rate": 0.3,
+          "implementation_order": 16
+        },
+        {
+          "name": "伊吹童子",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 17
+        },
+        {
+          "name": "千子村正",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 18
+        },
+        {
+          "name": "冲田总司〔Alter〕(Saber)",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 19
+        },
+        {
+          "name": "征氏姐妹",
+          "holding_count": 4,
+          "holding_rate": 0.2,
+          "implementation_order": 20
+        },
+        {
+          "name": "查理曼",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 21
+        },
+        {
+          "name": "美杜莎(Saber)",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 22
+        },
+        {
+          "name": "大和武尊",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 23
+        },
+        {
+          "name": "理查一世",
+          "holding_count": 1,
+          "holding_rate": 0.05,
+          "implementation_order": 24
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Saber.png",
+        "source_url": "https://media.fgo.wiki/4/41/%E9%87%91%E5%8D%A1Saber.png?v=ddpeaibgecl3rz9xxnjurvq47k7kr7n",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Archer",
+      "servant_count": 16,
+      "master_count": 20,
+      "highest": {
+        "name": "俄里翁",
+        "holding_count": 14,
+        "holding_rate": 0.7,
+        "implementation_order": 27,
+        "wiki_page": "https://fgo.wiki/w/%E4%BF%84%E9%87%8C%E7%BF%81",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\俄里翁.png",
+          "source_url": "https://media.fgo.wiki/3/32/Orion4.png?v=c2qy9h6je8v99a4womzm60rsojzb987",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "图坦卡蒙",
+        "holding_count": 0,
+        "holding_rate": 0.0,
+        "implementation_order": 41,
+        "wiki_page": "https://fgo.wiki/w/%E5%9B%BE%E5%9D%A6%E5%8D%A1%E8%92%99",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\图坦卡蒙.png",
+          "source_url": "https://media.fgo.wiki/a/a5/%E5%9B%BE%E5%9D%A6%E5%8D%A1%E8%92%99%E6%BB%A1%E7%A0%B4.png?v=9qsk1p0klvddf9fkmaaexpaey0egh2t",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 15,
+      "best_masters": [
+        "爱玉藻太好了"
+      ],
+      "servants": [
+        {
+          "name": "吉尔伽美什",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 26
+        },
+        {
+          "name": "俄里翁",
+          "holding_count": 14,
+          "holding_rate": 0.7,
+          "implementation_order": 27
+        },
+        {
+          "name": "尼古拉·特斯拉",
+          "holding_count": 6,
+          "holding_rate": 0.3,
+          "implementation_order": 28
+        },
+        {
+          "name": "阿周那",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 29
+        },
+        {
+          "name": "阿尔托莉雅·潘德拉贡(Archer)",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 30
+        },
+        {
+          "name": "伊什塔尔",
+          "holding_count": 13,
+          "holding_rate": 0.65,
+          "implementation_order": 31
+        },
+        {
+          "name": "新宿的Archer",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 32
+        },
+        {
+          "name": "拿破仑",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 33
+        },
+        {
+          "name": "贞德(Archer)",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 34
+        },
+        {
+          "name": "超人俄里翁",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 35
+        },
+        {
+          "name": "清少纳言",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 36
+        },
+        {
+          "name": "源为朝",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 37
+        },
+        {
+          "name": "高杉晋作",
+          "holding_count": 3,
+          "holding_rate": 0.15,
+          "implementation_order": 38
+        },
+        {
+          "name": "托勒密",
+          "holding_count": 9,
+          "holding_rate": 0.45,
+          "implementation_order": 39
+        },
+        {
+          "name": "杜尔伽",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 40
+        },
+        {
+          "name": "图坦卡蒙",
+          "holding_count": 0,
+          "holding_rate": 0.0,
+          "implementation_order": 41
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Archer.png",
+        "source_url": "https://media.fgo.wiki/8/81/%E9%87%91%E5%8D%A1Archer.png?v=kg9syuwtf6zkhzftilm7zuy8az6qrya",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Lancer",
+      "servant_count": 16,
+      "master_count": 20,
+      "highest": {
+        "name": "妖精骑士兰斯洛特",
+        "holding_count": 17,
+        "holding_rate": 0.85,
+        "implementation_order": 53,
+        "wiki_page": "https://fgo.wiki/w/%E5%A6%96%E7%B2%BE%E9%AA%91%E5%A3%AB%E5%85%B0%E6%96%AF%E6%B4%9B%E7%89%B9",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\妖精骑士兰斯洛特.png",
+          "source_url": "https://media.fgo.wiki/0/0b/%E3%83%A1%E3%83%AA%E3%83%A5%E3%82%B8%E3%83%BC%E3%83%8C%E6%BB%A1%E7%A0%B4.png?v=b0wmdjn5didhtlb4skoc8ch1753l49e",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "比肖内",
+        "holding_count": 0,
+        "holding_rate": 0.0,
+        "implementation_order": 57,
+        "wiki_page": "https://fgo.wiki/w/%E6%AF%94%E8%82%96%E5%86%85",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\比肖内.png",
+          "source_url": "https://media.fgo.wiki/4/40/%E6%AF%94%E8%82%96%E5%86%85%E6%BB%A1%E7%A0%B4.png?v=hp6zkvrtnzqhhc5g45b4yu7ifhedzp9",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 14,
+      "best_masters": [
+        "弥"
+      ],
+      "servants": [
+        {
+          "name": "斯卡哈",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 43
+        },
+        {
+          "name": "迦尔纳",
+          "holding_count": 15,
+          "holding_rate": 0.75,
+          "implementation_order": 44
+        },
+        {
+          "name": "布伦希尔德",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 45
+        },
+        {
+          "name": "阿尔托莉雅·潘德拉贡(Lancer)",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 46
+        },
+        {
+          "name": "玉藻前(Lancer)",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 47
+        },
+        {
+          "name": "恩奇都",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 48
+        },
+        {
+          "name": "埃列什基伽勒",
+          "holding_count": 13,
+          "holding_rate": 0.65,
+          "implementation_order": 49
+        },
+        {
+          "name": "布拉达曼特",
+          "holding_count": 14,
+          "holding_rate": 0.7,
+          "implementation_order": 50
+        },
+        {
+          "name": "罗穆路斯·奎里努斯",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 51
+        },
+        {
+          "name": "弗栗多",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 52
+        },
+        {
+          "name": "妖精骑士兰斯洛特",
+          "holding_count": 17,
+          "holding_rate": 0.85,
+          "implementation_order": 53
+        },
+        {
+          "name": "坂本龙马(Lancer)",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 54
+        },
+        {
+          "name": "布里托玛特",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 55
+        },
+        {
+          "name": "怖军",
+          "holding_count": 1,
+          "holding_rate": 0.05,
+          "implementation_order": 56
+        },
+        {
+          "name": "比肖内",
+          "holding_count": 0,
+          "holding_rate": 0.0,
+          "implementation_order": 57
+        },
+        {
+          "name": "因陀罗",
+          "holding_count": 3,
+          "holding_rate": 0.15,
+          "implementation_order": 58
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Lancer.png",
+        "source_url": "https://media.fgo.wiki/d/dc/%E9%87%91%E5%8D%A1Lancer.png?v=4b378odgnmqvo3m0zexm0trgxeamz54",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Rider",
+      "servant_count": 18,
+      "master_count": 20,
+      "highest": {
+        "name": "弗朗西斯·德雷克",
+        "holding_count": 15,
+        "holding_rate": 0.75,
+        "implementation_order": 60,
+        "wiki_page": "https://fgo.wiki/w/%E5%BC%97%E6%9C%97%E8%A5%BF%E6%96%AF%C2%B7%E5%BE%B7%E9%9B%B7%E5%85%8B",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\弗朗西斯·德雷克.png",
+          "source_url": "https://media.fgo.wiki/d/d8/%E5%BE%B7%E9%9B%B7%E5%85%8B%E5%8D%A1%E9%9D%A2%E2%85%A3.png?v=0v3h5vxyimzg5664n6gtkiorwhd5e1r",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "君士坦丁十一世",
+        "holding_count": 1,
+        "holding_rate": 0.05,
+        "implementation_order": 74,
+        "wiki_page": "https://fgo.wiki/w/%E5%90%9B%E5%A3%AB%E5%9D%A6%E4%B8%81%E5%8D%81%E4%B8%80%E4%B8%96",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\君士坦丁十一世.png",
+          "source_url": "https://media.fgo.wiki/4/4c/%E5%90%9B%E5%A3%AB%E5%9D%A6%E4%B8%81%E5%8D%81%E4%B8%80%E4%B8%96%E6%BB%A1%E7%A0%B4.png?v=f4ods5coxb2j7xechap4kmlw6o8mu34",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 14,
+      "best_masters": [
+        "爱玉藻太好了"
+      ],
+      "servants": [
+        {
+          "name": "弗朗西斯·德雷克",
+          "holding_count": 15,
+          "holding_rate": 0.75,
+          "implementation_order": 60
+        },
+        {
+          "name": "女王梅芙",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 61
+        },
+        {
+          "name": "伊斯坎达尔",
+          "holding_count": 6,
+          "holding_rate": 0.3,
+          "implementation_order": 62
+        },
+        {
+          "name": "奥斯曼狄斯",
+          "holding_count": 13,
+          "holding_rate": 0.65,
+          "implementation_order": 63
+        },
+        {
+          "name": "魁札尔·科亚特尔",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 64
+        },
+        {
+          "name": "阿尔托莉雅·潘德拉贡〔Alter〕(Rider)",
+          "holding_count": 9,
+          "holding_rate": 0.45,
+          "implementation_order": 65
+        },
+        {
+          "name": "伊凡雷帝",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 66
+        },
+        {
+          "name": "阿喀琉斯",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 67
+        },
+        {
+          "name": "司马懿〔莱妮丝〕",
+          "holding_count": 13,
+          "holding_rate": 0.65,
+          "implementation_order": 68
+        },
+        {
+          "name": "莱昂纳多·达·芬奇(Rider)",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 69
+        },
+        {
+          "name": "欧罗巴",
+          "holding_count": 13,
+          "holding_rate": 0.65,
+          "implementation_order": 70
+        },
+        {
+          "name": "奥德修斯",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 71
+        },
+        {
+          "name": "尼莫",
+          "holding_count": 9,
+          "holding_rate": 0.45,
+          "implementation_order": 72
+        },
+        {
+          "name": "太公望",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 73
+        },
+        {
+          "name": "君士坦丁十一世",
+          "holding_count": 1,
+          "holding_rate": 0.05,
+          "implementation_order": 74
+        },
+        {
+          "name": "曲亭马琴",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 75
+        },
+        {
+          "name": "武田晴信",
+          "holding_count": 1,
+          "holding_rate": 0.05,
+          "implementation_order": 76
+        },
+        {
+          "name": "安德洛墨达",
+          "holding_count": 2,
+          "holding_rate": 0.1,
+          "implementation_order": 77
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Rider.png",
+        "source_url": "https://media.fgo.wiki/5/5f/%E9%87%91%E5%8D%A1Rider.png?v=rpiyweu6pakoppvdsm6nabmyv9t9te5",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Caster",
+      "servant_count": 17,
+      "master_count": 20,
+      "highest": {
+        "name": "梅林",
+        "holding_count": 19,
+        "holding_rate": 0.95,
+        "implementation_order": 84,
+        "wiki_page": "https://fgo.wiki/w/%E6%A2%85%E6%9E%97",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\梅林.png",
+          "source_url": "https://media.fgo.wiki/2/2c/%E6%A2%85%E6%9E%97%E7%81%B5%E5%9F%BA%E5%86%8D%E4%B8%B44.png?v=tomp1z9n02q9v2v03fbfoma65luv8vt",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "小野小町",
+        "holding_count": 0,
+        "holding_rate": 0.0,
+        "implementation_order": 95,
+        "wiki_page": "https://fgo.wiki/w/%E5%B0%8F%E9%87%8E%E5%B0%8F%E7%94%BA",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\小野小町.png",
+          "source_url": "https://media.fgo.wiki/e/e3/%E5%B0%8F%E9%87%8E%E5%B0%8F%E7%94%BA%E6%BB%A1%E7%A0%B4.png?v=d3xdcph1g2k2o1k54unuvigswjstf19",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 15,
+      "best_masters": [
+        "Shiro团子",
+        "弥",
+        "爱玉藻太好了"
+      ],
+      "servants": [
+        {
+          "name": "诸葛孔明〔埃尔梅罗Ⅱ世〕",
+          "holding_count": 18,
+          "holding_rate": 0.9,
+          "implementation_order": 79
+        },
+        {
+          "name": "玉藻前",
+          "holding_count": 15,
+          "holding_rate": 0.75,
+          "implementation_order": 80
+        },
+        {
+          "name": "玄奘三藏",
+          "holding_count": 14,
+          "holding_rate": 0.7,
+          "implementation_order": 81
+        },
+        {
+          "name": "莱昂纳多·达·芬奇",
+          "holding_count": 9,
+          "holding_rate": 0.45,
+          "implementation_order": 82
+        },
+        {
+          "name": "伊莉雅丝菲尔·冯·爱因兹贝伦",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 83
+        },
+        {
+          "name": "梅林",
+          "holding_count": 19,
+          "holding_rate": 0.95,
+          "implementation_order": 84
+        },
+        {
+          "name": "不夜城的Caster",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 85
+        },
+        {
+          "name": "尼禄·克劳狄乌斯(Caster)",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 86
+        },
+        {
+          "name": "阿纳斯塔西娅",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 87
+        },
+        {
+          "name": "斯卡哈·斯卡蒂",
+          "holding_count": 17,
+          "holding_rate": 0.85,
+          "implementation_order": 88
+        },
+        {
+          "name": "紫式部",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 89
+        },
+        {
+          "name": "阿尔托莉雅·卡斯特",
+          "holding_count": 19,
+          "holding_rate": 0.95,
+          "implementation_order": 90
+        },
+        {
+          "name": "克莱恩小姐",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 91
+        },
+        {
+          "name": "出云阿国",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 92
+        },
+        {
+          "name": "雨之魔女梣",
+          "holding_count": 18,
+          "holding_rate": 0.9,
+          "implementation_order": 93
+        },
+        {
+          "name": "久远寺有珠",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 94
+        },
+        {
+          "name": "小野小町",
+          "holding_count": 0,
+          "holding_rate": 0.0,
+          "implementation_order": 95
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Caster.png",
+        "source_url": "https://media.fgo.wiki/5/5e/%E9%87%91%E5%8D%A1Caster.png?v=psmpwtz98lyc9p8at17862omszgoyyj",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Assassin",
+      "servant_count": 13,
+      "master_count": 20,
+      "highest": {
+        "name": "光之高扬斯卡娅",
+        "holding_count": 20,
+        "holding_rate": 1.0,
+        "implementation_order": 106,
+        "wiki_page": "https://fgo.wiki/w/%E5%85%89%E4%B9%8B%E9%AB%98%E6%89%AC%E6%96%AF%E5%8D%A1%E5%A8%85",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\光之高扬斯卡娅.png",
+          "source_url": "https://media.fgo.wiki/e/e7/%E5%85%89%E4%B9%8B%E9%AB%98%E6%89%AC%E6%96%AF%E5%8D%A1%E5%A8%85%E6%BB%A1%E7%A0%B4.png?v=kzfgi30agk8xajc5322usgp1xm8m6kx",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "果心居士",
+        "holding_count": 4,
+        "holding_rate": 0.2,
+        "implementation_order": 109,
+        "wiki_page": "https://fgo.wiki/w/%E6%9E%9C%E5%BF%83%E5%B1%85%E5%A3%AB",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\果心居士.png",
+          "source_url": "https://media.fgo.wiki/2/21/%E6%9E%9C%E5%BF%83%E5%B1%85%E5%A3%AB%E6%BB%A1%E7%A0%B4.png?v=slpqicvnb6cizljbla16d81me5mbbgp",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 13,
+      "best_masters": [
+        "爱玉藻太好了"
+      ],
+      "servants": [
+        {
+          "name": "开膛手杰克",
+          "holding_count": 16,
+          "holding_rate": 0.8,
+          "implementation_order": 97
+        },
+        {
+          "name": "谜之女主角X",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 98
+        },
+        {
+          "name": "酒吞童子",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 99
+        },
+        {
+          "name": "克娄巴特拉",
+          "holding_count": 6,
+          "holding_rate": 0.3,
+          "implementation_order": 100
+        },
+        {
+          "name": "“山中老人”",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 101
+        },
+        {
+          "name": "刑部姬",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 102
+        },
+        {
+          "name": "塞弥拉弥斯",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 103
+        },
+        {
+          "name": "李书文(Assassin)",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 104
+        },
+        {
+          "name": "迦摩",
+          "holding_count": 17,
+          "holding_rate": 0.85,
+          "implementation_order": 105
+        },
+        {
+          "name": "光之高扬斯卡娅",
+          "holding_count": 20,
+          "holding_rate": 1.0,
+          "implementation_order": 106
+        },
+        {
+          "name": "呼延灼",
+          "holding_count": 6,
+          "holding_rate": 0.3,
+          "implementation_order": 107
+        },
+        {
+          "name": "特斯卡特利波卡",
+          "holding_count": 16,
+          "holding_rate": 0.8,
+          "implementation_order": 108
+        },
+        {
+          "name": "果心居士",
+          "holding_count": 4,
+          "holding_rate": 0.2,
+          "implementation_order": 109
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Assassin.png",
+        "source_url": "https://media.fgo.wiki/9/9e/%E9%87%91%E5%8D%A1Assassin.png?v=r2ulxb2h0q04oe5zva7y6rj7ocbrks5",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Berserker",
+      "servant_count": 17,
+      "master_count": 20,
+      "highest": {
+        "name": "摩根",
+        "holding_count": 18,
+        "holding_rate": 0.9,
+        "implementation_order": 122,
+        "wiki_page": "https://fgo.wiki/w/%E6%91%A9%E6%A0%B9",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\摩根.png",
+          "source_url": "https://media.fgo.wiki/4/4f/%E3%83%A2%E3%83%AB%E3%82%AC%E3%83%B3%E6%BB%A1%E7%A0%B4.png?v=hv4fvagpia4831e3287075cvr0x1pgh",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "千利休",
+        "holding_count": 4,
+        "holding_rate": 0.2,
+        "implementation_order": 124,
+        "wiki_page": "https://fgo.wiki/w/%E5%8D%83%E5%88%A9%E4%BC%91",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\千利休.png",
+          "source_url": "https://media.fgo.wiki/5/5f/%E5%8D%83%E5%88%A9%E4%BC%91%E6%BB%A1%E7%A0%B4.png?v=384kkdwj6x03wn2o4kn8w9olsosekls",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 16,
+      "best_masters": [
+        "弥",
+        "爱玉藻太好了"
+      ],
+      "servants": [
+        {
+          "name": "坂田金时",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 111
+        },
+        {
+          "name": "弗拉德三世",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 112
+        },
+        {
+          "name": "南丁格尔",
+          "holding_count": 13,
+          "holding_rate": 0.65,
+          "implementation_order": 113
+        },
+        {
+          "name": "库·丘林〔Alter〕",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 114
+        },
+        {
+          "name": "源赖光",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 115
+        },
+        {
+          "name": "谜之女主角X〔Alter〕",
+          "holding_count": 9,
+          "holding_rate": 0.45,
+          "implementation_order": 116
+        },
+        {
+          "name": "土方岁三",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 117
+        },
+        {
+          "name": "项羽",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 118
+        },
+        {
+          "name": "阿周那〔Alter〕",
+          "holding_count": 13,
+          "holding_rate": 0.65,
+          "implementation_order": 119
+        },
+        {
+          "name": "宫本武藏(Berserker)",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 120
+        },
+        {
+          "name": "伽拉忒亚",
+          "holding_count": 9,
+          "holding_rate": 0.45,
+          "implementation_order": 121
+        },
+        {
+          "name": "摩根",
+          "holding_count": 18,
+          "holding_rate": 0.9,
+          "implementation_order": 122
+        },
+        {
+          "name": "伊吹童子(Berserker)",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 123
+        },
+        {
+          "name": "千利休",
+          "holding_count": 4,
+          "holding_rate": 0.2,
+          "implementation_order": 124
+        },
+        {
+          "name": "阿尔托莉雅·卡斯特(Berserker)",
+          "holding_count": 17,
+          "holding_rate": 0.85,
+          "implementation_order": 125
+        },
+        {
+          "name": "娄希",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 126
+        },
+        {
+          "name": "莉莉丝",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 127
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Berserker.png",
+        "source_url": "https://media.fgo.wiki/9/9f/%E9%87%91%E5%8D%A1Berserker.png?v=6je1c05kbez67u3yv93m2b8ovgqt9v7",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Ruler",
+      "servant_count": 13,
+      "master_count": 20,
+      "highest": {
+        "name": "斯卡哈·斯卡蒂(Ruler)",
+        "holding_count": 19,
+        "holding_rate": 0.95,
+        "implementation_order": 137,
+        "wiki_page": "https://fgo.wiki/w/%E6%96%AF%E5%8D%A1%E5%93%88%C2%B7%E6%96%AF%E5%8D%A1%E8%92%82%28Ruler%29",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\斯卡哈·斯卡蒂(Ruler).png",
+          "source_url": "https://media.fgo.wiki/e/ef/%E6%96%AF%E5%8D%A1%E5%93%88%C2%B7%E6%96%AF%E5%8D%A1%E8%92%82%28Ruler%29%E6%BB%A1%E7%A0%B4.png?v=clx3ixap96y0alo9p9e7bktfg0220c2",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "詹姆斯·莫里亚蒂(Ruler)",
+        "holding_count": 2,
+        "holding_rate": 0.1,
+        "implementation_order": 136,
+        "wiki_page": "https://fgo.wiki/w/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E8%8E%AB%E9%87%8C%E4%BA%9A%E8%92%82%28Ruler%29",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\詹姆斯·莫里亚蒂(Ruler).png",
+          "source_url": "https://media.fgo.wiki/9/98/%E8%A9%B9%E5%A7%86%E6%96%AF%C2%B7%E8%8E%AB%E9%87%8C%E4%BA%9A%E8%92%82%28Ruler%29%E6%BB%A1%E7%A0%B4.png?v=bj997jspjhcner5llqoxwx4oc2yqfuu",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 13,
+      "best_masters": [
+        "弥"
+      ],
+      "servants": [
+        {
+          "name": "贞德",
+          "holding_count": 16,
+          "holding_rate": 0.8,
+          "implementation_order": 129
+        },
+        {
+          "name": "天草四郎",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 130
+        },
+        {
+          "name": "夏洛克·福尔摩斯",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 131
+        },
+        {
+          "name": "始皇帝",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 132
+        },
+        {
+          "name": "阿尔托莉雅·潘德拉贡(Ruler)",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 133
+        },
+        {
+          "name": "卑弥呼",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 134
+        },
+        {
+          "name": "阿摩耳〔卡莲〕",
+          "holding_count": 14,
+          "holding_rate": 0.7,
+          "implementation_order": 135
+        },
+        {
+          "name": "詹姆斯·莫里亚蒂(Ruler)",
+          "holding_count": 2,
+          "holding_rate": 0.1,
+          "implementation_order": 136
+        },
+        {
+          "name": "斯卡哈·斯卡蒂(Ruler)",
+          "holding_count": 19,
+          "holding_rate": 0.95,
+          "implementation_order": 137
+        },
+        {
+          "name": "女教皇若安",
+          "holding_count": 3,
+          "holding_rate": 0.15,
+          "implementation_order": 138
+        },
+        {
+          "name": "梅柳齐娜(Ruler)",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 139
+        },
+        {
+          "name": "上杉谦信",
+          "holding_count": 4,
+          "holding_rate": 0.2,
+          "implementation_order": 140
+        },
+        {
+          "name": "梅塔特隆·贞德",
+          "holding_count": 9,
+          "holding_rate": 0.45,
+          "implementation_order": 141
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Ruler.png",
+        "source_url": "https://media.fgo.wiki/9/92/%E9%87%91%E5%8D%A1Ruler.png?v=141mg47wo7yjn5wyeqe3sscipb3rhk3",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Avenger",
+      "servant_count": 10,
+      "master_count": 20,
+      "highest": {
+        "name": "贞德〔Alter〕",
+        "holding_count": 17,
+        "holding_rate": 0.85,
+        "implementation_order": 144,
+        "wiki_page": "https://fgo.wiki/w/%E8%B4%9E%E5%BE%B7%E3%80%94Alter%E3%80%95",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\贞德〔Alter〕.png",
+          "source_url": "https://media.fgo.wiki/0/0a/%E9%BB%91%E8%B4%9E%E7%81%B5%E5%9F%BA%E5%86%8D%E4%B8%B4IV.png?v=6ox5m5u72p5hyl9lcybcho45pbbl44y",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "岩窟王 基督山",
+        "holding_count": 3,
+        "holding_rate": 0.15,
+        "implementation_order": 152,
+        "wiki_page": "https://fgo.wiki/w/%E5%B2%A9%E7%AA%9F%E7%8E%8B%20%E5%9F%BA%E7%9D%A3%E5%B1%B1",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\岩窟王 基督山.png",
+          "source_url": "https://media.fgo.wiki/5/51/%E5%B2%A9%E7%AA%9F%E7%8E%8B_%E5%9F%BA%E7%9D%A3%E5%B1%B1%E6%BB%A1%E7%A0%B4.png?v=dmay6xmthhthbwmvf750w2zjbik630q",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 9,
+      "best_masters": [
+        "弥"
+      ],
+      "servants": [
+        {
+          "name": "岩窟王",
+          "holding_count": 14,
+          "holding_rate": 0.7,
+          "implementation_order": 143
+        },
+        {
+          "name": "贞德〔Alter〕",
+          "holding_count": 17,
+          "holding_rate": 0.85,
+          "implementation_order": 144
+        },
+        {
+          "name": "织田信长(Avenger)",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 145
+        },
+        {
+          "name": "太空伊什塔尔",
+          "holding_count": 15,
+          "holding_rate": 0.75,
+          "implementation_order": 146
+        },
+        {
+          "name": "平景清",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 147
+        },
+        {
+          "name": "迦摩(Avenger)",
+          "holding_count": 13,
+          "holding_rate": 0.65,
+          "implementation_order": 148
+        },
+        {
+          "name": "尼托克丽丝〔Alter〕",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 149
+        },
+        {
+          "name": "源赖光／丑御前",
+          "holding_count": 4,
+          "holding_rate": 0.2,
+          "implementation_order": 150
+        },
+        {
+          "name": "玛丽·安托瓦内特〔Alter〕",
+          "holding_count": 6,
+          "holding_rate": 0.3,
+          "implementation_order": 151
+        },
+        {
+          "name": "岩窟王 基督山",
+          "holding_count": 3,
+          "holding_rate": 0.15,
+          "implementation_order": 152
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Avenger.png",
+        "source_url": "https://media.fgo.wiki/d/db/%E9%87%91%E5%8D%A1Avenger.png?v=86e3rop9sevzmgnitkaskix2zt17vh0",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "MoonCancer",
+      "servant_count": 6,
+      "master_count": 20,
+      "highest": {
+        "name": "Archetype：Earth",
+        "holding_count": 16,
+        "holding_rate": 0.8,
+        "implementation_order": 157,
+        "wiki_page": "https://fgo.wiki/w/Archetype%EF%BC%9AEarth",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\Archetype：Earth.png",
+          "source_url": "https://media.fgo.wiki/d/d9/Archetype_Earth%E6%BB%A1%E7%A0%B4.png?v=n164szjje4c19j17f7s3lvstbmntoyj",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "杀生院祈荒(MoonCancer)",
+        "holding_count": 7,
+        "holding_rate": 0.35,
+        "implementation_order": 156,
+        "wiki_page": "https://fgo.wiki/w/%E6%9D%80%E7%94%9F%E9%99%A2%E7%A5%88%E8%8D%92%28MoonCancer%29",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\杀生院祈荒(MoonCancer).png",
+          "source_url": "https://media.fgo.wiki/4/4b/%E6%9D%80%E7%94%9F%E9%99%A2%E7%A5%88%E8%8D%92%28MoonCancer%29%E6%BB%A1%E7%A0%B4.png?v=7c47fluc5hbehfte66hip2cs957r1bn",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 6,
+      "best_masters": [
+        "Manastorm",
+        "弥",
+        "爱玉藻太好了"
+      ],
+      "servants": [
+        {
+          "name": "BB(SSR)",
+          "holding_count": 14,
+          "holding_rate": 0.7,
+          "implementation_order": 154
+        },
+        {
+          "name": "伟大的石像神",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 155
+        },
+        {
+          "name": "杀生院祈荒(MoonCancer)",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 156
+        },
+        {
+          "name": "Archetype：Earth",
+          "holding_count": 16,
+          "holding_rate": 0.8,
+          "implementation_order": 157
+        },
+        {
+          "name": "谜之代行者C.I.E.L",
+          "holding_count": 15,
+          "holding_rate": 0.75,
+          "implementation_order": 158
+        },
+        {
+          "name": "BB迪拜",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 159
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\MoonCancer.png",
+        "source_url": "https://media.fgo.wiki/c/c3/%E9%87%91%E5%8D%A1MoonCancer.png?v=bw7v6ka9jv76sfgk9oocd3obiahld6e",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "AlterEgo",
+      "servant_count": 12,
+      "master_count": 20,
+      "highest": {
+        "name": "幼体／提亚马特",
+        "holding_count": 15,
+        "holding_rate": 0.75,
+        "implementation_order": 170,
+        "wiki_page": "https://fgo.wiki/w/%E5%B9%BC%E4%BD%93%EF%BC%8F%E6%8F%90%E4%BA%9A%E9%A9%AC%E7%89%B9",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\幼体／提亚马特.png",
+          "source_url": "https://media.fgo.wiki/8/8d/%E5%B9%BC%E4%BD%93%EF%BC%8F%E6%8F%90%E4%BA%9A%E9%A9%AC%E7%89%B9%E6%BB%A1%E7%A0%B4.png?v=m8oie5xyywah6h4z8de4lbfy9ki6i5a",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "超级班扬",
+        "holding_count": 2,
+        "holding_rate": 0.1,
+        "implementation_order": 168,
+        "wiki_page": "https://fgo.wiki/w/%E8%B6%85%E7%BA%A7%E7%8F%AD%E6%89%AC",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\超级班扬.png",
+          "source_url": "https://media.fgo.wiki/0/03/%E8%B6%85%E7%BA%A7%E7%8F%AD%E6%89%AC%E6%BB%A1%E7%A0%B4.png?v=j2panm6x9vhrljybu37nkesa9iz66qj",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 11,
+      "best_masters": [
+        "弥",
+        "爱玉藻太好了"
+      ],
+      "servants": [
+        {
+          "name": "Meltryllis",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 161
+        },
+        {
+          "name": "杀生院祈荒",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 162
+        },
+        {
+          "name": "冲田总司〔Alter〕",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 163
+        },
+        {
+          "name": "志度内",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 164
+        },
+        {
+          "name": "Kingprotea",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 165
+        },
+        {
+          "name": "芦屋道满",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 166
+        },
+        {
+          "name": "马纳南·麦克·利尔〔巴泽特〕",
+          "holding_count": 7,
+          "holding_rate": 0.35,
+          "implementation_order": 167
+        },
+        {
+          "name": "超级班扬",
+          "holding_count": 2,
+          "holding_rate": 0.1,
+          "implementation_order": 168
+        },
+        {
+          "name": "格里戈里·拉斯普京",
+          "holding_count": 6,
+          "holding_rate": 0.3,
+          "implementation_order": 169
+        },
+        {
+          "name": "幼体／提亚马特",
+          "holding_count": 15,
+          "holding_rate": 0.75,
+          "implementation_order": 170
+        },
+        {
+          "name": "响＆千键",
+          "holding_count": 4,
+          "holding_rate": 0.2,
+          "implementation_order": 171
+        },
+        {
+          "name": "Kazuradrop",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 172
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\AlterEgo.png",
+        "source_url": "https://media.fgo.wiki/f/ff/%E9%87%91%E5%8D%A1Alterego.png?v=2ltd599war1fgsswn32vtlk67agc7ka",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Foreigner",
+      "servant_count": 11,
+      "master_count": 20,
+      "highest": {
+        "name": "暗之高扬斯卡娅",
+        "holding_count": 12,
+        "holding_rate": 0.6,
+        "implementation_order": 181,
+        "wiki_page": "https://fgo.wiki/w/%E6%9A%97%E4%B9%8B%E9%AB%98%E6%89%AC%E6%96%AF%E5%8D%A1%E5%A8%85",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\暗之高扬斯卡娅.png",
+          "source_url": "https://media.fgo.wiki/0/03/%E6%9A%97%E4%B9%8B%E9%AB%98%E6%89%AC%E6%96%AF%E5%8D%A1%E5%A8%85%E6%BB%A1%E7%A0%B4.png?v=mmbv9pxy4yv7ltzlreofqyqyjaqfllf",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "旺吉娜",
+        "holding_count": 3,
+        "holding_rate": 0.15,
+        "implementation_order": 183,
+        "wiki_page": "https://fgo.wiki/w/%E6%97%BA%E5%90%89%E5%A8%9C",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\旺吉娜.png",
+          "source_url": "https://media.fgo.wiki/f/fe/%E6%97%BA%E5%90%89%E5%A8%9C%E6%BB%A1%E7%A0%B4.png?v=33vtriz22llbnu41uu6x29nm19mejwi",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 11,
+      "best_masters": [
+        "爱玉藻太好了"
+      ],
+      "servants": [
+        {
+          "name": "阿比盖尔·威廉姆斯",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 174
+        },
+        {
+          "name": "葛饰北斋",
+          "holding_count": 8,
+          "holding_rate": 0.4,
+          "implementation_order": 175
+        },
+        {
+          "name": "杨贵妃",
+          "holding_count": 6,
+          "holding_rate": 0.3,
+          "implementation_order": 176
+        },
+        {
+          "name": "旅行者",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 177
+        },
+        {
+          "name": "阿比盖尔·威廉姆斯〔夏〕",
+          "holding_count": 11,
+          "holding_rate": 0.55,
+          "implementation_order": 178
+        },
+        {
+          "name": "梵高",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 179
+        },
+        {
+          "name": "雅克·德·莫莱",
+          "holding_count": 5,
+          "holding_rate": 0.25,
+          "implementation_order": 180
+        },
+        {
+          "name": "暗之高扬斯卡娅",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 181
+        },
+        {
+          "name": "库库尔坎",
+          "holding_count": 10,
+          "holding_rate": 0.5,
+          "implementation_order": 182
+        },
+        {
+          "name": "旺吉娜",
+          "holding_count": 3,
+          "holding_rate": 0.15,
+          "implementation_order": 183
+        },
+        {
+          "name": "苍崎青子",
+          "holding_count": 9,
+          "holding_rate": 0.45,
+          "implementation_order": 184
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Foreigner.png",
+        "source_url": "https://media.fgo.wiki/c/c5/%E9%87%91%E5%8D%A1Foreigner.png?v=3u4gaaklfg2fva3wuedv6l0hocnjzbz",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Pretender",
+      "servant_count": 5,
+      "master_count": 20,
+      "highest": {
+        "name": "奥伯龙",
+        "holding_count": 18,
+        "holding_rate": 0.9,
+        "implementation_order": 186,
+        "wiki_page": "https://fgo.wiki/w/%E5%A5%A5%E4%BC%AF%E9%BE%99",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\奥伯龙.png",
+          "source_url": "https://media.fgo.wiki/2/2b/%E5%A5%A5%E4%BC%AF%E9%BE%99%E6%BB%A1%E7%A0%B4.png?v=8wpuyjd63a4sk46ydfa85wyf26ao263",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "但丁·阿利吉耶里",
+        "holding_count": 0,
+        "holding_rate": 0.0,
+        "implementation_order": 189,
+        "wiki_page": "https://fgo.wiki/w/%E4%BD%86%E4%B8%81%C2%B7%E9%98%BF%E5%88%A9%E5%90%89%E8%80%B6%E9%87%8C",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\但丁·阿利吉耶里.png",
+          "source_url": "https://media.fgo.wiki/b/b3/%E4%BD%86%E4%B8%81%C2%B7%E9%98%BF%E5%88%A9%E5%90%89%E8%80%B6%E9%87%8C%E6%BB%A1%E7%A0%B4.png?v=17w5ni1ym0g7rf4c5ulj38e49qfqvh1",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 4,
+      "best_masters": [
+        "nap/Napoléon rey",
+        "萝卜",
+        "弥",
+        "爱玉藻太好了",
+        "藤原春政",
+        "海鸥平方"
+      ],
+      "servants": [
+        {
+          "name": "奥伯龙",
+          "holding_count": 18,
+          "holding_rate": 0.9,
+          "implementation_order": 186
+        },
+        {
+          "name": "阿瓦隆女士",
+          "holding_count": 12,
+          "holding_rate": 0.6,
+          "implementation_order": 187
+        },
+        {
+          "name": "Phantasmoon",
+          "holding_count": 14,
+          "holding_rate": 0.7,
+          "implementation_order": 188
+        },
+        {
+          "name": "但丁·阿利吉耶里",
+          "holding_count": 0,
+          "holding_rate": 0.0,
+          "implementation_order": 189
+        },
+        {
+          "name": "堤丰·厄斐墨洛斯",
+          "holding_count": 9,
+          "holding_rate": 0.45,
+          "implementation_order": 190
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Pretender.png",
+        "source_url": "https://media.fgo.wiki/1/13/%E9%87%91%E5%8D%A1Pretender.png?v=91qthztty10wsw3cinwki08f5e08wn8",
+        "width": 80,
+        "height": 80
+      }
+    },
+    {
+      "class": "Beast",
+      "servant_count": 2,
+      "master_count": 20,
+      "highest": {
+        "name": "所多玛之兽／德拉科",
+        "holding_count": 16,
+        "holding_rate": 0.8,
+        "implementation_order": 192,
+        "wiki_page": "https://fgo.wiki/w/%E6%89%80%E5%A4%9A%E7%8E%9B%E4%B9%8B%E5%85%BD%EF%BC%8F%E5%BE%B7%E6%8B%89%E7%A7%91",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\所多玛之兽／德拉科.png",
+          "source_url": "https://media.fgo.wiki/6/61/%E6%89%80%E5%A4%9A%E7%8E%9B%E4%B9%8B%E5%85%BD%EF%BC%8F%E5%BE%B7%E6%8B%89%E7%A7%91%E6%BB%A1%E7%A0%B4.png?v=rhvku25e9vgs63tlpzyq6ilb1ns4j5u",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "lowest": {
+        "name": "所多玛之兽／德拉科",
+        "holding_count": 16,
+        "holding_rate": 0.8,
+        "implementation_order": 192,
+        "wiki_page": "https://fgo.wiki/w/%E6%89%80%E5%A4%9A%E7%8E%9B%E4%B9%8B%E5%85%BD%EF%BC%8F%E5%BE%B7%E6%8B%89%E7%A7%91",
+        "image": {
+          "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\从者满破\\所多玛之兽／德拉科.png",
+          "source_url": "https://media.fgo.wiki/6/61/%E6%89%80%E5%A4%9A%E7%8E%9B%E4%B9%8B%E5%85%BD%EF%BC%8F%E5%BE%B7%E6%8B%89%E7%A7%91%E6%BB%A1%E7%A0%B4.png?v=rhvku25e9vgs63tlpzyq6ilb1ns4j5u",
+          "width": 512,
+          "height": 724
+        }
+      },
+      "best_master_count": 2,
+      "best_masters": [
+        "ISU-152",
+        "望村小居士",
+        "软糯小祥",
+        "黑桐干也",
+        "神田真白",
+        "nap/Napoléon rey",
+        "Shiro团子",
+        "萝卜",
+        "朔月美遊",
+        "弥",
+        "老所长神选鸟主任",
+        "爱玉藻太好了",
+        "海鸥平方"
+      ],
+      "servants": [
+        {
+          "name": "所多玛之兽／德拉科",
+          "holding_count": 16,
+          "holding_rate": 0.8,
+          "implementation_order": 192
+        },
+        {
+          "name": "埃列什基伽勒(Beast)",
+          "holding_count": 16,
+          "holding_rate": 0.8,
+          "implementation_order": 193
+        }
+      ],
+      "icon": {
+        "path": "D:\\GitHub\\i-wanna\\FGO报菜名\\职介统计素材\\职阶图标\\Beast.png",
+        "source_url": "https://media.fgo.wiki/d/d2/%E9%87%91%E5%8D%A1Beast.png?v=pih4sf590o6iq8m7i5jx0jd7lz42vfl",
+        "width": 80,
+        "height": 80
+      }
+    }
+  ],
+  "asset_source": "fgo.wiki"
+}
